@@ -2,6 +2,8 @@
 import React from 'react';
 import { ChevronDown, ArrowRight, Globe, Cpu, Lightbulb } from 'lucide-react';
 import PipelineBackground from './PipelineBackground';
+import Link from 'next/link';
+import GreenprintBackground from './GreenprintBackground';
 
 export default function Home() {
   return (
@@ -114,8 +116,9 @@ export default function Home() {
       </section>
 
       {/* Greenprint Section */}
-      <section id="greenprint" className="py-20">
-        <div className="container mx-auto px-6">
+      <section id="greenprint" className="py-20 relative">
+        <GreenprintBackground />
+        <div className="container mx-auto px-6 relative z-10">
           <h2 className="text-4xl font-bold mb-12 text-center">
             <span className="text-green-400">Green</span>print
           </h2>
@@ -172,13 +175,13 @@ export default function Home() {
                       Set-and-forget automation
                     </li>
                   </ul>
-                  <a 
+                  <Link 
                     href="/greenprint" 
                     className="mt-8 inline-flex items-center text-green-400 hover:text-green-300 transition-colors"
                   >
                     Learn more about Greenprint
                     <ArrowRight className="w-4 h-4 ml-2" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
