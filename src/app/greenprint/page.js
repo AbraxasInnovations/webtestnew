@@ -67,7 +67,7 @@ export default function Greenprint() {
                     <h4 className="font-bold mb-4">Technical Specifications:</h4>
                     <ul className="text-gray-300 space-y-3">
                       <li><span className="font-bold">Language:</span> Python</li>
-                      <li><span className="font-bold">Supported Exchanges:</span> Binance, OKX, Bybit</li>
+                      <li><span className="font-bold">Supported Exchanges:</span> Hyperliquid, Kraken, GMGN</li>
                       <li><span className="font-bold">Minimum Requirements:</span> 24/7 running environment</li>
                       <li><span className="font-bold">Updates:</span> Free lifetime updates</li>
                     </ul>
