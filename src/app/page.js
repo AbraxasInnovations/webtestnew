@@ -83,18 +83,18 @@ export default function Home() {
               {
                 icon: <Globe className="w-12 h-12 text-blue-400" />,
                 title: "Global Solutions",
-                description: "Delivering innovative solutions across borders and industries."
+                description: "Delivering solutions across borders and industries."
               },
               {
                 icon: <Cpu className="w-12 h-12 text-purple-400" />,
-                title: "Asset Management",
-                description: "Leveraging cutting-edge technology to capitalize on market inefficiencies and risk premiums.",
+                title: "Non Custodial AM",
+                description: "Offering a revolutionary alternative to traditional custody-based asset management.",
                 link: "/asset-management"
               },
               {
                 icon: <Lightbulb className="w-12 h-12 text-green-400" />,
-                title: "Innovative Platforms",
-                description: "Thinking outside the box to create revolutionary solutions."
+                title: "Innovative Software",
+                description: "Developing institutional-grade financial software."
               }
             ].map((service, index) => (
               <div 
