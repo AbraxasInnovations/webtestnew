@@ -1,18 +1,113 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { ChevronDown, ArrowRight, Globe, Cpu, Lightbulb } from 'lucide-react';
 import PipelineBackground from './PipelineBackground';
 import Link from 'next/link';
 import GreenprintBackground from './GreenprintBackground';
+import Script from 'next/script';
 
 export default function Home() {
+  // References for animations
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const servicesRef = useRef(null);
+  const greenprintRef = useRef(null);
+  const contactRef = useRef(null);
+
+  useEffect(() => {
+    // We'll use this to initialize animations after the page loads
+    const initAnimations = () => {
+      // Make sure GSAP and ScrollMagic are loaded
+      if (typeof window !== 'undefined' && window.gsap && window.ScrollMagic) {
+        const gsap = window.gsap;
+        
+        // Initial animations (like the AirPods example)
+        gsap.from('.hero-title', {opacity: 0, duration: 1.5, delay: 0.5, y: 50});
+        gsap.from('.hero-description', {opacity: 0, duration: 1.5, delay: 0.8, y: 50});
+        gsap.from('.nav-logo', {opacity: 0, duration: 1.5, delay: 1, y: 25});
+        gsap.from('.nav-items', {opacity: 0, duration: 1.5, delay: 1.2, y: 25, stagger: 0.2});
+        gsap.from('.scroll-indicator', {opacity: 0, duration: 1.5, delay: 1.5, y: 30});
+        
+        // ScrollMagic Controller
+        const controller = new ScrollMagic.Controller();
+        
+        // About Section Animation
+        const aboutTimeline = gsap.timeline();
+        aboutTimeline.from('.about-content', {opacity: 0, y: 50, duration: 1});
+        aboutTimeline.from('.about-vision', {opacity: 0, y: 50, duration: 1}, "-=0.5");
+        
+        new ScrollMagic.Scene({
+          triggerElement: "#about",
+          triggerHook: 0.8,
+          reverse: false
+        })
+        .setTween(aboutTimeline)
+        .addTo(controller);
+        
+        // Services Section Animation
+        const servicesTimeline = gsap.timeline();
+        servicesTimeline.from('.services-title', {opacity: 0, y: 30, duration: 1});
+        servicesTimeline.from('.service-card', {opacity: 0, y: 50, duration: 1, stagger: 0.3}, "-=0.5");
+        
+        new ScrollMagic.Scene({
+          triggerElement: "#services",
+          triggerHook: 0.8,
+          reverse: false
+        })
+        .setTween(servicesTimeline)
+        .addTo(controller);
+        
+        // Greenprint Section Animation
+        const greenprintTimeline = gsap.timeline();
+        greenprintTimeline.from('.greenprint-title', {opacity: 0, y: 30, duration: 1});
+        greenprintTimeline.from('.greenprint-content', {opacity: 0, y: 50, duration: 1}, "-=0.5");
+        greenprintTimeline.from('.product-card', {opacity: 0, y: 30, duration: 1, stagger: 0.3}, "-=0.5");
+        greenprintTimeline.from('.greenprint-benefits', {opacity: 0, x: 50, duration: 1}, "-=1");
+        
+        new ScrollMagic.Scene({
+          triggerElement: "#greenprint",
+          triggerHook: 0.7,
+          reverse: false
+        })
+        .setTween(greenprintTimeline)
+        .addTo(controller);
+        
+        // Contact Section Animation
+        const contactTimeline = gsap.timeline();
+        contactTimeline.from('.contact-title', {opacity: 0, y: 30, duration: 1});
+        contactTimeline.from('.contact-form', {opacity: 0, y: 50, duration: 1}, "-=0.5");
+        
+        new ScrollMagic.Scene({
+          triggerElement: "#contact",
+          triggerHook: 0.8,
+          reverse: false
+        })
+        .setTween(contactTimeline)
+        .addTo(controller);
+      }
+    };
+
+    // Initialize animations
+    if (document.readyState === 'complete') {
+      initAnimations();
+    } else {
+      window.addEventListener('load', initAnimations);
+      return () => window.removeEventListener('load', initAnimations);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
+      {/* Scripts for GSAP and ScrollMagic */}
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" strategy="beforeInteractive" />
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" strategy="beforeInteractive" />
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js" strategy="beforeInteractive" />
+
       {/* Navigation */}
       <nav className="fixed w-full bg-black z-50">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="h-12">
+            <div className="h-12 nav-logo">
               <img 
                 src="/images/abaraxaslogo.jpeg"
                 alt="Abraxas"
@@ -20,37 +115,37 @@ export default function Home() {
               />
             </div>
             <div className="hidden md:flex space-x-8">
-              <a href="#about" className="hover:text-blue-400 transition-colors">About</a>
-              <a href="#services" className="hover:text-blue-400 transition-colors">Services</a>
-              <a href="#greenprint" className="hover:text-green-400 transition-colors">Greenprint</a>
-              <a href="#contact" className="hover:text-blue-400 transition-colors">Contact</a>
+              <a href="#about" className="hover:text-blue-400 transition-colors nav-items">About</a>
+              <a href="#services" className="hover:text-blue-400 transition-colors nav-items">Services</a>
+              <a href="#greenprint" className="hover:text-green-400 transition-colors nav-items">Greenprint</a>
+              <a href="#contact" className="hover:text-blue-400 transition-colors nav-items">Contact</a>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Hero Section with updated class names for animations */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden" ref={homeRef}>
         <PipelineBackground />
         <div className="relative container mx-auto px-6 text-center z-10">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 hero-title">
             Innovating Decentralized Finance
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-gray-300">
+          <p className="text-xl md:text-2xl mb-8 text-gray-300 hero-description">
             Pushing boundaries. Breaking limits. Creating tomorrow.
           </p>
-          <a href="#about" className="inline-flex items-center">
+          <a href="#about" className="inline-flex items-center scroll-indicator">
             <ChevronDown className="animate-bounce w-12 h-12" />
           </a>
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20">
+      {/* About Section - add classes for animations */}
+      <section id="about" className="py-20" ref={aboutRef}>
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-12 text-center">About Us</h2>
+          <h2 className="text-4xl font-bold mb-12 text-center about-title">About Us</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="about-content">
               <p className="text-lg text-gray-300 leading-relaxed">
                 At Abraxas Innovations, we're dedicated to pushing the boundaries of what's possible. 
                 Our team of experts works tirelessly to develop cutting-edge solutions that transform 
@@ -61,7 +156,7 @@ export default function Home() {
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
-            <div className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg p-1">
+            <div className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg p-1 about-vision">
               <div className="bg-gray-900 rounded-lg p-8">
                 <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
                 <p className="text-gray-300">
@@ -74,10 +169,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-20 bg-gray-900/50">
+      {/* Services Section - add classes for animations */}
+      <section id="services" className="py-20 bg-gray-900/50" ref={servicesRef}>
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-12 text-center">Our Services</h2>
+          <h2 className="text-4xl font-bold mb-12 text-center services-title">Our Services</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
@@ -99,7 +194,7 @@ export default function Home() {
             ].map((service, index) => (
               <div 
                 key={index} 
-                className="bg-gray-800/50 rounded-lg p-8 hover:bg-gray-800 transition-colors cursor-pointer"
+                className="bg-gray-800/50 rounded-lg p-8 hover:bg-gray-800 transition-colors cursor-pointer service-card"
                 onClick={() => {
                   if (service.link) {
                     window.location.href = service.link;
@@ -115,21 +210,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Greenprint Section */}
-      <section id="greenprint" className="py-20 relative">
+      {/* Greenprint Section - add classes for animations */}
+      <section id="greenprint" className="py-20 relative" ref={greenprintRef}>
         <GreenprintBackground />
         <div className="container mx-auto px-6 relative z-10">
-          <h2 className="text-4xl font-bold mb-12 text-center">
+          <h2 className="text-4xl font-bold mb-12 text-center greenprint-title">
             <span className="text-green-400">Green</span>print
           </h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="greenprint-content">
               <h3 className="text-2xl font-bold mb-4">Institutional-Grade Trading Tools for Retail Traders</h3>
               <p className="text-lg text-gray-300 leading-relaxed mb-6">
                 Access powerful algorithmic trading solutions that work while you sleep. Our suite of tools helps you capitalize on market inefficiencies in the crypto space with institutional-level infrastructure.
               </p>
               <div className="space-y-4">
-                <div className="bg-gray-800/50 p-6 rounded-lg">
+                <div className="bg-gray-800/50 p-6 rounded-lg product-card">
                   <h4 className="text-xl font-bold mb-2 text-green-400">Greenprint Funding Bot</h4>
                   <p className="text-gray-300 mb-4">
                     Automatically capture funding rate opportunities across exchanges. Ready for deployment.
@@ -143,17 +238,17 @@ export default function Home() {
                     Download Now - $50
                   </a>
                 </div>
-                <div className="bg-gray-800/50 p-6 rounded-lg opacity-75">
+                <div className="bg-gray-800/50 p-6 rounded-lg opacity-75 product-card">
                   <h4 className="text-xl font-bold mb-2">Greenprint CLMM Bot</h4>
                   <p className="text-gray-300">Coming soon - Advanced concentrated liquidity management for maximum yields.</p>
                 </div>
-                <div className="bg-gray-800/50 p-6 rounded-lg opacity-75">
+                <div className="bg-gray-800/50 p-6 rounded-lg opacity-75 product-card">
                   <h4 className="text-xl font-bold mb-2">Greenprint Data Analysis Tool</h4>
                   <p className="text-gray-300">Coming soon - Deep market analysis and opportunity detection.</p>
                 </div>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative greenprint-benefits">
               <div className="bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-lg p-1">
                 <div className="bg-gray-900 rounded-lg p-8">
                   <h3 className="text-2xl font-bold mb-4">Why Greenprint?</h3>
@@ -189,12 +284,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20">
+      {/* Contact Section - add classes for animations */}
+      <section id="contact" className="py-20" ref={contactRef}>
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-12 text-center">Contact Us</h2>
+          <h2 className="text-4xl font-bold mb-12 text-center contact-title">Contact Us</h2>
           <div className="max-w-2xl mx-auto">
-            <div className="bg-gray-800/50 rounded-lg p-8">
+            <div className="bg-gray-800/50 rounded-lg p-8 contact-form">
               <form className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium mb-2">Name</label>
