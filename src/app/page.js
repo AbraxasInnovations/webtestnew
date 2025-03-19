@@ -5,6 +5,7 @@ import PipelineBackground from './PipelineBackground';
 import Link from 'next/link';
 import GreenprintBackground from './GreenprintBackground';
 import Script from 'next/script';
+import CircularZoomBackground from './CircularZoomBackground';
 
 export default function Home() {
   // References for animations
@@ -126,7 +127,7 @@ export default function Home() {
 
       {/* Hero Section with updated class names for animations */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden" ref={homeRef}>
-        <PipelineBackground />
+        <CircularZoomBackground />
         <div className="relative container mx-auto px-6 text-center z-10">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 hero-title">
             Innovating Decentralized Finance
