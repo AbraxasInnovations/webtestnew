@@ -261,7 +261,7 @@ export default function Home() {
                     </li>
                     <li className="flex items-start">
                       <span className="text-green-400 mr-2">✓</span>
-                      Institutional-grade infrastructure
+                      Institutional-grade technology
                     </li>
                     <li className="flex items-start">
                       <span className="text-green-400 mr-2">✓</span>
