@@ -5,6 +5,21 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Shimmer text effect variables - only for services section */
+  --shimmer-offset: calc(3 * 0.5ch);
+  --shimmer-angle: calc(295 * 1deg);
+  --shimmer-gradient: linear-gradient(
+    var(--shimmer-angle),
+    transparent calc(50% - var(--shimmer-offset)),
+    #a960ee,
+    #ff333d,
+    #ffcb57,
+    #90e0ff,
+    transparent calc(50% + var(--shimmer-offset))
+  );
+  --shimmer-bg: var(--shimmer-gradient) 0 0 / 300% 100% no-repeat;
+  --shimmer-duration: 3s;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,6 +39,52 @@ body {
   to {
     stroke-dashoffset: 100;
   }
+}
+
+/* Shimmer text animation - only for services section */
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  50%,
+  100% {
+    background-position: 0% 0;
+  }
+}
+
+/* Shimmer text styles - only for services section */
+.services-shimmer-text {
+  background: var(--shimmer-bg);
+  animation: shimmer var(--shimmer-duration) infinite both ease-in-out;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* Grid background for services section only */
+.services-grid-background::before {
+  --size: 45px;
+  --grid-line: rgba(255, 255, 255, 0.3);
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: linear-gradient(
+        90deg,
+        var(--grid-line) 1px,
+        transparent 1px var(--size)
+      )
+      50% 50% / var(--size) var(--size),
+    linear-gradient(var(--grid-line) 1px, transparent 1px var(--size)) 50% 50% /
+      var(--size) var(--size);
+  mask: linear-gradient(-20deg, transparent 50%, white);
+  top: 0;
+  left: 0;
+  transform-style: flat;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.15;
 }
 
 /* Hover animations */
