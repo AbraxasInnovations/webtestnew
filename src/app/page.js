@@ -6,6 +6,7 @@ import Link from 'next/link';
 import GreenprintBackground from './GreenprintBackground';
 import Script from 'next/script';
 import CircularZoomBackground from './CircularZoomBackground';
+import ParticleWaveBackground from './ParticleWaveBackground';
 
 export default function Home() {
   // References for animations
@@ -213,7 +214,7 @@ export default function Home() {
 
       {/* Greenprint Section - add classes for animations */}
       <section id="greenprint" className="py-20 relative" ref={greenprintRef}>
-        <GreenprintBackground />
+        <ParticleWaveBackground />
         <div className="container mx-auto px-6 relative z-10">
           <h2 className="text-4xl font-bold mb-12 text-center greenprint-title">
             <span className="text-green-400">Green</span>print
