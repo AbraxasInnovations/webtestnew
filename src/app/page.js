@@ -7,8 +7,6 @@ import GreenprintBackground from './GreenprintBackground';
 import Script from 'next/script';
 import CircularZoomBackground from './CircularZoomBackground';
 import ParticleWaveBackground from './ParticleWaveBackground';
-import ShimmerText from './ShimmerText';
-import GridBackground from './GridBackground';
 
 export default function Home() {
   // References for animations
@@ -174,55 +172,49 @@ export default function Home() {
       </section>
 
       {/* Services Section - add classes for animations */}
-      <section id="services" className="py-20 relative overflow-hidden" ref={servicesRef}>
-        {/* Dark solid background for better contrast */}
-        <div className="absolute inset-0 bg-gray-900"></div>
-        
-        {/* Grid container */}
-        <GridBackground className="h-full w-full">
-          <div className="container mx-auto px-6 relative z-10">
-            <h2 className="text-4xl font-bold mb-4 text-center services-title">
-              <ShimmerText className="text-4xl font-bold">Our Services</ShimmerText>
-            </h2>
-            <p className="text-center mb-12">
-              <ShimmerText>Pushing boundaries. Breaking limits. Creating tomorrow.</ShimmerText>
-            </p>
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: <Globe className="w-12 h-12 text-blue-400" />,
-                  title: "Global Solutions",
-                  description: "Delivering solutions across borders and industries."
-                },
-                {
-                  icon: <Cpu className="w-12 h-12 text-purple-400" />,
-                  title: "Non Custodial AM",
-                  description: "Offering a revolutionary alternative to traditional custody-based asset management.",
-                  link: "/asset-management"
-                },
-                {
-                  icon: <Lightbulb className="w-12 h-12 text-green-400" />,
-                  title: "Innovative Software",
-                  description: "Developing institutional-grade financial software."
-                }
-              ].map((service, index) => (
-                <div 
-                  key={index} 
-                  className="bg-gray-800/90 backdrop-blur-sm rounded-lg p-8 hover:bg-gray-800 transition-colors cursor-pointer service-card border border-gray-700/50"
-                  onClick={() => {
-                    if (service.link) {
-                      window.location.href = service.link;
-                    }
-                  }}
-                >
-                  <div className="mb-4">{service.icon}</div>
-                  <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                  <p className="text-gray-300">{service.description}</p>
-                </div>
-              ))}
-            </div>
+      <section id="services" className="py-20 relative overflow-hidden bg-gray-900" ref={servicesRef}>
+        <div className="container mx-auto px-6 relative z-10">
+          <h2 className="text-4xl font-bold mb-4 text-center services-title">
+            Our Services
+          </h2>
+          <p className="text-center mb-12 text-gray-300">
+            Pushing boundaries. Breaking limits. Creating tomorrow.
+          </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <Globe className="w-12 h-12 text-blue-400" />,
+                title: "Global Solutions",
+                description: "Delivering solutions across borders and industries."
+              },
+              {
+                icon: <Cpu className="w-12 h-12 text-purple-400" />,
+                title: "Non Custodial AM",
+                description: "Offering a revolutionary alternative to traditional custody-based asset management.",
+                link: "/asset-management"
+              },
+              {
+                icon: <Lightbulb className="w-12 h-12 text-green-400" />,
+                title: "Innovative Software",
+                description: "Developing institutional-grade financial software."
+              }
+            ].map((service, index) => (
+              <div 
+                key={index} 
+                className="bg-gray-800 rounded-lg p-8 hover:bg-gray-700 transition-colors cursor-pointer service-card border border-gray-700/50"
+                onClick={() => {
+                  if (service.link) {
+                    window.location.href = service.link;
+                  }
+                }}
+              >
+                <div className="mb-4">{service.icon}</div>
+                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                <p className="text-gray-300">{service.description}</p>
+              </div>
+            ))}
           </div>
-        </GridBackground>
+        </div>
       </section>
 
       {/* Greenprint Section - add classes for animations */}
