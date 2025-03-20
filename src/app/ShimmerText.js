@@ -12,13 +12,21 @@ const ShimmerText = ({ children, className = '' }) => {
   }, [children]);
 
   return (
-    <span 
-      ref={textRef} 
-      className={`services-shimmer-text ${className}`}
-      data-text={typeof children === 'string' ? children : ''}
-    >
-      {children}
-    </span>
+    <div className={`inline-block ${className}`}>
+      <span
+        ref={textRef}
+        className="services-shimmer-text font-bold"
+        data-text={typeof children === 'string' ? children : ''}
+        style={{
+          display: 'inline-block',
+          position: 'relative',
+          color: 'white',
+          fontWeight: 'inherit'
+        }}
+      >
+        {children}
+      </span>
+    </div>
   );
 };
 

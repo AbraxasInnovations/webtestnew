@@ -3,16 +3,20 @@ import React from 'react';
 
 const GridBackground = ({ children, className = '' }) => {
   return (
-    <div className={`services-grid-background relative ${className}`}>
-      {/* Animated grid lines overlay */}
-      <div className="absolute inset-0 z-0">
-        {/* This will create an additional animated subtle effect */}
-        <div className="absolute inset-0 opacity-30 animate-pulse" 
-             style={{ 
-               background: 'radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0) 50%)'
-             }}
-        ></div>
-      </div>
+    <div className={`relative ${className}`}>
+      <div 
+        className="absolute inset-0 pointer-events-none" 
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 1px, transparent 1px)
+          `,
+          backgroundSize: '25px 25px',
+          backgroundPosition: '0 0',
+          opacity: 0.5,
+          zIndex: 0
+        }}
+      />
       {children}
     </div>
   );
