@@ -6,9 +6,8 @@ const ShimmerText = ({ children, className = '' }) => {
 
   useEffect(() => {
     if (textRef.current) {
-      const element = textRef.current;
-      // Set the placeholder length property for animation timing
-      element.style.setProperty('--placeholder-length', element.textContent.length);
+      // Make sure the data-text attribute has the same text as the element
+      textRef.current.setAttribute('data-text', textRef.current.textContent);
     }
   }, [children]);
 
@@ -16,6 +15,7 @@ const ShimmerText = ({ children, className = '' }) => {
     <span 
       ref={textRef} 
       className={`services-shimmer-text ${className}`}
+      data-text={typeof children === 'string' ? children : ''}
     >
       {children}
     </span>

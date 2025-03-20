@@ -174,7 +174,8 @@ export default function Home() {
       </section>
 
       {/* Services Section - add classes for animations */}
-      <section id="services" className="py-20 bg-gray-900/50 relative overflow-hidden" ref={servicesRef}>
+      <section id="services" className="py-20 relative overflow-hidden" ref={servicesRef}>
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-gray-800 opacity-90"></div>
         <GridBackground className="h-full w-full">
           <div className="container mx-auto px-6 relative z-10">
             <h2 className="text-4xl font-bold mb-4 text-center services-title">
@@ -204,7 +205,7 @@ export default function Home() {
               ].map((service, index) => (
                 <div 
                   key={index} 
-                  className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-8 hover:bg-gray-800 transition-colors cursor-pointer service-card"
+                  className="bg-gray-800/70 backdrop-blur-sm rounded-lg p-8 hover:bg-gray-800 transition-colors cursor-pointer service-card border border-gray-700/50"
                   onClick={() => {
                     if (service.link) {
                       window.location.href = service.link;
