@@ -75,8 +75,21 @@ html {
 }
 
 .sparkle-card {
-  animation: 2s gradient-angle infinite linear;
   border: 2px solid transparent;
+  background-image: linear-gradient(#1a1a1a, #0a0a0a),
+    linear-gradient(
+      to bottom,
+      rgba(75, 75, 75, 0.7),
+      rgba(50, 50, 50, 0.7)
+    );
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-image 0.3s ease;
+  position: relative;
+}
+
+.sparkle-card:hover {
+  animation: 2s gradient-angle infinite linear;
   background-image: linear-gradient(#1a1a1a, #0a0a0a),
     conic-gradient(
       from var(--gradient-angle),
@@ -91,10 +104,8 @@ html {
       #c7a03c 83%,
       #584827 90%
     );
-  background-clip: padding-box, border-box;
-  background-origin: padding-box, border-box;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(201, 157, 57, 0.3);
 }
 
 /* Fallback for browsers that don't support @property */
@@ -112,6 +123,18 @@ html {
     left: -2px;
     right: -2px;
     bottom: -2px;
+    background: linear-gradient(
+      to bottom,
+      rgba(75, 75, 75, 0.7),
+      rgba(50, 50, 50, 0.7)
+    );
+    z-index: -1;
+    border-radius: 0.5rem;
+    transition: background 0.3s ease;
+  }
+  
+  .sparkle-card:hover::before {
+    animation: 2s rotate linear infinite;
     background: conic-gradient(
       #584827,
       #c7a03c,
@@ -124,9 +147,6 @@ html {
       #c7a03c,
       #584827
     );
-    z-index: -1;
-    border-radius: 0.5rem;
-    animation: 2s rotate linear infinite;
   }
   
   @keyframes rotate {
@@ -137,11 +157,6 @@ html {
       transform: rotate(360deg);
     }
   }
-}
-
-.sparkle-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(201, 157, 57, 0.3);
 }
 
 @keyframes gradient-angle {
