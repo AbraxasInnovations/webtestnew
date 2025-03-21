@@ -56,13 +56,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
-        <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" type="image/png" />
-        <link rel="android-chrome" href="/android-chrome-192x192.png" sizes="192x192" type="image/png" />
-        <link rel="android-chrome" href="/android-chrome-512x512.png" sizes="512x512" type="image/png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        {/* Removing the redundant favicon links */}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
