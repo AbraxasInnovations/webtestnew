@@ -233,39 +233,33 @@ export default function Home() {
                 Access powerful algorithmic trading solutions that work while you sleep. Our suite of tools helps you capitalize on market inefficiencies in the crypto space with institutional-level infrastructure.
               </p>
               <div className="space-y-4">
-                <div className="sparkle-card p-0.5 rounded-lg product-card">
-                  <div className="bg-gray-900 rounded-lg p-6 h-full w-full">
-                    <h4 className="text-xl font-bold mb-2 text-green-400">Greenprint Funding Bot</h4>
-                    <p className="text-gray-300 mb-4">
-                      Automatically capture funding rate opportunities across exchanges. Ready for deployment.
-                    </p>
-                    <a 
-                      href="https://t.me/AbraxasInnovations" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="inline-block bg-green-500 hover:bg-green-400 text-white font-bold py-3 px-6 rounded-lg transition-colors"
-                    >
-                      Download Now - $50
-                    </a>
-                  </div>
+                <div className="bg-gray-800/50 p-6 rounded-lg product-card">
+                  <h4 className="text-xl font-bold mb-2 text-green-400">Greenprint Funding Bot</h4>
+                  <p className="text-gray-300 mb-4">
+                    Automatically capture funding rate opportunities across exchanges. Ready for deployment.
+                  </p>
+                  <a 
+                    href="https://t.me/AbraxasInnovations" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="inline-block bg-green-500 hover:bg-green-400 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                  >
+                    Download Now - $50
+                  </a>
                 </div>
-                <div className="sparkle-card p-0.5 rounded-lg product-card opacity-75">
-                  <div className="bg-gray-900 rounded-lg p-6 h-full w-full">
-                    <h4 className="text-xl font-bold mb-2">Greenprint CLMM Bot</h4>
-                    <p className="text-gray-300">Coming soon - Advanced concentrated liquidity management for maximum yields.</p>
-                  </div>
+                <div className="bg-gray-800/50 p-6 rounded-lg opacity-75 product-card">
+                  <h4 className="text-xl font-bold mb-2">Greenprint CLMM Bot</h4>
+                  <p className="text-gray-300">Coming soon - Advanced concentrated liquidity management for maximum yields.</p>
                 </div>
-                <div className="sparkle-card p-0.5 rounded-lg product-card opacity-75">
-                  <div className="bg-gray-900 rounded-lg p-6 h-full w-full">
-                    <h4 className="text-xl font-bold mb-2">Greenprint Data Analysis Tool</h4>
-                    <p className="text-gray-300">Coming soon - Deep market analysis and opportunity detection.</p>
-                  </div>
+                <div className="bg-gray-800/50 p-6 rounded-lg opacity-75 product-card">
+                  <h4 className="text-xl font-bold mb-2">Greenprint Data Analysis Tool</h4>
+                  <p className="text-gray-300">Coming soon - Deep market analysis and opportunity detection.</p>
                 </div>
               </div>
             </div>
             <div className="relative greenprint-benefits">
-              <div className="sparkle-card rounded-lg p-0.5">
-                <div className="bg-gray-900 rounded-lg p-8 h-full w-full">
+              <div className="bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-lg p-1">
+                <div className="bg-gray-900 rounded-lg p-8">
                   <h3 className="text-2xl font-bold mb-4">Why Greenprint?</h3>
                   <ul className="space-y-4 text-gray-300">
                     <li className="flex items-start">
@@ -304,35 +298,33 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold mb-12 text-center contact-title">Contact Us</h2>
           <div className="max-w-2xl mx-auto">
-            <div className="sparkle-card rounded-lg p-0.5 contact-form">
-              <div className="bg-gray-900 rounded-lg p-8 w-full">
-                <form className="space-y-6">
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Name</label>
-                    <input
-                      type="text"
-                      className="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Email</label>
-                    <input
-                      type="email"
-                      className="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Message</label>
-                    <textarea
-                      rows={4}
-                      className="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                    />
-                  </div>
-                  <button className="w-full bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded-lg transition-colors">
-                    Send Message
-                  </button>
-                </form>
-              </div>
+            <div className="bg-gray-800/50 rounded-lg p-8 contact-form">
+              <form className="space-y-6">
+                <div>
+                  <label className="block text-sm font-medium mb-2">Name</label>
+                  <input
+                    type="text"
+                    className="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2">Email</label>
+                  <input
+                    type="email"
+                    className="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2">Message</label>
+                  <textarea
+                    rows={4}
+                    className="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  />
+                </div>
+                <button className="w-full bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded-lg transition-colors">
+                  Send Message
+                </button>
+              </form>
             </div>
           </div>
         </div>
