@@ -5,6 +5,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* New color palette */
+  --primary-dark: #0a0a0a;
+  --primary-light: #f4f4f8;
+  --accent-silver: #c0c0c0;
+  --accent-dark-silver: #707070;
+  --accent-light-silver: #e0e0e4;
+  --dark-gray: #1e1e1e;
+  --medium-gray: #333333;
+  --light-gray: #666666;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,7 +43,7 @@ body {
 
 .service-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 30px rgba(192, 192, 192, 0.15);
 }
 
 .product-card {
@@ -162,5 +172,42 @@ html {
 @keyframes gradient-angle {
   to {
     --gradient-angle: 1turn;
+  }
+}
+
+/* Silver accent elements */
+.silver-accent {
+  background: linear-gradient(135deg, #a0a0a0, #c0c0c0, #e0e0e0, #c0c0c0, #a0a0a0);
+  background-size: 400% 400%;
+  animation: shimmer 3s ease infinite;
+}
+
+.silver-text {
+  background: linear-gradient(to right, #707070, #c0c0c0, #e0e0e0, #c0c0c0, #707070);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  animation: silver-text-shine 3s linear infinite;
+}
+
+@keyframes silver-text-shine {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }

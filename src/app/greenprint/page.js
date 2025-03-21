@@ -22,7 +22,7 @@ export default function Greenprint() {
       <div className="pt-24 pb-20">
         <div className="container mx-auto px-6">
           <h1 className="text-4xl md:text-5xl font-bold mb-8">
-            <span className="text-green-400">Green</span>print Suite
+            <span className="text-gray-400">Green</span>print Suite
           </h1>
           
           <div className="space-y-16">
@@ -40,7 +40,7 @@ export default function Greenprint() {
               
               {/* Funding Bot */}
               <div className="bg-gray-800/50 rounded-lg p-8 mb-8">
-                <h3 className="text-2xl font-bold text-green-400 mb-4">Greenprint Funding Bot</h3>
+                <h3 className="text-2xl font-bold text-gray-300 mb-4">Greenprint Funding Bot</h3>
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
                     <p className="text-gray-300 mb-4">
@@ -58,7 +58,7 @@ export default function Greenprint() {
                       href="https://t.me/AbraxasInnovations" 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="inline-block bg-green-500 hover:bg-green-400 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                      className="inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
                     >
                       Download Now - $50
                     </a>

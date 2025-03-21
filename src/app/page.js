@@ -117,10 +117,10 @@ export default function Home() {
               />
             </div>
             <div className="hidden md:flex space-x-8">
-              <a href="#about" className="hover:text-blue-400 transition-colors nav-items">About</a>
-              <a href="#services" className="hover:text-blue-400 transition-colors nav-items">Services</a>
-              <a href="#greenprint" className="hover:text-green-400 transition-colors nav-items">Greenprint</a>
-              <a href="#contact" className="hover:text-blue-400 transition-colors nav-items">Contact</a>
+              <a href="#about" className="hover:text-gray-300 transition-colors nav-items">About</a>
+              <a href="#services" className="hover:text-gray-300 transition-colors nav-items">Services</a>
+              <a href="#greenprint" className="hover:text-gray-300 transition-colors nav-items">Greenprint</a>
+              <a href="#contact" className="hover:text-gray-300 transition-colors nav-items">Contact</a>
             </div>
           </div>
         </div>
@@ -131,7 +131,7 @@ export default function Home() {
         <CircularZoomBackground />
         <div className="relative container mx-auto px-6 text-center z-10">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 hero-title">
-            Innovating Decentralized Finance
+            <span className="text-white">Innovating</span> <span className="silver-text">Decentralized Finance</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-300 hero-description">
             Pushing boundaries. Breaking limits. Creating tomorrow.
@@ -153,7 +153,7 @@ export default function Home() {
                 Our team of experts works tirelessly to develop cutting-edge solutions that transform 
                 the fabric of DeFi.
               </p>
-              <button className="mt-8 flex items-center space-x-2 text-blue-400 hover:text-blue-300 transition-colors">
+              <button className="mt-8 flex items-center space-x-2 text-gray-300 hover:text-white transition-colors">
                 <span>Learn more about our mission</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
@@ -183,18 +183,18 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: <Globe className="w-12 h-12 text-blue-400" />,
+                icon: <Globe className="w-12 h-12 text-gray-300" />,
                 title: "Global Solutions",
                 description: "Delivering solutions across borders and industries."
               },
               {
-                icon: <Cpu className="w-12 h-12 text-purple-400" />,
+                icon: <Cpu className="w-12 h-12 text-gray-300" />,
                 title: "Non Custodial AM",
                 description: "Offering a revolutionary alternative to traditional custody-based asset management.",
                 link: "/asset-management"
               },
               {
-                icon: <Lightbulb className="w-12 h-12 text-green-400" />,
+                icon: <Lightbulb className="w-12 h-12 text-gray-300" />,
                 title: "Innovative Software",
                 description: "Developing institutional-grade financial software."
               }
@@ -224,7 +224,7 @@ export default function Home() {
         <ParticleWaveBackground />
         <div className="container mx-auto px-6 relative z-10">
           <h2 className="text-4xl font-bold mb-12 text-center greenprint-title">
-            <span className="text-green-400">Green</span>print
+            <span className="text-gray-400">Green</span>print
           </h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="greenprint-content">
@@ -234,7 +234,7 @@ export default function Home() {
               </p>
               <div className="space-y-4">
                 <div className="bg-gray-800/50 p-6 rounded-lg product-card">
-                  <h4 className="text-xl font-bold mb-2 text-green-400">Greenprint Funding Bot</h4>
+                  <h4 className="text-xl font-bold mb-2 text-gray-300">Greenprint Funding Bot</h4>
                   <p className="text-gray-300 mb-4">
                     Automatically capture funding rate opportunities across exchanges. Ready for deployment.
                   </p>
@@ -242,7 +242,7 @@ export default function Home() {
                     href="https://t.me/AbraxasInnovations" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="inline-block bg-green-500 hover:bg-green-400 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                    className="inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
                   >
                     Download Now - $50
                   </a>
@@ -258,30 +258,30 @@ export default function Home() {
               </div>
             </div>
             <div className="relative greenprint-benefits">
-              <div className="bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-lg p-1">
+              <div className="bg-gradient-to-r from-gray-800/20 to-gray-700/20 rounded-lg p-1">
                 <div className="bg-gray-900 rounded-lg p-8">
                   <h3 className="text-2xl font-bold mb-4">Why Greenprint?</h3>
                   <ul className="space-y-4 text-gray-300">
                     <li className="flex items-start">
-                      <span className="text-green-400 mr-2">✓</span>
+                      <span className="text-gray-400 mr-2">✓</span>
                       Automated 24/7 trading strategies
                     </li>
                     <li className="flex items-start">
-                      <span className="text-green-400 mr-2">✓</span>
+                      <span className="text-gray-400 mr-2">✓</span>
                       Institutional-grade technology
                     </li>
                     <li className="flex items-start">
-                      <span className="text-green-400 mr-2">✓</span>
+                      <span className="text-gray-400 mr-2">✓</span>
                       Market inefficiency exploitation
                     </li>
                     <li className="flex items-start">
-                      <span className="text-green-400 mr-2">✓</span>
+                      <span className="text-gray-400 mr-2">✓</span>
                       Set-and-forget automation
                     </li>
                   </ul>
                   <Link 
                     href="/greenprint" 
-                    className="mt-8 inline-flex items-center text-green-400 hover:text-green-300 transition-colors"
+                    className="mt-8 inline-flex items-center text-gray-400 hover:text-gray-300 transition-colors"
                   >
                     Learn more about Greenprint
                     <ArrowRight className="w-4 h-4 ml-2" />
@@ -321,7 +321,7 @@ export default function Home() {
                     className="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
                 </div>
-                <button className="w-full bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded-lg transition-colors">
+                <button className="w-full bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg transition-colors">
                   Send Message
                 </button>
               </form>
