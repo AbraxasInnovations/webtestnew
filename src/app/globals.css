@@ -346,23 +346,23 @@ html {
 }
 
 .animated-card.active .card-borders .border-top {
-  animation: slide-in-horizontal 0.8s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  animation: slide-in-horizontal 1.2s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 }
 
 .animated-card.active .card-borders .border-right {
-  animation: slide-in-vertical 0.8s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  animation: slide-in-vertical 1.2s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 }
 
 .animated-card.active .card-borders .border-bottom {
-  animation: slide-in-horizontal-reverse 0.8s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  animation: slide-in-horizontal-reverse 1.2s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 }
 
 .animated-card.active .card-borders .border-left {
-  animation: slide-in-vertical-reverse 0.8s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  animation: slide-in-vertical-reverse 1.2s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 }
 
 .animated-card.active .card-content {
-  animation: bump-in 0.5s 0.8s forwards;
+  animation: bump-in 0.8s 1.2s forwards;
 }
 
 .animated-card .card-borders {
@@ -461,4 +461,68 @@ html {
   to {
     transform: translateY(100%);
   }
+}
+
+/* Greenprint Card Animation */
+.greenprint-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#1a1a1a, #0a0a0a),
+    linear-gradient(
+      to right,
+      rgba(16, 185, 129, 0.7), /* Emerald */
+      rgba(14, 165, 233, 0.7), /* Sky Blue */
+      rgba(6, 182, 212, 0.7)  /* Cyan */
+    );
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  animation: greenprint-pulse 3s ease-in-out infinite;
+}
+
+@keyframes greenprint-pulse {
+  0% {
+    box-shadow: 0 0 5px rgba(16, 185, 129, 0.2), 0 0 10px rgba(6, 182, 212, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.4), 0 0 20px rgba(6, 182, 212, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(16, 185, 129, 0.2), 0 0 10px rgba(6, 182, 212, 0.1);
+  }
+}
+
+.greenprint-card:hover {
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.5), 0 0 35px rgba(6, 182, 212, 0.4);
+  transform: translateY(-5px);
+}
+
+/* Greenprint Product Card Animation */
+.greenprint-product-card {
+  border-left: 3px solid transparent;
+  background-clip: padding-box, border-box;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.greenprint-product-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -3px;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, #10b981, #06b6d4);
+  z-index: 1;
+}
+
+.greenprint-product-card:hover {
+  transform: translateX(5px);
+  box-shadow: -5px 0 15px rgba(16, 185, 129, 0.3), -2px 0 8px rgba(6, 182, 212, 0.2);
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.greenprint-product-card:hover::before {
+  box-shadow: -2px 0 10px rgba(16, 185, 129, 0.5), -1px 0 5px rgba(6, 182, 212, 0.4);
 }

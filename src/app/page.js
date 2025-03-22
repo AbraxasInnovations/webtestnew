@@ -64,7 +64,7 @@ export default function Home() {
           cards.forEach((card, index) => {
             setTimeout(() => {
               card.classList.add('active');
-            }, 200 * index);
+            }, 400 * index);
           });
         })
         .setTween(servicesTimeline)
@@ -122,7 +122,7 @@ export default function Home() {
           <div className="flex items-center justify-between">
             <div className="h-12 nav-logo">
               <img 
-                src="/images/abraxaslogo.jpeg"
+                src="/images/abaraxaslogo.jpeg"
                 alt="Abraxas"
                 className="h-full w-auto"
               />
@@ -243,7 +243,7 @@ export default function Home() {
         <ParticleWaveBackground />
         <div className="container mx-auto px-6 relative z-10">
           <h2 className="text-4xl font-bold mb-12 text-center greenprint-title">
-            <span className="text-gray-400">Green</span>print
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400">Green</span>print
           </h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="greenprint-content">
@@ -252,8 +252,8 @@ export default function Home() {
                 Access powerful algorithmic trading solutions that work while you sleep. Our suite of tools helps you capitalize on market inefficiencies in the crypto space with institutional-level infrastructure.
               </p>
               <div className="space-y-4">
-                <div className="bg-gray-800/50 p-6 rounded-lg product-card">
-                  <h4 className="text-xl font-bold mb-2 text-gray-300">Greenprint Funding Bot</h4>
+                <div className="greenprint-product-card bg-gray-800/50 p-6 rounded-lg product-card">
+                  <h4 className="text-xl font-bold mb-2 text-emerald-300">Greenprint Funding Bot</h4>
                   <p className="text-gray-300 mb-4">
                     Automatically capture funding rate opportunities across exchanges. Ready for deployment.
                   </p>
@@ -261,46 +261,46 @@ export default function Home() {
                     href="https://t.me/AbraxasInnovations" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                    className="inline-block bg-gradient-to-r from-emerald-800 to-cyan-800 hover:from-emerald-700 hover:to-cyan-700 text-white font-bold py-3 px-6 rounded-lg transition-colors"
                   >
                     Download Now - $50
                   </a>
                 </div>
-                <div className="bg-gray-800/50 p-6 rounded-lg opacity-75 product-card">
-                  <h4 className="text-xl font-bold mb-2">Greenprint CLMM Bot</h4>
+                <div className="greenprint-product-card bg-gray-800/50 p-6 rounded-lg opacity-75 product-card">
+                  <h4 className="text-xl font-bold mb-2 text-emerald-300">Greenprint CLMM Bot</h4>
                   <p className="text-gray-300">Coming soon - Advanced concentrated liquidity management for maximum yields.</p>
                 </div>
-                <div className="bg-gray-800/50 p-6 rounded-lg opacity-75 product-card">
-                  <h4 className="text-xl font-bold mb-2">Greenprint Data Analysis Tool</h4>
+                <div className="greenprint-product-card bg-gray-800/50 p-6 rounded-lg opacity-75 product-card">
+                  <h4 className="text-xl font-bold mb-2 text-emerald-300">Greenprint Data Analysis Tool</h4>
                   <p className="text-gray-300">Coming soon - Deep market analysis and opportunity detection.</p>
                 </div>
               </div>
             </div>
             <div className="relative greenprint-benefits">
-              <div className="bg-gradient-to-r from-gray-800/20 to-gray-700/20 rounded-lg p-1">
+              <div className="bg-gradient-to-r from-emerald-500/30 to-cyan-500/30 rounded-lg p-1 greenprint-card">
                 <div className="bg-gray-900 rounded-lg p-8">
                   <h3 className="text-2xl font-bold mb-4">Why Greenprint?</h3>
                   <ul className="space-y-4 text-gray-300">
                     <li className="flex items-start">
-                      <span className="text-gray-400 mr-2">✓</span>
+                      <span className="text-emerald-400 mr-2">✓</span>
                       Automated 24/7 trading strategies
                     </li>
                     <li className="flex items-start">
-                      <span className="text-gray-400 mr-2">✓</span>
+                      <span className="text-emerald-400 mr-2">✓</span>
                       Institutional-grade technology
                     </li>
                     <li className="flex items-start">
-                      <span className="text-gray-400 mr-2">✓</span>
+                      <span className="text-emerald-400 mr-2">✓</span>
                       Market inefficiency exploitation
                     </li>
                     <li className="flex items-start">
-                      <span className="text-gray-400 mr-2">✓</span>
+                      <span className="text-emerald-400 mr-2">✓</span>
                       Set-and-forget automation
                     </li>
                   </ul>
                   <Link 
                     href="/greenprint" 
-                    className="mt-8 inline-flex items-center text-gray-400 hover:text-gray-300 transition-colors"
+                    className="mt-8 inline-flex items-center text-emerald-400 hover:text-emerald-300 transition-colors"
                   >
                     Learn more about Greenprint
                     <ArrowRight className="w-4 h-4 ml-2" />
@@ -356,7 +356,7 @@ export default function Home() {
             {/* Logo and Copyright */}
             <div className="flex flex-col items-center md:items-start">
               <img 
-                src="/images/abraxaslogo.jpeg"
+                src="/images/abaraxaslogo.jpeg"
                 alt="Abraxas"
                 className="h-12 w-auto mb-4"
               />
