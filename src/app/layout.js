@@ -42,6 +42,15 @@ export const metadata = {
     title: 'Abraxas Innovations',
     description: 'Innovating Decentralized Finance',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Abraxas Innovations'
+      }
+    ],
+    siteName: 'Abraxas Innovations',
   },
   other: {
     'google-site-verification': '',

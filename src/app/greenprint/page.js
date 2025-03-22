@@ -1,20 +1,97 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Menu, X } from 'lucide-react';
 
 export default function Greenprint() {
+  // Add state for mobile menu
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
+  // Toggle mobile menu function
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+  
+  // Close menu when clicking a navigation link
+  const handleNavClick = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
       {/* Navigation */}
       <nav className="fixed w-full bg-black z-50">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center space-x-2">
-              <ArrowLeft className="w-6 h-6" />
-              <span>Back to Home</span>
-            </Link>
+            <div className="h-12 nav-logo">
+              <Link href="/">
+                <img 
+                  src="/images/abaraxaslogo.jpeg"
+                  alt="Abraxas"
+                  className="h-full w-auto"
+                />
+              </Link>
+            </div>
+            
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex space-x-8">
+              <Link href="/#about" className="hover:text-gray-300 transition-colors nav-items">About</Link>
+              <Link href="/#services" className="hover:text-gray-300 transition-colors nav-items">Services</Link>
+              <Link href="/#greenprint" className="hover:text-gray-300 transition-colors nav-items">Greenprint</Link>
+              <Link href="/#contact" className="hover:text-gray-300 transition-colors nav-items">Contact</Link>
+            </div>
+            
+            {/* Mobile Menu Button */}
+            <div className="md:hidden">
+              <button 
+                onClick={toggleMobileMenu} 
+                className="text-white focus:outline-none"
+                aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              >
+                {mobileMenuOpen ? (
+                  <X className="h-7 w-7" />
+                ) : (
+                  <Menu className="h-7 w-7" />
+                )}
+              </button>
+            </div>
           </div>
+          
+          {/* Mobile Navigation Menu */}
+          {mobileMenuOpen && (
+            <div className="md:hidden py-4 animate-fade-in">
+              <div className="flex flex-col space-y-4 items-center">
+                <Link 
+                  href="/#about" 
+                  className="text-lg hover:text-gray-300 transition-colors w-full text-center py-2"
+                  onClick={handleNavClick}
+                >
+                  About
+                </Link>
+                <Link 
+                  href="/#services" 
+                  className="text-lg hover:text-gray-300 transition-colors w-full text-center py-2"
+                  onClick={handleNavClick}
+                >
+                  Services
+                </Link>
+                <Link 
+                  href="/#greenprint" 
+                  className="text-lg hover:text-gray-300 transition-colors w-full text-center py-2"
+                  onClick={handleNavClick}
+                >
+                  Greenprint
+                </Link>
+                <Link 
+                  href="/#contact" 
+                  className="text-lg hover:text-gray-300 transition-colors w-full text-center py-2"
+                  onClick={handleNavClick}
+                >
+                  Contact
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
