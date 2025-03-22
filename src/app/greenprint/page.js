@@ -58,7 +58,7 @@ export default function Greenprint() {
                       href="https://t.me/AbraxasInnovations" 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                      className="inline-block bg-gradient-to-r from-emerald-800 to-cyan-800 hover:from-emerald-700 hover:to-cyan-700 text-white font-bold py-3 px-6 rounded-lg transition-colors"
                     >
                       Download Now - $50
                     </a>
@@ -72,6 +72,302 @@ export default function Greenprint() {
                       <li><span className="font-bold">Updates:</span> Free lifetime updates</li>
                     </ul>
                   </div>
+                </div>
+              </div>
+
+              {/* Comprehensive Bot Overview */}
+              <div className="greenprint-card bg-gray-900/50 rounded-lg p-8 mb-12">
+                <h3 className="text-2xl font-bold text-emerald-300 mb-6">Comprehensive Overview: Abraxas Greenprint Funding Bot</h3>
+                
+                {/* Introduction */}
+                <div className="mb-8">
+                  <h4 className="text-xl font-bold mb-3 text-emerald-200">Introduction</h4>
+                  <p className="text-gray-300 leading-relaxed">
+                    The Abraxas Greenprint Funding Bot is an advanced automated trading system designed to capitalize on funding rate arbitrage opportunities between perpetual futures markets on Hyperliquid and spot markets on Kraken. By taking advantage of funding rate discrepancies while maintaining delta neutrality, the bot generates consistent returns with managed risk.
+                  </p>
+                </div>
+                
+                {/* Core Mechanism */}
+                <div className="mb-8">
+                  <h4 className="text-xl font-bold mb-3 text-emerald-200">Core Mechanism: Funding Rate Arbitrage</h4>
+                  <h5 className="font-bold mb-2 text-white">How It Works</h5>
+                  <ul className="text-gray-300 space-y-2 mb-4">
+                    <li className="flex items-start">
+                      <span className="text-emerald-400 mr-2">→</span>
+                      <span><strong>Market Position:</strong> The bot simultaneously goes short on perpetual futures contracts on Hyperliquid and long on spot markets on Kraken (or Hyperliquid for HYPE token).</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-emerald-400 mr-2">→</span>
+                      <span><strong>Delta Neutrality:</strong> By balancing long and short positions, the bot remains market-neutral, minimizing directional price risk.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-emerald-400 mr-2">→</span>
+                      <span><strong>Funding Rate Collection:</strong> Perpetual futures contracts periodically settle funding rates between long and short positions. When funding rates are positive, shorts receive payments from longs.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-emerald-400 mr-2">→</span>
+                      <span><strong>Profit Generation:</strong> The bot captures these funding rate payments while hedging market risk, effectively generating income from the funding rate differential.</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                {/* Subscription Model */}
+                <div className="mb-8">
+                  <h4 className="text-xl font-bold mb-3 text-emerald-200">Tiered Subscription Model</h4>
+                  <p className="text-gray-300 mb-3">The bot offers three subscription tiers:</p>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-2">
+                    <div className="bg-gray-800/70 p-5 rounded-lg">
+                      <h5 className="font-bold text-center mb-2 text-emerald-300">Tier 1</h5>
+                      <p className="text-xl font-bold text-center mb-4">$50/month</p>
+                      <p className="text-center text-gray-300">Trade 1 token of your choice</p>
+                    </div>
+                    <div className="bg-gray-800/70 p-5 rounded-lg">
+                      <h5 className="font-bold text-center mb-2 text-emerald-300">Tier 2</h5>
+                      <p className="text-xl font-bold text-center mb-4">$100/month</p>
+                      <p className="text-center text-gray-300">Trade 2 tokens of your choice</p>
+                    </div>
+                    <div className="bg-gray-800/70 p-5 rounded-lg">
+                      <h5 className="font-bold text-center mb-2 text-emerald-300">Tier 3</h5>
+                      <p className="text-xl font-bold text-center mb-4">$200/month</p>
+                      <p className="text-center text-gray-300">Trade all available tokens</p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Strategy Selection */}
+                <div className="mb-8">
+                  <h4 className="text-xl font-bold mb-3 text-emerald-200">Customizable Strategy Selection</h4>
+                  <p className="text-gray-300 mb-3">Users can select from various entry and exit strategies:</p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                    <div>
+                      <h5 className="font-bold mb-2 text-white">Entry Strategies:</h5>
+                      <ul className="text-gray-300 space-y-2">
+                        <li className="flex items-start">
+                          <span className="text-emerald-400 mr-2">•</span>
+                          <span><strong>Default:</strong> Enter positions when funding rates are above the 60th percentile</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-emerald-400 mr-2">•</span>
+                          <span><strong>Conservative:</strong> Enter above 75th, 85th, or 95th percentile (higher threshold = lower risk)</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-emerald-400 mr-2">•</span>
+                          <span><strong>Aggressive:</strong> Enter above 50th percentile (more frequent entries)</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-emerald-400 mr-2">•</span>
+                          <span><strong>Abraxas Optimized:</strong> Advanced algorithmic entry based on comprehensive data analysis</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 className="font-bold mb-2 text-white">Exit Strategies:</h5>
+                      <ul className="text-gray-300 space-y-2">
+                        <li className="flex items-start">
+                          <span className="text-emerald-400 mr-2">•</span>
+                          <span><strong>Default:</strong> Exit positions before the next funding rate becomes negative</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-emerald-400 mr-2">•</span>
+                          <span><strong>Percentile-based:</strong> Exit when funding rate drops below 50th, 35th, 20th, or 10th percentile</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-emerald-400 mr-2">•</span>
+                          <span><strong>Abraxas Optimized:</strong> Intelligent exit timing based on historical patterns and cost analysis</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Optimized Mode */}
+                <div className="mb-8">
+                  <h4 className="text-xl font-bold mb-3 text-emerald-200">The Abraxas Optimized Mode: Predictive Trading Edge</h4>
+                  <p className="text-gray-300 mb-4">The Abraxas Optimized mode provides a significant edge through advanced predictive analytics:</p>
+                  
+                  <h5 className="font-bold mb-2 text-white">Prescient Exit Timing</h5>
+                  <p className="text-gray-300 mb-3">The bot's most powerful feature is its ability to predict and act before negative funding rates occur. By analyzing:</p>
+                  <ul className="text-gray-300 space-y-2 mb-4">
+                    <li className="flex items-start">
+                      <span className="text-emerald-400 mr-2">•</span>
+                      <span><strong>Historical Funding Rate Patterns:</strong> Identifying cyclical patterns and anomalies</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-emerald-400 mr-2">•</span>
+                      <span><strong>On-chain Order Flow:</strong> Detecting large position changes that precede funding rate shifts</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-emerald-400 mr-2">•</span>
+                      <span><strong>Cross-exchange Correlations:</strong> Monitoring funding rate relationships across exchanges</span>
+                    </li>
+                  </ul>
+                  <p className="text-gray-300 mb-4">The bot can anticipate funding rate reversals with remarkable accuracy, exiting positions before negative rates materialize. This "prescience" ensures you're not caught paying negative funding.</p>
+                  
+                  <h5 className="font-bold mb-2 text-white">Comprehensive Data Analysis</h5>
+                  <p className="text-gray-300 mb-3">The Abraxas Optimized mode leverages extensive data analysis:</p>
+                  <ul className="text-gray-300 space-y-2 mb-4">
+                    <li className="flex items-start">
+                      <span className="text-emerald-400 mr-2">•</span>
+                      <span><strong>Long-term Percentile Calculations:</strong> Analyzing 24+ hours of funding rate history across multiple markets</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-emerald-400 mr-2">•</span>
+                      <span><strong>Volatility Correlation:</strong> Adjusting entry/exit thresholds based on market volatility</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-emerald-400 mr-2">•</span>
+                      <span><strong>Flash Crash Protection:</strong> Built-in safeguards against sudden market dislocations</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-emerald-400 mr-2">•</span>
+                      <span><strong>Multi-timeframe Analysis:</strong> Considering short, medium, and long-term funding rate patterns</span>
+                    </li>
+                  </ul>
+                  
+                  <h5 className="font-bold mb-2 text-white">Transaction Cost Optimization</h5>
+                  <p className="text-gray-300 mb-3">The bot meticulously accounts for all transaction costs:</p>
+                  <ul className="text-gray-300 space-y-2 mb-1">
+                    <li className="flex items-start">
+                      <span className="text-emerald-400 mr-2">•</span>
+                      <span><strong>Maker vs. Taker Analysis:</strong> Prioritizing maker orders to minimize fees (0.02% vs 0.05%)</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-emerald-400 mr-2">•</span>
+                      <span><strong>Slippage Modeling:</strong> Using order book depth analysis to minimize slippage</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-emerald-400 mr-2">•</span>
+                      <span><strong>Position Sizing Optimization:</strong> Calculating optimal position sizes based on available liquidity, current volatility, fee structures, and expected funding rate returns</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-emerald-400 mr-2">•</span>
+                      <span><strong>Execution Timing:</strong> Placing orders during periods of higher liquidity</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                {/* Technical Implementation */}
+                <div className="mb-8">
+                  <h4 className="text-xl font-bold mb-3 text-emerald-200">Technical Implementation Excellence</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <ul className="text-gray-300 space-y-2">
+                      <li className="flex items-start">
+                        <span className="text-emerald-400 mr-2">•</span>
+                        <span><strong>Multi-threading Architecture:</strong> Separate threads for websocket data processing and order execution</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-emerald-400 mr-2">•</span>
+                        <span><strong>API Rate Limiting:</strong> Sophisticated handling of exchange rate limits</span>
+                      </li>
+                    </ul>
+                    <ul className="text-gray-300 space-y-2">
+                      <li className="flex items-start">
+                        <span className="text-emerald-400 mr-2">•</span>
+                        <span><strong>Connection Resilience:</strong> Automatic reconnection with exponential backoff</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-emerald-400 mr-2">•</span>
+                        <span><strong>Error Handling:</strong> Comprehensive error management with incident logging</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                
+                {/* When it Works Best */}
+                <div className="mb-8">
+                  <h4 className="text-xl font-bold mb-3 text-emerald-200">When The Bot Works Best</h4>
+                  <p className="text-gray-300 mb-3">The bot delivers optimal performance under these market conditions:</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="bg-gray-800/60 rounded-lg p-4">
+                      <h5 className="font-bold mb-2 text-emerald-100">High Funding Rate Environments</h5>
+                      <p className="text-gray-300 text-sm">Particularly effective during periods of market exuberance when funding rates are consistently high</p>
+                    </div>
+                    <div className="bg-gray-800/60 rounded-lg p-4">
+                      <h5 className="font-bold mb-2 text-emerald-100">Volatile But Trending Markets</h5>
+                      <p className="text-gray-300 text-sm">Capitalizes on the increased funding rates that often accompany volatile markets</p>
+                    </div>
+                    <div className="bg-gray-800/60 rounded-lg p-4">
+                      <h5 className="font-bold mb-2 text-emerald-100">Market Neutral Conditions</h5>
+                      <p className="text-gray-300 text-sm">Performs well regardless of overall market direction due to delta-neutral strategy</p>
+                    </div>
+                    <div className="bg-gray-800/60 rounded-lg p-4">
+                      <h5 className="font-bold mb-2 text-emerald-100">Low Correlation Environments</h5>
+                      <p className="text-gray-300 text-sm">Excels when different assets have varied funding rate patterns, allowing for diversification</p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Advantages & Risk Management */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                  <div>
+                    <h4 className="text-xl font-bold mb-3 text-emerald-200">Advantages Over Manual Trading</h4>
+                    <ul className="text-gray-300 space-y-2">
+                      <li className="flex items-start">
+                        <span className="text-emerald-400 mr-2">1.</span>
+                        <span><strong>24/7 Operation:</strong> Continuously monitors and executes without fatigue</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-emerald-400 mr-2">2.</span>
+                        <span><strong>Emotional Discipline:</strong> Executes strategy without fear or greed</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-emerald-400 mr-2">3.</span>
+                        <span><strong>Speed:</strong> Reacts to market changes in milliseconds</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-emerald-400 mr-2">4.</span>
+                        <span><strong>Data Processing:</strong> Analyzes vast amounts of historical and real-time data simultaneously</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-emerald-400 mr-2">5.</span>
+                        <span><strong>Position Management:</strong> Precisely balances positions across exchanges to maintain neutrality</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold mb-3 text-emerald-200">Risk Management</h4>
+                    <ul className="text-gray-300 space-y-2">
+                      <li className="flex items-start">
+                        <span className="text-emerald-400 mr-2">•</span>
+                        <span><strong>Flash Crash Protection:</strong> Monitors for unusual market conditions and can pause trading</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-emerald-400 mr-2">•</span>
+                        <span><strong>Position Size Limits:</strong> Configures maximum exposure per asset</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-emerald-400 mr-2">•</span>
+                        <span><strong>Margin Monitoring:</strong> Regularly checks margin levels to prevent liquidations</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-emerald-400 mr-2">•</span>
+                        <span><strong>Emergency Close Functionality:</strong> Can close all positions if predefined risk thresholds are crossed</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                
+                {/* Conclusion */}
+                <div>
+                  <h4 className="text-xl font-bold mb-3 text-emerald-200">Conclusion</h4>
+                  <p className="text-gray-300 leading-relaxed mb-3">
+                    The Abraxas Greenprint Funding Bot represents the cutting edge of automated funding rate arbitrage, delivering sophisticated trading capabilities previously available only to institutional traders. The Abraxas Optimized strategy provides a genuine edge through predictive analytics, cost optimization, and dynamic strategy adjustment based on market conditions.
+                  </p>
+                  <p className="text-gray-300 leading-relaxed">
+                    By maintaining delta neutrality while capturing funding rate differentials, the bot offers a unique approach to generating returns in cryptocurrency markets without taking directional risk – an especially valuable strategy in uncertain market environments.
+                  </p>
+                </div>
+                
+                {/* CTA */}
+                <div className="mt-8 flex justify-center">
+                  <a 
+                    href="https://t.me/AbraxasInnovations" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="inline-block bg-gradient-to-r from-emerald-800 to-cyan-800 hover:from-emerald-700 hover:to-cyan-700 text-white font-bold py-4 px-8 rounded-lg transition-colors shadow-lg"
+                  >
+                    Get Started with Abraxas Greenprint Bot
+                  </a>
                 </div>
               </div>
 

@@ -87,7 +87,7 @@ export default function Home() {
         const greenprintTimeline = gsap.timeline();
         greenprintTimeline.from('.greenprint-title', {opacity: 0, y: 30, duration: 1});
         greenprintTimeline.from('.greenprint-content', {opacity: 0, y: 50, duration: 1}, "-=0.5");
-        greenprintTimeline.from('.product-card', {opacity: 0, y: 30, duration: 1, stagger: 0.3}, "-=0.5");
+        greenprintTimeline.from('.product-card', {opacity: 0.5, y: 30, duration: 1, stagger: 0.3}, "-=0.5");
         greenprintTimeline.from('.greenprint-benefits', {opacity: 0, x: 50, duration: 1}, "-=1");
         
         new ScrollMagic.Scene({
@@ -318,7 +318,7 @@ export default function Home() {
                 Access powerful algorithmic trading solutions that work while you sleep. Our suite of tools helps you capitalize on market inefficiencies in the crypto space with institutional-level infrastructure.
               </p>
               <div className="space-y-4">
-                <div className="greenprint-product-card bg-gray-800/50 p-6 rounded-lg product-card">
+                <div className="greenprint-product-card bg-gray-800/50 p-6 rounded-lg product-card relative z-10" style={{opacity: 1}}>
                   <h4 className="text-xl font-bold mb-2 text-emerald-300">Greenprint Funding Bot</h4>
                   <p className="text-gray-300 mb-4">
                     Automatically capture funding rate opportunities across exchanges. Ready for deployment.
@@ -332,11 +332,11 @@ export default function Home() {
                     Download Now - $50
                   </a>
                 </div>
-                <div className="greenprint-product-card bg-gray-800/50 p-6 rounded-lg opacity-75 product-card">
+                <div className="greenprint-product-card bg-gray-800/50 p-6 rounded-lg product-card relative z-10" style={{opacity: 1}}>
                   <h4 className="text-xl font-bold mb-2 text-emerald-300">Greenprint CLMM Bot</h4>
                   <p className="text-gray-300">Coming soon - Advanced concentrated liquidity management for maximum yields.</p>
                 </div>
-                <div className="greenprint-product-card bg-gray-800/50 p-6 rounded-lg opacity-75 product-card">
+                <div className="greenprint-product-card bg-gray-800/50 p-6 rounded-lg product-card relative z-10" style={{opacity: 1}}>
                   <h4 className="text-xl font-bold mb-2 text-emerald-300">Greenprint Data Analysis Tool</h4>
                   <p className="text-gray-300">Coming soon - Deep market analysis and opportunity detection.</p>
                 </div>

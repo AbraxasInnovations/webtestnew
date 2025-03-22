@@ -155,7 +155,7 @@ const ParticleWaveBackground = () => {
     <div 
       ref={containerRef} 
       className="absolute inset-0 z-0"
-      style={{ overflow: 'hidden' }}
+      style={{ overflow: 'hidden', opacity: 0.5 }}
     />
   );
 };

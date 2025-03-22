@@ -529,57 +529,57 @@ html {
 
 /* Mobile optimizations */
 @media (max-width: 768px) {
-  /* Simplify animations on mobile */
   .greenprint-card {
-    animation: greenprint-pulse 4s ease-in-out infinite; /* Slower animation to save resources */
-    border-width: 1px; /* Thinner border on mobile */
+    animation: greenprint-pulse 4s ease-in-out infinite;
   }
   
   @keyframes greenprint-pulse {
     0%, 100% {
-      box-shadow: 0 0 5px rgba(16, 185, 129, 0.2);
+      box-shadow: 0 0 5px rgba(16, 185, 129, 0.5);
     }
     50% {
-      box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.8);
     }
   }
   
-  /* Make service cards more mobile-friendly */
   .animated-card.active .card-borders .border-top,
   .animated-card.active .card-borders .border-right,
   .animated-card.active .card-borders .border-bottom,
   .animated-card.active .card-borders .border-left {
-    animation-duration: 0.8s; /* Faster animations on mobile */
+    animation-duration: 0.4s;
   }
   
   .animated-card.active .card-content {
-    animation: bump-in 0.5s 0.8s forwards; /* Faster content appear */
+    animation-delay: 0.3s;
   }
   
-  /* Adjust paddings and margins for mobile */
   .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   
-  /* Ensure text is readable on mobile */
   h1 {
-    font-size: 2.5rem !important;
+    font-size: 2.5rem;
   }
   
   h2 {
-    font-size: 2rem !important;
+    font-size: 2rem;
   }
   
   .service-card, .greenprint-product-card {
-    margin-bottom: 1rem;
+    margin-bottom: 20px;
+    opacity: 1 !important;
+    position: relative;
+    z-index: 5;
   }
   
-  /* Improve touch targets */
   button, a {
-    min-height: 44px; /* Apple's recommended minimum touch target size */
+    min-height: 44px;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
   }
 }
 
