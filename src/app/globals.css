@@ -211,3 +211,246 @@ html {
     background-position: 0% 50%;
   }
 }
+
+/* Cross Bar Glitch Text Effect */
+.cross-bar-glitch {
+  position: relative;
+}
+
+.cross-bar-glitch.active {
+  animation: none;
+}
+
+.cross-bar-glitch.active .bars .bar {
+  animation: 0.6s cubic-bezier(0.4, 0.2, 0.175, 1) forwards;
+}
+
+.cross-bar-glitch.active .bars .bar:nth-child(odd) {
+  animation-name: slide-left;
+}
+
+.cross-bar-glitch.active .bars .bar:nth-child(even) {
+  animation-name: slide-right;
+}
+
+.cross-bar-glitch.active .glitch {
+  animation: reveal forwards 0.3s;
+  animation-delay: 0.6s;
+}
+
+.cross-bar-glitch.active .glitch span:not(:last-child) {
+  animation-duration: 0.3s;
+}
+
+.cross-bar-glitch.active .glitch span:nth-child(odd) {
+  animation-name: slide-from-left;
+}
+
+.cross-bar-glitch.active .glitch span:nth-child(even) {
+  animation-name: slide-from-right;
+}
+
+.cross-bar-glitch.active .glitch span:last-child {
+  animation: reveal steps(1) forwards;
+  animation-delay: 1.2s;
+}
+
+.cross-bar-glitch .bars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cross-bar-glitch .bars .bar {
+  width: 100%;
+  flex: 1;
+  background: currentColor;
+  border-radius: 50px;
+}
+
+.cross-bar-glitch .bars .bar:nth-child(odd) {
+  transform: translateX(100%);
+}
+
+.cross-bar-glitch .bars .bar:nth-child(even) {
+  transform: translateX(-100%);
+}
+
+.cross-bar-glitch .bars .bar:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.cross-bar-glitch .bars .bar:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.cross-bar-glitch .bars .bar:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.cross-bar-glitch .bars .bar:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.cross-bar-glitch .bars .bar:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.cross-bar-glitch .glitch {
+  opacity: 0;
+}
+
+.cross-bar-glitch .glitch span:not(:last-child) {
+  --ratio: calc(100% / var(--slice-count));
+  --top: calc(var(--ratio) * (var(--i) - 1));
+  --bottom: calc(var(--ratio) * (var(--slice-count) - var(--i)));
+  position: absolute;
+  color: currentColor;
+  white-space: nowrap;
+  clip-path: inset(var(--top) 0 var(--bottom) 0);
+}
+
+.cross-bar-glitch .glitch span:last-child {
+  opacity: 0;
+}
+
+@keyframes slide-left {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-right {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* Card Border Animation */
+.animated-card {
+  position: relative;
+  color: white;
+}
+
+.animated-card.active .card-borders .border-top {
+  animation: slide-in-horizontal 0.8s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+
+.animated-card.active .card-borders .border-right {
+  animation: slide-in-vertical 0.8s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+
+.animated-card.active .card-borders .border-bottom {
+  animation: slide-in-horizontal-reverse 0.8s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+
+.animated-card.active .card-borders .border-left {
+  animation: slide-in-vertical-reverse 0.8s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+
+.animated-card.active .card-content {
+  animation: bump-in 0.5s 0.8s forwards;
+}
+
+.animated-card .card-borders {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.animated-card .card-borders .border-top {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--card-border-color, linear-gradient(90deg, #707070, #c0c0c0, #e0e0e0));
+  transform: translateX(-100%);
+}
+
+.animated-card .card-borders .border-right {
+  position: absolute;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: var(--card-border-color, linear-gradient(180deg, #707070, #c0c0c0, #e0e0e0));
+  transform: translateY(100%);
+}
+
+.animated-card .card-borders .border-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--card-border-color, linear-gradient(90deg, #707070, #c0c0c0, #e0e0e0));
+  transform: translateX(100%);
+}
+
+.animated-card .card-borders .border-left {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: var(--card-border-color, linear-gradient(180deg, #707070, #c0c0c0, #e0e0e0));
+  transform: translateY(-100%);
+}
+
+.animated-card .card-content {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+@keyframes bump-in {
+  50% {
+    transform: scale(1.025);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-in-horizontal {
+  50% {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slide-in-horizontal-reverse {
+  50% {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-in-vertical {
+  50% {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes slide-in-vertical-reverse {
+  50% {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}

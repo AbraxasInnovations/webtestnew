@@ -38,10 +38,14 @@ export default function Home() {
         aboutTimeline.from('.about-content', {opacity: 0, y: 50, duration: 1});
         aboutTimeline.from('.about-vision', {opacity: 0, y: 50, duration: 1}, "-=0.5");
         
+        // Add trigger for the cross-bar-glitch effect
         new ScrollMagic.Scene({
           triggerElement: "#about",
           triggerHook: 0.8,
           reverse: false
+        })
+        .on('enter', function() {
+          document.querySelector('.about-title').classList.add('active');
         })
         .setTween(aboutTimeline)
         .addTo(controller);
@@ -51,10 +55,21 @@ export default function Home() {
         servicesTimeline.from('.services-title', {opacity: 0, y: 30, duration: 1});
         servicesTimeline.from('.service-card', {opacity: 0, y: 50, duration: 1, stagger: 0.3}, "-=0.5");
         
+        // Add trigger for the cross-bar-glitch effect in services section
         new ScrollMagic.Scene({
           triggerElement: "#services",
           triggerHook: 0.8,
           reverse: false
+        })
+        .on('enter', function() {
+          document.querySelector('.services-title-glitch').classList.add('active');
+          // Activate animated cards with a staggered delay
+          const cards = document.querySelectorAll('.animated-card');
+          cards.forEach((card, index) => {
+            setTimeout(() => {
+              card.classList.add('active');
+            }, 200 * index);
+          });
         })
         .setTween(servicesTimeline)
         .addTo(controller);
@@ -97,6 +112,39 @@ export default function Home() {
       return () => window.removeEventListener('load', initAnimations);
     }
   }, []);
+
+  // Create glitch text elements with specified number of slices
+  const createGlitchText = (text, slices = 5) => {
+    const spans = [];
+    
+    // Add the bars
+    const bars = [];
+    for (let i = 0; i < slices; i++) {
+      bars.push(<div key={`bar-${i}`} className="bar"></div>);
+    }
+    
+    // Add the glitch spans
+    for (let i = 1; i <= slices; i++) {
+      spans.push(
+        <span 
+          key={`slice-${i}`} 
+          style={{"--i": i, "--slice-count": slices}}
+        >
+          {text}
+        </span>
+      );
+    }
+    
+    // Add the final visible text
+    spans.push(<span key="final">{text}</span>);
+    
+    return (
+      <div className="cross-bar-glitch" data-slice={slices}>
+        <div className="bars">{bars}</div>
+        <div className="glitch">{spans}</div>
+      </div>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
@@ -145,7 +193,9 @@ export default function Home() {
       {/* About Section - add classes for animations */}
       <section id="about" className="py-20" ref={aboutRef}>
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-12 text-center about-title">About Us</h2>
+          <h2 className="text-4xl font-bold mb-12 text-center about-title">
+            {createGlitchText("About Us", 5)}
+          </h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="about-content">
               <p className="text-lg text-gray-300 leading-relaxed">
@@ -174,8 +224,8 @@ export default function Home() {
       {/* Services Section - add classes for animations */}
       <section id="services" className="py-20 relative overflow-hidden bg-gray-900" ref={servicesRef}>
         <div className="container mx-auto px-6 relative z-10">
-          <h2 className="text-4xl font-bold mb-4 text-center services-title">
-            Our Services
+          <h2 className="text-4xl font-bold mb-4 text-center services-title services-title-glitch">
+            {createGlitchText("Our Services", 5)}
           </h2>
           <p className="text-center mb-12 text-gray-300">
             Pushing boundaries. Breaking limits. Creating tomorrow.
@@ -201,14 +251,20 @@ export default function Home() {
             ].map((service, index) => (
               <div 
                 key={index} 
-                className="sparkle-card rounded-lg p-0.5 service-card cursor-pointer"
+                className="sparkle-card rounded-lg p-0.5 service-card animated-card cursor-pointer"
                 onClick={() => {
                   if (service.link) {
                     window.location.href = service.link;
                   }
                 }}
               >
-                <div className="bg-gray-900 rounded-lg p-8 h-full w-full flex flex-col items-center text-center">
+                <div className="card-borders">
+                  <div className="border-top"></div>
+                  <div className="border-right"></div>
+                  <div className="border-bottom"></div>
+                  <div className="border-left"></div>
+                </div>
+                <div className="bg-gray-900 rounded-lg p-8 h-full w-full flex flex-col items-center text-center card-content">
                   <div className="mb-4">{service.icon}</div>
                   <h3 className="text-xl font-bold mb-2">{service.title}</h3>
                   <p className="text-gray-300">{service.description}</p>
