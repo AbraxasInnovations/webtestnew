@@ -16,21 +16,6 @@ export default function Home() {
   const greenprintRef = useRef(null);
   const contactRef = useRef(null);
 
-  // Fallback to ensure glitch headers are visible
-  useEffect(() => {
-    // This is a fallback in case the ScrollMagic triggers don't work
-    const activateGlitchElements = () => {
-      setTimeout(() => {
-        const glitchElements = document.querySelectorAll('.cross-bar-glitch');
-        glitchElements.forEach(element => {
-          element.classList.add('active');
-        });
-      }, 1000);
-    };
-    
-    activateGlitchElements();
-  }, []);
-
   useEffect(() => {
     // We'll use this to initialize animations after the page loads
     const initAnimations = () => {
@@ -53,17 +38,11 @@ export default function Home() {
         aboutTimeline.from('.about-content', {opacity: 0, y: 50, duration: 1});
         aboutTimeline.from('.about-vision', {opacity: 0, y: 50, duration: 1}, "-=0.5");
         
-        // Add trigger for the cross-bar-glitch effect
+        // Add trigger for the about section animations
         new ScrollMagic.Scene({
           triggerElement: "#about",
           triggerHook: 0.9,
           reverse: false
-        })
-        .on('enter', function() {
-          const aboutTitleElement = document.querySelector('.about-title .cross-bar-glitch');
-          if (aboutTitleElement) {
-            aboutTitleElement.classList.add('active');
-          }
         })
         .setTween(aboutTimeline)
         .addTo(controller);
@@ -73,18 +52,14 @@ export default function Home() {
         servicesTimeline.from('.services-title', {opacity: 0, y: 30, duration: 1});
         servicesTimeline.from('.service-card', {opacity: 0, y: 50, duration: 1, stagger: 0.3}, "-=0.5");
         
-        // Add trigger for the cross-bar-glitch effect in services section
+        // Add trigger for animations in services section
         new ScrollMagic.Scene({
           triggerElement: "#services",
           triggerHook: 0.9,
           reverse: false
         })
         .on('enter', function() {
-          const servicesTitleElement = document.querySelector('.services-title-glitch .cross-bar-glitch');
-          if (servicesTitleElement) {
-            servicesTitleElement.classList.add('active');
-          }
-          
+          // Activate animated cards with a staggered delay
           const cards = document.querySelectorAll('.animated-card');
           cards.forEach((card, index) => {
             setTimeout(() => {
@@ -134,39 +109,6 @@ export default function Home() {
     }
   }, []);
 
-  // Create glitch text elements with specified number of slices
-  const createGlitchText = (text, slices = 5) => {
-    const spans = [];
-    
-    // Add the bars
-    const bars = [];
-    for (let i = 0; i < slices; i++) {
-      bars.push(<div key={`bar-${i}`} className="bar"></div>);
-    }
-    
-    // Add the glitch spans
-    for (let i = 1; i <= slices; i++) {
-      spans.push(
-        <span 
-          key={`slice-${i}`} 
-          style={{"--i": i, "--slice-count": slices}}
-        >
-          {text}
-        </span>
-      );
-    }
-    
-    // Add the final visible text
-    spans.push(<span key="final">{text}</span>);
-    
-    return (
-      <div className="cross-bar-glitch" data-slice={slices}>
-        <div className="bars">{bars}</div>
-        <div className="glitch">{spans}</div>
-      </div>
-    );
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
       {/* Scripts for GSAP and ScrollMagic */}
@@ -215,7 +157,7 @@ export default function Home() {
       <section id="about" className="py-20" ref={aboutRef}>
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold mb-12 text-center about-title">
-            {createGlitchText("About Us", 5)}
+            About Us
           </h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="about-content">
@@ -245,8 +187,8 @@ export default function Home() {
       {/* Services Section - add classes for animations */}
       <section id="services" className="py-20 relative overflow-hidden bg-gray-900" ref={servicesRef}>
         <div className="container mx-auto px-6 relative z-10">
-          <h2 className="text-4xl font-bold mb-4 text-center services-title services-title-glitch">
-            {createGlitchText("Our Services", 5)}
+          <h2 className="text-4xl font-bold mb-4 text-center services-title">
+            Our Services
           </h2>
           <p className="text-center mb-12 text-gray-300">
             Pushing boundaries. Breaking limits. Creating tomorrow.
