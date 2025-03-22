@@ -99,103 +99,102 @@ export default function ReturnPolicy() {
       <div className="pt-24 pb-20">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-8">Return Policy</h1>
-            <div className="bg-gray-800/30 rounded-lg p-8 space-y-6 text-gray-300">
-              <div className="mb-6">
-                <h2 className="text-3xl font-bold text-white mb-3">ABRAXAS GREENPRINT FUNDING BOT - REFUND POLICY</h2>
-                <p className="text-sm text-gray-400 mb-6">Last Updated: 02/20/2025</p>
-                <p>
-                  This Refund Policy ("Policy") outlines the terms and conditions regarding refunds for subscriptions to Abraxas Greenprint Funding Bot ("Service"). By subscribing to our Service, you acknowledge and agree to this Policy.
-                </p>
+            <h1 className="text-2xl md:text-3xl font-semibold mb-6">Return Policy</h1>
+            <div className="bg-gray-900/50 rounded-lg p-8 space-y-5 text-gray-300">
+              <div className="mb-6 border-b border-gray-700 pb-4">
+                <h2 className="text-xl font-semibold text-white mb-2">ABRAXAS GREENPRINT FUNDING BOT - REFUND POLICY</h2>
+                <p className="text-sm text-gray-400">Last Updated: 02/20/2025</p>
               </div>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">1. NO REFUND POLICY</h2>
-                
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">1.1 Non-Refundable Subscriptions</h3>
-                <p className="mb-3">
-                  All subscription payments for the Service are <strong>non-refundable</strong>. Due to the nature of digital services and the immediate access to our proprietary technology platform, we maintain a strict no-refund policy for all subscription tiers.
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">1. NO REFUND POLICY</h2>
+                <p className="text-sm leading-relaxed mb-3">
+                  <strong>All subscription payments for the Abraxas Greenprint Funding Bot service are non-refundable.</strong> When you subscribe to our service, you understand and agree that due to the immediate access to proprietary digital analysis tools, algorithms, and methodologies, we cannot offer refunds.
                 </p>
-
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">1.2 Subscription Cancellation</h3>
-                <p className="mb-3">
-                  You may cancel your subscription at any time through your account settings or by contacting our support team. Upon cancellation:
+                <p className="text-sm leading-relaxed">
+                  If you wish to cancel your subscription, you may do so at any time by:
                 </p>
-                <ul className="list-disc list-inside pl-4 mb-4 space-y-1">
-                  <li>Your subscription will remain active until the end of the current billing period</li>
-                  <li>No partial refunds will be issued for unused portions of the current billing period</li>
-                  <li>Automatic renewal will be disabled for future billing cycles</li>
+                <ul className="list-disc list-inside pl-4 mb-4 space-y-1 text-sm">
+                  <li>Navigating to the subscription management section within our Telegram bot</li>
+                  <li>Following the cancellation instructions provided there</li>
+                  <li>Confirming your cancellation</li>
                 </ul>
-
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">1.3 Rationale for No-Refund Policy</h3>
-                <p className="mb-3">
-                  Our strict no-refund policy is based on the following considerations:
+                <p className="text-sm leading-relaxed">
+                  Your subscription will remain active until the end of your current billing period, after which it will not renew.
                 </p>
-                <ul className="list-disc list-inside pl-4 mb-4 space-y-1">
-                  <li>Immediate access to proprietary digital market analysis tools</li>
-                  <li>Continuous real-time data processing and computational resources allocated upon subscription</li>
-                  <li>Operational costs incurred regardless of individual usage patterns</li>
+              </section>
+
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">2. RATIONALE FOR NO-REFUND POLICY</h2>
+                <p className="text-sm leading-relaxed mb-3">
+                  Our no-refund policy is based on the following factors:
+                </p>
+                <ul className="list-disc list-inside pl-4 mb-4 space-y-1 text-sm">
+                  <li>Upon subscribing, you gain immediate access to our proprietary trading algorithms and analysis tools, which represent significant intellectual property value.</li>
+                  <li>Our service provides information and methods that, once accessed, cannot be "returned" or "unseen."</li>
+                  <li>We allocate computing resources and infrastructure specifically to your account upon subscription activation.</li>
                 </ul>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">2. EXCEPTIONS</h2>
-                
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">2.1 Service Unavailability</h3>
-                <p className="mb-3">
-                  In the rare event that our Service is completely unavailable for a continuous period exceeding 72 hours due solely to our technical failures (and not due to external factors, third-party integrations, or scheduled maintenance), we may consider, at our sole discretion, providing service credits for future use.
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">3. EXCEPTIONS FOR SERVICE UNAVAILABILITY</h2>
+                <p className="text-sm leading-relaxed mb-3">
+                  In the rare event that our service experiences a significant, extended outage (more than 72 consecutive hours) due to our systems and not external factors beyond our control or your setup, we may, at our sole discretion, offer:
                 </p>
-
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">2.2 Unauthorized Charges</h3>
-                <p className="mb-3">
-                  If you believe your account has been charged without authorization, please contact our support team immediately. With proper verification, we will investigate unauthorized payment claims in accordance with Paddle's payment dispute procedures.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">3. SUBSCRIPTION TIER CHANGES</h2>
-                
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">3.1 Upgrading</h3>
-                <p className="mb-3">
-                  When upgrading from a lower to a higher subscription tier, the new tier will be activated immediately. The remaining value of your current subscription will be prorated and applied as a credit toward the higher tier.
-                </p>
-
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">3.2 Downgrading</h3>
-                <p className="mb-3">
-                  When downgrading from a higher to a lower subscription tier, the lower tier will take effect at the start of the next billing cycle. No refunds will be issued for the difference in price for the current billing period.
+                <ul className="list-disc list-inside pl-4 mb-4 space-y-1 text-sm">
+                  <li>Service credit for the affected period</li>
+                  <li>Extended subscription period</li>
+                  <li>Other appropriate compensation</li>
+                </ul>
+                <p className="text-sm leading-relaxed">
+                  Such compensation will be proportional to the duration of the service unavailability and will not include monetary refunds.
                 </p>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">4. FREE TRIAL PERIODS</h2>
-                <p className="mb-3">
-                  If we offer free trial periods, no payment will be required during the trial. Upon trial expiration, your selected subscription will activate and billing will commence automatically unless you cancel before the trial period ends.
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">4. UNAUTHORIZED CHARGES</h2>
+                <p className="text-sm leading-relaxed">
+                  If you believe you have been charged without authorization, please contact our support team immediately at <a href="mailto:derekp@abxinnovate.com" className="text-gray-300 hover:text-gray-100 underline">derekp@abxinnovate.com</a> with details of the transaction. We will investigate all such claims and, if verified, we will process appropriate adjustments.
                 </p>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">5. PAYMENT DISPUTES AND CHARGEBACKS</h2>
-                <p className="mb-3">
-                  Initiating payment disputes or chargebacks with your payment provider instead of contacting us directly may result in the immediate termination of your account and access to the Service.
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">5. SUBSCRIPTION TIER CHANGES</h2>
+                <p className="text-sm leading-relaxed">
+                  If you upgrade to a higher subscription tier, the new rate will be charged immediately, and your billing cycle will reset. The additional value from the remaining portion of your previous subscription will be credited to your new subscription. Downgrades, however, will not result in any refund or credit and will take effect at the end of your current billing cycle.
                 </p>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">6. MODIFICATIONS TO THIS POLICY</h2>
-                <p className="mb-3">
-                  We reserve the right to modify this Refund Policy at any time. Changes will be effective immediately upon posting to our website. It is your responsibility to review this Policy periodically.
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">6. FREE TRIAL PERIOD</h2>
+                <p className="text-sm leading-relaxed">
+                  If we offer a free trial period and you choose not to continue with a paid subscription, no action is required from you to avoid charges as we implement a voluntary opt-in payment model. No charges will be processed unless you explicitly sign up for a paid tier after your trial concludes.
                 </p>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">7. CONTACT INFORMATION</h2>
-                <p className="mb-3">
-                  If you have questions about this Refund Policy or need to discuss exceptional circumstances, please contact our support team at <a href="mailto:derekp@abxinnovate.com" className="text-emerald-400 hover:text-emerald-300">derekp@abxinnovate.com</a>.
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">7. PAYMENT DISPUTES</h2>
+                <p className="text-sm leading-relaxed">
+                  We strongly encourage you to contact our support team before initiating any payment disputes or chargebacks with your payment provider. Unauthorized chargebacks or payment disputes may result in immediate termination of your account and access to our services, as well as potential administrative fees.
                 </p>
               </section>
 
-              <p className="mt-6">
-                By subscribing to our Service, you acknowledge that you have read, understood, and agree to this Refund Policy.
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">8. MODIFICATIONS TO THIS POLICY</h2>
+                <p className="text-sm leading-relaxed">
+                  We reserve the right to modify this Refund Policy at any time. Changes will be effective when posted on our website or communicated directly to you. Your continued use of our service after any changes to this policy will constitute your acceptance of such changes.
+                </p>
+              </section>
+
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">9. CONTACT US</h2>
+                <p className="text-sm leading-relaxed">
+                  If you have any questions about our Refund Policy, please contact us at <a href="mailto:derekp@abxinnovate.com" className="text-gray-300 hover:text-gray-100 underline">derekp@abxinnovate.com</a>.
+                </p>
+              </section>
+
+              <p className="mt-6 text-sm">
+                By subscribing to our service, you acknowledge that you have read, understood, and agree to this Refund Policy.
               </p>
             </div>
           </div>

@@ -44,7 +44,7 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image.jpeg',
+        url: '/og-image.jpeg?v=2',
         width: 1200,
         height: 630,
         alt: 'Abraxas Innovations'

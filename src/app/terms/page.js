@@ -99,172 +99,135 @@ export default function TermsAndConditions() {
       <div className="pt-24 pb-20">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-8">Terms and Conditions</h1>
-            <div className="bg-gray-800/30 rounded-lg p-8 space-y-6 text-gray-300">
-              <div className="mb-6">
-                <h2 className="text-3xl font-bold text-white mb-3">ABRAXAS GREENPRINT FUNDING BOT - TERMS OF SERVICE</h2>
-                <p className="text-sm text-gray-400 mb-6">Last Updated: 02/20/2025</p>
+            <h1 className="text-2xl md:text-3xl font-semibold mb-6">Terms of Service</h1>
+            <div className="bg-gray-900/50 rounded-lg p-8 space-y-5 text-gray-300">
+              <div className="mb-6 border-b border-gray-700 pb-4">
+                <h2 className="text-xl font-semibold text-white mb-2">ABRAXAS GREENPRINT FUNDING BOT - TERMS OF SERVICE</h2>
+                <p className="text-sm text-gray-400">Last Updated: 02/20/2025</p>
               </div>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">1. ACCEPTANCE OF TERMS</h2>
-                <p className="mb-3">
-                  Welcome to Abraxas Greenprint Funding Bot ("Service"). By accessing or using our Service, you agree to be bound by these Terms of Service ("Terms"), our Privacy Policy, and any additional terms and conditions that may apply. If you do not agree with these Terms, please do not use our Service.
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">1. ACCEPTANCE OF TERMS</h2>
+                <p className="text-sm leading-relaxed mb-3">
+                  By accessing or using the Abraxas Greenprint Funding Bot ("Service"), you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of the terms, you may not access or use the Service.
                 </p>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">2. DESCRIPTION OF SERVICE</h2>
-                <p className="mb-3">
-                  Abraxas Greenprint Funding Bot provides automated market analysis and financial opportunity detection tools for digital asset markets. The Service operates by analyzing market data, identifying potential opportunities, and executing transactions on behalf of users according to predefined parameters.
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">2. DESCRIPTION OF SERVICE</h2>
+                <p className="text-sm leading-relaxed mb-3">
+                  The Service is a digital market analysis tool that provides automated trading signals and market insights via Telegram. The Service does not directly execute trades but provides information and signals that users may choose to act upon at their sole discretion.
                 </p>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">3. SUBSCRIPTION TIERS AND PAYMENT</h2>
-                
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">3.1 Subscription Options</h3>
-                <p className="mb-3">
-                  We offer three subscription tiers with varying features and capabilities:
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">3. SUBSCRIPTION TIERS AND PAYMENT</h2>
+                <p className="text-sm leading-relaxed mb-3">
+                  We offer multiple subscription tiers with different features and pricing models. All payments are processed through Paddle as our payment processor. By subscribing to our Service, you agree to:
                 </p>
-                <ul className="list-disc list-inside pl-4 mb-4 space-y-1">
-                  <li>Tier 1: Basic market analysis and opportunity detection</li>
-                  <li>Tier 2: Enhanced analysis with additional market coverage</li>
-                  <li>Tier 3: Premium service with advanced features and priority support</li>
-                </ul>
-
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">3.2 Payment</h3>
-                <p className="mb-3">
-                  All payments are processed securely through Paddle as our payment processor. By subscribing to our Service, you agree to pay all fees associated with your selected subscription tier. All fees are quoted in US Dollars unless otherwise specified.
-                </p>
-
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">3.3 Subscription Renewal</h3>
-                <p className="mb-3">
-                  Subscriptions automatically renew for the same duration as the original subscription period unless canceled before the renewal date.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">4. USER OBLIGATIONS</h2>
-                
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">4.1 Accurate Information</h3>
-                <p className="mb-3">
-                  You must provide accurate and complete information when setting up your account and connecting to external services.
-                </p>
-
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">4.2 API Keys and Security</h3>
-                <p className="mb-3">
-                  You are responsible for maintaining the security and confidentiality of your API keys and other credentials. We encrypt all sensitive information but cannot guarantee absolute security.
-                </p>
-
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">4.3 Compliance with Laws</h3>
-                <p className="mb-3">
-                  You agree to use the Service in compliance with all applicable laws and regulations, including but not limited to financial regulations, tax laws, and digital asset regulations in your jurisdiction.
-                </p>
-
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">4.4 Acceptable Use</h3>
-                <p className="mb-3">You agree not to:</p>
-                <ul className="list-disc list-inside pl-4 mb-4 space-y-1">
-                  <li>Use the Service for any illegal activity</li>
-                  <li>Attempt to decompile, reverse engineer, or otherwise attempt to discover the source code of our Service</li>
-                  <li>Interfere with the proper working of the Service</li>
-                  <li>Bypass any measures we use to restrict access to the Service</li>
+                <ul className="list-disc list-inside pl-4 mb-4 space-y-1 text-sm">
+                  <li>Pay all fees associated with your selected subscription tier</li>
+                  <li>Provide accurate and complete payment information</li>
+                  <li>Accept our no-refund policy as detailed in our Refund Policy</li>
+                  <li>Authorize recurring charges on a monthly or annual basis, depending on your selected billing cycle</li>
                 </ul>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">5. RISK DISCLOSURE</h2>
-                
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">5.1 Investment Risks</h3>
-                <p className="mb-3">
-                  Digital asset markets involve significant risk. Past performance is not indicative of future results. You may lose some or all of your invested capital.
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">4. USER OBLIGATIONS</h2>
+                <p className="text-sm leading-relaxed mb-3">
+                  As a user of our Service, you agree to:
                 </p>
+                <ul className="list-disc list-inside pl-4 mb-4 space-y-1 text-sm">
+                  <li>Maintain the security of your account credentials</li>
+                  <li>Not share your subscription access with others</li>
+                  <li>Use the Service for lawful purposes and in compliance with all applicable laws</li>
+                  <li>Accept full responsibility for decisions made based on our Service's information</li>
+                  <li>Not reverse engineer or attempt to extract the source code of our algorithms</li>
+                  <li>Not use automated methods to scrape or extract data from our Service</li>
+                </ul>
+              </section>
 
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">5.2 Technical Risks</h3>
-                <p className="mb-3">
-                  The Service relies on external APIs, market data feeds, and internet connectivity. Interruptions, delays, or failures in these systems may impact the Service's performance.
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">5. RISK DISCLOSURE</h2>
+                <p className="text-sm leading-relaxed mb-3">
+                  Trading digital assets involves significant risk and can lead to partial or total loss of capital. By using our Service, you acknowledge that:
                 </p>
+                <ul className="list-disc list-inside pl-4 mb-4 space-y-1 text-sm">
+                  <li>Past performance is not indicative of future results</li>
+                  <li>Our signals and insights are not financial advice</li>
+                  <li>Trading decisions should be made based on your own research and risk tolerance</li>
+                  <li>Market conditions can change rapidly, and signals may not always be accurate</li>
+                  <li>You alone are responsible for the management of your capital and trading decisions</li>
+                </ul>
+              </section>
 
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">5.3 Market Volatility</h3>
-                <p className="mb-3">
-                  Digital asset markets can be highly volatile and unpredictable. Rapid price movements may occur at any time and may result in significant losses.
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">6. LIMITATION OF LIABILITY</h2>
+                <p className="text-sm leading-relaxed mb-3">
+                  To the maximum extent permitted by applicable law, in no event shall Abraxas or its suppliers be liable for:
                 </p>
-
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">5.4 No Financial Advice</h3>
-                <p className="mb-3">
-                  The Service does not provide investment advice, financial advice, or any other kind of professional advice. The Service is a tool, and all decisions made using the Service are your own responsibility.
+                <ul className="list-disc list-inside pl-4 mb-4 space-y-1 text-sm">
+                  <li>Trading losses or missed opportunities resulting from using or not using our signals</li>
+                  <li>Any indirect, incidental, special, consequential, or punitive damages</li>
+                  <li>Loss of profits, revenue, data, or trading opportunities</li>
+                  <li>Cost of substitute services</li>
+                  <li>Technical issues with third-party platforms or exchanges that may affect signal execution</li>
+                </ul>
+                <p className="text-sm leading-relaxed mb-3">
+                  Our total liability for any claim arising from or related to these Terms shall not exceed the amount you paid for the Service during the 12 months preceding the claim.
                 </p>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">6. LIMITATION OF LIABILITY</h2>
-                
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">6.1 No Guarantees</h3>
-                <p className="mb-3">
-                  We make no guarantees regarding the performance, accuracy, or reliability of the Service. The Service is provided "as is" without warranties of any kind.
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">7. MODIFICATION OF SERVICE</h2>
+                <p className="text-sm leading-relaxed mb-3">
+                  We reserve the right to modify, suspend, or discontinue any part of the Service at any time without prior notice. This includes:
                 </p>
+                <ul className="list-disc list-inside pl-4 mb-4 space-y-1 text-sm">
+                  <li>Changing, adding, or removing features and functionalities</li>
+                  <li>Updating algorithms and signal parameters</li>
+                  <li>Adjusting subscription tiers and pricing</li>
+                  <li>Modifying user interfaces and delivery methods</li>
+                </ul>
+              </section>
 
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">6.2 Limitation of Liability</h3>
-                <p className="mb-3">
-                  To the maximum extent permitted by law, we shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including lost profits, arising out of or relating to your use of the Service.
-                </p>
-
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">6.3 Maximum Liability</h3>
-                <p className="mb-3">
-                  In no event shall our total liability to you for all damages, losses, and causes of action exceed the amount paid by you to us for the Service during the twelve (12) months preceding the event giving rise to the liability.
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">8. TERMINATION</h2>
+                <p className="text-sm leading-relaxed mb-3">
+                  We reserve the right to terminate or suspend your access to the Service immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach these Terms. Upon termination, your right to use the Service will immediately cease.
                 </p>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">7. MODIFICATION OF SERVICE</h2>
-                <p className="mb-3">
-                  We reserve the right to modify, suspend, or discontinue any part of the Service at any time without prior notice. This includes changes to features, functionality, and subscription tiers.
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">9. INTELLECTUAL PROPERTY</h2>
+                <p className="text-sm leading-relaxed mb-3">
+                  All content, features, and functionality of the Service, including but not limited to algorithms, trading signals, analytical methodologies, and user interface, are owned by Abraxas and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.
                 </p>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">8. TERMINATION</h2>
-                
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">8.1 Termination by User</h3>
-                <p className="mb-3">
-                  You may terminate your subscription at any time by following the cancellation procedures. No refunds will be issued for the current billing period.
-                </p>
-
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">8.2 Termination by Us</h3>
-                <p className="mb-3">
-                  We reserve the right to terminate or suspend your access to the Service immediately, without prior notice or liability, for any reason, including breach of these Terms.
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">10. GOVERNING LAW</h2>
+                <p className="text-sm leading-relaxed mb-3">
+                  These Terms shall be governed by and construed in accordance with the laws of the United States, without regard to its conflict of law provisions. Any disputes relating to these Terms or your use of the Service shall be subject to the exclusive jurisdiction of the courts of the United States.
                 </p>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">9. INTELLECTUAL PROPERTY</h2>
-                <p className="mb-3">
-                  All content, features, and functionality of the Service, including but not limited to text, graphics, logos, icons, and software, are the exclusive property of Abraxas Greenprint Funding Bot and are protected by copyright, trademark, and other intellectual property laws.
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">11. CHANGES TO TERMS</h2>
+                <p className="text-sm leading-relaxed mb-3">
+                  We reserve the right to modify these Terms at any time. We will provide notice of significant changes via the Service or our website. Your continued use of the Service after such modifications will constitute your acknowledgment and acceptance of the modified Terms.
                 </p>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">10. GOVERNING LAW</h2>
-                <p className="mb-3">
-                  These Terms shall be governed by and construed in accordance with the laws of [Jurisdiction], without regard to its conflict of law provisions.
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">12. CONTACT US</h2>
+                <p className="text-sm leading-relaxed mb-3">
+                  If you have any questions about these Terms, please contact us at <a href="mailto:derekp@abxinnovate.com" className="text-gray-300 hover:text-gray-100 underline">derekp@abxinnovate.com</a>.
                 </p>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">11. CHANGES TO TERMS</h2>
-                <p className="mb-3">
-                  We reserve the right to modify these Terms at any time. If we make changes, we will provide notice of such changes, such as by sending an email or providing a notice through our Service. Your continued use of the Service following the posting of revised Terms means you accept and agree to the changes.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">12. CONTACT INFORMATION</h2>
-                <p className="mb-3">
-                  If you have any questions about these Terms, please contact us at <a href="mailto:derekp@abxinnovate.com" className="text-emerald-400 hover:text-emerald-300">derekp@abxinnovate.com</a>.
-                </p>
-              </section>
-
-              <p className="mt-6">
+              <p className="mt-6 text-sm">
                 By using our Service, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
               </p>
             </div>

@@ -99,42 +99,42 @@ export default function PrivacyPolicy() {
       <div className="pt-24 pb-20">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-8">Privacy Policy</h1>
-            <div className="bg-gray-800/30 rounded-lg p-8 space-y-6 text-gray-300">
-              <div className="mb-6">
-                <h2 className="text-3xl font-bold text-white mb-3">ABRAXAS GREENPRINT FUNDING BOT - PRIVACY NOTICE</h2>
-                <p className="text-sm text-gray-400 mb-6">Last Updated: 02/20/2025</p>
-                <p>
+            <h1 className="text-2xl md:text-3xl font-semibold mb-6">Privacy Policy</h1>
+            <div className="bg-gray-900/50 rounded-lg p-8 space-y-5 text-gray-300">
+              <div className="mb-6 border-b border-gray-700 pb-4">
+                <h2 className="text-xl font-semibold text-white mb-2">ABRAXAS GREENPRINT FUNDING BOT - PRIVACY NOTICE</h2>
+                <p className="text-sm text-gray-400">Last Updated: 02/20/2025</p>
+                <p className="mt-4 text-sm leading-relaxed">
                   Your privacy is important to us. This Privacy Notice explains how Abraxas Greenprint Funding Bot ("we," "our," or "us") collects, uses, discloses, and safeguards your information when you use our digital market analysis service ("Service").
                 </p>
               </div>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">1. INFORMATION WE COLLECT</h2>
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">1. INFORMATION WE COLLECT</h2>
                 
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">1.1 Account Information</h3>
-                <ul className="list-disc list-inside pl-4 mb-4 space-y-1">
+                <h3 className="text-base font-semibold mb-2 text-gray-200">1.1 Account Information</h3>
+                <ul className="list-disc list-inside pl-4 mb-4 space-y-1 text-sm">
                   <li>Telegram user ID and username</li>
                   <li>Subscription status and tier</li>
                   <li>Payment information (processed by our payment processor, Paddle)</li>
                 </ul>
 
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">1.2 Service Configuration Data</h3>
-                <ul className="list-disc list-inside pl-4 mb-4 space-y-1">
+                <h3 className="text-base font-semibold mb-2 text-gray-200">1.2 Service Configuration Data</h3>
+                <ul className="list-disc list-inside pl-4 mb-4 space-y-1 text-sm">
                   <li>API keys and access credentials for external platforms (encrypted)</li>
                   <li>Selected trading pairs and preferences</li>
                   <li>Configuration settings and parameters</li>
                 </ul>
 
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">1.3 Usage Information</h3>
-                <ul className="list-disc list-inside pl-4 mb-4 space-y-1">
+                <h3 className="text-base font-semibold mb-2 text-gray-200">1.3 Usage Information</h3>
+                <ul className="list-disc list-inside pl-4 mb-4 space-y-1 text-sm">
                   <li>Service interaction logs</li>
                   <li>Performance metrics and statistics</li>
                   <li>Technical diagnostics and error reports</li>
                 </ul>
 
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">1.4 Technical Data</h3>
-                <ul className="list-disc list-inside pl-4 mb-4 space-y-1">
+                <h3 className="text-base font-semibold mb-2 text-gray-200">1.4 Technical Data</h3>
+                <ul className="list-disc list-inside pl-4 mb-4 space-y-1 text-sm">
                   <li>Device information and IP address</li>
                   <li>Browser type and version</li>
                   <li>Operating system</li>
@@ -142,34 +142,34 @@ export default function PrivacyPolicy() {
                 </ul>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">2. HOW WE USE YOUR INFORMATION</h2>
-                <p className="mb-3">We use your information for the following purposes:</p>
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">2. HOW WE USE YOUR INFORMATION</h2>
+                <p className="mb-3 text-sm leading-relaxed">We use your information for the following purposes:</p>
                 
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">2.1 Service Provision</h3>
-                <ul className="list-disc list-inside pl-4 mb-4 space-y-1">
+                <h3 className="text-base font-semibold mb-2 text-gray-200">2.1 Service Provision</h3>
+                <ul className="list-disc list-inside pl-4 mb-4 space-y-1 text-sm">
                   <li>To establish and maintain your account</li>
                   <li>To provide access to our Service functionality</li>
                   <li>To process transactions and execute automated operations</li>
                   <li>To authenticate your identity and maintain security</li>
                 </ul>
 
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">2.2 Service Improvement</h3>
-                <ul className="list-disc list-inside pl-4 mb-4 space-y-1">
+                <h3 className="text-base font-semibold mb-2 text-gray-200">2.2 Service Improvement</h3>
+                <ul className="list-disc list-inside pl-4 mb-4 space-y-1 text-sm">
                   <li>To monitor and analyze usage patterns</li>
                   <li>To identify and fix technical issues</li>
                   <li>To develop new features and improve existing ones</li>
                 </ul>
 
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">2.3 Communication</h3>
-                <ul className="list-disc list-inside pl-4 mb-4 space-y-1">
+                <h3 className="text-base font-semibold mb-2 text-gray-200">2.3 Communication</h3>
+                <ul className="list-disc list-inside pl-4 mb-4 space-y-1 text-sm">
                   <li>To send service-related notifications</li>
                   <li>To respond to your inquiries and support requests</li>
                   <li>To provide important updates about your account</li>
                 </ul>
 
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">2.4 Legal and Compliance</h3>
-                <ul className="list-disc list-inside pl-4 mb-4 space-y-1">
+                <h3 className="text-base font-semibold mb-2 text-gray-200">2.4 Legal and Compliance</h3>
+                <ul className="list-disc list-inside pl-4 mb-4 space-y-1 text-sm">
                   <li>To comply with applicable laws and regulations</li>
                   <li>To enforce our Terms of Service</li>
                   <li>To prevent potentially illegal activities</li>
@@ -177,104 +177,104 @@ export default function PrivacyPolicy() {
                 </ul>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">3. DATA SECURITY</h2>
-                <p className="mb-3">
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">3. DATA SECURITY</h2>
+                <p className="mb-3 text-sm leading-relaxed">
                   We implement appropriate technical and organizational security measures designed to protect your information from unauthorized access, disclosure, alteration, and destruction. These measures include:
                 </p>
-                <ul className="list-disc list-inside pl-4 mb-4 space-y-1">
+                <ul className="list-disc list-inside pl-4 mb-4 space-y-1 text-sm">
                   <li>Encryption of sensitive data, including API keys and credentials</li>
                   <li>Regular security assessments and testing</li>
                   <li>Access controls and authentication mechanisms</li>
                   <li>Monitoring for suspicious activities</li>
                 </ul>
-                <p className="mb-3">
+                <p className="mb-3 text-sm leading-relaxed">
                   However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your information, we cannot guarantee its absolute security.
                 </p>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">4. DATA RETENTION</h2>
-                <p className="mb-3">
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">4. DATA RETENTION</h2>
+                <p className="mb-3 text-sm leading-relaxed">
                   We retain your information for as long as your account is active or as needed to provide you with our Service. We will retain and use your information as necessary to comply with our legal obligations, resolve disputes, and enforce our agreements.
                 </p>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">5. THIRD-PARTY SERVICE PROVIDERS</h2>
-                <p className="mb-3">
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">5. THIRD-PARTY SERVICE PROVIDERS</h2>
+                <p className="mb-3 text-sm leading-relaxed">
                   We may share your information with third-party service providers that perform services on our behalf, including:
                 </p>
                 
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">5.1 Payment Processing</h3>
-                <p className="mb-3">
+                <h3 className="text-base font-semibold mb-2 text-gray-200">5.1 Payment Processing</h3>
+                <p className="mb-3 text-sm leading-relaxed">
                   Paddle processes all subscription payments. When you make a payment, you provide your payment information directly to Paddle, whose use of your personal information is governed by their privacy policy.
                 </p>
 
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">5.2 Cloud Infrastructure</h3>
-                <p className="mb-3">
+                <h3 className="text-base font-semibold mb-2 text-gray-200">5.2 Cloud Infrastructure</h3>
+                <p className="mb-3 text-sm leading-relaxed">
                   Our Service is hosted on secure cloud infrastructure providers that maintain high standards of security and compliance.
                 </p>
 
-                <h3 className="text-xl font-bold mb-2 text-emerald-300">5.3 Analytics</h3>
-                <p className="mb-3">
+                <h3 className="text-base font-semibold mb-2 text-gray-200">5.3 Analytics</h3>
+                <p className="mb-3 text-sm leading-relaxed">
                   We may use third-party analytics services to help us understand how users interact with our Service.
                 </p>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">6. EXTERNAL PLATFORM CONNECTIONS</h2>
-                <p className="mb-3">
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">6. EXTERNAL PLATFORM CONNECTIONS</h2>
+                <p className="mb-3 text-sm leading-relaxed">
                   Our Service requires connection to external digital asset platforms via API keys that you provide. While we encrypt and secure these credentials, we do not control the security practices of these external platforms. Please review the privacy policies of any external platforms before connecting them to our Service.
                 </p>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">7. YOUR DATA RIGHTS</h2>
-                <p className="mb-3">
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">7. YOUR DATA RIGHTS</h2>
+                <p className="mb-3 text-sm leading-relaxed">
                   Depending on your location, you may have certain rights regarding your personal information, which may include:
                 </p>
-                <ul className="list-disc list-inside pl-4 mb-4 space-y-1">
+                <ul className="list-disc list-inside pl-4 mb-4 space-y-1 text-sm">
                   <li>Accessing and receiving a copy of your data</li>
                   <li>Rectifying inaccurate or incomplete information</li>
                   <li>Requesting deletion of your personal information</li>
                   <li>Restricting or objecting to certain processing activities</li>
                   <li>Data portability (receiving a copy of your data in a structured format)</li>
                 </ul>
-                <p className="mb-3">
+                <p className="mb-3 text-sm leading-relaxed">
                   To exercise any of these rights, please contact us using the information provided at the end of this Privacy Notice.
                 </p>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">8. CHILDREN'S PRIVACY</h2>
-                <p className="mb-3">
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">8. CHILDREN'S PRIVACY</h2>
+                <p className="mb-3 text-sm leading-relaxed">
                   Our Service is not directed to children under the age of 18. We do not knowingly collect personal information from children. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately.
                 </p>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">9. INTERNATIONAL DATA TRANSFERS</h2>
-                <p className="mb-3">
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">9. INTERNATIONAL DATA TRANSFERS</h2>
+                <p className="mb-3 text-sm leading-relaxed">
                   Your information may be transferred to, and maintained on, computers located outside of your state, province, country, or other governmental jurisdiction where data protection laws may differ. If you are located outside [Country] and choose to provide information to us, please note that we transfer the information to [Country] and process it there.
                 </p>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">10. CHANGES TO THIS PRIVACY NOTICE</h2>
-                <p className="mb-3">
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">10. CHANGES TO THIS PRIVACY NOTICE</h2>
+                <p className="mb-3 text-sm leading-relaxed">
                   We may update this Privacy Notice from time to time. The updated version will be indicated by an updated "Last Updated" date. We encourage you to review this Privacy Notice periodically to stay informed about how we are protecting your information.
                 </p>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-white">11. CONTACT US</h2>
-                <p className="mb-3">
-                  If you have questions or concerns about this Privacy Notice or our privacy practices, please contact us at <a href="mailto:derekp@abxinnovate.com" className="text-emerald-400 hover:text-emerald-300">derekp@abxinnovate.com</a>.
+              <section className="pb-4">
+                <h2 className="text-lg font-semibold mb-3 text-white">11. CONTACT US</h2>
+                <p className="mb-3 text-sm leading-relaxed">
+                  If you have questions or concerns about this Privacy Notice or our privacy practices, please contact us at <a href="mailto:derekp@abxinnovate.com" className="text-gray-300 hover:text-gray-100 underline">derekp@abxinnovate.com</a>.
                 </p>
               </section>
 
-              <p className="mt-6">
+              <p className="mt-6 text-sm">
                 By using our Service, you acknowledge that you have read and understood this Privacy Notice.
               </p>
             </div>
