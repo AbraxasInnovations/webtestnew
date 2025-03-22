@@ -16,6 +16,21 @@ export default function Home() {
   const greenprintRef = useRef(null);
   const contactRef = useRef(null);
 
+  // Fallback to ensure glitch headers are visible
+  useEffect(() => {
+    // This is a fallback in case the ScrollMagic triggers don't work
+    const activateGlitchElements = () => {
+      setTimeout(() => {
+        const glitchElements = document.querySelectorAll('.cross-bar-glitch');
+        glitchElements.forEach(element => {
+          element.classList.add('active');
+        });
+      }, 1000);
+    };
+    
+    activateGlitchElements();
+  }, []);
+
   useEffect(() => {
     // We'll use this to initialize animations after the page loads
     const initAnimations = () => {
@@ -41,11 +56,14 @@ export default function Home() {
         // Add trigger for the cross-bar-glitch effect
         new ScrollMagic.Scene({
           triggerElement: "#about",
-          triggerHook: 0.8,
+          triggerHook: 0.9,
           reverse: false
         })
         .on('enter', function() {
-          document.querySelector('.about-title').classList.add('active');
+          const aboutTitleElement = document.querySelector('.about-title .cross-bar-glitch');
+          if (aboutTitleElement) {
+            aboutTitleElement.classList.add('active');
+          }
         })
         .setTween(aboutTimeline)
         .addTo(controller);
@@ -58,12 +76,15 @@ export default function Home() {
         // Add trigger for the cross-bar-glitch effect in services section
         new ScrollMagic.Scene({
           triggerElement: "#services",
-          triggerHook: 0.8,
+          triggerHook: 0.9,
           reverse: false
         })
         .on('enter', function() {
-          document.querySelector('.services-title-glitch').classList.add('active');
-          // Activate animated cards with a staggered delay
+          const servicesTitleElement = document.querySelector('.services-title-glitch .cross-bar-glitch');
+          if (servicesTitleElement) {
+            servicesTitleElement.classList.add('active');
+          }
+          
           const cards = document.querySelectorAll('.animated-card');
           cards.forEach((card, index) => {
             setTimeout(() => {
@@ -159,7 +180,7 @@ export default function Home() {
           <div className="flex items-center justify-between">
             <div className="h-12 nav-logo">
               <img 
-                src="/images/abaraxaslogo.jpeg"
+                src="/images/abraxaslogo.jpeg"
                 alt="Abraxas"
                 className="h-full w-auto"
               />
@@ -393,7 +414,7 @@ export default function Home() {
             {/* Logo and Copyright */}
             <div className="flex flex-col items-center md:items-start">
               <img 
-                src="/images/abaraxaslogo.jpeg"
+                src="/images/abraxaslogo.jpeg"
                 alt="Abraxas"
                 className="h-12 w-auto mb-4"
               />

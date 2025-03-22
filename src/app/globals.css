@@ -215,6 +215,9 @@ html {
 /* Cross Bar Glitch Text Effect */
 .cross-bar-glitch {
   position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
 }
 
 .cross-bar-glitch.active {
@@ -264,6 +267,7 @@ html {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  z-index: 2;
 }
 
 .cross-bar-glitch .bars .bar {
@@ -302,7 +306,9 @@ html {
 }
 
 .cross-bar-glitch .glitch {
-  opacity: 0;
+  position: relative;
+  display: block;
+  z-index: 1;
 }
 
 .cross-bar-glitch .glitch span:not(:last-child) {
@@ -313,10 +319,12 @@ html {
   color: currentColor;
   white-space: nowrap;
   clip-path: inset(var(--top) 0 var(--bottom) 0);
+  opacity: 0;
 }
 
 .cross-bar-glitch .glitch span:last-child {
-  opacity: 0;
+  display: block;
+  opacity: 1;
 }
 
 @keyframes slide-left {
