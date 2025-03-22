@@ -12,6 +12,18 @@ export default function Home() {
   // Add state for mobile menu
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
+  // Add state for contact form
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [formStatus, setFormStatus] = useState({
+    submitted: false,
+    error: false,
+    message: ''
+  });
+  
   // References for animations
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
@@ -27,6 +39,90 @@ export default function Home() {
   // Close menu when clicking a navigation link
   const handleNavClick = () => {
     setMobileMenuOpen(false);
+  };
+
+  // Handle form input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.message) {
+      setFormStatus({
+        submitted: false,
+        error: true,
+        message: 'Please fill in all fields'
+      });
+      return;
+    }
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setFormStatus({
+        submitted: false,
+        error: true,
+        message: 'Please enter a valid email address'
+      });
+      return;
+    }
+    
+    setFormStatus({
+      submitted: true,
+      error: false,
+      message: 'Sending your message...'
+    });
+    
+    try {
+      // Prepare the form data
+      const formToSend = new FormData();
+      formToSend.append('name', formData.name);
+      formToSend.append('email', formData.email);
+      formToSend.append('message', formData.message);
+      formToSend.append('_recipient', 'derekp@abxinnovate.com');
+      
+      // Send the form using formsubmit.co service
+      const response = await fetch('https://formsubmit.co/derekp@abxinnovate.com', {
+        method: 'POST',
+        body: formToSend,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        // Form submitted successfully
+        setFormStatus({
+          submitted: true,
+          error: false,
+          message: 'Thank you! Your message has been sent.'
+        });
+        
+        // Reset form fields
+        setFormData({
+          name: '',
+          email: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setFormStatus({
+        submitted: false,
+        error: true,
+        message: 'There was an error sending your message. Please try again later.'
+      });
+    }
   };
 
   useEffect(() => {
@@ -384,30 +480,55 @@ export default function Home() {
           <h2 className="text-4xl font-bold mb-12 text-center contact-title">Contact Us</h2>
           <div className="max-w-2xl mx-auto">
             <div className="bg-gray-800/50 rounded-lg p-8 contact-form">
-              <form className="space-y-6">
+              {formStatus.message && (
+                <div className={`mb-6 p-4 rounded-lg ${formStatus.error ? 'bg-red-900/50 text-red-200' : 'bg-green-900/50 text-green-200'}`}>
+                  {formStatus.message}
+                </div>
+              )}
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div>
-                  <label className="block text-sm font-medium mb-2">Name</label>
+                  <label className="block text-sm font-medium mb-2" htmlFor="name">Name</label>
                   <input
+                    id="name"
+                    name="name"
                     type="text"
+                    value={formData.name}
+                    onChange={handleInputChange}
                     className="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">Email</label>
+                  <label className="block text-sm font-medium mb-2" htmlFor="email">Email</label>
                   <input
+                    id="email"
+                    name="email"
                     type="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     className="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">Message</label>
+                  <label className="block text-sm font-medium mb-2" htmlFor="message">Message</label>
                   <textarea
+                    id="message"
+                    name="message"
                     rows={4}
+                    value={formData.message}
+                    onChange={handleInputChange}
                     className="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
                 </div>
-                <button className="w-full bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg transition-colors">
-                  Send Message
+                <button 
+                  type="submit"
+                  disabled={formStatus.submitted && !formStatus.error}
+                  className={`w-full font-bold py-2 px-4 rounded-lg transition-colors ${
+                    formStatus.submitted && !formStatus.error 
+                      ? 'bg-green-700 hover:bg-green-600 text-white' 
+                      : 'bg-gray-700 hover:bg-gray-600 text-white'
+                  }`}
+                >
+                  {formStatus.submitted && !formStatus.error ? 'Message Sent' : 'Send Message'}
                 </button>
               </form>
             </div>
