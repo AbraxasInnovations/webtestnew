@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
-import { ChevronDown, ArrowRight, Globe, Cpu, Lightbulb, Menu, X } from 'lucide-react';
+import { ChevronDown, ArrowRight, Globe, Cpu, Lightbulb, Menu, X, Building, Wallet } from 'lucide-react';
 import PipelineBackground from './PipelineBackground';
 import Link from 'next/link';
 import GreenprintBackground from './GreenprintBackground';
@@ -267,13 +267,13 @@ export default function Home() {
                 description: "Delivering solutions across borders and industries."
               },
               {
-                icon: <Cpu className="w-12 h-12 text-gray-300" />,
+                icon: <Building className="w-12 h-12 text-gray-300" />,
                 title: "Non Custodial AM",
                 description: "Offering a revolutionary alternative to traditional custody-based asset management.",
                 link: "/asset-management"
               },
               {
-                icon: <Lightbulb className="w-12 h-12 text-gray-300" />,
+                icon: <Cpu className="w-12 h-12 text-gray-300" />,
                 title: "Innovative Software",
                 description: "Developing institutional-grade financial software."
               }
@@ -309,7 +309,7 @@ export default function Home() {
         <ParticleWaveBackground />
         <div className="container mx-auto px-6 relative z-10">
           <h2 className="text-4xl font-bold mb-12 text-center greenprint-title">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400">Green</span>print
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-emerald-400">Green</span>print
           </h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="greenprint-content">
@@ -327,7 +327,7 @@ export default function Home() {
                     href="https://t.me/AbraxasInnovations" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="inline-block bg-gradient-to-r from-emerald-800 to-cyan-800 hover:from-emerald-700 hover:to-cyan-700 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                    className="inline-block bg-gradient-to-r from-green-800 to-emerald-700 hover:from-green-700 hover:to-emerald-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
                   >
                     Download Now - $50
                   </a>
@@ -343,7 +343,7 @@ export default function Home() {
               </div>
             </div>
             <div className="relative greenprint-benefits">
-              <div className="bg-gradient-to-r from-emerald-500/30 to-cyan-500/30 rounded-lg p-1 greenprint-card">
+              <div className="bg-gradient-to-r from-green-500/30 to-emerald-600/30 rounded-lg p-1 greenprint-card">
                 <div className="bg-gray-900 rounded-lg p-8">
                   <h3 className="text-2xl font-bold mb-4">Why Greenprint?</h3>
                   <ul className="space-y-4 text-gray-300">

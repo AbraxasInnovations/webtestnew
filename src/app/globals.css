@@ -473,8 +473,8 @@ html {
     linear-gradient(
       to right,
       rgba(16, 185, 129, 0.7), /* Emerald */
-      rgba(14, 165, 233, 0.7), /* Sky Blue */
-      rgba(6, 182, 212, 0.7)  /* Cyan */
+      rgba(34, 197, 94, 0.7), /* Green */
+      rgba(5, 150, 105, 0.7)  /* Emerald-600 */
     );
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
@@ -483,18 +483,18 @@ html {
 
 @keyframes greenprint-pulse {
   0% {
-    box-shadow: 0 0 5px rgba(16, 185, 129, 0.2), 0 0 10px rgba(6, 182, 212, 0.1);
+    box-shadow: 0 0 5px rgba(16, 185, 129, 0.2), 0 0 10px rgba(5, 150, 105, 0.1);
   }
   50% {
-    box-shadow: 0 0 15px rgba(16, 185, 129, 0.4), 0 0 20px rgba(6, 182, 212, 0.3);
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.4), 0 0 20px rgba(5, 150, 105, 0.3);
   }
   100% {
-    box-shadow: 0 0 5px rgba(16, 185, 129, 0.2), 0 0 10px rgba(6, 182, 212, 0.1);
+    box-shadow: 0 0 5px rgba(16, 185, 129, 0.2), 0 0 10px rgba(5, 150, 105, 0.1);
   }
 }
 
 .greenprint-card:hover {
-  box-shadow: 0 0 25px rgba(16, 185, 129, 0.5), 0 0 35px rgba(6, 182, 212, 0.4);
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.5), 0 0 35px rgba(5, 150, 105, 0.4);
   transform: translateY(-5px);
 }
 
@@ -513,18 +513,18 @@ html {
   left: -3px;
   width: 3px;
   height: 100%;
-  background: linear-gradient(to bottom, #10b981, #06b6d4);
+  background: linear-gradient(to bottom, #10b981, #047857);
   z-index: 1;
 }
 
 .greenprint-product-card:hover {
   transform: translateX(5px);
-  box-shadow: -5px 0 15px rgba(16, 185, 129, 0.3), -2px 0 8px rgba(6, 182, 212, 0.2);
+  box-shadow: -5px 0 15px rgba(16, 185, 129, 0.3), -2px 0 8px rgba(5, 150, 105, 0.2);
   border-radius: 0 0.5rem 0.5rem 0;
 }
 
 .greenprint-product-card:hover::before {
-  box-shadow: -2px 0 10px rgba(16, 185, 129, 0.5), -1px 0 5px rgba(6, 182, 212, 0.4);
+  box-shadow: -2px 0 10px rgba(16, 185, 129, 0.5), -1px 0 5px rgba(5, 150, 105, 0.4);
 }
 
 /* Mobile optimizations */
@@ -538,7 +538,7 @@ html {
       box-shadow: 0 0 5px rgba(16, 185, 129, 0.5);
     }
     50% {
-      box-shadow: 0 0 15px rgba(16, 185, 129, 0.8);
+      box-shadow: 0 0 15px rgba(5, 150, 105, 0.8);
     }
   }
   
