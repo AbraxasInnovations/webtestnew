@@ -154,7 +154,7 @@ export default function ReturnPolicy() {
               <section className="pb-4">
                 <h2 className="text-lg font-semibold mb-3 text-white">4. UNAUTHORIZED CHARGES</h2>
                 <p className="text-sm leading-relaxed">
-                  If you believe you have been charged without authorization, please contact our support team immediately at <a href="mailto:derekp@abxinnovate.com" className="text-gray-300 hover:text-gray-100 underline">derekp@abxinnovate.com</a> with details of the transaction. We will investigate all such claims and, if verified, we will process appropriate adjustments.
+                  If you believe you have been charged without authorization, please contact our support team immediately at <a href="mailto:support@abxinnovate.com" className="text-gray-300 hover:text-gray-100 underline">support@abxinnovate.com</a> with details of the transaction. We will investigate all such claims and, if verified, we will process appropriate adjustments.
                 </p>
               </section>
 
@@ -189,7 +189,7 @@ export default function ReturnPolicy() {
               <section className="pb-4">
                 <h2 className="text-lg font-semibold mb-3 text-white">9. CONTACT US</h2>
                 <p className="text-sm leading-relaxed">
-                  If you have any questions about our Refund Policy, please contact us at <a href="mailto:derekp@abxinnovate.com" className="text-gray-300 hover:text-gray-100 underline">derekp@abxinnovate.com</a>.
+                  If you have any questions about our Refund Policy, please contact us at <a href="mailto:support@abxinnovate.com" className="text-gray-300 hover:text-gray-100 underline">support@abxinnovate.com</a>.
                 </p>
               </section>
 

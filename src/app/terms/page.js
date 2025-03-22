@@ -223,7 +223,7 @@ export default function TermsAndConditions() {
               <section className="pb-4">
                 <h2 className="text-lg font-semibold mb-3 text-white">12. CONTACT US</h2>
                 <p className="text-sm leading-relaxed mb-3">
-                  If you have any questions about these Terms, please contact us at <a href="mailto:derekp@abxinnovate.com" className="text-gray-300 hover:text-gray-100 underline">derekp@abxinnovate.com</a>.
+                  If you have any questions about these Terms, please contact us at <a href="mailto:support@abxinnovate.com" className="text-gray-300 hover:text-gray-100 underline">support@abxinnovate.com</a>.
                 </p>
               </section>
 
