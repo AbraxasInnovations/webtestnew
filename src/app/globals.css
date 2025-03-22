@@ -526,3 +526,88 @@ html {
 .greenprint-product-card:hover::before {
   box-shadow: -2px 0 10px rgba(16, 185, 129, 0.5), -1px 0 5px rgba(6, 182, 212, 0.4);
 }
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  /* Simplify animations on mobile */
+  .greenprint-card {
+    animation: greenprint-pulse 4s ease-in-out infinite; /* Slower animation to save resources */
+    border-width: 1px; /* Thinner border on mobile */
+  }
+  
+  @keyframes greenprint-pulse {
+    0%, 100% {
+      box-shadow: 0 0 5px rgba(16, 185, 129, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+    }
+  }
+  
+  /* Make service cards more mobile-friendly */
+  .animated-card.active .card-borders .border-top,
+  .animated-card.active .card-borders .border-right,
+  .animated-card.active .card-borders .border-bottom,
+  .animated-card.active .card-borders .border-left {
+    animation-duration: 0.8s; /* Faster animations on mobile */
+  }
+  
+  .animated-card.active .card-content {
+    animation: bump-in 0.5s 0.8s forwards; /* Faster content appear */
+  }
+  
+  /* Adjust paddings and margins for mobile */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Ensure text is readable on mobile */
+  h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  h2 {
+    font-size: 2rem !important;
+  }
+  
+  .service-card, .greenprint-product-card {
+    margin-bottom: 1rem;
+  }
+  
+  /* Improve touch targets */
+  button, a {
+    min-height: 44px; /* Apple's recommended minimum touch target size */
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* Optimize for high-end mobile */
+@media (max-width: 768px) and (min-resolution: 2dppx) {
+  /* For devices with high-DPI screens (like newer iPhones) */
+  .greenprint-card, .sparkle-card {
+    border-width: 1px; /* Sharper borders on high-DPI */
+  }
+  
+  /* Smoother animations for capable devices */
+  .animated-card {
+    transform: translateZ(0); /* Hardware acceleration */
+  }
+}
+
+/* Animation for mobile menu */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}

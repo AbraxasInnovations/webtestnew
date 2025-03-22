@@ -1,6 +1,6 @@
 'use client';
-import React, { useEffect, useRef } from 'react';
-import { ChevronDown, ArrowRight, Globe, Cpu, Lightbulb } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { ChevronDown, ArrowRight, Globe, Cpu, Lightbulb, Menu, X } from 'lucide-react';
 import PipelineBackground from './PipelineBackground';
 import Link from 'next/link';
 import GreenprintBackground from './GreenprintBackground';
@@ -9,12 +9,25 @@ import CircularZoomBackground from './CircularZoomBackground';
 import ParticleWaveBackground from './ParticleWaveBackground';
 
 export default function Home() {
+  // Add state for mobile menu
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
   // References for animations
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const servicesRef = useRef(null);
   const greenprintRef = useRef(null);
   const contactRef = useRef(null);
+
+  // Function to toggle mobile menu
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+  
+  // Close menu when clicking a navigation link
+  const handleNavClick = () => {
+    setMobileMenuOpen(false);
+  };
 
   useEffect(() => {
     // We'll use this to initialize animations after the page loads
@@ -127,13 +140,66 @@ export default function Home() {
                 className="h-full w-auto"
               />
             </div>
+            
+            {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
               <a href="#about" className="hover:text-gray-300 transition-colors nav-items">About</a>
               <a href="#services" className="hover:text-gray-300 transition-colors nav-items">Services</a>
               <a href="#greenprint" className="hover:text-gray-300 transition-colors nav-items">Greenprint</a>
               <a href="#contact" className="hover:text-gray-300 transition-colors nav-items">Contact</a>
             </div>
+            
+            {/* Mobile Menu Button */}
+            <div className="md:hidden">
+              <button 
+                onClick={toggleMobileMenu} 
+                className="text-white focus:outline-none"
+                aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              >
+                {mobileMenuOpen ? (
+                  <X className="h-7 w-7" />
+                ) : (
+                  <Menu className="h-7 w-7" />
+                )}
+              </button>
+            </div>
           </div>
+          
+          {/* Mobile Navigation Menu */}
+          {mobileMenuOpen && (
+            <div className="md:hidden py-4 animate-fade-in">
+              <div className="flex flex-col space-y-4 items-center">
+                <a 
+                  href="#about" 
+                  className="text-lg hover:text-gray-300 transition-colors w-full text-center py-2"
+                  onClick={handleNavClick}
+                >
+                  About
+                </a>
+                <a 
+                  href="#services" 
+                  className="text-lg hover:text-gray-300 transition-colors w-full text-center py-2"
+                  onClick={handleNavClick}
+                >
+                  Services
+                </a>
+                <a 
+                  href="#greenprint" 
+                  className="text-lg hover:text-gray-300 transition-colors w-full text-center py-2"
+                  onClick={handleNavClick}
+                >
+                  Greenprint
+                </a>
+                <a 
+                  href="#contact" 
+                  className="text-lg hover:text-gray-300 transition-colors w-full text-center py-2"
+                  onClick={handleNavClick}
+                >
+                  Contact
+                </a>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 

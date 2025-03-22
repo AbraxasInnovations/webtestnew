@@ -1,35 +1,69 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Menu, X } from 'lucide-react';
 
 export default function AssetManagement() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
       {/* Navigation */}
       <nav className="fixed w-full bg-black z-50">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="h-12">
+            <Link href="/" className="flex items-center space-x-2">
               <img 
                 src="/images/abaraxaslogo.jpeg"
                 alt="Abraxas Innovations Logo"
-                className="h-full w-auto"
+                className="h-12 w-auto"
               />
-            </div>
+            </Link>
+            
+            {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
               <Link href="/" className="hover:text-blue-400 transition-colors">Home</Link>
             </div>
+            
+            {/* Mobile Menu Button */}
+            <div className="md:hidden">
+              <button 
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
+                className="text-white focus:outline-none"
+                aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              >
+                {mobileMenuOpen ? (
+                  <X className="h-7 w-7" />
+                ) : (
+                  <Menu className="h-7 w-7" />
+                )}
+              </button>
+            </div>
           </div>
+          
+          {/* Mobile Navigation Menu */}
+          {mobileMenuOpen && (
+            <div className="md:hidden py-4 animate-fade-in">
+              <div className="flex flex-col space-y-4 items-center">
+                <Link 
+                  href="/" 
+                  className="text-lg hover:text-blue-400 transition-colors w-full text-center py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Home
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
       {/* Content */}
       <div className="pt-32 pb-20 container mx-auto px-6">
-        <h1 className="text-4xl md:text-6xl font-bold mb-8">Asset Management Strategy</h1>
+        <h1 className="text-3xl md:text-6xl font-bold mb-8">Asset Management Strategy</h1>
         
         {/* Strategy Overview */}
-        <div className="grid md:grid-cols-2 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mb-12">
           <div className="bg-gray-800/50 rounded-lg p-8">
             <h2 className="text-2xl font-bold mb-4">Positive Carry Strategies</h2>
             <p className="text-gray-300 mb-4">

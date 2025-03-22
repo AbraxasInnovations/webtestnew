@@ -56,7 +56,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Removing the redundant favicon links */}
+        {/* Add required meta tags for proper mobile rendering */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
