@@ -388,68 +388,59 @@ export default function Home() {
       </section>
 
       {/* About Section - add classes for animations */}
-      <section id="about" className="py-20 relative" ref={aboutRef}>
+      <section id="about" className="py-12 relative" ref={aboutRef}>
         <div className="bubble-container about-bubble">
           <div className="bubble-glow green"></div>
           <div className="bubble-glow blue"></div>
           <div className="content">
-            <h2 className="text-4xl font-bold mb-12 text-center about-title">
+            <h2 className="text-4xl font-bold mb-8 text-center about-title">
               About Us
             </h2>
-            <div className="grid md:grid-cols-2 gap-12 items-start">
-              <div className="about-content">
-                <p className="text-lg text-gray-300 leading-relaxed mb-8">
+            <div className="flex flex-col">
+              <div className="about-content mb-8">
+                <p className="text-lg text-gray-300 leading-relaxed mb-4">
                   At Abraxas Innovations, we're dedicated to leveling the playing field in a nebulous space, and providing value to our clients. 
                   Our team of experts works tirelessly to develop cutting-edge solutions that transform 
                   the fabric of DeFi.
                 </p>
-                <p className="text-lg text-gray-300 leading-relaxed mb-8">
+                <p className="text-lg text-gray-300 leading-relaxed mb-4">
                   We believe in creating transparent, accessible financial tools that empower users of all experience levels.
                   By combining advanced technology with intuitive design, we're making the complex world of decentralized finance
                   more approachable and profitable for everyone.
                 </p>
-                <button className="mt-4 flex items-center space-x-2 text-gray-300 hover:text-white transition-colors">
+                <div className="mb-8">
+                  <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
+                  <p className="text-gray-300 mb-6">
+                    Pioneering decentralized financial solutions that transform how the world interacts with blockchain technology. 
+                    We aim to be at the forefront of technological advancement, creating solutions that define the future of innovation.
+                  </p>
+                </div>
+                <button className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors">
                   <span>Learn more about our mission</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
-              <div className="sparkle-card rounded-lg p-0.5 about-vision h-full">
-                <div className="bg-black rounded-lg p-8 h-full w-full flex flex-col">
-                  <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
-                  <p className="text-gray-300 mb-6">
-                    To be at the forefront of technological advancement, creating solutions 
-                    that define the future of innovation.
-                  </p>
-                  
-                  {/* OUR VISION */}
-                  <div className="about-vision p-8 text-center mb-8 md:mb-0">
-                    <h2 className="text-3xl font-bold mb-4">Our Vision</h2>
-                    <p className="text-gray-300 mb-8">Pioneering decentralized financial solutions that transform how the world interacts with blockchain technology.</p>
-                    
-                    {/* Vision Image Container - using standard img tag instead of Next.js Image */}
-                    <div className="relative w-full h-[400px] overflow-hidden rounded-lg vision-image-container" style={{background: "#333"}}>
-                      <img 
-                        src="/images/vision-test.jpeg"
-                        alt="Abraxas Vision"
-                        className="w-full h-full object-cover object-center opacity-90 preserve-visibility"
-                        style={{
-                          borderRadius: '8px',
-                          border: '2px solid rgba(74, 222, 128, 0.4)',
-                          opacity: 1,
-                          visibility: 'visible',
-                          transform: 'none'
-                        }}
-                        onError={(e) => {
-                          console.error('Image failed to load');
-                          e.target.style.display = 'none';
-                          e.target.parentNode.style.backgroundColor = 'red';
-                          e.target.parentNode.innerText = 'Image failed to load: ' + e.target.src;
-                        }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                    </div>
-                  </div>
-                </div>
+              
+              {/* Vision Image - placed at the bottom of the bubble */}
+              <div className="relative w-full h-[300px] overflow-hidden rounded-lg vision-image-container" style={{background: "#111"}}>
+                <img 
+                  src="/images/vision-test.jpeg"
+                  alt="Abraxas Vision"
+                  className="w-full h-full object-cover object-center opacity-90 preserve-visibility"
+                  style={{
+                    borderRadius: '8px',
+                    opacity: 1,
+                    visibility: 'visible',
+                    transform: 'none'
+                  }}
+                  onError={(e) => {
+                    console.error('Image failed to load');
+                    e.target.style.display = 'none';
+                    e.target.parentNode.style.backgroundColor = 'red';
+                    e.target.parentNode.innerText = 'Image failed to load: ' + e.target.src;
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
               </div>
             </div>
           </div>
