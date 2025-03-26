@@ -426,10 +426,8 @@ export default function Home() {
                   style={{position: 'absolute', top: 0, left: 0}}
                 />
                 
-                {/* Text fallback */}
-                <div className="h-[300px] flex items-center justify-center">
-                  <span className="text-white opacity-30 text-xl font-bold">Vision Image</span>
-                </div>
+                {/* Empty container replacing text fallback */}
+                <div className="h-[300px]"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
               </div>
             </div>
