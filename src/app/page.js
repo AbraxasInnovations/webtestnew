@@ -155,20 +155,20 @@ export default function Home() {
         }, "-=0.5");
         aboutTimeline.from('.about-content button', {opacity: 0, y: 20, duration: 0.6}, "-=0.3");
         
-        // Just animate the vision image container directly
+        // Set the vision-image-container to already be visible before animation
+        const visionContainers = document.querySelectorAll('.vision-image-container');
+        visionContainers.forEach(container => {
+          container.style.opacity = "1";
+          container.style.visibility = "visible";
+          container.style.transform = "none";
+        });
+        
+        // Only animate subtle properties of the vision image container 
         aboutTimeline.from('.vision-image-container', {
-          opacity: 0, 
-          y: 40, 
-          scale: 0.9,
+          boxShadow: "0 0 0 rgba(0,0,0,0)",
+          scale: 0.98,
           duration: 1.2,
           ease: "power3.out",
-          onStart: function() {
-            // Make sure image stays visible during animation
-            document.querySelectorAll('.preserve-visibility').forEach(el => {
-              el.style.opacity = "1";
-              el.style.visibility = "visible";
-            });
-          }
         }, "-=0.8");
         
         aboutTimeline.from('#about .bubble-glow', {
@@ -411,13 +411,22 @@ export default function Home() {
               <div 
                 className="vision-image-container md:w-1/3 md:self-end" 
                 style={{
-                  backgroundImage: "url('/images/vision-test.jpeg'), url('https://placehold.co/600x400/222/333?text=Vision')",
+                  backgroundImage: "url('/images/vision-test.jpeg')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
-                  backgroundColor: "#222" /* Fallback color */
+                  backgroundColor: "#0F3830", /* Stronger fallback color - teal shade */
+                  backgroundRepeat: "no-repeat"
                 }}
               >
-                {/* Add a text fallback to show if the image fails to load */}
+                {/* Add a direct img tag as a backup */}
+                <img 
+                  src="/images/vision-test.jpeg"
+                  alt="Abraxas Vision"
+                  className="w-full h-full object-cover object-center opacity-0 preserve-visibility"
+                  style={{position: 'absolute', top: 0, left: 0}}
+                />
+                
+                {/* Text fallback */}
                 <div className="h-[300px] flex items-center justify-center">
                   <span className="text-white opacity-30 text-xl font-bold">Vision Image</span>
                 </div>
