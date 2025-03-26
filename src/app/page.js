@@ -397,23 +397,27 @@ export default function Home() {
               <div className="sparkle-card rounded-lg p-0.5 about-vision h-full">
                 <div className="bg-black rounded-lg p-8 h-full w-full flex flex-col">
                   <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
-                  <div className="flex flex-col h-full">
-                    <p className="text-gray-300 mb-6">
-                      To be at the forefront of technological advancement, creating solutions 
-                      that define the future of innovation.
-                    </p>
-                    <div className="relative flex-grow mt-2 mb-0 min-h-[400px] bg-black rounded-lg overflow-hidden flex items-end">
-                      {/* Static placeholder that doesn't rely on any image files */}
-                      <div 
-                        className="w-full h-full bg-gradient-to-b from-green-800 to-green-950 flex items-center justify-center" 
-                        style={{border: '4px solid red'}}
-                      >
-                        <div className="text-center p-8">
-                          <div className="text-4xl font-bold text-white mb-4">Vision</div>
-                          <div className="text-xl text-green-300">Innovative Solutions for Tomorrow</div>
-                        </div>
-                      </div>
-                    </div>
+                  <p className="text-gray-300 mb-6">
+                    To be at the forefront of technological advancement, creating solutions 
+                    that define the future of innovation.
+                  </p>
+                  
+                  {/* SUPER BASIC TEST DIV - THIS SHOULD DEFINITELY BE VISIBLE */}
+                  <div style={{
+                    width: '100%',
+                    minHeight: '400px',
+                    backgroundColor: 'yellow',
+                    color: 'black',
+                    border: '10px solid red',
+                    padding: '20px',
+                    fontSize: '24px',
+                    fontWeight: 'bold',
+                    textAlign: 'center',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
+                    THIS IS A TEST - YELLOW BOX WITH RED BORDER
                   </div>
                 </div>
               </div>
