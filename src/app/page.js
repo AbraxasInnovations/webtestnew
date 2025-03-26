@@ -140,11 +140,10 @@ export default function Home() {
         const heroTimeline = window.gsap.timeline();
         heroTimeline.from('.hero-title', {opacity: 0, y: 30, duration: 0.7, delay: 0.2});
         heroTimeline.from('.hero-description', {opacity: 0, y: 30, duration: 0.7}, "-=0.4");
-        heroTimeline.from('.hero-cta', {opacity: 0, y: 30, duration: 0.7}, "-=0.5");
         heroTimeline.from('.nav-logo', {opacity: 0, duration: 0.7, y: 25}, "-=0.5");
         heroTimeline.from('.nav-items', {opacity: 0, duration: 0.7, y: 25, stagger: 0.1}, "-=0.6");
   
-        // About Section Animation
+        // About Section Animation - simplified
         const aboutTimeline = window.gsap.timeline();
         aboutTimeline.from('#about .bubble-container', {opacity: 0.5, scale: 0.95, duration: 1});
         aboutTimeline.from('.about-title', {opacity: 0, y: 30, duration: 0.8}, "-=0.5");
@@ -155,19 +154,8 @@ export default function Home() {
           stagger: 0.2
         }, "-=0.5");
         aboutTimeline.from('.about-content button', {opacity: 0, y: 20, duration: 0.6}, "-=0.3");
-        aboutTimeline.from('.about-vision h3', {opacity: 0, y: 20, duration: 0.6}, "-=0.4");
-        aboutTimeline.from('.about-vision p', {opacity: 0, y: 20, duration: 0.6}, "-=0.3");
         
-        // Animate the container but exclude the image
-        aboutTimeline.from('.about-vision .relative:not(.vision-image-container)', {
-          opacity: 0, 
-          y: 40, 
-          scale: 0.9,
-          duration: 1.2,
-          ease: "power3.out"
-        }, "-=0.3");
-        
-        // Instead, animate the vision container separately, but preserve the image
+        // Just animate the vision image container directly
         aboutTimeline.from('.vision-image-container', {
           opacity: 0, 
           y: 40, 
@@ -181,7 +169,7 @@ export default function Home() {
               el.style.visibility = "visible";
             });
           }
-        }, "-=0.3");
+        }, "-=0.8");
         
         aboutTimeline.from('#about .bubble-glow', {
           opacity: 0, 
@@ -387,17 +375,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section - add classes for animations */}
-      <section id="about" className="py-12 relative" ref={aboutRef}>
+      {/* About Section - updated layout */}
+      <section id="about" className="py-10 relative" ref={aboutRef}>
         <div className="bubble-container about-bubble">
           <div className="bubble-glow green"></div>
           <div className="bubble-glow blue"></div>
           <div className="content">
-            <h2 className="text-4xl font-bold mb-8 text-center about-title">
+            <h2 className="text-4xl font-bold mb-6 text-center about-title">
               About Us
             </h2>
-            <div className="flex flex-col">
-              <div className="about-content mb-8">
+            <div className="md:grid md:grid-cols-12 gap-6">
+              <div className="about-content md:col-span-7 mb-4 md:mb-0">
                 <p className="text-lg text-gray-300 leading-relaxed mb-4">
                   At Abraxas Innovations, we're dedicated to leveling the playing field in a nebulous space, and providing value to our clients. 
                   Our team of experts works tirelessly to develop cutting-edge solutions that transform 
@@ -408,21 +396,19 @@ export default function Home() {
                   By combining advanced technology with intuitive design, we're making the complex world of decentralized finance
                   more approachable and profitable for everyone.
                 </p>
-                <div className="mb-8">
-                  <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
-                  <p className="text-gray-300 mb-6">
-                    Pioneering decentralized financial solutions that transform how the world interacts with blockchain technology. 
-                    We aim to be at the forefront of technological advancement, creating solutions that define the future of innovation.
-                  </p>
-                </div>
+                <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
+                <p className="text-gray-300 mb-6">
+                  Pioneering decentralized financial solutions that transform how the world interacts with blockchain technology. 
+                  We aim to be at the forefront of technological advancement, creating solutions that define the future of innovation.
+                </p>
                 <button className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors">
                   <span>Learn more about our mission</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
               
-              {/* Vision Image - placed at the bottom of the bubble */}
-              <div className="relative w-full h-[300px] overflow-hidden rounded-lg vision-image-container" style={{background: "#111"}}>
+              {/* Vision Image - positioned on the bottom right */}
+              <div className="vision-image-container md:col-span-5 md:self-end">
                 <img 
                   src="/images/vision-test.jpeg"
                   alt="Abraxas Vision"
