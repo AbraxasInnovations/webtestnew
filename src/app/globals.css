@@ -46,9 +46,11 @@ body {
 
 /* Custom styling for the About bubble container */
 .about-bubble {
-  padding: 1.5rem 2rem;
+  padding: 2rem 2rem 0 2rem; /* More padding at top, no padding at bottom */
   min-height: 0;
   max-width: 1400px;
+  background: #000000; /* Ensure solid black with no transparency */
+  border: 1px solid rgba(80, 80, 80, 0.2);
 }
 
 .about-bubble .about-vision {
@@ -110,18 +112,7 @@ body {
 }
 
 .bubble-container::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at center, 
-                              rgba(80, 80, 80, 0.05) 0%, 
-                              rgba(30, 30, 30, 0.03) 30%, 
-                              transparent 70%);
-  z-index: 0;
-  animation: bubble-rotate 15s linear infinite;
+  display: none; /* Hide the gradient background */
 }
 
 .bubble-container .content {
@@ -129,20 +120,11 @@ body {
   z-index: 1;
 }
 
-@keyframes bubble-rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 .bubble-glow {
   position: absolute;
   border-radius: 50%;
   filter: blur(40px);
-  opacity: 0.15;
+  opacity: 0; /* Hide the glowing bubbles */
   z-index: 0;
 }
 
