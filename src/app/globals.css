@@ -46,61 +46,30 @@ body {
 
 /* Custom styling for the About bubble container */
 .about-bubble {
-  padding: 1.5rem 2rem;
-  min-height: 0;
+  padding: 1rem;
   max-width: 1400px;
-  height: 350px; /* Use fixed height instead of max-height for more precise control */
-  background: #000000; /* Ensure solid black with no transparency */
+  background: #000000;
   border: 1px solid rgba(80, 80, 80, 0.2);
-  display: flex;
-  flex-direction: column;
 }
 
 .about-bubble .content {
   height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.about-bubble .about-vision {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 .about-bubble .about-content {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center content vertically */
+  margin-bottom: 1rem;
 }
 
-/* Make sure the image container has proper dimensions but is smaller */
+/* Basic styling for the image container */
 .vision-image-container {
-  height: 100%;
-  background: #111;
-  border-radius: 8px;
   overflow: hidden;
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: 2;
-  border: none;
-  opacity: 1 !important;
-  visibility: visible !important;
-  will-change: transform;
-  flex-shrink: 0;
+  border-radius: 8px;
+  background: #111;
 }
 
 .vision-image-container img {
-  position: relative;
-  z-index: 0;
-  transition: all 0.5s ease;
-  height: 100%;
-  width: 100%;
+  display: block;
   object-fit: cover;
-  object-position: center; /* Position the image to center for better framing */
-  display: block !important;
-  filter: none !important; /* Ensure no filters are applied */
 }
 
 .vision-image-container:hover {
@@ -742,15 +711,11 @@ html {
   }
   
   .about-bubble {
-    padding: 1.5rem;
-    max-height: none; /* Remove max-height on mobile to allow content to flow */
-    height: auto; /* Change to auto height on mobile */
+    padding: 1rem;
   }
   
   .vision-image-container {
     margin-top: 1rem;
-    height: 250px; /* Fixed height on mobile */
-    width: 100%; /* Full width on mobile */
   }
 
   .about-content {

@@ -382,9 +382,9 @@ export default function Home() {
             <h2 className="text-4xl font-bold mb-4 text-center about-title">
               About Us
             </h2>
-            <div className="flex flex-col md:flex-row items-stretch" style={{ height: "calc(100% - 52px)" }}>
+            <div className="flex flex-col md:flex-row items-center">
               {/* About content - positioned to the left of the image */}
-              <div className="about-content md:w-2/3 mb-4 md:mb-0 md:pr-8 flex flex-col justify-center">
+              <div className="about-content md:w-2/3 mb-4 md:mb-0 md:pr-8">
                 <p className="text-lg text-gray-300 leading-relaxed mb-3">
                   At Abraxas Innovations, we're dedicated to leveling the playing field in a nebulous space, and providing value to our clients. 
                   Our team of experts works tirelessly to develop cutting-edge solutions that transform 
@@ -397,24 +397,13 @@ export default function Home() {
                 </p>
               </div>
               
-              {/* Vision Image - positioned on the right where it was originally */}
-              <div 
-                className="vision-image-container md:w-1/3 flex-shrink-0"
-                style={{
-                  backgroundImage: "url('/images/vision-test.jpeg')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  backgroundColor: "#0F3830",
-                  backgroundRepeat: "no-repeat",
-                  height: "100%"
-                }}
-              >
-                {/* Add a direct img tag as a backup */}
+              {/* Vision Image - simplified approach */}
+              <div className="vision-image-container md:w-1/3">
                 <img 
                   src="/images/vision-test.jpeg"
                   alt="Abraxas Vision"
-                  className="w-full h-full object-cover object-center preserve-visibility"
-                  style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
+                  className="w-full h-full object-cover"
+                  style={{width: '100%', height: '250px'}}
                 />
               </div>
             </div>
