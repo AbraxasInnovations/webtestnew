@@ -147,15 +147,29 @@ export default function Home() {
         const aboutTimeline = window.gsap.timeline();
         aboutTimeline.from('#about .bubble-container', {opacity: 0.5, scale: 0.95, duration: 1});
         aboutTimeline.from('.about-title', {opacity: 0, y: 30, duration: 0.8}, "-=0.5");
-        aboutTimeline.from('.about-content', {opacity: 0, y: 30, duration: 0.8}, "-=0.5");
-        aboutTimeline.from('.about-vision', {opacity: 0, y: 30, duration: 0.8}, "-=0.5");
+        aboutTimeline.from('.about-content p', {
+          opacity: 0, 
+          y: 30, 
+          duration: 0.8, 
+          stagger: 0.2
+        }, "-=0.5");
+        aboutTimeline.from('.about-content button', {opacity: 0, y: 20, duration: 0.6}, "-=0.3");
+        aboutTimeline.from('.about-vision h3', {opacity: 0, y: 20, duration: 0.6}, "-=0.4");
+        aboutTimeline.from('.about-vision p', {opacity: 0, y: 20, duration: 0.6}, "-=0.3");
+        aboutTimeline.from('.about-vision .relative', {
+          opacity: 0, 
+          y: 40, 
+          scale: 0.9,
+          duration: 1.2,
+          ease: "power3.out"
+        }, "-=0.3");
         aboutTimeline.from('#about .bubble-glow', {
           opacity: 0, 
           scale: 0.5, 
           stagger: 0.3, 
           duration: 1.5,
           ease: "power2.out"
-        }, "-=0.7");
+        }, "-=1.2");
   
         new window.ScrollMagic.Scene({
           triggerElement: "#about",
@@ -355,32 +369,51 @@ export default function Home() {
 
       {/* About Section - add classes for animations */}
       <section id="about" className="py-20 relative" ref={aboutRef}>
-        <div className="bubble-container">
+        <div className="bubble-container about-bubble">
           <div className="bubble-glow green"></div>
           <div className="bubble-glow blue"></div>
           <div className="content">
             <h2 className="text-4xl font-bold mb-12 text-center about-title">
               About Us
             </h2>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-12 items-start">
               <div className="about-content">
-                <p className="text-lg text-gray-300 leading-relaxed">
+                <p className="text-lg text-gray-300 leading-relaxed mb-8">
                   At Abraxas Innovations, we're dedicated to leveling the playing field in a nebulous space, and providing value to our clients. 
                   Our team of experts works tirelessly to develop cutting-edge solutions that transform 
                   the fabric of DeFi.
                 </p>
-                <button className="mt-8 flex items-center space-x-2 text-gray-300 hover:text-white transition-colors">
+                <p className="text-lg text-gray-300 leading-relaxed mb-8">
+                  We believe in creating transparent, accessible financial tools that empower users of all experience levels.
+                  By combining advanced technology with intuitive design, we're making the complex world of decentralized finance
+                  more approachable and profitable for everyone.
+                </p>
+                <button className="mt-4 flex items-center space-x-2 text-gray-300 hover:text-white transition-colors">
                   <span>Learn more about our mission</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
-              <div className="sparkle-card rounded-lg p-0.5 about-vision">
-                <div className="bg-gray-900 rounded-lg p-8 h-full w-full">
+              <div className="sparkle-card rounded-lg p-0.5 about-vision h-full">
+                <div className="bg-gray-900 rounded-lg p-8 h-full w-full flex flex-col">
                   <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
-                  <p className="text-gray-300">
-                    To be at the forefront of technological advancement, creating solutions 
-                    that define the future of innovation.
-                  </p>
+                  <div className="flex flex-col h-full">
+                    <p className="text-gray-300 mb-6">
+                      To be at the forefront of technological advancement, creating solutions 
+                      that define the future of innovation.
+                    </p>
+                    <div className="relative flex-grow mt-2 mb-4 min-h-[400px] bg-gray-800/50 rounded-lg overflow-hidden">
+                      {/* Placeholder for tall image - replace src with your actual image */}
+                      <img 
+                        src="/images/vision-image.png" 
+                        alt="Our vision for the future" 
+                        className="w-full h-full object-cover opacity-90 mix-blend-luminosity"
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 600'%3E%3Crect fill='%23003300' width='800' height='600'/%3E%3Cg fill-opacity='0.2'%3E%3Cpath fill='%23009933' d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath fill='%2300cc66' d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath fill='%2300ff99' d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath fill='%2300ff99' d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath fill='%2300cc66' d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3C/svg%3E";
+                        }}
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
