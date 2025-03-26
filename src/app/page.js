@@ -403,19 +403,15 @@ export default function Home() {
                       that define the future of innovation.
                     </p>
                     <div className="relative flex-grow mt-2 mb-0 min-h-[400px] bg-black rounded-lg overflow-hidden flex items-end">
-                      {/* Using Next.js Image component with priority loading */}
-                      <div className="relative w-full h-full">
-                        <Image
-                          src="/images/vision-image.png"
-                          alt="Our vision for the future"
-                          fill
-                          sizes="100vw"
-                          style={{
-                            objectFit: 'contain',
-                            border: '4px solid red'
-                          }}
-                          priority
-                        />
+                      {/* Static placeholder that doesn't rely on any image files */}
+                      <div 
+                        className="w-full h-full bg-gradient-to-b from-green-800 to-green-950 flex items-center justify-center" 
+                        style={{border: '4px solid red'}}
+                      >
+                        <div className="text-center p-8">
+                          <div className="text-4xl font-bold text-white mb-4">Vision</div>
+                          <div className="text-xl text-green-300">Innovative Solutions for Tomorrow</div>
+                        </div>
                       </div>
                     </div>
                   </div>
