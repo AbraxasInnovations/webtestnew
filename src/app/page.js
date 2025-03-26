@@ -382,7 +382,7 @@ export default function Home() {
             <h2 className="text-4xl font-bold mb-4 text-center about-title">
               About Us
             </h2>
-            <div className="flex flex-col md:flex-row items-center" style={{ minHeight: "300px" }}>
+            <div className="flex flex-col md:flex-row items-center" style={{ height: "320px" }}>
               {/* About content - positioned to the left of the image */}
               <div className="about-content md:w-2/3 mb-4 md:mb-0 md:pr-8 flex flex-col justify-center">
                 <p className="text-lg text-gray-300 leading-relaxed mb-3">
@@ -406,14 +406,14 @@ export default function Home() {
                   backgroundPosition: "center bottom",
                   backgroundColor: "#0F3830",
                   backgroundRepeat: "no-repeat",
-                  height: "300px"
+                  height: "320px" /* Adjusted to match bubble height minus padding/spacing */
                 }}
               >
                 {/* Add a direct img tag as a backup */}
                 <img 
                   src="/images/vision-test.jpeg"
                   alt="Abraxas Vision"
-                  className="w-full h-full object-cover object-bottom preserve-visibility"
+                  className="w-full h-full object-cover object-center preserve-visibility"
                   style={{position: 'absolute', top: 0, left: 0}}
                 />
               </div>
