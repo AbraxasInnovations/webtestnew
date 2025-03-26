@@ -741,10 +741,12 @@ html {
     margin-top: 1rem;
     min-height: 250px;
     height: 250px; /* Fixed height on mobile */
+    width: 100%; /* Full width on mobile */
   }
 
   .about-content {
     margin-bottom: 1rem;
+    width: 100%; /* Full width on mobile */
   }
 }
 

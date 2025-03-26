@@ -383,9 +383,23 @@ export default function Home() {
               About Us
             </h2>
             <div className="flex flex-col md:flex-row items-center" style={{ minHeight: "300px" }}>
-              {/* Vision Image - positioned on the left for desktop */}
+              {/* About content - positioned to the left of the image */}
+              <div className="about-content md:w-2/3 mb-4 md:mb-0 md:pr-8 flex flex-col justify-center">
+                <p className="text-lg text-gray-300 leading-relaxed mb-3">
+                  At Abraxas Innovations, we're dedicated to leveling the playing field in a nebulous space, and providing value to our clients. 
+                  Our team of experts works tirelessly to develop cutting-edge solutions that transform 
+                  the fabric of DeFi.
+                </p>
+                <p className="text-lg text-gray-300 leading-relaxed mb-3">
+                  We believe in creating transparent, accessible financial tools that empower users of all experience levels.
+                  By combining advanced technology with intuitive design, we're making the complex world of decentralized finance
+                  more approachable and profitable for everyone.
+                </p>
+              </div>
+              
+              {/* Vision Image - positioned on the right where it was originally */}
               <div 
-                className="vision-image-container order-2 md:order-1 md:w-1/3 flex-shrink-0"
+                className="vision-image-container md:w-1/3 flex-shrink-0"
                 style={{
                   backgroundImage: "url('/images/vision-test.jpeg')",
                   backgroundSize: "cover",
@@ -402,20 +416,6 @@ export default function Home() {
                   className="w-full h-full object-cover object-bottom preserve-visibility"
                   style={{position: 'absolute', top: 0, left: 0}}
                 />
-              </div>
-              
-              {/* About content - positioned to the right of the image */}
-              <div className="about-content order-1 md:order-2 md:w-2/3 mb-4 md:mb-0 md:pl-8 flex flex-col justify-center">
-                <p className="text-lg text-gray-300 leading-relaxed mb-3">
-                  At Abraxas Innovations, we're dedicated to leveling the playing field in a nebulous space, and providing value to our clients. 
-                  Our team of experts works tirelessly to develop cutting-edge solutions that transform 
-                  the fabric of DeFi.
-                </p>
-                <p className="text-lg text-gray-300 leading-relaxed mb-3">
-                  We believe in creating transparent, accessible financial tools that empower users of all experience levels.
-                  By combining advanced technology with intuitive design, we're making the complex world of decentralized finance
-                  more approachable and profitable for everyone.
-                </p>
               </div>
             </div>
           </div>
