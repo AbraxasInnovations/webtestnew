@@ -378,11 +378,11 @@ export default function Home() {
       {/* About Section - updated layout */}
       <section id="about" className="py-6 relative" ref={aboutRef}>
         <div className="bubble-container about-bubble">
-          <div className="content pt-5">
+          <div className="content">
             <h2 className="text-4xl font-bold mb-4 text-center about-title">
               About Us
             </h2>
-            <div className="flex flex-col md:flex-row items-center" style={{ height: "320px" }}>
+            <div className="flex flex-col md:flex-row items-stretch" style={{ height: "calc(100% - 52px)" }}>
               {/* About content - positioned to the left of the image */}
               <div className="about-content md:w-2/3 mb-4 md:mb-0 md:pr-8 flex flex-col justify-center">
                 <p className="text-lg text-gray-300 leading-relaxed mb-3">
@@ -403,10 +403,10 @@ export default function Home() {
                 style={{
                   backgroundImage: "url('/images/vision-test.jpeg')",
                   backgroundSize: "cover",
-                  backgroundPosition: "center bottom",
+                  backgroundPosition: "center",
                   backgroundColor: "#0F3830",
                   backgroundRepeat: "no-repeat",
-                  height: "320px" /* Adjusted to match bubble height minus padding/spacing */
+                  height: "100%"
                 }}
               >
                 {/* Add a direct img tag as a backup */}
@@ -414,7 +414,7 @@ export default function Home() {
                   src="/images/vision-test.jpeg"
                   alt="Abraxas Vision"
                   className="w-full h-full object-cover object-center preserve-visibility"
-                  style={{position: 'absolute', top: 0, left: 0}}
+                  style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
                 />
               </div>
             </div>
