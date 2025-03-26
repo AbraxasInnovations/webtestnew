@@ -384,8 +384,8 @@ export default function Home() {
             <h2 className="text-4xl font-bold mb-6 text-center about-title">
               About Us
             </h2>
-            <div className="md:grid md:grid-cols-12 gap-6">
-              <div className="about-content md:col-span-7 mb-4 md:mb-0">
+            <div className="flex flex-col md:flex-row">
+              <div className="about-content md:w-2/3 mb-4 md:mb-0 md:pr-6">
                 <p className="text-lg text-gray-300 leading-relaxed mb-4">
                   At Abraxas Innovations, we're dedicated to leveling the playing field in a nebulous space, and providing value to our clients. 
                   Our team of experts works tirelessly to develop cutting-edge solutions that transform 
@@ -408,24 +408,15 @@ export default function Home() {
               </div>
               
               {/* Vision Image - positioned on the bottom right */}
-              <div className="vision-image-container md:col-span-5 md:self-end">
-                <img 
-                  src="/images/vision-test.jpeg"
-                  alt="Abraxas Vision"
-                  className="w-full h-full object-cover object-center opacity-90 preserve-visibility"
-                  style={{
-                    borderRadius: '8px',
-                    opacity: 1,
-                    visibility: 'visible',
-                    transform: 'none'
-                  }}
-                  onError={(e) => {
-                    console.error('Image failed to load');
-                    e.target.style.display = 'none';
-                    e.target.parentNode.style.backgroundColor = 'red';
-                    e.target.parentNode.innerText = 'Image failed to load: ' + e.target.src;
-                  }}
-                />
+              <div 
+                className="vision-image-container md:w-1/3 md:self-end" 
+                style={{
+                  backgroundImage: "url('/images/vision-test.jpeg')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center"
+                }}
+              >
+                {/* Fallback content in case background image fails */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
               </div>
             </div>
