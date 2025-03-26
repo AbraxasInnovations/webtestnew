@@ -413,8 +413,8 @@ export default function Home() {
                 style={{
                   backgroundImage: "url('/images/vision-test.jpeg')",
                   backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  backgroundColor: "#0F3830", /* Stronger fallback color - teal shade */
+                  backgroundPosition: "top center",
+                  backgroundColor: "#0F3830",
                   backgroundRepeat: "no-repeat"
                 }}
               >
@@ -422,12 +422,12 @@ export default function Home() {
                 <img 
                   src="/images/vision-test.jpeg"
                   alt="Abraxas Vision"
-                  className="w-full h-full object-cover object-center opacity-0 preserve-visibility"
+                  className="w-full h-full object-cover object-top preserve-visibility"
                   style={{position: 'absolute', top: 0, left: 0}}
                 />
                 
                 {/* Empty container replacing text fallback */}
-                <div className="h-[300px]"></div>
+                <div className="h-[350px]"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
               </div>
             </div>
