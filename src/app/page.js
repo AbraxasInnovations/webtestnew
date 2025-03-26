@@ -194,6 +194,85 @@ export default function Home() {
         .setTween(greenprintTimeline)
         .addTo(controller);
         
+        // Testimonials Section Animation
+        const testimonialsTimeline = gsap.timeline();
+        testimonialsTimeline.from('.testimonials-title span:first-child', {
+          opacity: 0, 
+          y: 30,
+          duration: 1,
+          ease: "power2.out"
+        });
+        testimonialsTimeline.from('.testimonials-title span:last-child', {
+          opacity: 0, 
+          y: 30,
+          duration: 1,
+          ease: "power2.out"
+        }, "-=0.7");
+        testimonialsTimeline.from('.testimonials-title + p', {
+          opacity: 0, 
+          y: 30, 
+          duration: 1
+        }, "-=0.7");
+        
+        // Animate each testimonial card with staggered entrance
+        testimonialsTimeline.from('.bg-gray-100.rounded-lg.shadow-lg', {
+          opacity: 0, 
+          y: 50, 
+          scale: 0.9,
+          duration: 0.8, 
+          stagger: 0.3,
+          ease: "back.out(1.7)"
+        }, "-=0.5");
+        
+        // Animate profile pictures and name sections
+        testimonialsTimeline.from('.bg-gray-100.rounded-lg.shadow-lg .flex.items-center.mb-6', {
+          opacity: 0,
+          x: -20,
+          duration: 0.7,
+          stagger: 0.2
+        }, "-=0.9");
+        
+        // Animate star ratings
+        testimonialsTimeline.from('.bg-gray-100.rounded-lg.shadow-lg .flex.text-yellow-400 svg', {
+          opacity: 0,
+          scale: 0.5,
+          duration: 0.5,
+          stagger: 0.05,
+          ease: "back.out(2)"
+        }, "-=0.7");
+        
+        // Animate testimonial text
+        testimonialsTimeline.from('.bg-gray-100.rounded-lg.shadow-lg p.italic', {
+          opacity: 0,
+          y: 15,
+          duration: 0.7,
+          stagger: 0.2
+        }, "-=0.5");
+        
+        // Animate CTA section
+        testimonialsTimeline.from('.text-center.mt-16 p', {
+          opacity: 0,
+          y: 20,
+          duration: 0.8
+        }, "-=0.3");
+        
+        testimonialsTimeline.from('.text-center.mt-16 a', {
+          opacity: 0,
+          y: 20,
+          scale: 0.9,
+          duration: 0.7,
+          ease: "back.out(1.5)"
+        }, "-=0.5");
+        
+        // Add trigger for testimonials section animations
+        new ScrollMagic.Scene({
+          triggerElement: "#about",
+          triggerHook: 0.5,
+          reverse: false
+        })
+        .setTween(testimonialsTimeline)
+        .addTo(controller);
+        
         // Contact Section Animation
         const contactTimeline = gsap.timeline();
         contactTimeline.from('.contact-title', {opacity: 0, y: 30, duration: 1});
@@ -215,6 +294,75 @@ export default function Home() {
     } else {
       window.addEventListener('load', initAnimations);
       return () => window.removeEventListener('load', initAnimations);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.gsap) {
+      const testimonialCards = document.querySelectorAll('.bg-gray-100.rounded-lg.shadow-lg');
+      
+      // Animate the background blobs
+      const blob1 = document.querySelector('.testimonials-section .blob-1');
+      const blob2 = document.querySelector('.testimonials-section .blob-2');
+      const blob3 = document.querySelector('.testimonials-section .blob-3');
+      
+      if (blob1 && blob2 && blob3) {
+        // Create random movement animations for each blob
+        window.gsap.to(blob1, {
+          x: window.gsap.utils.random(-30, 30),
+          y: window.gsap.utils.random(-20, 20),
+          scale: window.gsap.utils.random(0.9, 1.1),
+          duration: window.gsap.utils.random(20, 30),
+          ease: "sine.inOut",
+          repeat: -1,
+          yoyo: true
+        });
+        
+        window.gsap.to(blob2, {
+          x: window.gsap.utils.random(-40, 40),
+          y: window.gsap.utils.random(-30, 30),
+          scale: window.gsap.utils.random(0.85, 1.15),
+          duration: window.gsap.utils.random(15, 25),
+          ease: "sine.inOut",
+          repeat: -1,
+          yoyo: true,
+          delay: 1
+        });
+        
+        window.gsap.to(blob3, {
+          x: window.gsap.utils.random(-25, 25),
+          y: window.gsap.utils.random(-25, 25),
+          scale: window.gsap.utils.random(0.9, 1.1),
+          duration: window.gsap.utils.random(18, 28),
+          ease: "sine.inOut",
+          repeat: -1,
+          yoyo: true,
+          delay: 2
+        });
+      }
+      
+      testimonialCards.forEach(card => {
+        // Create hover animations
+        card.addEventListener('mouseenter', () => {
+          window.gsap.to(card, {
+            y: -10,
+            scale: 1.02,
+            boxShadow: '0 15px 30px rgba(0,0,0,0.15)',
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          window.gsap.to(card, {
+            y: 0,
+            scale: 1,
+            boxShadow: '0 10px 15px rgba(0,0,0,0.1)',
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        });
+      });
     }
   }, []);
 
@@ -374,12 +522,7 @@ export default function Home() {
           
           <div className="grid md:grid-cols-3 gap-8">
             {/* Testimonial 1 */}
-            <div className="bg-white rounded-lg shadow-lg p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative">
-              {/* Quote mark */}
-              <div className="absolute -top-6 left-8 text-indigo-200 text-9xl leading-none" style={{ fontFamily: 'Georgia, serif' }}>
-                "
-              </div>
-              
+            <div className="bg-gray-100 rounded-lg shadow-lg p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative">
               <div className="flex items-center mb-6 relative z-10">
                 <div className="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
                   <span className="text-indigo-600 font-bold text-xl">JD</span>
@@ -404,12 +547,7 @@ export default function Home() {
             </div>
             
             {/* Testimonial 2 */}
-            <div className="bg-white rounded-lg shadow-lg p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative md:mt-8">
-              {/* Quote mark */}
-              <div className="absolute -top-6 left-8 text-emerald-200 text-9xl leading-none" style={{ fontFamily: 'Georgia, serif' }}>
-                "
-              </div>
-              
+            <div className="bg-gray-100 rounded-lg shadow-lg p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative md:mt-8">
               <div className="flex items-center mb-6 relative z-10">
                 <div className="w-14 h-14 bg-emerald-100 rounded-full flex items-center justify-center mr-4">
                   <span className="text-emerald-600 font-bold text-xl">SK</span>
@@ -434,12 +572,7 @@ export default function Home() {
             </div>
             
             {/* Testimonial 3 */}
-            <div className="bg-white rounded-lg shadow-lg p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative">
-              {/* Quote mark */}
-              <div className="absolute -top-6 left-8 text-blue-200 text-9xl leading-none" style={{ fontFamily: 'Georgia, serif' }}>
-                "
-              </div>
-              
+            <div className="bg-gray-100 rounded-lg shadow-lg p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative">
               <div className="flex items-center mb-6 relative z-10">
                 <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mr-4">
                   <span className="text-blue-600 font-bold text-xl">MR</span>
@@ -703,7 +836,7 @@ export default function Home() {
                   aria-label="Telegram"
                 >
                   <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.2-.04-.28-.02-.12.02-1.98 1.26-5.61 3.71-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.06-.49-.83-.27-1.49-.42-1.43-.89.03-.24.27-.49.71-.74C7.19 11.73 8.87 11 11.2 9.6c3.71-2.21 4.48-2.6 4.98-2.61.11 0 .35.03.51.14.13.09.17.21.18.27-.01.06-.01.24-.02.27l-.21 1.13z"/>
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.2-.04-.28-.02-.12.02-1.98 1.26-5.61 3.71-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.06-.49-.83-.27-1.49-.42-1.43-.89.03-.24.27-.49.71-.74C7.19 11.73 8.87 11 11.2 9.6c3.71-2.21 4.48-2.6 4.98-2.61.11 0 .35.03.51.14.13.09.17.21.18.27-.01.06-.01.24-.02.27l-.21 1.13z"/>
                   </svg>
                 </a>
                 <a 
