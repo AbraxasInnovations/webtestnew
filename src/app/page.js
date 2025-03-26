@@ -403,7 +403,7 @@ export default function Home() {
                   src="/images/vision-test.jpeg"
                   alt="Abraxas Vision"
                   className="rounded-lg"
-                  style={{ height: '200px', width: 'auto', objectFit: 'contain', marginBottom: '0', display: 'block' }}
+                  style={{ height: '280px', width: 'auto', objectFit: 'contain', marginBottom: '0', display: 'block' }}
                 />
               </div>
             </div>
