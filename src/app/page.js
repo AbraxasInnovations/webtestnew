@@ -411,12 +411,16 @@ export default function Home() {
               <div 
                 className="vision-image-container md:w-1/3 md:self-end" 
                 style={{
-                  backgroundImage: "url('/images/vision-test.jpeg')",
+                  backgroundImage: "url('/images/vision-test.jpeg'), url('https://placehold.co/600x400/222/333?text=Vision')",
                   backgroundSize: "cover",
-                  backgroundPosition: "center"
+                  backgroundPosition: "center",
+                  backgroundColor: "#222" /* Fallback color */
                 }}
               >
-                {/* Fallback content in case background image fails */}
+                {/* Add a text fallback to show if the image fails to load */}
+                <div className="h-[300px] flex items-center justify-center">
+                  <span className="text-white opacity-30 text-xl font-bold">Vision Image</span>
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
               </div>
             </div>
