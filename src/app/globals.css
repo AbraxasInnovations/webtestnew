@@ -46,9 +46,10 @@ body {
 
 /* Custom styling for the About bubble container */
 .about-bubble {
-  padding: 2rem 2rem 0 2rem; /* More padding at top, no padding at bottom */
+  padding: 1.5rem 2rem; /* Reduced padding all around */
   min-height: 0;
   max-width: 1400px;
+  max-height: 350px; /* Cap the maximum height */
   background: #000000; /* Ensure solid black with no transparency */
   border: 1px solid rgba(80, 80, 80, 0.2);
 }
@@ -63,12 +64,12 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center; /* Center content vertically */
 }
 
 /* Make sure the image container has proper dimensions but is smaller */
 .vision-image-container {
-  min-height: 350px;
+  min-height: 300px; /* Match the height in the JSX */
   background: #111;
   border-radius: 8px;
   overflow: hidden;
@@ -733,11 +734,17 @@ html {
   
   .about-bubble {
     padding: 1.5rem;
+    max-height: none; /* Remove max-height on mobile to allow content to flow */
   }
   
   .vision-image-container {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     min-height: 250px;
+    height: 250px; /* Fixed height on mobile */
+  }
+
+  .about-content {
+    margin-bottom: 1rem;
   }
 }
 

@@ -378,12 +378,34 @@ export default function Home() {
       {/* About Section - updated layout */}
       <section id="about" className="py-6 relative" ref={aboutRef}>
         <div className="bubble-container about-bubble">
-          <div className="content pt-8">
-            <h2 className="text-4xl font-bold mb-6 text-center about-title">
+          <div className="content pt-5">
+            <h2 className="text-4xl font-bold mb-4 text-center about-title">
               About Us
             </h2>
-            <div className="flex flex-col md:flex-row" style={{ minHeight: "400px" }}>
-              <div className="about-content md:w-3/4 mb-4 md:mb-0 md:pr-8">
+            <div className="flex flex-col md:flex-row items-center" style={{ minHeight: "300px" }}>
+              {/* Vision Image - positioned on the left for desktop */}
+              <div 
+                className="vision-image-container order-2 md:order-1 md:w-1/3 flex-shrink-0"
+                style={{
+                  backgroundImage: "url('/images/vision-test.jpeg')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center bottom",
+                  backgroundColor: "#0F3830",
+                  backgroundRepeat: "no-repeat",
+                  height: "300px"
+                }}
+              >
+                {/* Add a direct img tag as a backup */}
+                <img 
+                  src="/images/vision-test.jpeg"
+                  alt="Abraxas Vision"
+                  className="w-full h-full object-cover object-bottom preserve-visibility"
+                  style={{position: 'absolute', top: 0, left: 0}}
+                />
+              </div>
+              
+              {/* About content - positioned to the right of the image */}
+              <div className="about-content order-1 md:order-2 md:w-2/3 mb-4 md:mb-0 md:pl-8 flex flex-col justify-center">
                 <p className="text-lg text-gray-300 leading-relaxed mb-3">
                   At Abraxas Innovations, we're dedicated to leveling the playing field in a nebulous space, and providing value to our clients. 
                   Our team of experts works tirelessly to develop cutting-edge solutions that transform 
@@ -394,28 +416,6 @@ export default function Home() {
                   By combining advanced technology with intuitive design, we're making the complex world of decentralized finance
                   more approachable and profitable for everyone.
                 </p>
-              </div>
-              
-              {/* Vision Image - adjusted to align at the bottom */}
-              <div 
-                className="vision-image-container md:w-1/4 flex-shrink-0 self-end"
-                style={{
-                  backgroundImage: "url('/images/vision-test.jpeg')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center bottom",
-                  backgroundColor: "#0F3830",
-                  backgroundRepeat: "no-repeat",
-                  marginBottom: "0",
-                  height: "350px"
-                }}
-              >
-                {/* Add a direct img tag as a backup */}
-                <img 
-                  src="/images/vision-test.jpeg"
-                  alt="Abraxas Vision"
-                  className="w-full h-full object-cover object-bottom preserve-visibility"
-                  style={{position: 'absolute', top: 0, left: 0}}
-                />
               </div>
             </div>
           </div>
