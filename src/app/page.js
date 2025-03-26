@@ -478,25 +478,25 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: <Globe className="w-12 h-12 text-gray-300" />,
+                icon: <Globe className="w-12 h-12 text-green-400 service-icon transition-all duration-300" />,
                 title: "Global Solutions",
                 description: "Delivering solutions across borders and industries."
               },
               {
-                icon: <Building className="w-12 h-12 text-gray-300" />,
+                icon: <Building className="w-12 h-12 text-green-400 service-icon transition-all duration-300" />,
                 title: "Non Custodial AM",
                 description: "Offering a revolutionary alternative to traditional custody-based asset management.",
                 link: "/asset-management"
               },
               {
-                icon: <Cpu className="w-12 h-12 text-gray-300" />,
+                icon: <Cpu className="w-12 h-12 text-green-400 service-icon transition-all duration-300" />,
                 title: "Innovative Software",
                 description: "Developing institutional-grade financial software."
               }
             ].map((service, index) => (
               <div 
                 key={index} 
-                className="sparkle-card rounded-lg p-0.5 service-card animated-card cursor-pointer"
+                className="sparkle-card rounded-lg p-0.5 service-card animated-card cursor-pointer group"
                 onClick={() => {
                   if (service.link) {
                     window.location.href = service.link;

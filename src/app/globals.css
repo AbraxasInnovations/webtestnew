@@ -31,9 +31,33 @@ body {
 }
 
 @keyframes dash {
-  to {
+  from {
     stroke-dashoffset: 100;
   }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes icon-pulse {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(74, 222, 128, 0.6));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(74, 222, 128, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(74, 222, 128, 0.6));
+  }
+}
+
+.service-icon {
+  animation: icon-pulse 3s ease-in-out infinite;
+}
+
+.group:hover .service-icon {
+  animation: none;
+  filter: drop-shadow(0 0 20px rgba(74, 222, 128, 0.9));
 }
 
 /* Hover animations */
