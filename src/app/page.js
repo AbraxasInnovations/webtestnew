@@ -428,7 +428,6 @@ export default function Home() {
                 
                 {/* Empty container replacing text fallback */}
                 <div className="h-[350px]"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
               </div>
             </div>
           </div>
