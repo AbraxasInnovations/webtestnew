@@ -46,9 +46,9 @@ body {
 
 /* Custom styling for the About bubble container */
 .about-bubble {
-  padding: 2rem 2rem;
+  padding: 1.5rem 2rem;
   min-height: 0;
-  max-width: 1200px;
+  max-width: 1400px;
 }
 
 .about-bubble .about-vision {
@@ -77,6 +77,7 @@ body {
   opacity: 1 !important;
   visibility: visible !important;
   will-change: transform;
+  flex-shrink: 0;
 }
 
 .vision-image-container img {
