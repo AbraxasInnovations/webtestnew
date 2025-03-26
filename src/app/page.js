@@ -410,7 +410,7 @@ export default function Home() {
                     {/* Vision Image Container - using standard img tag instead of Next.js Image */}
                     <div className="relative w-full h-[400px] overflow-hidden rounded-lg" style={{background: "#333"}}>
                       <img 
-                        src="/images/vision-image.jpeg"
+                        src="/images/vision-test.jpeg"
                         alt="Abraxas Vision"
                         className="w-full h-full object-cover object-center opacity-90"
                         style={{
