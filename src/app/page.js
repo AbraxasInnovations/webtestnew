@@ -135,14 +135,13 @@ export default function Home() {
         // Create ScrollMagic controller
         const controller = new window.ScrollMagic.Controller();
   
-        // Hero Section Animation
+        // Hero Section Animation - updated to animate title as one unit and faster timing
         const heroTimeline = window.gsap.timeline();
-        heroTimeline.from('.hero-title span:first-child', {opacity: 0, y: 30, duration: 1, delay: 0.5});
-        heroTimeline.from('.hero-title span:last-child', {opacity: 0, y: 30, duration: 1}, "-=0.7");
-        heroTimeline.from('.hero-description', {opacity: 0, y: 30, duration: 1}, "-=0.7");
-        heroTimeline.from('.hero-cta', {opacity: 0, y: 30, duration: 1}, "-=0.7");
-        heroTimeline.from('.nav-logo', {opacity: 0, duration: 1, y: 25});
-        heroTimeline.from('.nav-items', {opacity: 0, duration: 1, y: 25, stagger: 0.2}, "-=0.7");
+        heroTimeline.from('.hero-title', {opacity: 0, y: 30, duration: 0.7, delay: 0.2});
+        heroTimeline.from('.hero-description', {opacity: 0, y: 30, duration: 0.7}, "-=0.4");
+        heroTimeline.from('.hero-cta', {opacity: 0, y: 30, duration: 0.7}, "-=0.5");
+        heroTimeline.from('.nav-logo', {opacity: 0, duration: 0.7, y: 25}, "-=0.5");
+        heroTimeline.from('.nav-items', {opacity: 0, duration: 0.7, y: 25, stagger: 0.1}, "-=0.6");
   
         // About Section Animation
         const aboutTimeline = window.gsap.timeline();
