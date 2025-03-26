@@ -376,17 +376,17 @@ export default function Home() {
       </section>
 
       {/* About Vision Section - Simple and Compact */}
-      <section id="about" className="py-8 bg-black text-white relative">
+      <section id="about" className="pt-8 bg-black text-white relative">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold mb-4 text-center">
             <span className="text-white">About</span>
             <span className="ml-3 text-white">Us</span>
           </h2>
           
-          <div className="flex flex-col-reverse md:flex-row md:items-start">
-            {/* About Content */}
-            <div className="md:w-2/3 md:pr-8 h-full flex flex-col justify-center">
-              <div>
+          <div className="flex flex-col-reverse md:flex-row md:items-end" style={{ marginBottom: 0 }}>
+            {/* About Content - aligned at bottom with image */}
+            <div className="md:w-2/3 md:pr-8">
+              <div className="md:pb-8">
                 <h3 className="text-2xl font-semibold mb-3 text-white">Our Vision</h3>
                 <p className="text-lg text-gray-300 leading-relaxed mb-3">
                   At Abraxas Innovations, we're pioneering the future of decentralized finance by creating sophisticated, 
@@ -400,8 +400,8 @@ export default function Home() {
               </div>
             </div>
             
-            {/* Vision Image - right aligned */}
-            <div className="md:w-1/3 flex justify-center mb-6 md:mb-0">
+            {/* Vision Image - precisely aligned at bottom */}
+            <div className="md:w-1/3 flex justify-center md:justify-end">
               <img
                 src="/images/vision-test.jpeg"
                 alt="Abraxas Vision"
@@ -410,7 +410,8 @@ export default function Home() {
                   height: '350px', 
                   width: 'auto', 
                   maxWidth: '100%',
-                  objectFit: 'cover'
+                  objectFit: 'cover',
+                  marginBottom: 0
                 }}
               />
             </div>
