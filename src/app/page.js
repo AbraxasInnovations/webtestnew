@@ -408,15 +408,20 @@ export default function Home() {
                     <p className="text-gray-300 mb-8">Pioneering decentralized financial solutions that transform how the world interacts with blockchain technology.</p>
                     
                     {/* Vision Image Container - using standard img tag instead of Next.js Image */}
-                    <div className="relative w-full h-[400px] overflow-hidden rounded-lg">
+                    <div className="relative w-full h-[400px] overflow-hidden rounded-lg" style={{background: "#333"}}>
                       <img 
-                        src="/images/vision-image.png"
+                        src="/images/vision-image.jpg"
                         alt="Abraxas Vision"
                         className="w-full h-full object-cover object-center opacity-90"
                         style={{
-                          mixBlendMode: 'luminosity',
                           borderRadius: '8px',
                           border: '2px solid rgba(74, 222, 128, 0.4)'
+                        }}
+                        onError={(e) => {
+                          console.error('Image failed to load');
+                          e.target.style.display = 'none';
+                          e.target.parentNode.style.backgroundColor = 'red';
+                          e.target.parentNode.innerText = 'Image failed to load';
                         }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
