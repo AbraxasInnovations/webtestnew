@@ -402,22 +402,25 @@ export default function Home() {
                     that define the future of innovation.
                   </p>
                   
-                  {/* SUPER BASIC TEST DIV - THIS SHOULD DEFINITELY BE VISIBLE */}
-                  <div style={{
-                    width: '100%',
-                    minHeight: '400px',
-                    backgroundColor: 'yellow',
-                    color: 'black',
-                    border: '10px solid red',
-                    padding: '20px',
-                    fontSize: '24px',
-                    fontWeight: 'bold',
-                    textAlign: 'center',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                  }}>
-                    THIS IS A TEST - YELLOW BOX WITH RED BORDER
+                  {/* OUR VISION */}
+                  <div className="about-vision p-8 text-center mb-8 md:mb-0">
+                    <h2 className="text-3xl font-bold mb-4">Our Vision</h2>
+                    <p className="text-gray-300 mb-8">Pioneering decentralized financial solutions that transform how the world interacts with blockchain technology.</p>
+                    
+                    {/* Vision Image Container - using standard img tag instead of Next.js Image */}
+                    <div className="relative w-full h-[400px] overflow-hidden rounded-lg">
+                      <img 
+                        src="/images/vision-image.png"
+                        alt="Abraxas Vision"
+                        className="w-full h-full object-cover object-center opacity-90"
+                        style={{
+                          mixBlendMode: 'luminosity',
+                          borderRadius: '8px',
+                          border: '2px solid rgba(74, 222, 128, 0.4)'
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    </div>
                   </div>
                 </div>
               </div>
