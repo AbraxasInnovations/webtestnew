@@ -777,3 +777,22 @@ html {
 .animate-fade-in {
   animation: fadeIn 0.3s ease-out forwards;
 }
+
+/* Make sure images with this class always stay visible during animations */
+.preserve-visibility {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
+}
+
+.vision-image-container {
+  position: relative;
+  z-index: 1; /* Make sure it's above other elements */
+  transition: none !important;
+}
+
+.vision-image-container img {
+  display: block !important;
+}

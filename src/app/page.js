@@ -157,13 +157,32 @@ export default function Home() {
         aboutTimeline.from('.about-content button', {opacity: 0, y: 20, duration: 0.6}, "-=0.3");
         aboutTimeline.from('.about-vision h3', {opacity: 0, y: 20, duration: 0.6}, "-=0.4");
         aboutTimeline.from('.about-vision p', {opacity: 0, y: 20, duration: 0.6}, "-=0.3");
-        aboutTimeline.from('.about-vision .relative', {
+        
+        // Animate the container but exclude the image
+        aboutTimeline.from('.about-vision .relative:not(.vision-image-container)', {
           opacity: 0, 
           y: 40, 
           scale: 0.9,
           duration: 1.2,
           ease: "power3.out"
         }, "-=0.3");
+        
+        // Instead, animate the vision container separately, but preserve the image
+        aboutTimeline.from('.vision-image-container', {
+          opacity: 0, 
+          y: 40, 
+          scale: 0.9,
+          duration: 1.2,
+          ease: "power3.out",
+          onStart: function() {
+            // Make sure image stays visible during animation
+            document.querySelectorAll('.preserve-visibility').forEach(el => {
+              el.style.opacity = "1";
+              el.style.visibility = "visible";
+            });
+          }
+        }, "-=0.3");
+        
         aboutTimeline.from('#about .bubble-glow', {
           opacity: 0, 
           scale: 0.5, 
@@ -408,14 +427,17 @@ export default function Home() {
                     <p className="text-gray-300 mb-8">Pioneering decentralized financial solutions that transform how the world interacts with blockchain technology.</p>
                     
                     {/* Vision Image Container - using standard img tag instead of Next.js Image */}
-                    <div className="relative w-full h-[400px] overflow-hidden rounded-lg" style={{background: "#333"}}>
+                    <div className="relative w-full h-[400px] overflow-hidden rounded-lg vision-image-container" style={{background: "#333"}}>
                       <img 
                         src="/images/vision-test.jpeg"
                         alt="Abraxas Vision"
-                        className="w-full h-full object-cover object-center opacity-90"
+                        className="w-full h-full object-cover object-center opacity-90 preserve-visibility"
                         style={{
                           borderRadius: '8px',
-                          border: '2px solid rgba(74, 222, 128, 0.4)'
+                          border: '2px solid rgba(74, 222, 128, 0.4)',
+                          opacity: 1,
+                          visibility: 'visible',
+                          transform: 'none'
                         }}
                         onError={(e) => {
                           console.error('Image failed to load');
