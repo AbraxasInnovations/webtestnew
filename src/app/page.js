@@ -137,10 +137,12 @@ export default function Home() {
   
         // Hero Section Animation
         const heroTimeline = window.gsap.timeline();
-        heroTimeline.from('.hero-title span:first-child', {opacity: 0, y: 30, duration: 1});
+        heroTimeline.from('.hero-title span:first-child', {opacity: 0, y: 30, duration: 1, delay: 0.5});
         heroTimeline.from('.hero-title span:last-child', {opacity: 0, y: 30, duration: 1}, "-=0.7");
-        heroTimeline.from('.hero-subtitle', {opacity: 0, y: 30, duration: 1}, "-=0.7");
+        heroTimeline.from('.hero-description', {opacity: 0, y: 30, duration: 1}, "-=0.7");
         heroTimeline.from('.hero-cta', {opacity: 0, y: 30, duration: 1}, "-=0.7");
+        heroTimeline.from('.nav-logo', {opacity: 0, duration: 1, y: 25});
+        heroTimeline.from('.nav-items', {opacity: 0, duration: 1, y: 25, stagger: 0.2}, "-=0.7");
   
         // About Section Animation
         const aboutTimeline = window.gsap.timeline();
@@ -154,6 +156,28 @@ export default function Home() {
           reverse: false
         })
         .setTween(aboutTimeline)
+        .addTo(controller);
+
+        // Testimonials Section Animation
+        const testimonialsTimeline = window.gsap.timeline();
+        testimonialsTimeline.from('.testimonials-title span:first-child', {opacity: 0, y: 30, duration: 1});
+        testimonialsTimeline.from('.testimonials-title span:last-child', {opacity: 0, y: 30, duration: 1}, "-=0.7");
+        testimonialsTimeline.from('.testimonials-title + p', {opacity: 0, y: 30, duration: 1}, "-=0.7");
+        testimonialsTimeline.from('.bg-gray-800.rounded-lg.shadow-lg', {
+          opacity: 0, 
+          y: 50, 
+          stagger: 0.3,
+          duration: 0.8,
+          ease: "back.out(1.4)"
+        }, "-=0.5");
+        testimonialsTimeline.from('.text-center.mt-16', {opacity: 0, y: 30, duration: 1}, "-=0.5");
+        
+        new window.ScrollMagic.Scene({
+          triggerElement: ".testimonials-title",
+          triggerHook: 0.8,
+          reverse: false
+        })
+        .setTween(testimonialsTimeline)
         .addTo(controller);
   
         // Services Section Animation
