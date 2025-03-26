@@ -410,7 +410,7 @@ export default function Home() {
                     {/* Vision Image Container - using standard img tag instead of Next.js Image */}
                     <div className="relative w-full h-[400px] overflow-hidden rounded-lg" style={{background: "#333"}}>
                       <img 
-                        src="/images/vision-image.jpg"
+                        src="/images/vision-image.jpeg"
                         alt="Abraxas Vision"
                         className="w-full h-full object-cover object-center opacity-90"
                         style={{
@@ -421,7 +421,7 @@ export default function Home() {
                           console.error('Image failed to load');
                           e.target.style.display = 'none';
                           e.target.parentNode.style.backgroundColor = 'red';
-                          e.target.parentNode.innerText = 'Image failed to load';
+                          e.target.parentNode.innerText = 'Image failed to load: ' + e.target.src;
                         }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
