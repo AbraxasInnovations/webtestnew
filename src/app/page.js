@@ -375,43 +375,45 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section - updated layout */}
-      <section id="about" className="py-6 relative" ref={aboutRef}>
-        <div className="bubble-container about-bubble">
-          <div className="content">
-            <h2 className="text-4xl font-bold mb-4 text-center about-title">
-              About Us
-            </h2>
-            <div className="flex flex-col md:flex-row items-stretch justify-center h-full">
-              {/* About content - positioned to the left of the image */}
-              <div className="about-content md:w-2/3 md:pr-8 flex flex-col justify-center">
-                <p className="text-lg text-gray-300 leading-relaxed mb-3">
-                  At Abraxas Innovations, we're dedicated to leveling the playing field in a nebulous space, and providing value to our clients. 
-                  Our team of experts works tirelessly to develop cutting-edge solutions that transform 
-                  the fabric of DeFi.
+      {/* About Vision Section - Redesigned without bubble */}
+      <section id="about" className="py-20 bg-black text-white relative">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold mb-6 text-center">
+            <span className="text-white">About</span>
+            <span className="ml-3 text-green-400">Us</span>
+          </h2>
+          
+          <div className="mt-4 flex flex-col-reverse md:flex-row">
+            {/* About Content */}
+            <div className="md:w-2/3 mt-8 md:mt-0 md:pr-8 flex flex-col justify-between">
+              <div>
+                <h3 className="text-2xl font-semibold mb-6 text-green-400">Our Vision</h3>
+                <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                  At Abraxas Innovations, we're pioneering the future of decentralized finance by creating sophisticated, 
+                  accessible trading solutions for both institutional and individual investors.
                 </p>
-                <p className="text-lg text-gray-300 leading-relaxed mb-3">
+                <p className="text-lg text-gray-300 leading-relaxed mb-6">
                   We believe in creating transparent, accessible financial tools that empower users of all experience levels.
                   By combining advanced technology with intuitive design, we're making the complex world of decentralized finance
                   more approachable and profitable for everyone.
                 </p>
               </div>
-              
-              {/* Vision Image - simplified approach */}
-              <div className="vision-image-container md:w-1/3" style={{ 
-                display: 'flex', 
-                alignItems: 'center',
-                justifyContent: 'center',
-                height: 'auto', 
-                overflow: 'visible'
-              }}>
-                <img
-                  src="/images/vision-test.jpeg"
-                  alt="Abraxas Vision"
-                  className="rounded-lg"
-                  style={{ height: '380px', width: 'auto', objectFit: 'contain', margin: 'auto', display: 'block' }}
-                />
-              </div>
+            </div>
+            
+            {/* Vision Image - large and aligned at bottom right */}
+            <div className="md:w-1/3 flex items-end justify-center">
+              <img
+                src="/images/vision-test.jpeg"
+                alt="Abraxas Vision"
+                className="rounded-lg shadow-lg"
+                style={{ 
+                  height: 'auto', 
+                  maxHeight: '450px', 
+                  width: 'auto', 
+                  maxWidth: '100%', 
+                  objectFit: 'contain'
+                }}
+              />
             </div>
           </div>
         </div>

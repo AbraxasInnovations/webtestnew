@@ -779,3 +779,32 @@ html {
   transition: none !important;
   animation: none !important;
 }
+
+/* New styles for About section */
+#about {
+  background-color: #000000;
+  position: relative;
+  overflow: hidden;
+}
+
+#about img {
+  transition: transform 0.5s ease;
+  max-width: 100%;
+}
+
+#about img:hover {
+  transform: scale(1.03);
+}
+
+/* Keep mobile responsiveness */
+@media (max-width: 768px) {
+  #about .flex-col-reverse {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
+  #about img {
+    max-height: 350px;
+    margin: 0 auto 2rem;
+  }
+}
