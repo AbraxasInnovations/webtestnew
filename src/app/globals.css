@@ -66,7 +66,7 @@ body {
 /* Make sure the image container has proper dimensions */
 .about-vision .relative {
   min-height: 500px;
-  background: rgba(20, 20, 20, 0.5);
+  background: black;
   border-radius: 12px;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -80,7 +80,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at center, transparent 50%, rgba(10, 10, 10, 0.8) 100%);
+  background: none; /* Removed the radial gradient */
   pointer-events: none;
   z-index: 1;
 }
@@ -102,7 +102,7 @@ body {
 }
 
 /* Make the vision card expand to fill the height better */
-.about-vision .bg-gray-900 {
+.about-vision .bg-gray-900, .about-vision .bg-black {
   height: 100%;
   display: flex;
   flex-direction: column;
