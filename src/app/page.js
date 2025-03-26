@@ -145,9 +145,17 @@ export default function Home() {
   
         // About Section Animation
         const aboutTimeline = window.gsap.timeline();
-        aboutTimeline.from('.about-title', {opacity: 0, y: 30, duration: 1});
-        aboutTimeline.from('.about-content', {opacity: 0, y: 30, duration: 1}, "-=0.7");
-        aboutTimeline.from('.about-vision', {opacity: 0, y: 30, duration: 1}, "-=0.7");
+        aboutTimeline.from('#about .bubble-container', {opacity: 0.5, scale: 0.95, duration: 1});
+        aboutTimeline.from('.about-title', {opacity: 0, y: 30, duration: 0.8}, "-=0.5");
+        aboutTimeline.from('.about-content', {opacity: 0, y: 30, duration: 0.8}, "-=0.5");
+        aboutTimeline.from('.about-vision', {opacity: 0, y: 30, duration: 0.8}, "-=0.5");
+        aboutTimeline.from('#about .bubble-glow', {
+          opacity: 0, 
+          scale: 0.5, 
+          stagger: 0.3, 
+          duration: 1.5,
+          ease: "power2.out"
+        }, "-=0.7");
   
         new window.ScrollMagic.Scene({
           triggerElement: "#about",
@@ -181,15 +189,23 @@ export default function Home() {
   
         // Services Section Animation
         const servicesTimeline = window.gsap.timeline();
-        servicesTimeline.from('.services-title', {opacity: 0, y: 30, duration: 1});
-        servicesTimeline.from('.services-text', {opacity: 0, y: 30, duration: 1}, "-=0.7");
+        servicesTimeline.from('#services .bubble-container', {opacity: 0.5, scale: 0.95, duration: 1});
+        servicesTimeline.from('.services-title', {opacity: 0, y: 30, duration: 0.8}, "-=0.5");
+        servicesTimeline.from('#services .bubble-container p', {opacity: 0, y: 30, duration: 0.8}, "-=0.5");
         servicesTimeline.from('.service-card', {
           opacity: 0, 
           y: 50, 
           stagger: 0.3,
           duration: 0.8,
           ease: "back.out(1.4)"
-        }, "-=0.5");
+        }, "-=0.3");
+        servicesTimeline.from('#services .bubble-glow', {
+          opacity: 0, 
+          scale: 0.5, 
+          stagger: 0.3, 
+          duration: 1.5,
+          ease: "power2.out"
+        }, "-=1");
         
         // Add trigger for animations in services section
         new window.ScrollMagic.Scene({
@@ -338,30 +354,34 @@ export default function Home() {
       </section>
 
       {/* About Section - add classes for animations */}
-      <section id="about" className="py-20" ref={aboutRef}>
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-12 text-center about-title">
-            About Us
-          </h2>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="about-content">
-              <p className="text-lg text-gray-300 leading-relaxed">
-                At Abraxas Innovations, we're dedicated to leveling the playing field in a nebulous space, and providing value to our clients. 
-                Our team of experts works tirelessly to develop cutting-edge solutions that transform 
-                the fabric of DeFi.
-              </p>
-              <button className="mt-8 flex items-center space-x-2 text-gray-300 hover:text-white transition-colors">
-                <span>Learn more about our mission</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-            <div className="sparkle-card rounded-lg p-0.5 about-vision">
-              <div className="bg-gray-900 rounded-lg p-8 h-full w-full">
-                <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
-                <p className="text-gray-300">
-                  To be at the forefront of technological advancement, creating solutions 
-                  that define the future of innovation.
+      <section id="about" className="py-20 relative" ref={aboutRef}>
+        <div className="bubble-container">
+          <div className="bubble-glow green"></div>
+          <div className="bubble-glow blue"></div>
+          <div className="content">
+            <h2 className="text-4xl font-bold mb-12 text-center about-title">
+              About Us
+            </h2>
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="about-content">
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  At Abraxas Innovations, we're dedicated to leveling the playing field in a nebulous space, and providing value to our clients. 
+                  Our team of experts works tirelessly to develop cutting-edge solutions that transform 
+                  the fabric of DeFi.
                 </p>
+                <button className="mt-8 flex items-center space-x-2 text-gray-300 hover:text-white transition-colors">
+                  <span>Learn more about our mission</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+              <div className="sparkle-card rounded-lg p-0.5 about-vision">
+                <div className="bg-gray-900 rounded-lg p-8 h-full w-full">
+                  <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
+                  <p className="text-gray-300">
+                    To be at the forefront of technological advancement, creating solutions 
+                    that define the future of innovation.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -467,55 +487,59 @@ export default function Home() {
       </section>
 
       {/* Services Section - add classes for animations */}
-      <section id="services" className="py-20 relative overflow-hidden bg-gray-900" ref={servicesRef}>
-        <div className="container mx-auto px-6 relative z-10">
-          <h2 className="text-4xl font-bold mb-4 text-center services-title">
-            Our Services
-          </h2>
-          <p className="text-center mb-12 text-gray-300">
-            Pushing boundaries. Breaking limits. Creating tomorrow.
-          </p>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <Globe className="w-12 h-12 text-green-400 service-icon transition-all duration-300" />,
-                title: "Global Solutions",
-                description: "Delivering solutions across borders and industries."
-              },
-              {
-                icon: <Building className="w-12 h-12 text-green-400 service-icon transition-all duration-300" />,
-                title: "Non Custodial AM",
-                description: "Offering a revolutionary alternative to traditional custody-based asset management.",
-                link: "/asset-management"
-              },
-              {
-                icon: <Cpu className="w-12 h-12 text-green-400 service-icon transition-all duration-300" />,
-                title: "Innovative Software",
-                description: "Developing institutional-grade financial software."
-              }
-            ].map((service, index) => (
-              <div 
-                key={index} 
-                className="sparkle-card rounded-lg p-0.5 service-card animated-card cursor-pointer group"
-                onClick={() => {
-                  if (service.link) {
-                    window.location.href = service.link;
-                  }
-                }}
-              >
-                <div className="card-borders">
-                  <div className="border-top"></div>
-                  <div className="border-right"></div>
-                  <div className="border-bottom"></div>
-                  <div className="border-left"></div>
+      <section id="services" className="py-20 relative overflow-hidden" ref={servicesRef}>
+        <div className="bubble-container">
+          <div className="bubble-glow green" style={{left: '15%', top: '15%'}}></div>
+          <div className="bubble-glow blue" style={{right: '10%', bottom: '20%'}}></div>
+          <div className="content">
+            <h2 className="text-4xl font-bold mb-4 text-center services-title">
+              Our Services
+            </h2>
+            <p className="text-center mb-12 text-gray-300 max-w-2xl mx-auto">
+              Pushing boundaries. Breaking limits. Creating tomorrow.
+            </p>
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: <Globe className="w-12 h-12 text-green-400 service-icon transition-all duration-300" />,
+                  title: "Global Solutions",
+                  description: "Delivering solutions across borders and industries."
+                },
+                {
+                  icon: <Building className="w-12 h-12 text-green-400 service-icon transition-all duration-300" />,
+                  title: "Non Custodial AM",
+                  description: "Offering a revolutionary alternative to traditional custody-based asset management.",
+                  link: "/asset-management"
+                },
+                {
+                  icon: <Cpu className="w-12 h-12 text-green-400 service-icon transition-all duration-300" />,
+                  title: "Innovative Software",
+                  description: "Developing institutional-grade financial software."
+                }
+              ].map((service, index) => (
+                <div 
+                  key={index} 
+                  className="sparkle-card rounded-lg p-0.5 service-card animated-card cursor-pointer group"
+                  onClick={() => {
+                    if (service.link) {
+                      window.location.href = service.link;
+                    }
+                  }}
+                >
+                  <div className="card-borders">
+                    <div className="border-top"></div>
+                    <div className="border-right"></div>
+                    <div className="border-bottom"></div>
+                    <div className="border-left"></div>
+                  </div>
+                  <div className="bg-gray-900 rounded-lg p-8 h-full w-full flex flex-col items-center text-center card-content">
+                    <div className="mb-4">{service.icon}</div>
+                    <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                    <p className="text-gray-300">{service.description}</p>
+                  </div>
                 </div>
-                <div className="bg-gray-900 rounded-lg p-8 h-full w-full flex flex-col items-center text-center card-content">
-                  <div className="mb-4">{service.icon}</div>
-                  <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                  <p className="text-gray-300">{service.description}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
