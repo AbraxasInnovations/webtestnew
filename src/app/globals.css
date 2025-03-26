@@ -46,10 +46,15 @@ body {
 
 /* Custom styling for the About bubble container */
 .about-bubble {
-  padding: 2rem 1.5rem;
+  background-color: black;
+  color: white;
+  border-radius: 15px;
+  padding: 1.5rem 2rem 2rem 2rem;
   max-width: 1400px;
-  background: #000000;
-  border: 1px solid rgba(80, 80, 80, 0.2);
+  max-height: 350px;
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .about-bubble .content {
@@ -62,12 +67,19 @@ body {
 
 /* Basic styling for the image container - greatly simplified */
 .vision-image-container {
+  height: auto;
   overflow: visible;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .vision-image-container img {
-  display: block;
-  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
 }
 
 .vision-image-container:hover {

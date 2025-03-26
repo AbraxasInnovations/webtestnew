@@ -398,12 +398,12 @@ export default function Home() {
               </div>
               
               {/* Vision Image - simplified approach */}
-              <div className="vision-image-container md:w-1/3" style={{marginTop: '15px'}}>
-                <img 
+              <div className="vision-image-container md:w-1/3" style={{ marginTop: '0px', overflow: 'visible', paddingBottom: '5px' }}>
+                <img
                   src="/images/vision-test.jpeg"
                   alt="Abraxas Vision"
-                  className="w-full object-cover rounded-lg border border-gray-700"
-                  style={{width: '100%', height: '180px'}}
+                  className="rounded-lg"
+                  style={{ height: '110px', width: 'auto', objectFit: 'contain', marginBottom: '0', display: 'block' }}
                 />
               </div>
             </div>
