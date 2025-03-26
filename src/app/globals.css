@@ -785,15 +785,17 @@ html {
   background-color: #000000;
   position: relative;
   overflow: hidden;
+  min-height: 0; /* Remove any minimum height */
 }
 
 #about img {
-  transition: transform 0.5s ease;
   max-width: 100%;
+  border-radius: 8px;
+  transition: none; /* Remove animations */
 }
 
 #about img:hover {
-  transform: scale(1.03);
+  transform: none; /* Remove hover effects */
 }
 
 /* Keep mobile responsiveness */
@@ -804,7 +806,7 @@ html {
   }
   
   #about img {
-    max-height: 350px;
-    margin: 0 auto 2rem;
+    max-height: 300px;
+    margin: 0 auto 1rem;
   }
 }

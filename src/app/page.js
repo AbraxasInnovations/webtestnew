@@ -375,24 +375,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Vision Section - Redesigned without bubble */}
-      <section id="about" className="py-20 bg-black text-white relative">
+      {/* About Vision Section - Simple and Compact */}
+      <section id="about" className="py-8 bg-black text-white relative">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-6 text-center">
+          <h2 className="text-4xl font-bold mb-4 text-center">
             <span className="text-white">About</span>
-            <span className="ml-3 text-green-400">Us</span>
+            <span className="ml-3 text-white">Us</span>
           </h2>
           
-          <div className="mt-4 flex flex-col-reverse md:flex-row">
+          <div className="flex flex-col-reverse md:flex-row md:items-start">
             {/* About Content */}
-            <div className="md:w-2/3 mt-8 md:mt-0 md:pr-8 flex flex-col justify-between">
+            <div className="md:w-2/3 md:pr-8 h-full flex flex-col justify-center">
               <div>
-                <h3 className="text-2xl font-semibold mb-6 text-green-400">Our Vision</h3>
-                <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                <h3 className="text-2xl font-semibold mb-3 text-white">Our Vision</h3>
+                <p className="text-lg text-gray-300 leading-relaxed mb-3">
                   At Abraxas Innovations, we're pioneering the future of decentralized finance by creating sophisticated, 
                   accessible trading solutions for both institutional and individual investors.
                 </p>
-                <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                <p className="text-lg text-gray-300 leading-relaxed">
                   We believe in creating transparent, accessible financial tools that empower users of all experience levels.
                   By combining advanced technology with intuitive design, we're making the complex world of decentralized finance
                   more approachable and profitable for everyone.
@@ -400,18 +400,17 @@ export default function Home() {
               </div>
             </div>
             
-            {/* Vision Image - large and aligned at bottom right */}
-            <div className="md:w-1/3 flex items-end justify-center">
+            {/* Vision Image - right aligned */}
+            <div className="md:w-1/3 flex justify-center mb-6 md:mb-0">
               <img
                 src="/images/vision-test.jpeg"
                 alt="Abraxas Vision"
-                className="rounded-lg shadow-lg"
+                className="rounded-lg"
                 style={{ 
-                  height: 'auto', 
-                  maxHeight: '450px', 
+                  height: '350px', 
                   width: 'auto', 
-                  maxWidth: '100%', 
-                  objectFit: 'contain'
+                  maxWidth: '100%',
+                  objectFit: 'cover'
                 }}
               />
             </div>
