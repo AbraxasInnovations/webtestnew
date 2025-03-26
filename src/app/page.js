@@ -379,12 +379,12 @@ export default function Home() {
       <section id="about" className="py-6 relative" ref={aboutRef}>
         <div className="bubble-container about-bubble">
           <div className="content">
-            <h2 className="text-4xl font-bold mb-6 text-center about-title">
+            <h2 className="text-4xl font-bold mb-4 text-center about-title">
               About Us
             </h2>
-            <div className="flex flex-col md:flex-row items-center mt-4">
+            <div className="flex flex-col md:flex-row items-stretch justify-center h-full">
               {/* About content - positioned to the left of the image */}
-              <div className="about-content md:w-2/3 mb-6 md:mb-0 md:pr-8">
+              <div className="about-content md:w-2/3 md:pr-8 flex flex-col justify-center">
                 <p className="text-lg text-gray-300 leading-relaxed mb-3">
                   At Abraxas Innovations, we're dedicated to leveling the playing field in a nebulous space, and providing value to our clients. 
                   Our team of experts works tirelessly to develop cutting-edge solutions that transform 
@@ -402,15 +402,14 @@ export default function Home() {
                 display: 'flex', 
                 alignItems: 'center',
                 justifyContent: 'center',
-                height: '100%', 
-                overflow: 'visible', 
-                paddingBottom: '5px'
+                height: 'auto', 
+                overflow: 'visible'
               }}>
                 <img
                   src="/images/vision-test.jpeg"
                   alt="Abraxas Vision"
                   className="rounded-lg"
-                  style={{ height: '380px', width: 'auto', objectFit: 'contain', marginBottom: '0', display: 'block' }}
+                  style={{ height: '420px', width: 'auto', objectFit: 'contain', margin: 'auto', display: 'block' }}
                 />
               </div>
             </div>

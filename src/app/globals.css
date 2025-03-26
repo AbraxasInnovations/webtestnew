@@ -46,31 +46,37 @@ body {
 
 /* Custom styling for the About bubble container */
 .about-bubble {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
   border-radius: 15px;
-  padding: 1.5rem 2rem 2rem 2rem;
-  max-width: 1400px;
-  max-height: 400px;
+  padding: 1.5rem;
+  max-width: 1200px;
   margin: 0 auto;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: visible;
 }
 
 .about-bubble .content {
+  position: relative;
+  z-index: 2;
   height: 100%;
 }
 
 .about-bubble .about-content {
-  margin-bottom: 1rem;
+  width: 100%;
+  z-index: 10;
 }
 
 /* Basic styling for the image container - greatly simplified */
 .vision-image-container {
-  height: auto;
-  overflow: visible;
-  padding: 0;
-  margin: 0;
+  position: relative;
+  z-index: 10;
+  transition: transform 0.3s ease;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,8 +84,8 @@ body {
 
 .vision-image-container img {
   max-width: 100%;
-  height: auto;
-  transition: transform 0.3s ease;
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
 
 .vision-image-container:hover {
@@ -721,16 +727,18 @@ html {
   }
   
   .about-bubble {
-    padding: 1rem;
+    padding: 1.5rem;
   }
   
   .vision-image-container {
     margin-top: 1rem;
+    height: auto;
+    width: 100%;
   }
-
+  
   .about-content {
     margin-bottom: 1rem;
-    width: 100%; /* Full width on mobile */
+    width: 100%;
   }
 }
 
