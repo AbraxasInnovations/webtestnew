@@ -46,7 +46,7 @@ body {
 
 /* Custom styling for the About bubble container */
 .about-bubble {
-  padding: 1rem;
+  padding: 2rem 1.5rem;
   max-width: 1400px;
   background: #000000;
   border: 1px solid rgba(80, 80, 80, 0.2);
@@ -60,11 +60,9 @@ body {
   margin-bottom: 1rem;
 }
 
-/* Basic styling for the image container */
+/* Basic styling for the image container - greatly simplified */
 .vision-image-container {
-  overflow: hidden;
-  border-radius: 8px;
-  background: #111;
+  overflow: visible;
 }
 
 .vision-image-container img {
