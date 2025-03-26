@@ -126,43 +126,50 @@ export default function Home() {
   };
 
   useEffect(() => {
-    // We'll use this to initialize animations after the page loads
-    const initAnimations = () => {
-      // Make sure GSAP and ScrollMagic are loaded
-      if (typeof window !== 'undefined' && window.gsap && window.ScrollMagic) {
-        const gsap = window.gsap;
-        
-        // Initial animations (like the AirPods example)
-        gsap.from('.hero-title', {opacity: 0, duration: 1.5, delay: 0.5, y: 50});
-        gsap.from('.hero-description', {opacity: 0, duration: 1.5, delay: 0.8, y: 50});
-        gsap.from('.nav-logo', {opacity: 0, duration: 1.5, delay: 1, y: 25});
-        gsap.from('.nav-items', {opacity: 0, duration: 1.5, delay: 1.2, y: 25, stagger: 0.2});
-        gsap.from('.scroll-indicator', {opacity: 0, duration: 1.5, delay: 1.5, y: 30});
-        
-        // ScrollMagic Controller
-        const controller = new ScrollMagic.Controller();
-        
+    initAnimations();
+  }, []);
+  
+  function initAnimations() {
+    if (typeof window !== 'undefined') {
+      if (window.ScrollMagic && window.gsap) {
+        // Create ScrollMagic controller
+        const controller = new window.ScrollMagic.Controller();
+  
+        // Hero Section Animation
+        const heroTimeline = window.gsap.timeline();
+        heroTimeline.from('.hero-title span:first-child', {opacity: 0, y: 30, duration: 1});
+        heroTimeline.from('.hero-title span:last-child', {opacity: 0, y: 30, duration: 1}, "-=0.7");
+        heroTimeline.from('.hero-subtitle', {opacity: 0, y: 30, duration: 1}, "-=0.7");
+        heroTimeline.from('.hero-cta', {opacity: 0, y: 30, duration: 1}, "-=0.7");
+  
         // About Section Animation
-        const aboutTimeline = gsap.timeline();
-        aboutTimeline.from('.about-content', {opacity: 0, y: 50, duration: 1});
-        aboutTimeline.from('.about-vision', {opacity: 0, y: 50, duration: 1}, "-=0.5");
-        
-        // Add trigger for the about section animations
-        new ScrollMagic.Scene({
+        const aboutTimeline = window.gsap.timeline();
+        aboutTimeline.from('.about-title', {opacity: 0, y: 30, duration: 1});
+        aboutTimeline.from('.about-content', {opacity: 0, y: 30, duration: 1}, "-=0.7");
+        aboutTimeline.from('.about-vision', {opacity: 0, y: 30, duration: 1}, "-=0.7");
+  
+        new window.ScrollMagic.Scene({
           triggerElement: "#about",
-          triggerHook: 0.9,
+          triggerHook: 0.8,
           reverse: false
         })
         .setTween(aboutTimeline)
         .addTo(controller);
-        
+  
         // Services Section Animation
-        const servicesTimeline = gsap.timeline();
+        const servicesTimeline = window.gsap.timeline();
         servicesTimeline.from('.services-title', {opacity: 0, y: 30, duration: 1});
-        servicesTimeline.from('.service-card', {opacity: 0, y: 50, duration: 1, stagger: 0.3}, "-=0.5");
+        servicesTimeline.from('.services-text', {opacity: 0, y: 30, duration: 1}, "-=0.7");
+        servicesTimeline.from('.service-card', {
+          opacity: 0, 
+          y: 50, 
+          stagger: 0.3,
+          duration: 0.8,
+          ease: "back.out(1.4)"
+        }, "-=0.5");
         
         // Add trigger for animations in services section
-        new ScrollMagic.Scene({
+        new window.ScrollMagic.Scene({
           triggerElement: "#services",
           triggerHook: 0.9,
           reverse: false
@@ -180,13 +187,13 @@ export default function Home() {
         .addTo(controller);
         
         // Greenprint Section Animation
-        const greenprintTimeline = gsap.timeline();
+        const greenprintTimeline = window.gsap.timeline();
         greenprintTimeline.from('.greenprint-title', {opacity: 0, y: 30, duration: 1});
         greenprintTimeline.from('.greenprint-content', {opacity: 0, y: 50, duration: 1}, "-=0.5");
         greenprintTimeline.from('.product-card', {opacity: 0.5, y: 30, duration: 1, stagger: 0.3}, "-=0.5");
         greenprintTimeline.from('.greenprint-benefits', {opacity: 0, x: 50, duration: 1}, "-=1");
         
-        new ScrollMagic.Scene({
+        new window.ScrollMagic.Scene({
           triggerElement: "#greenprint",
           triggerHook: 0.7,
           reverse: false
@@ -194,91 +201,12 @@ export default function Home() {
         .setTween(greenprintTimeline)
         .addTo(controller);
         
-        // Testimonials Section Animation
-        const testimonialsTimeline = gsap.timeline();
-        testimonialsTimeline.from('.testimonials-title span:first-child', {
-          opacity: 0, 
-          y: 30,
-          duration: 1,
-          ease: "power2.out"
-        });
-        testimonialsTimeline.from('.testimonials-title span:last-child', {
-          opacity: 0, 
-          y: 30,
-          duration: 1,
-          ease: "power2.out"
-        }, "-=0.7");
-        testimonialsTimeline.from('.testimonials-title + p', {
-          opacity: 0, 
-          y: 30, 
-          duration: 1
-        }, "-=0.7");
-        
-        // Animate each testimonial card with staggered entrance
-        testimonialsTimeline.from('.bg-gray-100.rounded-lg.shadow-lg', {
-          opacity: 0, 
-          y: 50, 
-          scale: 0.9,
-          duration: 0.8, 
-          stagger: 0.3,
-          ease: "back.out(1.7)"
-        }, "-=0.5");
-        
-        // Animate profile pictures and name sections
-        testimonialsTimeline.from('.bg-gray-100.rounded-lg.shadow-lg .flex.items-center.mb-6', {
-          opacity: 0,
-          x: -20,
-          duration: 0.7,
-          stagger: 0.2
-        }, "-=0.9");
-        
-        // Animate star ratings
-        testimonialsTimeline.from('.bg-gray-100.rounded-lg.shadow-lg .flex.text-yellow-400 svg', {
-          opacity: 0,
-          scale: 0.5,
-          duration: 0.5,
-          stagger: 0.05,
-          ease: "back.out(2)"
-        }, "-=0.7");
-        
-        // Animate testimonial text
-        testimonialsTimeline.from('.bg-gray-100.rounded-lg.shadow-lg p.italic', {
-          opacity: 0,
-          y: 15,
-          duration: 0.7,
-          stagger: 0.2
-        }, "-=0.5");
-        
-        // Animate CTA section
-        testimonialsTimeline.from('.text-center.mt-16 p', {
-          opacity: 0,
-          y: 20,
-          duration: 0.8
-        }, "-=0.3");
-        
-        testimonialsTimeline.from('.text-center.mt-16 a', {
-          opacity: 0,
-          y: 20,
-          scale: 0.9,
-          duration: 0.7,
-          ease: "back.out(1.5)"
-        }, "-=0.5");
-        
-        // Add trigger for testimonials section animations
-        new ScrollMagic.Scene({
-          triggerElement: "#about",
-          triggerHook: 0.5,
-          reverse: false
-        })
-        .setTween(testimonialsTimeline)
-        .addTo(controller);
-        
         // Contact Section Animation
-        const contactTimeline = gsap.timeline();
+        const contactTimeline = window.gsap.timeline();
         contactTimeline.from('.contact-title', {opacity: 0, y: 30, duration: 1});
         contactTimeline.from('.contact-form', {opacity: 0, y: 50, duration: 1}, "-=0.5");
         
-        new ScrollMagic.Scene({
+        new window.ScrollMagic.Scene({
           triggerElement: "#contact",
           triggerHook: 0.8,
           reverse: false
@@ -287,84 +215,7 @@ export default function Home() {
         .addTo(controller);
       }
     };
-
-    // Initialize animations
-    if (document.readyState === 'complete') {
-      initAnimations();
-    } else {
-      window.addEventListener('load', initAnimations);
-      return () => window.removeEventListener('load', initAnimations);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined' && window.gsap) {
-      const testimonialCards = document.querySelectorAll('.bg-gray-100.rounded-lg.shadow-lg');
-      
-      // Animate the background blobs
-      const blob1 = document.querySelector('.testimonials-section .blob-1');
-      const blob2 = document.querySelector('.testimonials-section .blob-2');
-      const blob3 = document.querySelector('.testimonials-section .blob-3');
-      
-      if (blob1 && blob2 && blob3) {
-        // Create random movement animations for each blob
-        window.gsap.to(blob1, {
-          x: window.gsap.utils.random(-30, 30),
-          y: window.gsap.utils.random(-20, 20),
-          scale: window.gsap.utils.random(0.9, 1.1),
-          duration: window.gsap.utils.random(20, 30),
-          ease: "sine.inOut",
-          repeat: -1,
-          yoyo: true
-        });
-        
-        window.gsap.to(blob2, {
-          x: window.gsap.utils.random(-40, 40),
-          y: window.gsap.utils.random(-30, 30),
-          scale: window.gsap.utils.random(0.85, 1.15),
-          duration: window.gsap.utils.random(15, 25),
-          ease: "sine.inOut",
-          repeat: -1,
-          yoyo: true,
-          delay: 1
-        });
-        
-        window.gsap.to(blob3, {
-          x: window.gsap.utils.random(-25, 25),
-          y: window.gsap.utils.random(-25, 25),
-          scale: window.gsap.utils.random(0.9, 1.1),
-          duration: window.gsap.utils.random(18, 28),
-          ease: "sine.inOut",
-          repeat: -1,
-          yoyo: true,
-          delay: 2
-        });
-      }
-      
-      testimonialCards.forEach(card => {
-        // Create hover animations
-        card.addEventListener('mouseenter', () => {
-          window.gsap.to(card, {
-            y: -10,
-            scale: 1.02,
-            boxShadow: '0 15px 30px rgba(0,0,0,0.15)',
-            duration: 0.3,
-            ease: "power2.out"
-          });
-        });
-        
-        card.addEventListener('mouseleave', () => {
-          window.gsap.to(card, {
-            y: 0,
-            scale: 1,
-            boxShadow: '0 10px 15px rgba(0,0,0,0.1)',
-            duration: 0.3,
-            ease: "power2.out"
-          });
-        });
-      });
-    }
-  }, []);
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
@@ -495,41 +346,26 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-gray-100 text-gray-800 relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle, #3B82F6 1px, transparent 1px)',
-            backgroundSize: '40px 40px'
-          }}></div>
-        </div>
-        
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden testimonials-bg-animation">
-          <div className="absolute top-10 left-10 w-64 h-64 rounded-full bg-blue-200 opacity-20 blur-3xl testimonials-blob-1"></div>
-          <div className="absolute bottom-20 right-20 w-80 h-80 rounded-full bg-indigo-300 opacity-20 blur-3xl testimonials-blob-2"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-emerald-200 opacity-20 blur-3xl testimonials-blob-3"></div>
-        </div>
-        
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black text-white relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <h2 className="text-4xl font-bold mb-4 text-center testimonials-title">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-500">Client</span>
-            <span className="ml-3 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-indigo-600">Testimonials</span>
+            <span className="text-white">Client</span>
+            <span className="ml-3 text-green-400">Testimonials</span>
           </h2>
-          <p className="text-center mb-16 text-gray-600 max-w-2xl mx-auto">
+          <p className="text-center mb-16 text-gray-300 max-w-2xl mx-auto">
             We pride ourselves on delivering exceptional value and results. Here's what our clients have to say about their experience working with Abraxas Innovations.
           </p>
           
           <div className="grid md:grid-cols-3 gap-8">
             {/* Testimonial 1 */}
-            <div className="bg-gray-100 rounded-lg shadow-lg p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative">
+            <div className="bg-gray-800 rounded-lg shadow-lg p-8 relative">
               <div className="flex items-center mb-6 relative z-10">
-                <div className="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-indigo-600 font-bold text-xl">JD</span>
+                <div className="w-14 h-14 bg-gray-700 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-green-400 font-bold text-xl">JD</span>
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg">James Danforth</h3>
-                  <p className="text-sm text-gray-500">Hedge Fund Manager</p>
+                  <h3 className="font-bold text-lg text-white">James Danforth</h3>
+                  <p className="text-sm text-gray-400">Hedge Fund Manager</p>
                 </div>
               </div>
               <div className="mb-6">
@@ -541,20 +377,20 @@ export default function Home() {
                   <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
                 </div>
               </div>
-              <p className="text-gray-600 italic relative z-10 leading-relaxed">
+              <p className="text-gray-300 italic relative z-10 leading-relaxed">
                 "The Greenprint Funding Bot has been a game-changer for our operations. The consistent returns and hands-off approach have allowed us to focus on other aspects of our business while generating steady revenue."
               </p>
             </div>
             
             {/* Testimonial 2 */}
-            <div className="bg-gray-100 rounded-lg shadow-lg p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative md:mt-8">
+            <div className="bg-gray-800 rounded-lg shadow-lg p-8 relative">
               <div className="flex items-center mb-6 relative z-10">
-                <div className="w-14 h-14 bg-emerald-100 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-emerald-600 font-bold text-xl">SK</span>
+                <div className="w-14 h-14 bg-gray-700 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-green-400 font-bold text-xl">SE</span>
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg">Sarah Kim</h3>
-                  <p className="text-sm text-gray-500">Retail Trader</p>
+                  <h3 className="font-bold text-lg text-white">Sarah Evans</h3>
+                  <p className="text-sm text-gray-400">Retail Trader</p>
                 </div>
               </div>
               <div className="mb-6">
@@ -566,20 +402,20 @@ export default function Home() {
                   <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
                 </div>
               </div>
-              <p className="text-gray-600 italic relative z-10 leading-relaxed">
+              <p className="text-gray-300 italic relative z-10 leading-relaxed">
                 "As a retail trader, I never had access to institutional-grade tools until I found Abraxas. Their Greenprint solutions have leveled the playing field and significantly improved my trading performance."
               </p>
             </div>
             
             {/* Testimonial 3 */}
-            <div className="bg-gray-100 rounded-lg shadow-lg p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative">
+            <div className="bg-gray-800 rounded-lg shadow-lg p-8 relative">
               <div className="flex items-center mb-6 relative z-10">
-                <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-blue-600 font-bold text-xl">MR</span>
+                <div className="w-14 h-14 bg-gray-700 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-green-400 font-bold text-xl">MR</span>
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg">Michael Rodriguez</h3>
-                  <p className="text-sm text-gray-500">DeFi Protocol Founder</p>
+                  <h3 className="font-bold text-lg text-white">Michael Rodriguez</h3>
+                  <p className="text-sm text-gray-400">DeFi Protocol Founder</p>
                 </div>
               </div>
               <div className="mb-6">
@@ -591,7 +427,7 @@ export default function Home() {
                   <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
                 </div>
               </div>
-              <p className="text-gray-600 italic relative z-10 leading-relaxed">
+              <p className="text-gray-300 italic relative z-10 leading-relaxed">
                 "Abraxas' team doesn't just deliver software—they deliver expertise. Their consultative approach and deep understanding of DeFi markets made our collaboration incredibly valuable."
               </p>
             </div>
@@ -599,8 +435,8 @@ export default function Home() {
           
           {/* Testimonial Call-to-Action */}
           <div className="text-center mt-16">
-            <p className="text-gray-600 mb-6 italic">"Join our growing list of satisfied clients and experience the Abraxas difference."</p>
-            <a href="#contact" className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg transition-colors shadow-md hover:shadow-lg">
+            <p className="text-gray-300 mb-6 italic">"Join our growing list of satisfied clients and experience the Abraxas difference."</p>
+            <a href="#contact" className="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg transition-colors shadow-md hover:shadow-lg">
               Work With Us
             </a>
           </div>
