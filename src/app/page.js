@@ -346,6 +346,134 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-gray-100 text-gray-800 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle, #3B82F6 1px, transparent 1px)',
+            backgroundSize: '40px 40px'
+          }}></div>
+        </div>
+        
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden testimonials-bg-animation">
+          <div className="absolute top-10 left-10 w-64 h-64 rounded-full bg-blue-200 opacity-20 blur-3xl testimonials-blob-1"></div>
+          <div className="absolute bottom-20 right-20 w-80 h-80 rounded-full bg-indigo-300 opacity-20 blur-3xl testimonials-blob-2"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-emerald-200 opacity-20 blur-3xl testimonials-blob-3"></div>
+        </div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <h2 className="text-4xl font-bold mb-4 text-center testimonials-title">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-500">Client</span>
+            <span className="ml-3 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-indigo-600">Testimonials</span>
+          </h2>
+          <p className="text-center mb-16 text-gray-600 max-w-2xl mx-auto">
+            We pride ourselves on delivering exceptional value and results. Here's what our clients have to say about their experience working with Abraxas Innovations.
+          </p>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Testimonial 1 */}
+            <div className="bg-white rounded-lg shadow-lg p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative">
+              {/* Quote mark */}
+              <div className="absolute -top-6 left-8 text-indigo-200 text-9xl leading-none" style={{ fontFamily: 'Georgia, serif' }}>
+                "
+              </div>
+              
+              <div className="flex items-center mb-6 relative z-10">
+                <div className="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-indigo-600 font-bold text-xl">JD</span>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">James Danforth</h3>
+                  <p className="text-sm text-gray-500">Hedge Fund Manager</p>
+                </div>
+              </div>
+              <div className="mb-6">
+                <div className="flex text-yellow-400">
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                </div>
+              </div>
+              <p className="text-gray-600 italic relative z-10 leading-relaxed">
+                "The Greenprint Funding Bot has been a game-changer for our operations. The consistent returns and hands-off approach have allowed us to focus on other aspects of our business while generating steady revenue."
+              </p>
+            </div>
+            
+            {/* Testimonial 2 */}
+            <div className="bg-white rounded-lg shadow-lg p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative md:mt-8">
+              {/* Quote mark */}
+              <div className="absolute -top-6 left-8 text-emerald-200 text-9xl leading-none" style={{ fontFamily: 'Georgia, serif' }}>
+                "
+              </div>
+              
+              <div className="flex items-center mb-6 relative z-10">
+                <div className="w-14 h-14 bg-emerald-100 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-emerald-600 font-bold text-xl">SK</span>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Sarah Kim</h3>
+                  <p className="text-sm text-gray-500">Retail Trader</p>
+                </div>
+              </div>
+              <div className="mb-6">
+                <div className="flex text-yellow-400">
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                </div>
+              </div>
+              <p className="text-gray-600 italic relative z-10 leading-relaxed">
+                "As a retail trader, I never had access to institutional-grade tools until I found Abraxas. Their Greenprint solutions have leveled the playing field and significantly improved my trading performance."
+              </p>
+            </div>
+            
+            {/* Testimonial 3 */}
+            <div className="bg-white rounded-lg shadow-lg p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative">
+              {/* Quote mark */}
+              <div className="absolute -top-6 left-8 text-blue-200 text-9xl leading-none" style={{ fontFamily: 'Georgia, serif' }}>
+                "
+              </div>
+              
+              <div className="flex items-center mb-6 relative z-10">
+                <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-blue-600 font-bold text-xl">MR</span>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Michael Rodriguez</h3>
+                  <p className="text-sm text-gray-500">DeFi Protocol Founder</p>
+                </div>
+              </div>
+              <div className="mb-6">
+                <div className="flex text-yellow-400">
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                </div>
+              </div>
+              <p className="text-gray-600 italic relative z-10 leading-relaxed">
+                "Abraxas' team doesn't just deliver software—they deliver expertise. Their consultative approach and deep understanding of DeFi markets made our collaboration incredibly valuable."
+              </p>
+            </div>
+          </div>
+          
+          {/* Testimonial Call-to-Action */}
+          <div className="text-center mt-16">
+            <p className="text-gray-600 mb-6 italic">"Join our growing list of satisfied clients and experience the Abraxas difference."</p>
+            <a href="#contact" className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg transition-colors shadow-md hover:shadow-lg">
+              Work With Us
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section - add classes for animations */}
       <section id="services" className="py-20 relative overflow-hidden bg-gray-900" ref={servicesRef}>
         <div className="container mx-auto px-6 relative z-10">
