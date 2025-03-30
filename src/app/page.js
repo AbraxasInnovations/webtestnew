@@ -426,8 +426,8 @@ export default function Home() {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
       }}>
-        {/* Overlay for better text readability with reduced opacity and blue tint */}
-        <div className="absolute inset-0 bg-blue-900 bg-opacity-40"></div>
+        {/* Overlay for better text readability with reduced opacity */}
+        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
         <div className="container mx-auto px-6 relative z-10">
           <h2 className="text-4xl font-bold mb-4 text-center testimonials-title">
             <span className="text-white">Client</span>
