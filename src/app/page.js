@@ -559,7 +559,7 @@ export default function Home() {
                   <img 
                     src={service.image} 
                     alt={service.title} 
-                    className="w-full h-full object-contain p-4"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 
