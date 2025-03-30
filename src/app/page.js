@@ -427,7 +427,7 @@ export default function Home() {
         backgroundRepeat: 'no-repeat'
       }}>
         {/* Overlay for better text readability with reduced opacity */}
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="container mx-auto px-6 relative z-10">
           <h2 className="text-4xl font-bold mb-4 text-center testimonials-title">
             <span className="text-white">Client</span>
@@ -537,8 +537,8 @@ export default function Home() {
             {[
               {
                 image: "/images/global-solutions-icon.jpg", // Replace with your actual icon image
-                title: "Global Solutions",
-                description: "Delivering solutions across borders and industries."
+                title: "Consulting",
+                description: "Delivering expert advice across borders and industries."
               },
               {
                 image: "/images/non-custodial-icon.jpg", // Replace with your actual icon image
