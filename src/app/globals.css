@@ -810,3 +810,43 @@ html {
     margin: 0 auto 1rem;
   }
 }
+
+/* Tall Service Cards */
+.tall-service-card {
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(40, 40, 40, 0.3);
+  background-color: #000;
+  height: 500px;
+}
+
+.tall-service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+  border-color: rgba(80, 80, 80, 0.5);
+}
+
+.service-image-container {
+  background: linear-gradient(to bottom, #1a1a1a, #000000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-image-container img {
+  transition: transform 0.5s ease;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.tall-service-card:hover .service-image-container img {
+  transform: scale(1.1);
+}
+
+/* Mobile responsive adjustments for service cards */
+@media (max-width: 768px) {
+  .tall-service-card {
+    height: 450px;
+    margin-bottom: 2rem;
+  }
+}

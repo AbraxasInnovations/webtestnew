@@ -517,60 +517,59 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section - add classes for animations */}
-      <section id="services" className="py-20 relative overflow-hidden" ref={servicesRef}>
-        <div className="bubble-container">
-          <div className="bubble-glow green" style={{left: '15%', top: '15%'}}></div>
-          <div className="bubble-glow blue" style={{right: '10%', bottom: '20%'}}></div>
-          <div className="content">
-            <h2 className="text-4xl font-bold mb-4 text-center services-title">
-              Our Services
-            </h2>
-            <p className="text-center mb-12 text-gray-300 max-w-2xl mx-auto">
-              Pushing boundaries. Breaking limits. Creating tomorrow.
-            </p>
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: <Globe className="w-12 h-12 text-green-400 service-icon transition-all duration-300" />,
-                  title: "Global Solutions",
-                  description: "Delivering solutions across borders and industries."
-                },
-                {
-                  icon: <Building className="w-12 h-12 text-green-400 service-icon transition-all duration-300" />,
-                  title: "Non Custodial AM",
-                  description: "Offering a revolutionary alternative to traditional custody-based asset management.",
-                  link: "/asset-management"
-                },
-                {
-                  icon: <Cpu className="w-12 h-12 text-green-400 service-icon transition-all duration-300" />,
-                  title: "Innovative Software",
-                  description: "Developing institutional-grade financial software."
-                }
-              ].map((service, index) => (
-                <div 
-                  key={index} 
-                  className="sparkle-card rounded-lg p-0.5 service-card animated-card cursor-pointer group"
-                  onClick={() => {
-                    if (service.link) {
-                      window.location.href = service.link;
-                    }
-                  }}
-                >
-                  <div className="card-borders">
-                    <div className="border-top"></div>
-                    <div className="border-right"></div>
-                    <div className="border-bottom"></div>
-                    <div className="border-left"></div>
-                  </div>
-                  <div className="bg-gray-900 rounded-lg p-8 h-full w-full flex flex-col items-center text-center card-content">
-                    <div className="mb-4">{service.icon}</div>
-                    <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                    <p className="text-gray-300">{service.description}</p>
-                  </div>
+      {/* Services Section - tall cards with image top and text bottom */}
+      <section id="services" className="py-20 relative overflow-hidden bg-black" ref={servicesRef}>
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold mb-4 text-center services-title">
+            Our Services
+          </h2>
+          <p className="text-center mb-12 text-gray-300 max-w-2xl mx-auto">
+            Pushing boundaries. Breaking limits. Creating tomorrow.
+          </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                image: "/images/global-solutions-icon.jpg", // Replace with your actual icon image
+                title: "Global Solutions",
+                description: "Delivering solutions across borders and industries."
+              },
+              {
+                image: "/images/non-custodial-icon.jpg", // Replace with your actual icon image
+                title: "Non Custodial AM",
+                description: "Offering a revolutionary alternative to traditional custody-based asset management.",
+                link: "/asset-management"
+              },
+              {
+                image: "/images/innovative-software-icon.jpg", // Replace with your actual icon image
+                title: "Innovative Software",
+                description: "Developing institutional-grade financial software."
+              }
+            ].map((service, index) => (
+              <div 
+                key={index} 
+                className="tall-service-card rounded-lg overflow-hidden shadow-lg cursor-pointer h-[500px] flex flex-col"
+                onClick={() => {
+                  if (service.link) {
+                    window.location.href = service.link;
+                  }
+                }}
+              >
+                {/* Top 40% image portion */}
+                <div className="service-image-container h-[40%] overflow-hidden bg-gradient-to-b from-gray-800 to-black">
+                  <img 
+                    src={service.image} 
+                    alt={service.title} 
+                    className="w-full h-full object-contain p-4"
+                  />
                 </div>
-              ))}
-            </div>
+                
+                {/* Bottom 60% black portion with text */}
+                <div className="bg-black p-6 flex-grow flex flex-col justify-center">
+                  <h3 className="text-2xl font-bold mb-4 text-white text-center">{service.title}</h3>
+                  <p className="text-gray-300 text-center text-lg">{service.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
