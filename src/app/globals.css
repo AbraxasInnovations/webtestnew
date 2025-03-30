@@ -817,7 +817,7 @@ html {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(40, 40, 40, 0.3);
   background-color: #000;
-  height: 500px;
+  height: 550px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -858,7 +858,7 @@ html {
 /* Mobile responsive adjustments for service cards */
 @media (max-width: 768px) {
   .tall-service-card {
-    height: 450px;
+    height: 500px;
     margin-bottom: 2rem;
   }
 }

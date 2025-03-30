@@ -420,11 +420,18 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-900 to-black text-white relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden text-white" style={{ 
+        backgroundImage: "url('/images/testimonials-bg.jpg')", 
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}>
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black bg-opacity-70"></div>
         <div className="container mx-auto px-6 relative z-10">
           <h2 className="text-4xl font-bold mb-4 text-center testimonials-title">
             <span className="text-white">Client</span>
-            <span className="ml-3 text-green-400">Testimonials</span>
+            <span className="ml-3 text-white">Testimonials</span>
           </h2>
           <p className="text-center mb-16 text-gray-300 max-w-2xl mx-auto">
             We pride ourselves on delivering exceptional value and results. Here's what our clients have to say about their experience working with Abraxas Innovations.
@@ -435,7 +442,7 @@ export default function Home() {
             <div className="bg-gray-800 rounded-lg shadow-lg p-8 relative">
               <div className="flex items-center mb-6 relative z-10">
                 <div className="w-14 h-14 bg-gray-700 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-green-400 font-bold text-xl">JD</span>
+                  <span className="text-white font-bold text-xl">JD</span>
                 </div>
                 <div>
                   <h3 className="font-bold text-lg text-white">James Danforth</h3>
@@ -460,7 +467,7 @@ export default function Home() {
             <div className="bg-gray-800 rounded-lg shadow-lg p-8 relative">
               <div className="flex items-center mb-6 relative z-10">
                 <div className="w-14 h-14 bg-gray-700 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-green-400 font-bold text-xl">SE</span>
+                  <span className="text-white font-bold text-xl">SE</span>
                 </div>
                 <div>
                   <h3 className="font-bold text-lg text-white">Sarah Evans</h3>
@@ -485,7 +492,7 @@ export default function Home() {
             <div className="bg-gray-800 rounded-lg shadow-lg p-8 relative">
               <div className="flex items-center mb-6 relative z-10">
                 <div className="w-14 h-14 bg-gray-700 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-green-400 font-bold text-xl">MR</span>
+                  <span className="text-white font-bold text-xl">MR</span>
                 </div>
                 <div>
                   <h3 className="font-bold text-lg text-white">Michael Rodriguez</h3>
@@ -510,7 +517,7 @@ export default function Home() {
           {/* Testimonial Call-to-Action */}
           <div className="text-center mt-16">
             <p className="text-gray-300 mb-6 italic">"Join our growing list of satisfied clients and experience the Abraxas difference."</p>
-            <a href="#contact" className="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg transition-colors shadow-md hover:shadow-lg">
+            <a href="#contact" className="inline-block bg-white hover:bg-gray-200 text-black font-bold py-3 px-8 rounded-lg transition-colors shadow-md hover:shadow-lg">
               Work With Us
             </a>
           </div>
@@ -547,7 +554,7 @@ export default function Home() {
             ].map((service, index) => (
               <div 
                 key={index} 
-                className="tall-service-card rounded-lg overflow-hidden shadow-lg cursor-pointer h-[500px] flex flex-col"
+                className="tall-service-card rounded-lg overflow-hidden shadow-lg cursor-pointer h-[550px] flex flex-col"
                 onClick={() => {
                   if (service.link) {
                     window.location.href = service.link;
@@ -555,11 +562,11 @@ export default function Home() {
                 }}
               >
                 {/* Top 40% image portion */}
-                <div className="service-image-container h-[40%] overflow-hidden bg-gradient-to-b from-gray-800 to-black">
+                <div className="service-image-container h-[45%] overflow-hidden bg-gradient-to-b from-gray-800 to-black">
                   <img 
                     src={service.image} 
                     alt={service.title} 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 
