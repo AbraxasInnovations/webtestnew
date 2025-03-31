@@ -1033,7 +1033,7 @@ html {
   transform: translateX(0);
 }
 
-/* Testimonial specific animations */
+/* Testimonial specific animations - simplified for smoother experience */
 .testimonial-section {
   height: 100vh; /* Full viewport height */
   display: flex;
@@ -1050,30 +1050,20 @@ html {
   transition: opacity 0.8s cubic-bezier(0.5, 0, 0.2, 1), 
               transform 0.8s cubic-bezier(0.5, 0, 0.2, 1);
   will-change: opacity, transform;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .testimonial-card.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-.testimonial-card:nth-child(1) {
-  transition-delay: 0.2s;
-}
-
-.testimonial-card:nth-child(2) {
-  transition-delay: 0.5s;
-}
-
-.testimonial-card:nth-child(3) {
-  transition-delay: 0.8s;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .testimonial-cta {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  transition-delay: 1.2s;
 }
 
 .testimonial-cta.visible {
@@ -1124,24 +1114,48 @@ html.smooth-scroll {
   transition: opacity 0.5s ease;
 }
 
-/* New fullscreen section styling */
-.fullscreen-section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 3rem 0;
-  position: relative;
+/* Enhanced service card animations */
+#services .testimonial-card {
+  opacity: 0;
+  transform: translateY(80px) rotateX(10deg);
+  transform-origin: center bottom;
+  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+              opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.6s ease;
+  perspective: 1000px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  will-change: transform, opacity, box-shadow;
+}
+
+#services .testimonial-card:hover {
+  transform: translateY(-10px) rotateX(0deg) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+#services .service-image-container {
   overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+#services .testimonial-card:hover .service-image-container img {
+  transform: scale(1.05);
 }
 
 /* Improved testimonials styling */
-.testimonials-title {
+.testimonials-title,
+.services-title,
+#services .services-title {
   transform: translateY(30px);
   opacity: 0;
   transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  color: white;
+  font-weight: bold;
 }
 
-.testimonials-title.visible {
+.testimonials-title.visible,
+.services-title.visible,
+#services .services-title.visible {
   transform: translateY(0);
   opacity: 1;
 }
@@ -1162,6 +1176,7 @@ html.smooth-scroll {
 .section-transition {
   position: relative;
   z-index: 10;
+  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .section-transition::after {
@@ -1186,59 +1201,13 @@ html.smooth-scroll {
   pointer-events: none;
 }
 
-/* Scroll indicator */
-.scroll-indicator {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 50px;
-  border: 2px solid rgba(255,255,255,0.5);
-  border-radius: 15px;
-  display: flex;
-  justify-content: center;
-  padding-top: 10px;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.scroll-indicator.visible {
-  opacity: 1;
-}
-
-.scroll-indicator::after {
-  content: '';
-  width: 4px;
-  height: 8px;
-  background: rgba(255,255,255,0.7);
-  border-radius: 2px;
-  animation: scrollIndicator 2s infinite;
-}
-
-@keyframes scrollIndicator {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(15px);
-    opacity: 0;
-  }
-}
-
-/* Section Transitions and Effects */
-.section-transition {
-  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
-}
-
 .section-transition.is-pinned {
   z-index: 10;
 }
 
 .section-transition.is-pinned + section {
   transform: translateY(100vh);
-  transition: transform 0.8s ease-out;
+  transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 /* Enhanced Parallax Effect */
@@ -1251,6 +1220,16 @@ html.smooth-scroll {
 .fullscreen-section.testimonial-section.is-pinned {
   background-position: center 20%;
   background-size: 110% auto;
+}
+
+/* Fullscreen section styling */
+.fullscreen-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 3rem 0;
+  position: relative;
+  overflow: hidden;
 }
 
 /* Create a seamless transition between sections */
@@ -1288,6 +1267,74 @@ html.smooth-scroll {
   will-change: transform, opacity;
 }
 
+/* For creative 3D card entrance animations */
+@keyframes card-entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) rotateX(20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+/* Ensure scroll indicator is properly positioned and styled */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 50px;
+  border: 2px solid rgba(255,255,255,0.5);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 50;
+}
+
+.scroll-indicator.visible {
+  opacity: 1;
+  animation: pulse 2s infinite;
+}
+
+.scroll-indicator::after {
+  content: '';
+  width: 4px;
+  height: 8px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 2px;
+  animation: scrollIndicator 2s infinite;
+}
+
+@keyframes scrollIndicator {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+/* Mobile responsive styles */
 @media (max-width: 768px) {
   .fullscreen-section {
     height: auto;

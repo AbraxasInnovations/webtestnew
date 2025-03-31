@@ -292,105 +292,87 @@ export default function Home() {
 
         // Enhanced Testimonials Section Animation with pin and scroll control
         const testimonialsTween = window.gsap.timeline();
-        // For reference only, actual animations now handled by CSS & Intersection Observer
         
         // Create a scene that pins the testimonials section while scrolling through its animation sequence
         new window.ScrollMagic.Scene({
           triggerElement: "#testimonials",
-          triggerHook: 0,  // Start at the top of the viewport
-          duration: '150%' // Pin for longer than the section height to allow for scrolling through animations
+          triggerHook: 0,      // Start at the top of the viewport
+          duration: '100%'     // Reduced from 150% to create a more focused, single-screen animation
         })
         .setPin("#testimonials", {pushFollowers: true})  // Pin the section
         .setClassToggle('#testimonials', 'is-pinned') // Add pinned class for additional styling
-        .on('progress', function(event) {
-          // Use the progress to control animation steps
-          const progress = event.progress;
+        .on('enter', function() {
+          // Immediately reveal the heading and description
+          document.querySelector('.testimonials-title').classList.add('visible');
+          document.querySelector('.testimonials-description').classList.add('visible');
           
-          // First reveal the title and description
-          if (progress > 0.1) {
-            document.querySelector('.testimonials-title').classList.add('visible');
-            document.querySelector('.testimonials-description').classList.add('visible');
-          } else {
-            document.querySelector('.testimonials-title').classList.remove('visible');
-            document.querySelector('.testimonials-description').classList.remove('visible');
-          }
-          
-          // Then reveal the testimonial cards in sequence
-          const cards = document.querySelectorAll('.testimonial-card');
-          if (progress > 0.3) {
-            cards[0].classList.add('visible');
-          } else {
-            cards[0].classList.remove('visible');
-          }
-          
-          if (progress > 0.5) {
-            cards[1].classList.add('visible');
-          } else {
-            cards[1].classList.remove('visible');
-          }
-          
-          if (progress > 0.7) {
-            cards[2].classList.add('visible');
-          } else {
-            cards[2].classList.remove('visible');
-          }
-          
-          // Finally reveal the CTA
-          if (progress > 0.9) {
-            document.querySelector('.testimonial-cta').classList.add('visible');
-            document.querySelector('.scroll-indicator').classList.remove('visible');
-          } else if (progress > 0.2) {
-            document.querySelector('.testimonial-cta').classList.remove('visible');
-            document.querySelector('.scroll-indicator').classList.add('visible');
-          } else {
-            document.querySelector('.scroll-indicator').classList.remove('visible');
-          }
+          // After a brief delay, show all cards at once
+          setTimeout(() => {
+            const cards = document.querySelectorAll('#testimonials .testimonial-card');
+            cards.forEach(card => card.classList.add('visible'));
+            
+            // Then show the CTA
+            setTimeout(() => {
+              document.querySelector('.testimonial-cta').classList.add('visible');
+            }, 500);
+          }, 800);
+        })
+        .on('leave', function() {
+          // Optional: hide elements when scrolling away completely
+          // This is commented out to keep elements visible after animation
+          /*
+          document.querySelector('.testimonials-title').classList.remove('visible');
+          document.querySelector('.testimonials-description').classList.remove('visible');
+          document.querySelectorAll('#testimonials .testimonial-card').forEach(card => {
+            card.classList.remove('visible');
+          });
+          document.querySelector('.testimonial-cta').classList.remove('visible');
+          */
         })
         .addTo(controller);
   
         // Services Section Animation
-        const servicesTimeline = window.gsap.timeline();
-        servicesTimeline.from('#services .bubble-container', {opacity: 0.5, scale: 0.95, duration: 1});
-        servicesTimeline.from('.services-title', {opacity: 0, y: 30, duration: 0.8}, "-=0.5");
-        servicesTimeline.from('#services .bubble-container p', {opacity: 0, y: 30, duration: 0.8}, "-=0.5");
-        servicesTimeline.from('.service-card', {
-          opacity: 0, 
-          y: 50, 
-          stagger: 0.3,
-          duration: 0.8,
-          ease: "back.out(1.4)"
-        }, "-=0.3");
-        servicesTimeline.from('#services .bubble-glow', {
-          opacity: 0, 
-          scale: 0.5, 
-          stagger: 0.3, 
-          duration: 1.5,
-          ease: "power2.out"
-        }, "-=1");
-        
-        // Add trigger for animations in services section
         new window.ScrollMagic.Scene({
           triggerElement: "#services",
-          triggerHook: 0,  // Start at the top of the viewport
-          duration: '150%' // Pin for longer than the section height to allow for scrolling through animations
+          triggerHook: 0,      // Start at the top of the viewport
+          duration: '120%'     // Pin for a bit longer to ensure all animations complete
         })
         .setPin("#services", {pushFollowers: true})  // Pin the section
         .setClassToggle('#services', 'is-pinned') // Add pinned class for additional styling
         .on('enter', function() {
-          // Activate animated cards with a staggered delay
-          const cards = document.querySelectorAll('.animated-card');
+          // Show section title and description immediately
+          document.querySelector('#services .services-title').classList.add('visible');
+          document.querySelector('#services .testimonials-description').classList.add('visible');
+          
+          // Creative 3D animation for service cards
+          const cards = document.querySelectorAll('#services .testimonial-card');
           cards.forEach((card, index) => {
             setTimeout(() => {
-              card.classList.add('active');
-            }, 400 * index);
+              // Apply a creative 3D entrance animation
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0) rotateX(0deg)';
+              
+              // Add a subtle bounce effect
+              setTimeout(() => {
+                card.style.transform = 'translateY(-15px) rotateX(-2deg)';
+                setTimeout(() => {
+                  card.style.transform = 'translateY(0) rotateX(0deg)';
+                }, 150);
+              }, 600);
+            }, 1000 + (index * 300)); // Longer delay between cards for more noticeable staggering
           });
         })
         .on('leave', function() {
-          // Reset animated cards when leaving the section
-          const cards = document.querySelectorAll('.animated-card');
-          cards.forEach((card) => {
-            card.classList.remove('active');
+          // Optional: reset animations when scrolling away completely
+          // This is commented out to keep elements visible after animation
+          /*
+          document.querySelector('#services .services-title').classList.remove('visible');
+          document.querySelector('#services .testimonials-description').classList.remove('visible');
+          document.querySelectorAll('#services .testimonial-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(80px) rotateX(10deg)';
           });
+          */
         })
         .addTo(controller);
         
@@ -681,7 +663,7 @@ export default function Home() {
       {/* Services Section - tall cards with image top and text bottom */}
       <section id="services" className="fullscreen-section relative overflow-hidden bg-black section-transition" ref={servicesRef}>
         <div className="container mx-auto px-6 scroll-animation-container">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center services-title testimonials-title">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center services-title">
             Our Services
           </h2>
           <p className="text-center mb-12 text-gray-300 max-w-2xl mx-auto testimonials-description">
@@ -714,7 +696,11 @@ export default function Home() {
                     window.location.href = service.link;
                   }
                 }}
-                style={{ transitionDelay: `${0.2 + index * 0.2}s` }}
+                style={{ 
+                  transitionDelay: `${0.3 + index * 0.3}s`,
+                  opacity: 0,
+                  transform: 'translateY(80px) rotateX(10deg)'
+                }}
               >
                 {/* Top 40% image portion */}
                 <div className="service-image-container h-[45%] overflow-hidden bg-gradient-to-b from-gray-800 to-black">
