@@ -862,3 +862,56 @@ html {
     margin-bottom: 2rem;
   }
 }
+
+/* Greenprint Logo Styling */
+.greenprint-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.greenprint-logo {
+  font-family: var(--font-geist-mono);
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1;
+  font-size: 2.5rem;
+  position: relative;
+  padding: 0 3rem;
+}
+
+.greenprint-logo .green-text {
+  font-weight: 800;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(90deg, #22c55e, #10b981);
+  position: relative;
+}
+
+.greenprint-logo .print-text {
+  letter-spacing: -0.05em;
+  position: relative;
+  color: white;
+}
+
+.greenprint-logo::before {
+  content: "<";
+  position: absolute;
+  left: 0;
+  opacity: 0.5;
+  font-family: var(--font-geist-mono);
+  color: #10b981;
+}
+
+.greenprint-logo::after {
+  content: "/>";
+  position: absolute;
+  right: 0;
+  opacity: 0.5;
+  font-family: var(--font-geist-mono);
+  color: #10b981;
+}

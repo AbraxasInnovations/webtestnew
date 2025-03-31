@@ -541,7 +541,7 @@ export default function Home() {
                 description: "Delivering expert advice across borders and industries."
               },
               {
-                image: "/images/non-custodial-icon.jpg", // Replace with your actual icon image
+                image: "/images/non-custodial-icon.jpg?v=2", // Added version parameter to bust cache
                 title: "Non Custodial AM",
                 description: "Offering a revolutionary alternative to traditional custody-based asset management.",
                 link: "/asset-management"
@@ -585,9 +585,11 @@ export default function Home() {
       <section id="greenprint" className="py-20 relative" ref={greenprintRef}>
         <ParticleWaveBackground />
         <div className="container mx-auto px-6 relative z-10">
-          <h2 className="text-4xl font-bold mb-12 text-center greenprint-title">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-emerald-400">Green</span>print
-          </h2>
+          <div className="greenprint-logo-container">
+            <h2 className="greenprint-logo">
+              <span className="green-text">GREEN</span><span className="print-text">PRINT</span>
+            </h2>
+          </div>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="greenprint-content">
               <h3 className="text-2xl font-bold mb-4">Institutional-Grade Trading Tools for Retail Traders</h3>
