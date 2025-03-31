@@ -31,6 +31,7 @@ export default function Home() {
   const servicesRef = useRef(null);
   const greenprintRef = useRef(null);
   const contactRef = useRef(null);
+  const testimonialsRef = useRef(null);
 
   // Function to toggle mobile menu
   const toggleMobileMenu = () => {
@@ -127,8 +128,110 @@ export default function Home() {
   };
 
   useEffect(() => {
+    // Add smooth scrolling class to HTML element
+    document.documentElement.classList.add('smooth-scroll');
+    
+    // Initialize animations
     initAnimations();
+    
+    // Setup scroll observer for animation triggers
+    setupScrollObservers();
+    
+    // Cleanup function
+    return () => {
+      document.documentElement.classList.remove('smooth-scroll');
+      
+      // Clear any event listeners or animation controllers
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('scroll', handleScroll);
+      }
+    };
   }, []);
+  
+  // Function to handle scroll events for animation triggers
+  const handleScroll = () => {
+    if (typeof window === 'undefined') return;
+    
+    // Update scroll progress indicator
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.offsetHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    
+    const progressBar = document.getElementById('scroll-progress');
+    if (progressBar) {
+      progressBar.style.width = `${scrollPercent}%`;
+    }
+  };
+  
+  // Setup IntersectionObserver to trigger animations when elements enter viewport
+  const setupScrollObservers = () => {
+    if (typeof window === 'undefined' || typeof IntersectionObserver === 'undefined') return;
+    
+    // Add scroll event listener for progress bar
+    window.addEventListener('scroll', handleScroll);
+    
+    // Add smooth scroll class to HTML element
+    document.documentElement.classList.add('smooth-scroll');
+    
+    // Create observer for fade-in animations
+    const animationObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            // Only unobserve elements that should animate once
+            if (!entry.target.classList.contains('testimonial-card') && 
+                !entry.target.classList.contains('testimonial-cta') &&
+                !entry.target.classList.contains('testimonials-title') &&
+                !entry.target.classList.contains('testimonials-description') &&
+                !entry.target.classList.contains('scroll-indicator')) {
+              animationObserver.unobserve(entry.target);
+            }
+          } else {
+            // For testimonials section, remove the visible class when not in view
+            // This creates the effect of elements re-animating when scrolling back
+            if (entry.target.classList.contains('testimonial-card') || 
+                entry.target.classList.contains('testimonial-cta') ||
+                entry.target.classList.contains('testimonials-title') ||
+                entry.target.classList.contains('testimonials-description')) {
+              entry.target.classList.remove('visible');
+            }
+          }
+        });
+      },
+      { 
+        threshold: 0.15,  // Trigger when 15% of the element is visible
+        rootMargin: '0px 0px -10% 0px' // Trigger slightly before element enters viewport
+      }
+    );
+    
+    // Create a separate observer for scroll indicators with a higher threshold
+    const scrollIndicatorObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          } else {
+            entry.target.classList.remove('visible');
+          }
+        });
+      },
+      { 
+        threshold: 0.9,  // Only show when section is almost fully visible
+        rootMargin: '0px 0px 0px 0px'
+      }
+    );
+    
+    // Observe all elements with animation classes
+    document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .testimonial-card, .testimonial-cta, .testimonials-title, .testimonials-description').forEach(el => {
+      animationObserver.observe(el);
+    });
+    
+    // Observe scroll indicators
+    document.querySelectorAll('.scroll-indicator').forEach(el => {
+      scrollIndicatorObserver.observe(el);
+    });
+  };
   
   function initAnimations() {
     if (typeof window !== 'undefined') {
@@ -187,26 +290,62 @@ export default function Home() {
         .setTween(aboutTimeline)
         .addTo(controller);
 
-        // Testimonials Section Animation
-        const testimonialsTimeline = window.gsap.timeline();
-        testimonialsTimeline.from('.testimonials-title span:first-child', {opacity: 0, y: 30, duration: 1});
-        testimonialsTimeline.from('.testimonials-title span:last-child', {opacity: 0, y: 30, duration: 1}, "-=0.7");
-        testimonialsTimeline.from('.testimonials-title + p', {opacity: 0, y: 30, duration: 1}, "-=0.7");
-        testimonialsTimeline.from('.bg-gray-800.rounded-lg.shadow-lg', {
-          opacity: 0, 
-          y: 50, 
-          stagger: 0.3,
-          duration: 0.8,
-          ease: "back.out(1.4)"
-        }, "-=0.5");
-        testimonialsTimeline.from('.text-center.mt-16', {opacity: 0, y: 30, duration: 1}, "-=0.5");
+        // Enhanced Testimonials Section Animation with pin and scroll control
+        const testimonialsTween = window.gsap.timeline();
+        // For reference only, actual animations now handled by CSS & Intersection Observer
         
+        // Create a scene that pins the testimonials section while scrolling through its animation sequence
         new window.ScrollMagic.Scene({
-          triggerElement: ".testimonials-title",
-          triggerHook: 0.8,
-          reverse: false
+          triggerElement: "#testimonials",
+          triggerHook: 0,  // Start at the top of the viewport
+          duration: '150%' // Pin for longer than the section height to allow for scrolling through animations
         })
-        .setTween(testimonialsTimeline)
+        .setPin("#testimonials", {pushFollowers: true})  // Pin the section
+        .setClassToggle('#testimonials', 'is-pinned') // Add pinned class for additional styling
+        .on('progress', function(event) {
+          // Use the progress to control animation steps
+          const progress = event.progress;
+          
+          // First reveal the title and description
+          if (progress > 0.1) {
+            document.querySelector('.testimonials-title').classList.add('visible');
+            document.querySelector('.testimonials-description').classList.add('visible');
+          } else {
+            document.querySelector('.testimonials-title').classList.remove('visible');
+            document.querySelector('.testimonials-description').classList.remove('visible');
+          }
+          
+          // Then reveal the testimonial cards in sequence
+          const cards = document.querySelectorAll('.testimonial-card');
+          if (progress > 0.3) {
+            cards[0].classList.add('visible');
+          } else {
+            cards[0].classList.remove('visible');
+          }
+          
+          if (progress > 0.5) {
+            cards[1].classList.add('visible');
+          } else {
+            cards[1].classList.remove('visible');
+          }
+          
+          if (progress > 0.7) {
+            cards[2].classList.add('visible');
+          } else {
+            cards[2].classList.remove('visible');
+          }
+          
+          // Finally reveal the CTA
+          if (progress > 0.9) {
+            document.querySelector('.testimonial-cta').classList.add('visible');
+            document.querySelector('.scroll-indicator').classList.remove('visible');
+          } else if (progress > 0.2) {
+            document.querySelector('.testimonial-cta').classList.remove('visible');
+            document.querySelector('.scroll-indicator').classList.add('visible');
+          } else {
+            document.querySelector('.scroll-indicator').classList.remove('visible');
+          }
+        })
         .addTo(controller);
   
         // Services Section Animation
@@ -232,9 +371,11 @@ export default function Home() {
         // Add trigger for animations in services section
         new window.ScrollMagic.Scene({
           triggerElement: "#services",
-          triggerHook: 0.9,
-          reverse: false
+          triggerHook: 0,  // Start at the top of the viewport
+          duration: '150%' // Pin for longer than the section height to allow for scrolling through animations
         })
+        .setPin("#services", {pushFollowers: true})  // Pin the section
+        .setClassToggle('#services', 'is-pinned') // Add pinned class for additional styling
         .on('enter', function() {
           // Activate animated cards with a staggered delay
           const cards = document.querySelectorAll('.animated-card');
@@ -244,7 +385,13 @@ export default function Home() {
             }, 400 * index);
           });
         })
-        .setTween(servicesTimeline)
+        .on('leave', function() {
+          // Reset animated cards when leaving the section
+          const cards = document.querySelectorAll('.animated-card');
+          cards.forEach((card) => {
+            card.classList.remove('active');
+          });
+        })
         .addTo(controller);
         
         // Greenprint Section Animation
@@ -275,11 +422,14 @@ export default function Home() {
         .setTween(contactTimeline)
         .addTo(controller);
       }
-    };
+    }
   }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
+      {/* Scroll Progress Indicator */}
+      <div id="scroll-progress" className="scroll-progress"></div>
+      
       {/* Scripts for GSAP and ScrollMagic */}
       <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" strategy="beforeInteractive" />
       <Script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" strategy="beforeInteractive" />
@@ -420,26 +570,27 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 relative overflow-hidden text-white" style={{ 
+      <section id="testimonials" className="fullscreen-section testimonial-section section-transition" ref={testimonialsRef} style={{ 
         backgroundImage: "url('/images/testimonials-bg.jpg')", 
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed'
       }}>
         {/* Overlay for better text readability with reduced opacity */}
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div className="container mx-auto px-6 relative z-10">
-          <h2 className="text-4xl font-bold mb-4 text-center testimonials-title">
+        <div className="container mx-auto px-6 relative z-10 scroll-animation-container">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center testimonials-title">
             <span className="text-white">Hear From</span>
             <span className="ml-3 text-white">Our Clients</span>
           </h2>
-          <p className="text-center mb-16 text-gray-300 max-w-2xl mx-auto">
+          <p className="text-center mb-16 text-gray-300 max-w-2xl mx-auto testimonials-description">
             We pride ourselves on delivering exceptional value and results. Here's what our clients have to say about their experience working with Abraxas Innovations.
           </p>
           
           <div className="grid md:grid-cols-3 gap-8">
             {/* Testimonial 1 */}
-            <div className="bg-gray-800 rounded-lg shadow-lg p-8 relative">
+            <div className="bg-gray-800/80 backdrop-blur-sm rounded-lg shadow-lg p-8 relative testimonial-card">
               <div className="flex items-center mb-6 relative z-10">
                 <div className="w-14 h-14 bg-gray-700 rounded-full flex items-center justify-center mr-4">
                   <span className="text-white font-bold text-xl">JD</span>
@@ -464,7 +615,7 @@ export default function Home() {
             </div>
             
             {/* Testimonial 2 */}
-            <div className="bg-gray-800 rounded-lg shadow-lg p-8 relative">
+            <div className="bg-gray-800/80 backdrop-blur-sm rounded-lg shadow-lg p-8 relative testimonial-card">
               <div className="flex items-center mb-6 relative z-10">
                 <div className="w-14 h-14 bg-gray-700 rounded-full flex items-center justify-center mr-4">
                   <span className="text-white font-bold text-xl">SE</span>
@@ -489,7 +640,7 @@ export default function Home() {
             </div>
             
             {/* Testimonial 3 */}
-            <div className="bg-gray-800 rounded-lg shadow-lg p-8 relative">
+            <div className="bg-gray-800/80 backdrop-blur-sm rounded-lg shadow-lg p-8 relative testimonial-card">
               <div className="flex items-center mb-6 relative z-10">
                 <div className="w-14 h-14 bg-gray-700 rounded-full flex items-center justify-center mr-4">
                   <span className="text-white font-bold text-xl">MR</span>
@@ -515,25 +666,28 @@ export default function Home() {
           </div>
           
           {/* Testimonial Call-to-Action */}
-          <div className="text-center mt-16">
+          <div className="text-center mt-16 testimonial-cta">
             <p className="text-gray-300 mb-6 italic">"Join Abraxas Innovations and experience the difference."</p>
             <a href="#contact" className="inline-block bg-white hover:bg-gray-200 text-black font-bold py-3 px-8 rounded-lg transition-colors shadow-md hover:shadow-lg">
               Work With Us
             </a>
           </div>
         </div>
+        
+        {/* Scroll indicator */}
+        <div className="scroll-indicator"></div>
       </section>
 
       {/* Services Section - tall cards with image top and text bottom */}
-      <section id="services" className="py-20 relative overflow-hidden bg-black" ref={servicesRef}>
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-4 text-center services-title">
+      <section id="services" className="fullscreen-section relative overflow-hidden bg-black section-transition" ref={servicesRef}>
+        <div className="container mx-auto px-6 scroll-animation-container">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center services-title testimonials-title">
             Our Services
           </h2>
-          <p className="text-center mb-12 text-gray-300 max-w-2xl mx-auto">
+          <p className="text-center mb-12 text-gray-300 max-w-2xl mx-auto testimonials-description">
             Pushing boundaries. Breaking limits. Creating tomorrow.
           </p>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 service-card-container">
             {[
               {
                 image: "/images/global-solutions-icon.jpg", // Replace with your actual icon image
@@ -554,12 +708,13 @@ export default function Home() {
             ].map((service, index) => (
               <div 
                 key={index} 
-                className="tall-service-card rounded-lg overflow-hidden shadow-lg cursor-pointer h-[550px] flex flex-col"
+                className="tall-service-card rounded-lg overflow-hidden shadow-lg cursor-pointer h-[550px] flex flex-col testimonial-card"
                 onClick={() => {
                   if (service.link) {
                     window.location.href = service.link;
                   }
                 }}
+                style={{ transitionDelay: `${0.2 + index * 0.2}s` }}
               >
                 {/* Top 40% image portion */}
                 <div className="service-image-container h-[45%] overflow-hidden bg-gradient-to-b from-gray-800 to-black">
@@ -579,25 +734,28 @@ export default function Home() {
             ))}
           </div>
         </div>
+        
+        {/* Scroll indicator */}
+        <div className="scroll-indicator"></div>
       </section>
 
       {/* Freehold NCAM Section */}
-      <section id="freehold" className="py-20 relative overflow-hidden bg-gradient-to-b from-black to-gray-900">
+      <section id="freehold" className="fullscreen-section relative overflow-hidden bg-gradient-to-b from-black to-gray-900">
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-6 relative z-10 scroll-animation-container">
           <div className="mb-12 text-center">
-            <h2 className="text-4xl font-bold mb-4">
+            <h2 className="text-4xl font-bold mb-4 fade-in-up">
               <span className="text-blue-300">Freehold</span>
               <span className="text-white ml-2">NCAM</span>
             </h2>
-            <p className="text-center mb-8 text-gray-300 max-w-3xl mx-auto text-lg">
+            <p className="text-center mb-8 text-gray-300 max-w-3xl mx-auto text-lg fade-in-up">
               The first non-custodial asset management platform built for both professional and retail investors.
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="bg-gray-800/40 p-8 rounded-lg backdrop-blur-sm border border-gray-700/50 shadow-xl">
+              <div className="bg-gray-800/40 p-8 rounded-lg backdrop-blur-sm border border-gray-700/50 shadow-xl fade-in-right">
                 <h3 className="text-2xl font-bold mb-6 text-white">Revolutionary Asset Management</h3>
                 <p className="text-gray-300 leading-relaxed mb-6">
                   Freehold NCAM transforms the traditional asset management model by eliminating custody risk while maintaining professional-grade trading capabilities. Your assets remain in your control at all times.
@@ -614,7 +772,7 @@ export default function Home() {
             </div>
             
             <div>
-              <div className="space-y-6">
+              <div className="space-y-6 fade-in-left">
                 <div className="bg-gray-800/30 p-6 rounded-lg border border-blue-500/30 shadow-lg">
                   <h4 className="text-xl font-bold mb-3 flex items-center text-blue-300">
                     <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

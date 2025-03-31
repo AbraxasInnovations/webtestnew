@@ -988,3 +988,318 @@ html {
 #freehold .border-gray-700\/50:hover {
   border-color: rgba(59, 130, 246, 0.3);
 }
+
+/* Fullscreen Sections for Scroll-Based Animation */
+.fullscreen-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 3rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animation utility classes for scroll-based animations */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Testimonial specific animations */
+.testimonial-section {
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-card {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s cubic-bezier(0.5, 0, 0.2, 1), 
+              transform 0.8s cubic-bezier(0.5, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.testimonial-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.testimonial-card:nth-child(1) {
+  transition-delay: 0.2s;
+}
+
+.testimonial-card:nth-child(2) {
+  transition-delay: 0.5s;
+}
+
+.testimonial-card:nth-child(3) {
+  transition-delay: 0.8s;
+}
+
+.testimonial-cta {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition-delay: 1.2s;
+}
+
+.testimonial-cta.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Scroll-driven animation container */
+.scroll-animation-container {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* For the visual progress indicator */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(to right, #3b82f6, #10b981);
+  width: 0%;
+  z-index: 1000;
+  transition: width 0.2s ease;
+}
+
+/* Add smooth scroll behavior for the whole page */
+html.smooth-scroll {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* For fixed navigation */
+}
+
+/* Class to apply when section is being animated */
+.is-pinned {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+
+/* For when animations are completed */
+.is-complete {
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* New fullscreen section styling */
+.fullscreen-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 3rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Improved testimonials styling */
+.testimonials-title {
+  transform: translateY(30px);
+  opacity: 0;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.testimonials-title.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.testimonials-description {
+  transform: translateY(30px);
+  opacity: 0;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  transition-delay: 0.2s;
+}
+
+.testimonials-description.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Section transition animations */
+.section-transition {
+  position: relative;
+  z-index: 10;
+}
+
+.section-transition::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+  pointer-events: none;
+}
+
+.section-transition::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+  pointer-events: none;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 50px;
+  border: 2px solid rgba(255,255,255,0.5);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.scroll-indicator.visible {
+  opacity: 1;
+}
+
+.scroll-indicator::after {
+  content: '';
+  width: 4px;
+  height: 8px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 2px;
+  animation: scrollIndicator 2s infinite;
+}
+
+@keyframes scrollIndicator {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+}
+
+/* Section Transitions and Effects */
+.section-transition {
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.section-transition.is-pinned {
+  z-index: 10;
+}
+
+.section-transition.is-pinned + section {
+  transform: translateY(100vh);
+  transition: transform 0.8s ease-out;
+}
+
+/* Enhanced Parallax Effect */
+.fullscreen-section.testimonial-section {
+  background-position: center 0%;
+  background-size: 120% auto;
+  transition: background-position 0.3s ease-out, background-size 0.3s ease-out;
+}
+
+.fullscreen-section.testimonial-section.is-pinned {
+  background-position: center 20%;
+  background-size: 110% auto;
+}
+
+/* Create a seamless transition between sections */
+.fullscreen-section::before,
+.fullscreen-section::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.fullscreen-section::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+.fullscreen-section::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+/* Staggered animation for service cards */
+.service-card-container {
+  perspective: 1000px;
+}
+
+.service-card {
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.5s ease;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+
+@media (max-width: 768px) {
+  .fullscreen-section {
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .fullscreen-section.testimonial-section {
+    background-attachment: scroll;
+    background-position: center center;
+  }
+  
+  .section-transition.is-pinned + section {
+    transform: none;
+  }
+}
