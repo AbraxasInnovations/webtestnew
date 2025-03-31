@@ -98,9 +98,12 @@ export default function Greenprint() {
       {/* Main Content */}
       <div className="pt-24 pb-20">
         <div className="container mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-bold mb-8">
-            <span className="text-gray-400">Green</span>print Suite
-          </h1>
+          <div className="greenprint-logo-container">
+            <h1 className="greenprint-logo">
+              <span className="green-text">GREEN</span><span className="print-text">PRINT</span>
+            </h1>
+            <p className="text-lg text-center text-gray-300 mt-4">Suite</p>
+          </div>
           
           <div className="space-y-16">
             {/* Overview Section */}

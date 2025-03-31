@@ -430,8 +430,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="container mx-auto px-6 relative z-10">
           <h2 className="text-4xl font-bold mb-4 text-center testimonials-title">
-            <span className="text-white">Client</span>
-            <span className="ml-3 text-white">Testimonials</span>
+            <span className="text-white">Hear From</span>
+            <span className="ml-3 text-white">Our Clients</span>
           </h2>
           <p className="text-center mb-16 text-gray-300 max-w-2xl mx-auto">
             We pride ourselves on delivering exceptional value and results. Here's what our clients have to say about their experience working with Abraxas Innovations.
@@ -446,7 +446,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg text-white">James Danforth</h3>
-                  <p className="text-sm text-gray-400">Hedge Fund Manager</p>
+                  <p className="text-sm text-gray-400">GreenPrint Funding Bot</p>
                 </div>
               </div>
               <div className="mb-6">
@@ -471,7 +471,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg text-white">Sarah Evans</h3>
-                  <p className="text-sm text-gray-400">Retail Trader</p>
+                  <p className="text-sm text-gray-400">GreenPrint Funding Bot</p>
                 </div>
               </div>
               <div className="mb-6">
@@ -496,7 +496,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg text-white">Michael Rodriguez</h3>
-                  <p className="text-sm text-gray-400">DeFi Protocol Founder</p>
+                  <p className="text-sm text-gray-400">Consulting Services</p>
                 </div>
               </div>
               <div className="mb-6">
@@ -516,7 +516,7 @@ export default function Home() {
           
           {/* Testimonial Call-to-Action */}
           <div className="text-center mt-16">
-            <p className="text-gray-300 mb-6 italic">"Join our growing list of satisfied clients and experience the Abraxas difference."</p>
+            <p className="text-gray-300 mb-6 italic">"Join Abraxas Innovations and experience the difference."</p>
             <a href="#contact" className="inline-block bg-white hover:bg-gray-200 text-black font-bold py-3 px-8 rounded-lg transition-colors shadow-md hover:shadow-lg">
               Work With Us
             </a>
@@ -577,6 +577,81 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Freehold NCAM Section */}
+      <section id="freehold" className="py-20 relative overflow-hidden bg-gradient-to-b from-black to-gray-900">
+        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="mb-12 text-center">
+            <h2 className="text-4xl font-bold mb-4">
+              <span className="text-blue-300">Freehold</span>
+              <span className="text-white ml-2">NCAM</span>
+            </h2>
+            <p className="text-center mb-8 text-gray-300 max-w-3xl mx-auto text-lg">
+              The first non-custodial asset management platform built for both professional and retail investors.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="bg-gray-800/40 p-8 rounded-lg backdrop-blur-sm border border-gray-700/50 shadow-xl">
+                <h3 className="text-2xl font-bold mb-6 text-white">Revolutionary Asset Management</h3>
+                <p className="text-gray-300 leading-relaxed mb-6">
+                  Freehold NCAM transforms the traditional asset management model by eliminating custody risk while maintaining professional-grade trading capabilities. Your assets remain in your control at all times.
+                </p>
+                <p className="text-gray-300 leading-relaxed mb-6">
+                  Our platform bridges the gap between institutional expertise and individual ownership, allowing professional investors to manage client assets without ever taking custody, and providing retail investors with access to sophisticated strategies without surrendering control.
+                </p>
+                <div className="mt-8">
+                  <a href="/asset-management" className="inline-block bg-gradient-to-r from-blue-800 to-blue-600 hover:from-blue-700 hover:to-blue-500 text-white font-bold py-3 px-8 rounded-lg transition-colors shadow-md hover:shadow-lg">
+                    Explore Freehold NCAM
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <div className="space-y-6">
+                <div className="bg-gray-800/30 p-6 rounded-lg border border-blue-500/30 shadow-lg">
+                  <h4 className="text-xl font-bold mb-3 flex items-center text-blue-300">
+                    <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                    Self-Custody
+                  </h4>
+                  <p className="text-gray-300">
+                    Maintain full ownership and control of your assets at all times. No more counterparty risk or custody concerns.
+                  </p>
+                </div>
+                
+                <div className="bg-gray-800/30 p-6 rounded-lg border border-blue-500/30 shadow-lg">
+                  <h4 className="text-xl font-bold mb-3 flex items-center text-blue-300">
+                    <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                    Professional Management
+                  </h4>
+                  <p className="text-gray-300">
+                    Access sophisticated trading strategies and professional portfolio management without surrendering control of your assets.
+                  </p>
+                </div>
+                
+                <div className="bg-gray-800/30 p-6 rounded-lg border border-blue-500/30 shadow-lg">
+                  <h4 className="text-xl font-bold mb-3 flex items-center text-blue-300">
+                    <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    For All Investors
+                  </h4>
+                  <p className="text-gray-300">
+                    Whether you're a professional asset manager, institution, or individual investor, Freehold NCAM provides the tools and infrastructure you need.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
