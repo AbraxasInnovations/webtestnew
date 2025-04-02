@@ -96,6 +96,265 @@ export default function Greenprint() {
         </div>
       </nav>
 
+      {/* Hero Section */}
+      <section className="min-h-screen bg-[#0a0a0a] flex items-center justify-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+              <span className="text-emerald-400">Greenprint</span>
+              <span className="text-white"> Suite</span>
+            </h1>
+            <p className="text-xl text-gray-300 mb-8">
+              A comprehensive suite of DeFi tools designed to enhance your trading experience. From automated funding to advanced data analysis, Greenprint provides the infrastructure for modern crypto trading.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Products Overview Section */}
+      <section className="py-20 bg-[#0a0a0a]">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
+            <span className="text-emerald-400">Our Products</span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Funding Bot Card */}
+            <div className="bg-gray-800/30 p-8 rounded-lg border border-emerald-500/30 shadow-lg hover:shadow-emerald-500/20 transition-all duration-300">
+              <div className="w-16 h-16 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-emerald-400">Funding Bot</h3>
+              <p className="text-gray-300 mb-6">
+                Automated funding solution for Bybit. Set your parameters and let our bot handle the rest.
+              </p>
+              <Link 
+                href="#how-to"
+                className="inline-block bg-emerald-500/20 text-emerald-400 px-6 py-2 rounded-lg hover:bg-emerald-500/30 transition-colors"
+              >
+                Get Started
+              </Link>
+            </div>
+
+            {/* Data Analysis Tool Card */}
+            <div className="bg-gray-800/30 p-8 rounded-lg border border-emerald-500/30 shadow-lg hover:shadow-emerald-500/20 transition-all duration-300">
+              <div className="w-16 h-16 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-emerald-400">Data Analysis Tool</h3>
+              <p className="text-gray-300 mb-6">
+                Advanced market analysis and insights to inform your trading decisions.
+              </p>
+              <span className="inline-block bg-gray-700/50 text-gray-400 px-6 py-2 rounded-lg">
+                Coming Soon
+              </span>
+            </div>
+
+            {/* CLMM Bot Card */}
+            <div className="bg-gray-800/30 p-8 rounded-lg border border-emerald-500/30 shadow-lg hover:shadow-emerald-500/20 transition-all duration-300">
+              <div className="w-16 h-16 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-emerald-400">CLMM Bot</h3>
+              <p className="text-gray-300 mb-6">
+                Automated liquidity management for concentrated liquidity positions.
+              </p>
+              <span className="inline-block bg-gray-700/50 text-gray-400 px-6 py-2 rounded-lg">
+                Coming Soon
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Step-by-Step Guide Section */}
+      <section id="how-to" className="py-20 bg-[#0a0a0a]">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
+            <span className="text-emerald-400">Getting Started</span> with Greenprint Funding Bot
+          </h2>
+          <p className="text-xl text-gray-300 text-center mb-12 max-w-2xl mx-auto">
+            Follow these simple steps to start automating your Bybit funding process.
+          </p>
+          <div className="max-w-4xl mx-auto">
+            {/* Step 1: Choose a Tier */}
+            <div className="mb-16">
+              <div className="flex items-start space-x-6">
+                <div className="flex-shrink-0 w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center">
+                  <span className="text-2xl font-bold text-emerald-400">1</span>
+                </div>
+                <div className="flex-grow">
+                  <h3 className="text-2xl font-bold mb-4 text-emerald-400">Choose Your Tier</h3>
+                  <p className="text-gray-300 mb-6">
+                    Select from our range of tiers designed to match your trading needs. Each tier comes with its own set of features and capabilities.
+                  </p>
+                  <div className="bg-gray-800/50 rounded-lg p-6">
+                    <div className="aspect-w-16 aspect-h-9 bg-gray-700 rounded-lg overflow-hidden">
+                      <Image
+                        src="/images/greenprint/tier-selection.jpg"
+                        alt="Tier Selection Interface"
+                        width={800}
+                        height={450}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 2: Make Payment */}
+            <div className="mb-16">
+              <div className="flex items-start space-x-6">
+                <div className="flex-shrink-0 w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center">
+                  <span className="text-2xl font-bold text-emerald-400">2</span>
+                </div>
+                <div className="flex-grow">
+                  <h3 className="text-2xl font-bold mb-4 text-emerald-400">Secure Payment</h3>
+                  <p className="text-gray-300 mb-6">
+                    Complete your purchase through our secure payment system. We accept various payment methods for your convenience.
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="bg-gray-800/50 rounded-lg p-6">
+                      <div className="aspect-w-16 aspect-h-9 bg-gray-700 rounded-lg overflow-hidden">
+                        <Image
+                          src="/images/greenprint/payment-methods.jpg"
+                          alt="Available Payment Methods"
+                          width={800}
+                          height={450}
+                          className="object-cover w-full h-full"
+                        />
+                      </div>
+                    </div>
+                    <div className="bg-gray-800/50 rounded-lg p-6">
+                      <div className="aspect-w-16 aspect-h-9 bg-gray-700 rounded-lg overflow-hidden">
+                        <Image
+                          src="/images/greenprint/payment-confirmation.jpg"
+                          alt="Payment Confirmation Screen"
+                          width={800}
+                          height={450}
+                          className="object-cover w-full h-full"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 3: Choose Tokens */}
+            <div className="mb-16">
+              <div className="flex items-start space-x-6">
+                <div className="flex-shrink-0 w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center">
+                  <span className="text-2xl font-bold text-emerald-400">3</span>
+                </div>
+                <div className="flex-grow">
+                  <h3 className="text-2xl font-bold mb-4 text-emerald-400">Select Your Tokens</h3>
+                  <p className="text-gray-300 mb-6">
+                    Choose from our supported token list. Our bot is optimized for various trading pairs and market conditions.
+                  </p>
+                  <div className="bg-gray-800/50 rounded-lg p-6">
+                    <div className="aspect-w-16 aspect-h-9 bg-gray-700 rounded-lg overflow-hidden">
+                      <Image
+                        src="/images/greenprint/token-selection.jpg"
+                        alt="Token Selection Interface"
+                        width={800}
+                        height={450}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 4: Choose Strategies */}
+            <div className="mb-16">
+              <div className="flex items-start space-x-6">
+                <div className="flex-shrink-0 w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center">
+                  <span className="text-2xl font-bold text-emerald-400">4</span>
+                </div>
+                <div className="flex-grow">
+                  <h3 className="text-2xl font-bold mb-4 text-emerald-400">Configure Strategies</h3>
+                  <p className="text-gray-300 mb-6">
+                    Set up your entry and exit strategies. Our intuitive interface makes it easy to customize your trading parameters.
+                  </p>
+                  <div className="bg-gray-800/50 rounded-lg p-6">
+                    <div className="aspect-w-16 aspect-h-9 bg-gray-700 rounded-lg overflow-hidden">
+                      <Image
+                        src="/images/greenprint/strategy-config.jpg"
+                        alt="Strategy Configuration Interface"
+                        width={800}
+                        height={450}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 5: Enter API Keys */}
+            <div className="mb-16">
+              <div className="flex items-start space-x-6">
+                <div className="flex-shrink-0 w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center">
+                  <span className="text-2xl font-bold text-emerald-400">5</span>
+                </div>
+                <div className="flex-grow">
+                  <h3 className="text-2xl font-bold mb-4 text-emerald-400">Secure API Integration</h3>
+                  <p className="text-gray-300 mb-6">
+                    Safely input your exchange API keys. We use military-grade encryption to protect your credentials.
+                  </p>
+                  <div className="bg-gray-800/50 rounded-lg p-6">
+                    <div className="aspect-w-16 aspect-h-9 bg-gray-700 rounded-lg overflow-hidden">
+                      <Image
+                        src="/images/greenprint/api-integration.jpg"
+                        alt="API Key Integration Interface"
+                        width={800}
+                        height={450}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 6: Start Bot */}
+            <div className="mb-16">
+              <div className="flex items-start space-x-6">
+                <div className="flex-shrink-0 w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center">
+                  <span className="text-2xl font-bold text-emerald-400">6</span>
+                </div>
+                <div className="flex-grow">
+                  <h3 className="text-2xl font-bold mb-4 text-emerald-400">Launch & Monitor</h3>
+                  <p className="text-gray-300 mb-6">
+                    Start your bot and watch it work! Monitor performance through our real-time dashboard.
+                  </p>
+                  <div className="bg-gray-800/50 rounded-lg p-6">
+                    <div className="aspect-w-16 aspect-h-9 bg-gray-700 rounded-lg overflow-hidden">
+                      <Image
+                        src="/images/greenprint/bot-dashboard.jpg"
+                        alt="Bot Dashboard Interface"
+                        width={800}
+                        height={450}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Main Content */}
       <div className="pt-24 pb-20">
         <div className="container mx-auto px-6">
@@ -113,185 +372,6 @@ export default function Greenprint() {
               <p className="text-lg text-gray-300 leading-relaxed">
                 Greenprint is a comprehensive suite of trading tools designed to help serious traders capitalize on market inefficiencies in the cryptocurrency space. Our tools provide institutional-grade capabilities to retail traders, allowing you to automate your trading strategies and generate returns while you sleep.
               </p>
-            </section>
-
-            {/* Step-by-Step Guide Section */}
-            <section className="py-20 bg-[#0a0a0a]">
-              <div className="container mx-auto px-4">
-                <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
-                  <span className="text-emerald-400">Getting Started</span> with Greenprint
-                </h2>
-                <div className="max-w-4xl mx-auto">
-                  {/* Step 1: Choose a Tier */}
-                  <div className="mb-16">
-                    <div className="flex items-start space-x-6">
-                      <div className="flex-shrink-0 w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center">
-                        <span className="text-2xl font-bold text-emerald-400">1</span>
-                      </div>
-                      <div className="flex-grow">
-                        <h3 className="text-2xl font-bold mb-4 text-emerald-400">Choose Your Tier</h3>
-                        <p className="text-gray-300 mb-6">
-                          Select from our range of tiers designed to match your trading needs. Each tier comes with its own set of features and capabilities.
-                        </p>
-                        <div className="bg-gray-800/50 rounded-lg p-6">
-                          <div className="aspect-w-16 aspect-h-9 bg-gray-700 rounded-lg overflow-hidden">
-                            <Image
-                              src="/images/greenprint/tier-selection.jpg"
-                              alt="Tier Selection Interface"
-                              width={800}
-                              height={450}
-                              className="object-cover w-full h-full"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Step 2: Make Payment */}
-                  <div className="mb-16">
-                    <div className="flex items-start space-x-6">
-                      <div className="flex-shrink-0 w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center">
-                        <span className="text-2xl font-bold text-emerald-400">2</span>
-                      </div>
-                      <div className="flex-grow">
-                        <h3 className="text-2xl font-bold mb-4 text-emerald-400">Secure Payment</h3>
-                        <p className="text-gray-300 mb-6">
-                          Complete your purchase through our secure payment system. We accept various payment methods for your convenience.
-                        </p>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                          <div className="bg-gray-800/50 rounded-lg p-6">
-                            <div className="aspect-w-16 aspect-h-9 bg-gray-700 rounded-lg overflow-hidden">
-                              <Image
-                                src="/images/greenprint/payment-methods.jpg"
-                                alt="Available Payment Methods"
-                                width={800}
-                                height={450}
-                                className="object-cover w-full h-full"
-                              />
-                            </div>
-                          </div>
-                          <div className="bg-gray-800/50 rounded-lg p-6">
-                            <div className="aspect-w-16 aspect-h-9 bg-gray-700 rounded-lg overflow-hidden">
-                              <Image
-                                src="/images/greenprint/payment-confirmation.jpg"
-                                alt="Payment Confirmation Screen"
-                                width={800}
-                                height={450}
-                                className="object-cover w-full h-full"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Step 3: Choose Tokens */}
-                  <div className="mb-16">
-                    <div className="flex items-start space-x-6">
-                      <div className="flex-shrink-0 w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center">
-                        <span className="text-2xl font-bold text-emerald-400">3</span>
-                      </div>
-                      <div className="flex-grow">
-                        <h3 className="text-2xl font-bold mb-4 text-emerald-400">Select Your Tokens</h3>
-                        <p className="text-gray-300 mb-6">
-                          Choose from our supported token list. Our bot is optimized for various trading pairs and market conditions.
-                        </p>
-                        <div className="bg-gray-800/50 rounded-lg p-6">
-                          <div className="aspect-w-16 aspect-h-9 bg-gray-700 rounded-lg overflow-hidden">
-                            <Image
-                              src="/images/greenprint/token-selection.jpg"
-                              alt="Token Selection Interface"
-                              width={800}
-                              height={450}
-                              className="object-cover w-full h-full"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Step 4: Choose Strategies */}
-                  <div className="mb-16">
-                    <div className="flex items-start space-x-6">
-                      <div className="flex-shrink-0 w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center">
-                        <span className="text-2xl font-bold text-emerald-400">4</span>
-                      </div>
-                      <div className="flex-grow">
-                        <h3 className="text-2xl font-bold mb-4 text-emerald-400">Configure Strategies</h3>
-                        <p className="text-gray-300 mb-6">
-                          Set up your entry and exit strategies. Our intuitive interface makes it easy to customize your trading parameters.
-                        </p>
-                        <div className="bg-gray-800/50 rounded-lg p-6">
-                          <div className="aspect-w-16 aspect-h-9 bg-gray-700 rounded-lg overflow-hidden">
-                            <Image
-                              src="/images/greenprint/strategy-config.jpg"
-                              alt="Strategy Configuration Interface"
-                              width={800}
-                              height={450}
-                              className="object-cover w-full h-full"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Step 5: Enter API Keys */}
-                  <div className="mb-16">
-                    <div className="flex items-start space-x-6">
-                      <div className="flex-shrink-0 w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center">
-                        <span className="text-2xl font-bold text-emerald-400">5</span>
-                      </div>
-                      <div className="flex-grow">
-                        <h3 className="text-2xl font-bold mb-4 text-emerald-400">Secure API Integration</h3>
-                        <p className="text-gray-300 mb-6">
-                          Safely input your exchange API keys. We use military-grade encryption to protect your credentials.
-                        </p>
-                        <div className="bg-gray-800/50 rounded-lg p-6">
-                          <div className="aspect-w-16 aspect-h-9 bg-gray-700 rounded-lg overflow-hidden">
-                            <Image
-                              src="/images/greenprint/api-integration.jpg"
-                              alt="API Key Integration Interface"
-                              width={800}
-                              height={450}
-                              className="object-cover w-full h-full"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Step 6: Start Bot */}
-                  <div className="mb-16">
-                    <div className="flex items-start space-x-6">
-                      <div className="flex-shrink-0 w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center">
-                        <span className="text-2xl font-bold text-emerald-400">6</span>
-                      </div>
-                      <div className="flex-grow">
-                        <h3 className="text-2xl font-bold mb-4 text-emerald-400">Launch & Monitor</h3>
-                        <p className="text-gray-300 mb-6">
-                          Start your bot and watch it work! Monitor performance through our real-time dashboard.
-                        </p>
-                        <div className="bg-gray-800/50 rounded-lg p-6">
-                          <div className="aspect-w-16 aspect-h-9 bg-gray-700 rounded-lg overflow-hidden">
-                            <Image
-                              src="/images/greenprint/bot-dashboard.jpg"
-                              alt="Bot Dashboard Interface"
-                              width={800}
-                              height={450}
-                              className="object-cover w-full h-full"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </section>
 
             {/* Products Section */}

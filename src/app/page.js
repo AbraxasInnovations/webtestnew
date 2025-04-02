@@ -726,86 +726,79 @@ export default function Home() {
       </section>
 
       {/* Freehold NCAM Section */}
-      <section id="freehold" className="fullscreen-section bg-gradient-to-b from-white to-gray-50 section-transition">
-        <div className="container mx-auto px-4 h-full flex flex-col justify-center">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-gray-800">Freehold</span>
-              <span className="text-blue-600"> NCAM</span>
-            </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Advanced asset management solutions for institutional and high-net-worth clients
+      <section id="freehold" className="fullscreen-section relative overflow-hidden bg-gradient-to-b from-black to-gray-900">
+        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+        <div className="container mx-auto px-6 relative z-10 scroll-animation-container">
+          <div className="mb-12 text-center">
+            <div className="flex justify-center mb-6">
+              <img 
+                src="/images/freeholdlogo.jpg"
+                alt="Freehold NCAM"
+                className="h-16 w-auto object-contain"
+              />
+            </div>
+            <p className="text-center mb-8 text-gray-300 max-w-3xl mx-auto text-lg fade-in-up">
+              The first non-custodial asset management platform built for both professional and retail investors.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
-                <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-6">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-800">Portfolio Management</h3>
-                <p className="text-gray-600 mb-6">
-                  Sophisticated portfolio strategies tailored to your investment objectives and risk tolerance
+          </div>
+           
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="bg-gray-800/40 p-8 rounded-lg backdrop-blur-sm border border-gray-700/50 shadow-xl fade-in-right">
+                <h3 className="text-2xl font-bold mb-6 text-white">Revolutionary Asset Management</h3>
+                <p className="text-gray-300 leading-relaxed mb-6">
+                  Freehold NCAM transforms the traditional asset management model by eliminating custody risk while maintaining professional-grade trading capabilities. Your assets remain in your control at all times.
                 </p>
-                <ul className="text-gray-600 space-y-3">
-                  <li className="flex items-center">
-                    <svg className="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    Custom Investment Strategies
-                  </li>
-                  <li className="flex items-center">
-                    <svg className="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    Risk Management
-                  </li>
-                  <li className="flex items-center">
-                    <svg className="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    Performance Analytics
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
-                <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-6">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-800">Market Analysis</h3>
-                <p className="text-gray-600 mb-6">
-                  Comprehensive market research and analysis to inform investment decisions
+                <p className="text-gray-300 leading-relaxed mb-6">
+                  Our platform bridges the gap between institutional expertise and individual ownership, allowing professional investors to manage client assets without ever taking custody, and providing retail investors with access to sophisticated strategies without surrendering control.
                 </p>
-                <ul className="text-gray-600 space-y-3">
-                  <li className="flex items-center">
-                    <svg className="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    Market Research
-                  </li>
-                  <li className="flex items-center">
-                    <svg className="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    Trend Analysis
-                  </li>
-                  <li className="flex items-center">
-                    <svg className="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    Investment Opportunities
-                  </li>
-                </ul>
+                <div className="mt-8">
+                  <a href="/asset-management" className="inline-block bg-gradient-to-r from-blue-800 to-blue-600 hover:from-blue-700 hover:to-blue-500 text-white font-bold py-3 px-8 rounded-lg transition-colors shadow-md hover:shadow-lg">
+                    Explore Freehold NCAM
+                  </a>
+                </div>
               </div>
             </div>
-            <Link 
-              href="/freehold" 
-              className="inline-block mt-8 px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow-md hover:shadow-lg"
-            >
-              Learn more about Freehold NCAM
-            </Link>
+             
+            <div>
+              <div className="space-y-6 fade-in-left">
+                <div className="bg-gray-800/30 p-6 rounded-lg border border-blue-500/30 shadow-lg">
+                  <h4 className="text-xl font-bold mb-3 flex items-center text-blue-300">
+                    <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                    Self-Custody
+                  </h4>
+                  <p className="text-gray-300">
+                    Maintain full ownership and control of your assets at all times. No more counterparty risk or custody concerns.
+                  </p>
+                </div>
+                 
+                <div className="bg-gray-800/30 p-6 rounded-lg border border-blue-500/30 shadow-lg">
+                  <h4 className="text-xl font-bold mb-3 flex items-center text-blue-300">
+                    <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                    Professional Management
+                  </h4>
+                  <p className="text-gray-300">
+                    Access sophisticated trading strategies and professional portfolio management without surrendering control of your assets.
+                  </p>
+                </div>
+                 
+                <div className="bg-gray-800/30 p-6 rounded-lg border border-blue-500/30 shadow-lg">
+                  <h4 className="text-xl font-bold mb-3 flex items-center text-blue-300">
+                    <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    For All Investors
+                  </h4>
+                  <p className="text-gray-300">
+                    Whether you're a professional asset manager, institution, or individual investor, Freehold NCAM provides the tools and infrastructure you need.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
