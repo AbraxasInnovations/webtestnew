@@ -800,6 +800,50 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Apollo Security Section */}
+      <section id="apollo" className="fullscreen-section bg-[#0a0a0a] section-transition">
+        <div className="container mx-auto px-4 h-full flex flex-col justify-center">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="text-gray-400">Apollo</span> Security
+            </h2>
+            <p className="text-xl text-gray-300 mb-8">
+              Comprehensive security consulting to protect your digital assets and infrastructure
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-[#1a1a1a] p-6 rounded-lg border border-gray-800 hover:border-blue-500 transition-all duration-300">
+                <h3 className="text-2xl font-bold mb-4 text-blue-400">Vulnerability Assessment</h3>
+                <p className="text-gray-300 mb-4">
+                  Thorough analysis of your systems to identify potential security weaknesses
+                </p>
+                <ul className="text-gray-400 space-y-2">
+                  <li>• Penetration Testing</li>
+                  <li>• Code Security Review</li>
+                  <li>• Infrastructure Analysis</li>
+                </ul>
+              </div>
+              <div className="bg-[#1a1a1a] p-6 rounded-lg border border-gray-800 hover:border-blue-500 transition-all duration-300">
+                <h3 className="text-2xl font-bold mb-4 text-blue-400">Security Solutions</h3>
+                <p className="text-gray-300 mb-4">
+                  Custom security implementations to fortify your digital presence
+                </p>
+                <ul className="text-gray-400 space-y-2">
+                  <li>• Security Architecture</li>
+                  <li>• Threat Prevention</li>
+                  <li>• Incident Response</li>
+                </ul>
+              </div>
+            </div>
+            <Link 
+              href="/apollo" 
+              className="inline-block mt-8 px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300"
+            >
+              Learn more about Apollo Security
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Greenprint Section - add classes for animations */}
       <section id="greenprint" className="py-20 relative" ref={greenprintRef}>
         <ParticleWaveBackground />
