@@ -23,319 +23,250 @@ export default function Greenprint() {
       <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
       
       {/* Top Navigation */}
-      <nav className="fixed w-full bg-[#0a1512]/80 backdrop-blur-sm border-b border-gray-800/50 z-50">
-        <div className="px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-8">
-            <Link href="/" className="h-8">
-              <img 
-                src="/images/abaraxaslogo.jpeg"
-                alt="Abraxas"
-                className="h-full w-auto"
-              />
-            </Link>
-            <div className="hidden md:flex space-x-6 text-sm">
-              <Link href="/documentation" className="text-gray-400 hover:text-white">Documentation</Link>
-              <Link href="/ecosystem" className="text-gray-400 hover:text-white">Ecosystem</Link>
-              <Link href="/portal" className="text-gray-400 hover:text-white">Portal</Link>
-            </div>
+      <header className="sticky top-0 z-50 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+        <div className="max-w-screen-xl mx-auto px-4 h-16 flex items-center justify-between">
+          <a href="/" className="flex items-center">
+            <img src="https://mintlify.s3.us-west-1.amazonaws.com/abstract/logo/light.svg" alt="Abstract Logo" className="block dark:hidden h-8" />
+            <img src="https://mintlify.s3.us-west-1.amazonaws.com/abstract/logo/dark.svg" alt="Abstract Logo" className="hidden dark:block h-8" />
+          </a>
+          <div className="hidden md:block flex-1 mx-4">
+            <input type="text" placeholder="Search... Ctrl K" className="w-full p-3.5 rounded-xl border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-green-600 transition" />
           </div>
-          
-          {/* Search Bar */}
-          <div className="hidden md:flex items-center bg-black/30 rounded-lg px-3 py-1.5 border border-gray-800/50">
-            <svg className="w-4 h-4 text-gray-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-            <input 
-              type="text" 
-              placeholder="Search..." 
-              className="bg-transparent text-sm text-gray-300 placeholder-gray-500 focus:outline-none w-64"
-            />
-            <span className="text-xs text-gray-600 ml-2">⌘K</span>
+          <div className="flex items-center space-x-4">
+            <button className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 2a1 1 0 01.993.883L11 3v2a1 1 0 01-1.993.117L9 5V3a1 1 0 011-1zm4.22 2.47a1 1 0 011.414 0l1.414 1.414a1 1 0 01-1.414 1.414L14.22 5.884a1 1 0 010-1.414zM10 14a4 4 0 110-8 4 4 0 010 8zm7-4a1 1 0 01.117 1.993L17 12h-2a1 1 0 01-.117-1.993L15 10h2zm-1.636 5.364a1 1 0 011.414 1.414L14.57 18.61a1 1 0 01-1.414-1.414l1.414-1.414zM5 10a1 1 0 01.117 1.993L5 12H3a1 1 0 01-.117-1.993L3 10h2zm1.636-4.636a1 1 0 011.414-1.414L9.464 5.37a1 1 0 01-1.414 1.414L6.636 5.364zM10 16a1 1 0 01.993.883L11 17v2a1 1 0 01-1.993.117L9 19v-2a1 1 0 011-1z" />
+              </svg>
+            </button>
+            <button className="md:hidden p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </button>
+            <button className="md:hidden p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
           </div>
+        </div>
+      </header>
+      <nav className="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+        <div className="max-w-screen-xl mx-auto px-4">
+          <ul className="flex space-x-6 h-12 items-center text-sm">
+            <li>
+              <a href="#" className="font-semibold text-green-600 dark:text-green-400 border-b-2 border-green-600 pb-1">Documentation</a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-green-600 dark:hover:text-green-400 transition">Abstract Global Wallet</a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-green-600 dark:hover:text-green-400 transition">Ecosystem</a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-green-600 dark:hover:text-green-400 transition">Portal</a>
+            </li>
+          </ul>
         </div>
       </nav>
 
       {/* Main Layout */}
-      <div className="flex min-h-screen pt-16">
-        {/* Left Sidebar */}
-        <div className="w-64 fixed h-[calc(100vh-4rem)] overflow-y-auto border-r border-gray-800/50 bg-[#0a1512]/80 backdrop-blur-sm">
-          <div className="p-6">
-            <div className="mb-8">
-              <h3 className="text-sm font-medium text-gray-400 mb-3">Overview</h3>
-              <ul className="space-y-2.5">
+      <div className="max-w-screen-xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <aside className="hidden lg:block lg:col-span-3">
+          <nav className="space-y-2">
+            <div>
+              <h3 className="text-sm font-semibold text-gray-500 uppercase mb-2">Overview</h3>
+              <ul className="space-y-1">
                 <li>
-                  <Link href="#introduction" className="text-sm text-gray-300 hover:text-white">
-                    Introduction
-                  </Link>
+                  <a href="#" className="block py-1.5 px-3 rounded bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-400 font-medium">Introduction</a>
                 </li>
                 <li>
-                  <Link href="#getting-started" className="text-sm text-gray-300 hover:text-white">
-                    Getting Started
-                  </Link>
+                  <a href="#" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">What is Abstract?</a>
                 </li>
                 <li>
-                  <Link href="/greenprint/overview" className="text-sm text-gray-300 hover:text-white">
-                    Comprehensive Overview
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/greenprint/guide" className="text-sm text-gray-300 hover:text-white">
-                    Step-by-Step Guide
-                  </Link>
+                  <a href="#" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Connect to Abstract</a>
                 </li>
               </ul>
             </div>
-
-            <div className="mb-8">
-              <h3 className="text-sm font-medium text-gray-400 mb-3">Products</h3>
-              <ul className="space-y-2.5">
+            <div>
+              <h3 className="text-sm font-semibold text-gray-500 uppercase mb-2">Build on Abstract</h3>
+              <ul className="space-y-1">
                 <li>
-                  <Link href="#funding-bot" className="text-sm text-gray-300 hover:text-white">
-                    Funding Bot
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#clmm-bot" className="text-sm text-gray-300 hover:text-white">
-                    CLMM Bot
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#data-analysis" className="text-sm text-gray-300 hover:text-white">
-                    Data Analysis Tool
-                  </Link>
+                  <a href="#" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Start Building</a>
                 </li>
               </ul>
             </div>
-
-            <div className="mb-8">
-              <h3 className="text-sm font-medium text-gray-400 mb-3">Resources</h3>
-              <ul className="space-y-2.5">
+            <div>
+              <h3 className="text-sm font-semibold text-gray-500 uppercase mb-2">How Abstract Works</h3>
+              <ul className="space-y-1">
                 <li>
-                  <Link href="#documentation" className="text-sm text-gray-300 hover:text-white">
-                    Documentation
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#tutorials" className="text-sm text-gray-300 hover:text-white">
-                    Tutorials
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#support" className="text-sm text-gray-300 hover:text-white">
-                    Support
-                  </Link>
+                  <a href="#" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Overview</a>
                 </li>
               </ul>
             </div>
+            <div>
+              <h3 className="text-sm font-semibold text-gray-500 uppercase mb-2">Tooling</h3>
+              <ul className="space-y-1">
+                <li>
+                  <a href="#" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Tools</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-gray-500 uppercase mb-2">Infrastructure</h3>
+              <ul className="space-y-1">
+                <li>
+                  <a href="#" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Network</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </aside>
+        <main className="lg:col-span-6 space-y-12">
+          <section>
+            <p className="uppercase text-green-600 dark:text-green-400 text-xs font-semibold tracking-wide">Overview</p>
+            <h1 className="text-3xl font-bold mt-2">Introduction</h1>
+            <p className="mt-4 text-base leading-relaxed">Welcome to the Abstract documentation. Learn how Abstract empowers developers to build, connect, and innovate in a next-generation ecosystem.</p>
+            <div className="mt-8 flex justify-center">
+              <img src="https://mintlify.s3.us-west-1.amazonaws.com/abstract/images/Block.svg" alt="Hero Block Image" className="w-64 h-auto" />
+            </div>
+          </section>
+          <section id="get-started-with-abstract">
+            <h2 className="text-2xl font-semibold mb-2">Get started with Abstract</h2>
+            <p className="mb-4 text-base">Kickstart your journey. Choose one of the options below to connect or begin building on Abstract.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <a href="/connect-to-abstract" className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition">
+                <div className="mb-2">
+                  <svg className="w-8 h-8 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm8-5a1 1 0 00-.993.883L9 6v3H6a1 1 0 00-.117 1.993L6 11h3v3a1 1 0 001.993.117L11 14v-3h3a1 1 0 00.117-1.993L14 9h-3V6a1 1 0 00-1-1z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-medium mb-1">Connect to Abstract</h3>
+                <p className="text-sm">Link your services and enjoy seamless connectivity.</p>
+              </a>
+              <a href="/build-on-abstract/getting-started" className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition">
+                <div className="mb-2">
+                  <svg className="w-8 h-8 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M11 17a1 1 0 01-.117-1.993L11 15h3a1 1 0 01.117 1.993L14 17h-3zm-4-4a1 1 0 01-.117-1.993L7 11h7a1 1 0 01.117 1.993L14 13H7zm-4-4a1 1 0 01-.117-1.993L3 7h11a1 1 0 01.117 1.993L14 9H3z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-medium mb-1">Start Building on Abstract</h3>
+                <p className="text-sm">Get your development environment set up in minutes.</p>
+              </a>
+            </div>
+          </section>
+          <section id="explore-abstract-resources">
+            <h2 className="text-2xl font-semibold mb-2">Explore Abstract Resources</h2>
+            <p className="mb-4 text-base">Discover example repositories and tutorials to accelerate your learning process.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <a href="https://github.com/Abstract-Foundation/examples" className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition">
+                <div className="mb-2">
+                  <svg className="w-8 h-8 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0a12 12 0 00-3.79 23.39c.6.11.82-.26.82-.58v-2.16c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.09-.75.08-.74.08-.74 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.8 1.3 3.48.99.11-.78.42-1.3.76-1.6-2.67-.3-5.48-1.34-5.48-5.96 0-1.32.47-2.39 1.24-3.24-.12-.3-.54-1.52.12-3.16 0 0 1-.32 3.3 1.23a11.49 11.49 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.64.24 2.86.12 3.16.77.85 1.24 1.92 1.24 3.24 0 4.63-2.81 5.66-5.49 5.96.43.38.81 1.12.81 2.26v3.35c0 .32.22.7.82.58A12 12 0 0012 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-medium mb-1">Clone Example Repositories</h3>
+                <p className="text-sm">Browse our GitHub examples to kickstart your project.</p>
+              </a>
+              <a href="https://www.youtube.com/@AbstractBlockchain" className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition">
+                <div className="mb-2">
+                  <svg className="w-8 h-8 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.498 6.186a2.985 2.985 0 00-2.103-2.116C19.845 3.5 12 3.5 12 3.5s-7.845 0-9.395.57A2.985 2.985 0 00.502 6.186 31.87 31.87 0 000 12a31.87 31.87 0 00.502 5.814 2.985 2.985 0 002.103 2.116C4.155 20.5 12 20.5 12 20.5s7.845 0 9.395-.57a2.985 2.985 0 002.103-2.116A31.87 31.87 0 0024 12a31.87 31.87 0 00-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-medium mb-1">YouTube Tutorials</h3>
+                <p className="text-sm">Watch our video guides to learn the ropes of Abstract.</p>
+              </a>
+            </div>
+          </section>
+          <section id="learn-more-about-abstract">
+            <h2 className="text-2xl font-semibold mb-2">Learn more about Abstract</h2>
+            <p className="mb-4 text-base">Deep dive into what Abstract is, how it works, and explore its architecture and wallet solutions.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <a href="/what-is-abstract" className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition">
+                <div className="mb-2">
+                  <svg className="w-8 h-8 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm8-5a1 1 0 00-.993.883L9 6v3H6a1 1 0 00-.117 1.993L6 11h3v3a1 1 0 001.993.117L11 14v-3h3a1 1 0 00.117-1.993L14 9h-3V6a1 1 0 00-1-1z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-medium mb-1">What is Abstract?</h3>
+                <p className="text-sm">Understand the fundamentals of Abstract.</p>
+              </a>
+              <a href="/how-abstract-works/architecture/layer-2s" className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition">
+                <div className="mb-2">
+                  <svg className="w-8 h-8 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M4 3a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V4a1 1 0 00-1-1H4zm11 2v10H5V5h10z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-medium mb-1">How Abstract Works</h3>
+                <p className="text-sm">Dive into the technical workings of the platform.</p>
+              </a>
+              <a href="/architecture" className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition">
+                <div className="mb-2">
+                  <svg className="w-8 h-8 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 2a1 1 0 01.993.883L11 3v4h4a1 1 0 01.117 1.993L15 9h-4v4a1 1 0 01-1.993.117L9 13v-4H5a1 1 0 01-.117-1.993L5 7h4V3a1 1 0 011-1z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-medium mb-1">Architecture</h3>
+                <p className="text-sm">Discover the design behind Abstract.</p>
+              </a>
+              <a href="/abstract-global-wallet/overview" className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition">
+                <div className="mb-2">
+                  <svg className="w-8 h-8 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 2a1 1 0 01.993.883L11 3v4h4a1 1 0 01.117 1.993L15 9h-4v4a1 1 0 01-1.993.117L9 13v-4H5a1 1 0 01-.117-1.993L5 7h4V3a1 1 0 011-1z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-medium mb-1">Abstract Global Wallet</h3>
+                <p className="text-sm">Explore wallet solutions and capabilities.</p>
+              </a>
+            </div>
+          </section>
+          <section className="border-t border-gray-200 dark:border-gray-700 pt-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div className="flex items-center space-x-3">
+                <span className="font-medium">Was this page helpful?</span>
+                <button className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition">Yes</button>
+                <button className="px-4 py-2 bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded hover:bg-gray-400 dark:hover:bg-gray-600 transition">No</button>
+              </div>
+              <div className="flex items-center space-x-4">
+                <a href="https://github.com/Abstract-Foundation" className="text-sm text-green-600 dark:text-green-400 hover:underline">Suggest edits</a>
+                <a href="https://github.com/Abstract-Foundation/issues" className="text-sm text-green-600 dark:text-green-400 hover:underline">Raise issue</a>
+              </div>
+            </div>
+          </section>
+        </main>
+        <aside className="hidden xl:block xl:col-span-3">
+          <div className="sticky top-20">
+            <h3 className="text-sm font-semibold text-gray-500 uppercase mb-4">On this page</h3>
+            <nav className="space-y-2 text-sm">
+              <a href="#get-started-with-abstract" className="block hover:text-green-600 dark:hover:text-green-400 transition">Get started with Abstract</a>
+              <a href="#explore-abstract-resources" className="block hover:text-green-600 dark:hover:text-green-400 transition">Explore Abstract Resources</a>
+              <a href="#learn-more-about-abstract" className="block hover:text-green-600 dark:hover:text-green-400 transition">Learn more about Abstract</a>
+            </nav>
           </div>
-        </div>
-
-        {/* Main Content */}
-        <div className="pl-64 w-full">
-          <div className="max-w-4xl mx-auto px-8 py-12">
-            {/* Hero Section */}
-            <section className="mb-16">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Welcome to <span className="text-primary-light">Greenprint</span>
-              </h1>
-              <p className="text-xl text-gray-300 leading-relaxed mb-8">
-                Discover our suite of sophisticated trading tools designed to help you capitalize on market inefficiencies in the cryptocurrency space.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Link 
-                  href="/greenprint/guide" 
-                  className="group block bg-gray-800/30 rounded-lg p-6 hover:bg-gray-800/50 transition-all duration-300"
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-xl font-bold text-primary-light">Quick Start Guide</h3>
-                    <ArrowRight className="w-5 h-5 text-primary-light transform group-hover:translate-x-1 transition-transform" />
-                  </div>
-                  <p className="text-gray-300">
-                    Get up and running with our step-by-step guide for new users.
-                  </p>
-                </Link>
-                <Link 
-                  href="/greenprint/overview" 
-                  className="group block bg-gray-800/30 rounded-lg p-6 hover:bg-gray-800/50 transition-all duration-300"
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-xl font-bold text-primary-light">Comprehensive Overview</h3>
-                    <ArrowRight className="w-5 h-5 text-primary-light transform group-hover:translate-x-1 transition-transform" />
-                  </div>
-                  <p className="text-gray-300">
-                    Deep dive into features, advantages, and technical details.
-                  </p>
-                </Link>
-              </div>
-            </section>
-
-            {/* Getting Started Cards */}
-            <section className="mb-16">
-              <h2 className="text-2xl font-bold mb-6 text-primary-light">Getting Started</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-gray-800/30 rounded-lg p-6">
-                  <div className="w-12 h-12 bg-primary-light/20 rounded-full flex items-center justify-center mb-4">
-                    <span className="text-2xl font-bold text-primary-light">1</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 text-primary-light">Choose Your Tier</h3>
-                  <p className="text-gray-300 mb-4">
-                    Select the tier that best matches your trading needs and volume.
-                  </p>
-                  <Link href="/greenprint/guide#tiers" className="text-primary-light hover:text-primary-light/90">
-                    View tiers →
-                  </Link>
-                </div>
-                <div className="bg-gray-800/30 rounded-lg p-6">
-                  <div className="w-12 h-12 bg-primary-light/20 rounded-full flex items-center justify-center mb-4">
-                    <span className="text-2xl font-bold text-primary-light">2</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 text-primary-light">Setup</h3>
-                  <p className="text-gray-300 mb-4">
-                    Configure your environment and connect your accounts securely.
-                  </p>
-                  <Link href="/greenprint/guide#setup" className="text-primary-light hover:text-primary-light/90">
-                    Setup guide →
-                  </Link>
-                </div>
-                <div className="bg-gray-800/30 rounded-lg p-6">
-                  <div className="w-12 h-12 bg-primary-light/20 rounded-full flex items-center justify-center mb-4">
-                    <span className="text-2xl font-bold text-primary-light">3</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 text-primary-light">Launch</h3>
-                  <p className="text-gray-300 mb-4">
-                    Start trading with our automated systems and monitor performance.
-                  </p>
-                  <Link href="/greenprint/guide#launch" className="text-primary-light hover:text-primary-light/90">
-                    Launch guide →
-                  </Link>
-                </div>
-              </div>
-            </section>
-
-            {/* Features Overview */}
-            <section>
-              <h2 className="text-2xl font-bold mb-6 text-primary-light">Key Features</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-gray-800/30 rounded-lg p-6">
-                  <h3 className="text-xl font-bold mb-3 text-primary-light">Automated Trading</h3>
-                  <ul className="space-y-2 text-gray-300">
-                    <li className="flex items-center">
-                      <span className="text-primary-light mr-2">•</span>
-                      24/7 market monitoring
-                    </li>
-                    <li className="flex items-center">
-                      <span className="text-primary-light mr-2">•</span>
-                      Instant execution
-                    </li>
-                    <li className="flex items-center">
-                      <span className="text-primary-light mr-2">•</span>
-                      Smart order routing
-                    </li>
-                  </ul>
-                </div>
-                <div className="bg-gray-800/30 rounded-lg p-6">
-                  <h3 className="text-xl font-bold mb-3 text-primary-light">Risk Management</h3>
-                  <ul className="space-y-2 text-gray-300">
-                    <li className="flex items-center">
-                      <span className="text-primary-light mr-2">•</span>
-                      Position limits
-                    </li>
-                    <li className="flex items-center">
-                      <span className="text-primary-light mr-2">•</span>
-                      Auto stop-loss
-                    </li>
-                    <li className="flex items-center">
-                      <span className="text-primary-light mr-2">•</span>
-                      Emergency protocols
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </section>
-          </div>
-        </div>
+        </aside>
       </div>
-
-      {/* Footer */}
-      <footer className="bg-black py-12">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Logo and Copyright */}
-            <div className="flex flex-col items-center md:items-start">
-              <img 
-                src="/images/abaraxaslogo.jpeg"
-                alt="Abraxas"
-                className="h-12 w-auto mb-4"
-              />
-              <p className="text-gray-400 text-sm">
-                © 2025 Abraxas Innovations. All rights reserved.
-              </p>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex flex-col items-center md:items-start">
-              <h3 className="text-white font-bold mb-4">Connect With Us</h3>
-              <div className="flex space-x-6">
-                <a 
-                  href="#" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-gray-400 hover:text-white transition-colors"
-                  aria-label="Twitter"
-                >
-                  <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                  </svg>
-                </a>
-                <a 
-                  href="https://t.me/AbraxasInnovations" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-gray-400 hover:text-white transition-colors"
-                  aria-label="Telegram"
-                >
-                  <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.2-.04-.28-.02-.12.02-1.98 1.26-5.61 3.71-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.06-.49-.83-.27-1.49-.42-1.43-.89.03-.24.27-.49.71-.74C7.19 11.73 8.87 11 11.2 9.6c3.71-2.21 4.48-2.6 4.98-2.61.11 0 .35.03.51.14.13.09.17.21.18.27-.01.06-.01.24-.02.27l-.21 1.13z"/>
-                  </svg>
-                </a>
-                <a 
-                  href="#" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-gray-400 hover:text-white transition-colors"
-                  aria-label="LinkedIn"
-                >
-                  <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-            {/* Legal Links - Added Return Policy */}
-            <div className="flex flex-col items-center md:items-start">
-              <h3 className="text-white font-bold mb-4">Legal</h3>
-              <div className="flex flex-col space-y-2">
-                <Link 
-                  href="/terms" 
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Terms & Conditions
-                </Link>
-                <Link 
-                  href="/privacy" 
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Privacy Policy
-                </Link>
-                <Link 
-                  href="/return-policy" 
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Return Policy
-                </Link>
-              </div>
-            </div>
+      <footer className="border-t border-gray-200 dark:border-gray-700">
+        <div className="max-w-screen-xl mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex space-x-4">
+            <a href="https://twitter.com" className="p-2 hover:text-green-600 dark:hover:text-green-400 transition" aria-label="Twitter">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22.46 6c-.77.35-1.6.59-2.46.69a4.26 4.26 0 001.88-2.35 8.69 8.69 0 01-2.7 1.03 4.25 4.25 0 00-7.24 3.87 12.07 12.07 0 01-8.75-4.43 4.24 4.24 0 001.32 5.67 4.21 4.21 0 01-1.92-.53v.05a4.25 4.25 0 003.41 4.17 4.23 4.23 0 01-1.91.07 4.26 4.26 0 003.97 2.96 8.52 8.52 0 01-5.27 1.82A8.71 8.71 0 012 19.54a12.04 12.04 0 006.52 1.91c7.83 0 12.12-6.48 12.12-12.11 0-.19-.01-.39-.02-.58A8.65 8.65 0 0024 5.55a8.43 8.43 0 01-2.54.7z" />
+              </svg>
+            </a>
+            <a href="https://discord.com" className="p-2 hover:text-green-600 dark:hover:text-green-400 transition" aria-label="Discord">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.317 4.369a19.791 19.791 0 00-4.885-1.515.07.07 0 00-.074.035 13.86 13.86 0 00-2.608 5.333 19.665 19.665 0 00-5.687 0A13.888 13.888 0 007.449 3.89a.07.07 0 00-.074-.035 19.736 19.736 0 00-4.885 1.515.066.066 0 00-.03.027C.533 9.36-.319 14.276.099 19.138a.07.07 0 00.027.045 19.916 19.916 0 005.994 3.005.07.07 0 00.076-.027c.464-.63.87-1.295 1.226-1.993a.07.07 0 00-.041-.095 13.148 13.148 0 01-1.87-.89.07.07 0 01-.007-.117c.125-.094.25-.192.367-.293a.07.07 0 01.072-.01 13.16 13.16 0 0012.108 0 .07.07 0 01.073.01c.117.1.242.199.367.293a.07.07 0 01-.006.117 13.093 13.093 0 01-1.87.89.07.07 0 00-.041.095c.36.698.765 1.363 1.227 1.993a.07.07 0 00.077.027 19.86 19.86 0 005.994-3.005.07.07 0 00.027-.045c.5-5.035-.838-9.95-3.548-14.742a.063.063 0 00-.03-.028zM8.02 15.331c-1.18 0-2.148-1.085-2.148-2.419 0-1.334.955-2.419 2.148-2.419 1.2 0 2.167 1.092 2.148 2.419 0 1.334-.955 2.419-2.148 2.419zm7.96 0c-1.18 0-2.148-1.085-2.148-2.419 0-1.334.955-2.419 2.148-2.419 1.2 0 2.167 1.092 2.148 2.419 0 1.334-.948 2.419-2.148 2.419z" />
+              </svg>
+            </a>
+            <a href="https://github.com" className="p-2 hover:text-green-600 dark:hover:text-green-400 transition" aria-label="GitHub">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0a12 12 0 00-3.79 23.39c.6.11.82-.26.82-.58v-2.16c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.09-.75.08-.74.08-.74 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.8 1.3 3.48.99.11-.78.42-1.3.76-1.6-2.67-.3-5.48-1.34-5.48-5.96 0-1.32.47-2.39 1.24-3.24-.12-.3-.54-1.52.12-3.16 0 0 1-.32 3.3 1.23a11.49 11.49 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.64.24 2.86.12 3.16.77.85 1.24 1.92 1.24 3.24 0 4.63-2.81 5.66-5.49 5.96.43.38.81 1.12.81 2.26v3.35c0 .32.22.7.82.58A12 12 0 0012 0z" />
+              </svg>
+            </a>
+          </div>
+          <div>
+            <a href="https://mintlify.com" className="text-sm text-gray-600 dark:text-gray-400 hover:underline">Powered by Mintlify</a>
           </div>
         </div>
       </footer>
