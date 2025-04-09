@@ -20,7 +20,7 @@ export default function Greenprint() {
 
   return (
     <div className="min-h-screen bg-[#0a1512] text-white relative">
-      <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+      <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
       
       {/* Top Navigation */}
       <header className="sticky top-0 z-50 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
