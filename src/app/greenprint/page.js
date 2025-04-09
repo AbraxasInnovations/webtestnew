@@ -20,14 +20,14 @@ export default function Greenprint() {
 
   return (
     <div className="min-h-screen bg-[#0a1512] text-white relative">
-      <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
+      <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
       
       {/* Top Navigation */}
       <header className="sticky top-0 z-50 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-screen-xl mx-auto px-4 h-16 flex items-center justify-between">
           <a href="/" className="flex items-center">
-            <img src="https://mintlify.s3.us-west-1.amazonaws.com/abstract/logo/light.svg" alt="Abstract Logo" className="block dark:hidden h-8" />
-            <img src="https://mintlify.s3.us-west-1.amazonaws.com/abstract/logo/dark.svg" alt="Abstract Logo" className="hidden dark:block h-8" />
+            <img src="https://mintlify.s3.us-west-1.amazonaws.com/abstract/logo/light.svg" alt="GreenPrint Logo" className="block dark:hidden h-8" />
+            <img src="https://mintlify.s3.us-west-1.amazonaws.com/abstract/logo/dark.svg" alt="GreenPrint Logo" className="hidden dark:block h-8" />
           </a>
           <div className="hidden md:block flex-1 mx-4">
             <input type="text" placeholder="Search... Ctrl K" className="w-full p-3.5 rounded-xl border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-green-600 transition" />
@@ -58,13 +58,7 @@ export default function Greenprint() {
               <a href="#" className="font-semibold text-green-600 dark:text-green-400 border-b-2 border-green-600 pb-1">Documentation</a>
             </li>
             <li>
-              <a href="#" className="hover:text-green-600 dark:hover:text-green-400 transition">Abstract Global Wallet</a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-green-600 dark:hover:text-green-400 transition">Ecosystem</a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-green-600 dark:hover:text-green-400 transition">Portal</a>
+              <a href="#" className="hover:text-green-600 dark:hover:text-green-400 transition">Abraxas Innovations</a>
             </li>
           </ul>
         </div>
@@ -81,23 +75,23 @@ export default function Greenprint() {
                   <a href="#" className="block py-1.5 px-3 rounded bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-400 font-medium">Introduction</a>
                 </li>
                 <li>
-                  <a href="#" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">What is Abstract?</a>
+                  <a href="#" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">What is GreenPrint?</a>
                 </li>
                 <li>
-                  <a href="#" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Connect to Abstract</a>
+                  <a href="#" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Connect to GreenPrint</a>
                 </li>
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-gray-500 uppercase mb-2">Build on Abstract</h3>
+              <h3 className="text-sm font-semibold text-gray-500 uppercase mb-2">Pricing</h3>
               <ul className="space-y-1">
                 <li>
-                  <a href="#" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Start Building</a>
+                  <a href="#" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Our prices</a>
                 </li>
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-gray-500 uppercase mb-2">How Abstract Works</h3>
+              <h3 className="text-sm font-semibold text-gray-500 uppercase mb-2">How GreenPrint Works</h3>
               <ul className="space-y-1">
                 <li>
                   <a href="#" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Overview</a>
@@ -105,10 +99,10 @@ export default function Greenprint() {
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-gray-500 uppercase mb-2">Tooling</h3>
+              <h3 className="text-sm font-semibold text-gray-500 uppercase mb-2">Education</h3>
               <ul className="space-y-1">
                 <li>
-                  <a href="#" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Tools</a>
+                  <a href="#" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Glossary</a>
                 </li>
               </ul>
             </div>
@@ -126,14 +120,14 @@ export default function Greenprint() {
           <section>
             <p className="uppercase text-green-600 dark:text-green-400 text-xs font-semibold tracking-wide">Overview</p>
             <h1 className="text-3xl font-bold mt-2">Introduction</h1>
-            <p className="mt-4 text-base leading-relaxed">Welcome to the Abstract documentation. Learn how Abstract empowers developers to build, connect, and innovate in a next-generation ecosystem.</p>
+            <p className="mt-4 text-base leading-relaxed">Welcome to the GreenPrint documentation. Learn how GreenPrint empowers developers to build, connect, and innovate in a next-generation ecosystem.</p>
             <div className="mt-8 flex justify-center">
               <img src="https://mintlify.s3.us-west-1.amazonaws.com/abstract/images/Block.svg" alt="Hero Block Image" className="w-64 h-auto" />
             </div>
           </section>
           <section id="get-started-with-abstract">
-            <h2 className="text-2xl font-semibold mb-2">Get started with Abstract</h2>
-            <p className="mb-4 text-base">Kickstart your journey. Choose one of the options below to connect or begin building on Abstract.</p>
+            <h2 className="text-2xl font-semibold mb-2">Get started with GreenPrint</h2>
+            <p className="mb-4 text-base">Kickstart your journey. Choose one of the options below to connect or begin building on GreenPrint.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <a href="/connect-to-abstract" className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition">
                 <div className="mb-2">
@@ -141,7 +135,7 @@ export default function Greenprint() {
                     <path d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm8-5a1 1 0 00-.993.883L9 6v3H6a1 1 0 00-.117 1.993L6 11h3v3a1 1 0 001.993.117L11 14v-3h3a1 1 0 00.117-1.993L14 9h-3V6a1 1 0 00-1-1z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-medium mb-1">Connect to Abstract</h3>
+                <h3 className="text-lg font-medium mb-1">Connect to GreenPrint</h3>
                 <p className="text-sm">Link your services and enjoy seamless connectivity.</p>
               </a>
               <a href="/build-on-abstract/getting-started" className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition">
@@ -150,13 +144,13 @@ export default function Greenprint() {
                     <path d="M11 17a1 1 0 01-.117-1.993L11 15h3a1 1 0 01.117 1.993L14 17h-3zm-4-4a1 1 0 01-.117-1.993L7 11h7a1 1 0 01.117 1.993L14 13H7zm-4-4a1 1 0 01-.117-1.993L3 7h11a1 1 0 01.117 1.993L14 9H3z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-medium mb-1">Start Building on Abstract</h3>
-                <p className="text-sm">Get your development environment set up in minutes.</p>
+                <h3 className="text-lg font-medium mb-1">Our prices</h3>
+                <p className="text-sm">Explore our pricing options and find the right plan for you.</p>
               </a>
             </div>
           </section>
           <section id="explore-abstract-resources">
-            <h2 className="text-2xl font-semibold mb-2">Explore Abstract Resources</h2>
+            <h2 className="text-2xl font-semibold mb-2">Explore GreenPrint Resources</h2>
             <p className="mb-4 text-base">Discover example repositories and tutorials to accelerate your learning process.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <a href="https://github.com/Abstract-Foundation/examples" className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition">
@@ -175,13 +169,13 @@ export default function Greenprint() {
                   </svg>
                 </div>
                 <h3 className="text-lg font-medium mb-1">YouTube Tutorials</h3>
-                <p className="text-sm">Watch our video guides to learn the ropes of Abstract.</p>
+                <p className="text-sm">Watch our video guides to learn the ropes of GreenPrint.</p>
               </a>
             </div>
           </section>
           <section id="learn-more-about-abstract">
-            <h2 className="text-2xl font-semibold mb-2">Learn more about Abstract</h2>
-            <p className="mb-4 text-base">Deep dive into what Abstract is, how it works, and explore its architecture and wallet solutions.</p>
+            <h2 className="text-2xl font-semibold mb-2">Learn more about GreenPrint</h2>
+            <p className="mb-4 text-base">Deep dive into what GreenPrint is, how it works, and explore its architecture and wallet solutions.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <a href="/what-is-abstract" className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition">
                 <div className="mb-2">
@@ -189,8 +183,8 @@ export default function Greenprint() {
                     <path d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm8-5a1 1 0 00-.993.883L9 6v3H6a1 1 0 00-.117 1.993L6 11h3v3a1 1 0 001.993.117L11 14v-3h3a1 1 0 00.117-1.993L14 9h-3V6a1 1 0 00-1-1z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-medium mb-1">What is Abstract?</h3>
-                <p className="text-sm">Understand the fundamentals of Abstract.</p>
+                <h3 className="text-lg font-medium mb-1">What is GreenPrint?</h3>
+                <p className="text-sm">Understand the fundamentals of GreenPrint.</p>
               </a>
               <a href="/how-abstract-works/architecture/layer-2s" className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition">
                 <div className="mb-2">
@@ -198,7 +192,7 @@ export default function Greenprint() {
                     <path d="M4 3a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V4a1 1 0 00-1-1H4zm11 2v10H5V5h10z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-medium mb-1">How Abstract Works</h3>
+                <h3 className="text-lg font-medium mb-1">How GreenPrint Works</h3>
                 <p className="text-sm">Dive into the technical workings of the platform.</p>
               </a>
               <a href="/architecture" className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition">
@@ -208,7 +202,7 @@ export default function Greenprint() {
                   </svg>
                 </div>
                 <h3 className="text-lg font-medium mb-1">Architecture</h3>
-                <p className="text-sm">Discover the design behind Abstract.</p>
+                <p className="text-sm">Discover the design behind GreenPrint.</p>
               </a>
               <a href="/abstract-global-wallet/overview" className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition">
                 <div className="mb-2">
@@ -216,8 +210,8 @@ export default function Greenprint() {
                     <path d="M10 2a1 1 0 01.993.883L11 3v4h4a1 1 0 01.117 1.993L15 9h-4v4a1 1 0 01-1.993.117L9 13v-4H5a1 1 0 01-.117-1.993L5 7h4V3a1 1 0 011-1z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-medium mb-1">Abstract Global Wallet</h3>
-                <p className="text-sm">Explore wallet solutions and capabilities.</p>
+                <h3 className="text-lg font-medium mb-1">Glossary</h3>
+                <p className="text-sm">Explore key terms and concepts in GreenPrint.</p>
               </a>
             </div>
           </section>
@@ -239,9 +233,9 @@ export default function Greenprint() {
           <div className="sticky top-20">
             <h3 className="text-sm font-semibold text-gray-500 uppercase mb-4">On this page</h3>
             <nav className="space-y-2 text-sm">
-              <a href="#get-started-with-abstract" className="block hover:text-green-600 dark:hover:text-green-400 transition">Get started with Abstract</a>
-              <a href="#explore-abstract-resources" className="block hover:text-green-600 dark:hover:text-green-400 transition">Explore Abstract Resources</a>
-              <a href="#learn-more-about-abstract" className="block hover:text-green-600 dark:hover:text-green-400 transition">Learn more about Abstract</a>
+              <a href="#get-started-with-abstract" className="block hover:text-green-600 dark:hover:text-green-400 transition">Get started with GreenPrint</a>
+              <a href="#explore-abstract-resources" className="block hover:text-green-600 dark:hover:text-green-400 transition">Explore GreenPrint Resources</a>
+              <a href="#learn-more-about-abstract" className="block hover:text-green-600 dark:hover:text-green-400 transition">Learn more about GreenPrint</a>
             </nav>
           </div>
         </aside>
