@@ -71,13 +71,16 @@ export default function Greenprint() {
               <h3 className="text-sm font-semibold text-gray-500 uppercase mb-2">Overview</h3>
               <ul className="space-y-1">
                 <li>
-                  <a href="#" className="block py-1.5 px-3 rounded bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-400 font-medium">Introduction</a>
+                  <a href="/greenprint" className="block py-1.5 px-3 rounded bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-400 font-medium">Introduction</a>
                 </li>
                 <li>
-                  <a href="#" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">What is GreenPrint?</a>
+                  <a href="/greenprint/what-is" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">What is GreenPrint?</a>
                 </li>
                 <li>
-                  <a href="#" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Connect to GreenPrint</a>
+                  <a href="/greenprint/connect" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Connect to GreenPrint</a>
+                </li>
+                <li>
+                  <a href="/greenprint/how-to-guide" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">How-to Guide</a>
                 </li>
               </ul>
             </div>
@@ -85,7 +88,7 @@ export default function Greenprint() {
               <h3 className="text-sm font-semibold text-gray-500 uppercase mb-2">Pricing</h3>
               <ul className="space-y-1">
                 <li>
-                  <a href="#" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Our prices</a>
+                  <a href="/greenprint/pricing" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Our prices</a>
                 </li>
               </ul>
             </div>
@@ -93,7 +96,10 @@ export default function Greenprint() {
               <h3 className="text-sm font-semibold text-gray-500 uppercase mb-2">How GreenPrint Works</h3>
               <ul className="space-y-1">
                 <li>
-                  <a href="#" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Overview</a>
+                  <a href="/greenprint/how-it-works" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Overview</a>
+                </li>
+                <li>
+                  <a href="/greenprint/how-to-guide" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">How-to Guide</a>
                 </li>
               </ul>
             </div>
@@ -101,7 +107,7 @@ export default function Greenprint() {
               <h3 className="text-sm font-semibold text-gray-500 uppercase mb-2">Education</h3>
               <ul className="space-y-1">
                 <li>
-                  <a href="#" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Glossary</a>
+                  <a href="/greenprint/glossary" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Glossary</a>
                 </li>
               </ul>
             </div>
@@ -109,19 +115,19 @@ export default function Greenprint() {
               <h3 className="text-sm font-semibold text-gray-500 uppercase mb-2">Infrastructure</h3>
               <ul className="space-y-1">
                 <li>
-                  <a href="#" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Network</a>
+                  <a href="/greenprint/network" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Network</a>
                 </li>
               </ul>
             </div>
           </nav>
         </aside>
-        <main className="lg:col-span-6 space-y-12">
+        <main className="lg:col-span-7 space-y-12">
           <section>
             <p className="uppercase text-green-600 dark:text-green-400 text-xs font-semibold tracking-wide">Overview</p>
             <h1 className="text-3xl font-bold mt-2">Introduction</h1>
             <p className="mt-4 text-base leading-relaxed">Welcome to the GreenPrint documentation. Learn how GreenPrint empowers developers to build, connect, and innovate in a next-generation ecosystem.</p>
             <div className="mt-8 flex justify-center">
-              <img src="https://mintlify.s3.us-west-1.amazonaws.com/abstract/images/Block.svg" alt="Hero Block Image" className="w-64 h-auto" />
+              <img src="https://mintlify.s3.us-west-1.amazonaws.com/abstract/images/Block.svg" alt="Hero Block Image" className="w-96 h-auto" />
             </div>
           </section>
           <section id="get-started-with-abstract">
@@ -197,7 +203,7 @@ export default function Greenprint() {
               <a href="/architecture" className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition">
                 <div className="mb-2">
                   <svg className="w-8 h-8 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 2a1 1 0 01.993.883L11 3v4h4a1 1 0 01.117 1.993L15 9h-4v4a1 1 0 01-1.993.117L9 13v-4H5a1 1 0 01-.117-1.993L5 7h4V3a1 1 0 011-1z" />
+                    <path d="M10 2a1 1 0 01.993.883L11 3v4h4a1 1 0 01.117 1.993L15 9h-4v4H5a1 1 0 01-.117-1.993L5 11h4V3a1 1 0 011-1z" />
                   </svg>
                 </div>
                 <h3 className="text-lg font-medium mb-1">Architecture</h3>
@@ -206,7 +212,7 @@ export default function Greenprint() {
               <a href="/abstract-global-wallet/overview" className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition">
                 <div className="mb-2">
                   <svg className="w-8 h-8 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 2a1 1 0 01.993.883L11 3v4h4a1 1 0 01.117 1.993L15 9h-4v4a1 1 0 01-1.993.117L9 13v-4H5a1 1 0 01-.117-1.993L5 7h4V3a1 1 0 011-1z" />
+                    <path d="M10 2a1 1 0 01.993.883L11 3v4h4a1 1 0 01.117 1.993L15 9h-4v4H5a1 1 0 01-.117-1.993L5 11h4V3a1 1 0 011-1z" />
                   </svg>
                 </div>
                 <h3 className="text-lg font-medium mb-1">Glossary</h3>
@@ -228,7 +234,7 @@ export default function Greenprint() {
             </div>
           </section>
         </main>
-        <aside className="hidden xl:block xl:col-span-3">
+        <aside className="hidden xl:block xl:col-span-2">
           <div className="sticky top-20">
             <h3 className="text-sm font-semibold text-gray-500 uppercase mb-4">On this page</h3>
             <nav className="space-y-2 text-sm">
