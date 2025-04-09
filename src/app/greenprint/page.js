@@ -26,8 +26,7 @@ export default function Greenprint() {
       <header className="sticky top-0 z-50 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-screen-xl mx-auto px-4 h-16 flex items-center justify-between">
           <a href="/" className="flex items-center">
-            <img src="https://mintlify.s3.us-west-1.amazonaws.com/abstract/logo/light.svg" alt="GreenPrint Logo" className="block dark:hidden h-8" />
-            <img src="https://mintlify.s3.us-west-1.amazonaws.com/abstract/logo/dark.svg" alt="GreenPrint Logo" className="hidden dark:block h-8" />
+            <div className="h-8 w-32 bg-gray-200 dark:bg-gray-700 rounded"></div>
           </a>
           <div className="hidden md:block flex-1 mx-4">
             <input type="text" placeholder="Search... Ctrl K" className="w-full p-3.5 rounded-xl border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-green-600 transition" />
