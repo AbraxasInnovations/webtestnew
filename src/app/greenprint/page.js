@@ -27,7 +27,7 @@ export default function Greenprint() {
         <div className="max-w-screen-xl mx-auto px-4 h-16 flex items-center justify-between">
           <a href="/" className="flex items-center">
             <Image
-              src="/images/greenprint-logo.jpg"
+              src="/images/greenprint-logo.PNG"
               alt="Greenprint Logo"
               width={32}
               height={32}
@@ -61,10 +61,16 @@ export default function Greenprint() {
         <div className="max-w-screen-xl mx-auto px-4">
           <ul className="flex space-x-6 h-12 items-center text-sm">
             <li>
-              <a href="#" className="font-semibold text-green-600 dark:text-green-400 border-b-2 border-green-600 pb-1">Documentation</a>
+              <Link href="/greenprint" className="font-semibold text-green-600 dark:text-green-400 border-b-2 border-green-600 pb-1">Documentation</Link>
             </li>
             <li>
-              <a href="#" className="hover:text-green-600 dark:hover:text-green-400 transition">Abraxas Innovations</a>
+              <Link href="/greenprint/pricing" className="hover:text-green-600 dark:hover:text-green-400 transition">Pricing</Link>
+            </li>
+            <li>
+              <Link href="/greenprint/how-to-guide" className="hover:text-green-600 dark:hover:text-green-400 transition">How-to Guide</Link>
+            </li>
+            <li>
+              <Link href="/greenprint/glossary" className="hover:text-green-600 dark:hover:text-green-400 transition">Glossary</Link>
             </li>
           </ul>
         </div>
