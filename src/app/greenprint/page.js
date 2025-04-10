@@ -18,6 +18,14 @@ export default function Greenprint() {
     setMobileMenuOpen(false);
   };
 
+  const handleScroll = (e, id) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#0a1512] text-white relative">
       <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
@@ -228,9 +236,27 @@ export default function Greenprint() {
           <div className="sticky top-20">
             <h3 className="text-sm font-semibold text-gray-500 uppercase mb-4">On this page</h3>
             <nav className="space-y-2 text-sm">
-              <a href="#get-started-with-abstract" className="block hover:text-green-600 dark:hover:text-green-400 transition">Get started with GreenPrint</a>
-              <a href="#explore-abstract-resources" className="block hover:text-green-600 dark:hover:text-green-400 transition">Explore GreenPrint Resources</a>
-              <a href="#learn-more-about-abstract" className="block hover:text-green-600 dark:hover:text-green-400 transition">Learn more about GreenPrint</a>
+              <a 
+                href="#get-started-with-abstract" 
+                onClick={(e) => handleScroll(e, 'get-started-with-abstract')} 
+                className="block hover:text-green-600 dark:hover:text-green-400 transition cursor-pointer"
+              >
+                Get started with GreenPrint
+              </a>
+              <a 
+                href="#explore-abstract-resources" 
+                onClick={(e) => handleScroll(e, 'explore-abstract-resources')} 
+                className="block hover:text-green-600 dark:hover:text-green-400 transition cursor-pointer"
+              >
+                Explore GreenPrint Resources
+              </a>
+              <a 
+                href="#learn-more-about-abstract" 
+                onClick={(e) => handleScroll(e, 'learn-more-about-abstract')} 
+                className="block hover:text-green-600 dark:hover:text-green-400 transition cursor-pointer"
+              >
+                Learn more about GreenPrint
+              </a>
             </nav>
           </div>
         </aside>
