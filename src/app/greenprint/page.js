@@ -97,13 +97,13 @@ export default function Greenprint() {
               <h3 className="text-sm font-semibold text-gray-500 uppercase mb-2">Overview</h3>
               <ul className="space-y-1">
                 <li>
-                  <Link href="/greenprint" className="block py-1.5 px-3 rounded bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-400 font-medium">Introduction</Link>
+                  <Link href="/greenprint" className="block py-1.5 px-3 rounded text-green-400 hover:text-green-300 hover:bg-green-400/10 transition-all duration-200">Introduction</Link>
                 </li>
                 <li>
-                  <Link href="/greenprint/overview" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">What is GreenPrint?</Link>
+                  <Link href="/greenprint/overview" className="block py-1.5 px-3 rounded text-gray-300 hover:text-green-300 hover:bg-green-400/10 transition-all duration-200">What is GreenPrint?</Link>
                 </li>
                 <li>
-                  <Link href="/greenprint/guide" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Guide</Link>
+                  <Link href="/greenprint/guide" className="block py-1.5 px-3 rounded text-gray-300 hover:text-green-300 hover:bg-green-400/10 transition-all duration-200">Guide</Link>
                 </li>
               </ul>
             </div>
@@ -111,7 +111,7 @@ export default function Greenprint() {
               <h3 className="text-sm font-semibold text-gray-500 uppercase mb-2">Pricing</h3>
               <ul className="space-y-1">
                 <li>
-                  <Link href="/greenprint/pricing" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Our prices</Link>
+                  <Link href="/greenprint/pricing" className="block py-1.5 px-3 rounded text-gray-300 hover:text-green-300 hover:bg-green-400/10 transition-all duration-200">Our prices</Link>
                 </li>
               </ul>
             </div>
@@ -119,10 +119,10 @@ export default function Greenprint() {
               <h3 className="text-sm font-semibold text-gray-500 uppercase mb-2">Resources</h3>
               <ul className="space-y-1">
                 <li>
-                  <Link href="/greenprint/guide" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Guide</Link>
+                  <Link href="/greenprint/guide" className="block py-1.5 px-3 rounded text-gray-300 hover:text-green-300 hover:bg-green-400/10 transition-all duration-200">Guide</Link>
                 </li>
                 <li>
-                  <Link href="/greenprint/glossary" className="block py-1.5 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Glossary</Link>
+                  <Link href="/greenprint/glossary" className="block py-1.5 px-3 rounded text-gray-300 hover:text-green-300 hover:bg-green-400/10 transition-all duration-200">Glossary</Link>
                 </li>
               </ul>
             </div>
