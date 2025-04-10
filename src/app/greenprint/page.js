@@ -24,32 +24,36 @@ export default function Greenprint() {
       
       {/* Top Navigation */}
       <header className="sticky top-0 z-50 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <img
-                  src="/images/greenprint-logo.png"
-                  alt="Greenprint Logo"
-                  className="h-8 w-auto"
-                />
-              </div>
-              <nav className="hidden md:ml-6 md:flex md:space-x-8">
-                <a href="#" className="font-semibold text-green-600 dark:text-green-400 border-b-2 border-green-600 pb-1">Documentation</a>
-                <a href="#" className="text-gray-500 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 transition">Abraxas Innovations</a>
-                <a href="#" className="text-gray-500 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 transition">Ecosystem</a>
-                <a href="#" className="text-gray-500 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 transition">Portal</a>
-              </nav>
-            </div>
-            <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <input
-                  type="search"
-                  placeholder="Search..."
-                  className="w-64 px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500"
-                />
-              </div>
-            </div>
+        <div className="max-w-screen-xl mx-auto px-4 h-16 flex items-center justify-between">
+          <a href="/" className="flex items-center">
+            <Image
+              src="/images/greenprint-logo.jpg"
+              alt="Greenprint Logo"
+              width={32}
+              height={32}
+              className="h-8 w-auto"
+              priority
+            />
+          </a>
+          <div className="hidden md:block flex-1 mx-4">
+            <input type="text" placeholder="Search... Ctrl K" className="w-full p-3.5 rounded-xl border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-green-600 transition" />
+          </div>
+          <div className="flex items-center space-x-4">
+            <button className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 2a1 1 0 01.993.883L11 3v2a1 1 0 01-1.993.117L9 5V3a1 1 0 011-1zm4.22 2.47a1 1 0 011.414 0l1.414 1.414a1 1 0 01-1.414 1.414L14.22 5.884a1 1 0 010-1.414zM10 14a4 4 0 110-8 4 4 0 010 8zm7-4a1 1 0 01.117 1.993L17 12h-2a1 1 0 01-.117-1.993L15 10h2zm-1.636 5.364a1 1 0 011.414 1.414L14.57 18.61a1 1 0 01-1.414-1.414l1.414-1.414zM5 10a1 1 0 01.117 1.993L5 12H3a1 1 0 01-.117-1.993L3 10h2zm1.636-4.636a1 1 0 011.414-1.414L9.464 5.37a1 1 0 01-1.414 1.414L6.636 5.364zM10 16a1 1 0 01.993.883L11 17v2a1 1 0 01-1.993.117L9 19v-2a1 1 0 011-1z" />
+              </svg>
+            </button>
+            <button className="md:hidden p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </button>
+            <button className="md:hidden p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
           </div>
         </div>
       </header>
