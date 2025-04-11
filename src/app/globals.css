@@ -1144,18 +1144,13 @@ html.smooth-scroll {
 .testimonials-title,
 .services-title,
 #services .services-title {
-  transform: translateY(30px);
-  opacity: 0;
-  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
-  color: white;
-  font-weight: bold;
+  display: none;
 }
 
 .testimonials-title.visible,
 .services-title.visible,
 #services .services-title.visible {
-  transform: translateY(0);
-  opacity: 1;
+  display: none;
 }
 
 .testimonials-description {
