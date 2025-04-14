@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, ChevronRight, Menu, X } from 'lucide-react';
@@ -7,6 +7,8 @@ import { ArrowRight, ChevronRight, Menu, X } from 'lucide-react';
 export default function GreenprintHome() {
   // Add state for mobile menu
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  // Add state for disclosure popup
+  const [showDisclosure, setShowDisclosure] = useState(true);
   
   // Toggle mobile menu function
   const toggleMobileMenu = () => {
@@ -18,8 +20,83 @@ export default function GreenprintHome() {
     setMobileMenuOpen(false);
   };
 
+  // Close disclosure popup
+  const closeDisclosure = () => {
+    setShowDisclosure(false);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-[#0a1512] to-black text-white">
+      {/* Disclosure Popup */}
+      {showDisclosure && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md">
+          <div className="max-w-3xl w-full bg-black/80 border border-gray-800 rounded-xl overflow-hidden shadow-2xl shadow-green-500/20">
+            <div className="grid md:grid-cols-2 gap-0">
+              <div className="p-8 md:p-10 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
+                      <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                    <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-600">
+                      Time-Sensitive Opportunity
+                    </h2>
+                  </div>
+                  
+                  <div className="prose prose-invert">
+                    <p className="text-gray-300 leading-relaxed mb-4">
+                      <span className="text-green-400 font-semibold">Listen carefully</span> - I don't have time for marketing fluff. I'm a 15-year Wall Street quant who's been running this funding rate arbitrage strategy for the past 3 years.
+                    </p>
+                    <p className="text-gray-300 leading-relaxed mb-4">
+                      The GreenPrint Funding Bot works. Period. It's generating consistent returns regardless of market conditions. But here's the catch - it's capacity constrained. There's only so much liquidity in the funding rate markets.
+                    </p>
+                    <p className="text-gray-300 leading-relaxed mb-4">
+                      I'm offering this to a limited number of traders because I've reached my optimal position size. Any larger, and slippage would eat into my returns. By spreading it across multiple portfolios, we can all benefit without impacting each other's performance.
+                    </p>
+                    <p className="text-gray-300 leading-relaxed mb-6">
+                      <span className="text-red-400 font-semibold">But the window is closing.</span> As more arbitrageurs enter this space, the funding rate differentials will compress. This is a first-mover advantage situation. The early adopters will capture the highest returns.
+                    </p>
+                  </div>
+                </div>
+                
+                <button 
+                  onClick={closeDisclosure}
+                  className="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-lg text-center font-semibold hover:from-green-600 hover:to-emerald-700 transition-all duration-200 mt-6"
+                >
+                  I Understand - Continue to GreenPrint
+                </button>
+              </div>
+              
+              <div className="relative hidden md:block">
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-900/10 to-transparent"></div>
+                <div className="aspect-[4/3] relative">
+                  <Image
+                    src="/images/bot-backtest.png"
+                    alt="GreenPrint Funding Bot Backtest Results"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-black/80 backdrop-blur-sm border-t border-gray-800">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-sm text-gray-400">3-Year Backtest Performance</p>
+                      <p className="text-2xl font-bold text-green-400">+187.4%</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-400">Max Drawdown</p>
+                      <p className="text-2xl font-bold text-red-400">-3.2%</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Tech Pattern Overlay */}
       <div className="fixed inset-0 bg-[url('/images/tech-pattern.png')] opacity-5 pointer-events-none"></div>
       
@@ -234,8 +311,8 @@ export default function GreenprintHome() {
         </div>
       </div>
 
-      {/* Profit Cards Carousel - Moved up closer to hero section */}
-      <section className="py-8 -mt-16 bg-black/50 backdrop-blur-sm relative overflow-hidden z-10">
+      {/* Profit Cards Carousel - Moved up even higher */}
+      <section className="py-4 -mt-32 bg-black/50 backdrop-blur-sm relative overflow-hidden z-10">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-900/10 to-transparent"></div>
         <div className="max-w-7xl mx-auto px-4">
           <style jsx>{`
@@ -383,7 +460,7 @@ export default function GreenprintHome() {
               </h2>
               <div className="prose prose-lg prose-invert">
                 <p className="text-xl text-gray-300 leading-relaxed mb-6">
-                  GreenPrint is a sophisticated cryptocurrency trading bot that leverages advanced algorithms to identify and exploit funding rate differentials across major exchanges. Our technology enables automated, 24/7 trading that generates consistent returns regardless of market conditions.
+                  GreenPrint is a suite of market-exploiting products, for retail and professionals alike. 
                 </p>
                 <p className="text-xl text-gray-300 leading-relaxed mb-6">
                   Unlike traditional trading strategies that rely on market direction, GreenPrint's unique approach focuses on capturing the spread between funding rates, creating a reliable income stream that's independent of price movements. This market-neutral strategy has proven effective across various market cycles.
