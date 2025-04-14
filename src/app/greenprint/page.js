@@ -300,19 +300,7 @@ export default function GreenprintHome() {
               
               <div className="relative">
                 <div className="bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-gray-800 shadow-2xl shadow-green-500/20">
-                  {/* Faded GreenPrint Logo in Background */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
-                    <Image
-                      src="/images/gplogo.PNG"
-                      alt="GreenPrint Logo Background"
-                      width={400}
-                      height={120}
-                      className="object-contain"
-                      priority
-                    />
-                  </div>
-                  
-                  <div className="flex items-center justify-between mb-6 relative z-10">
+                  <div className="flex items-center justify-between mb-6">
                     <h3 className="text-xl font-semibold">Recent Profits</h3>
                     <div className="flex items-center gap-1 text-green-400">
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -322,7 +310,7 @@ export default function GreenprintHome() {
                     </div>
                   </div>
                   
-                  <div className="space-y-4 relative z-10">
+                  <div className="space-y-4">
                     {[
                       { name: "BTC/USDT", profit: "+$1,245", time: "2 min ago" },
                       { name: "ETH/USDT", profit: "+$876", time: "5 min ago" },
