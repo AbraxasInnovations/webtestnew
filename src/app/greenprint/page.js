@@ -445,7 +445,7 @@ export default function GreenprintHome() {
       )}
 
       {/* Hero Section with Video */}
-      <div className="relative min-h-screen">
+      <div className="relative min-h-screen pt-16">
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-transparent z-10"></div>
         <video 
           className="absolute inset-0 w-full h-full object-cover"
@@ -543,7 +543,7 @@ export default function GreenprintHome() {
       </div>
 
       {/* Profit Cards Carousel - Moved up even higher */}
-      <section className="py-4 -mt-48 bg-black/50 backdrop-blur-sm relative overflow-hidden z-10">
+      <section className="py-4 -mt-64 bg-black/50 backdrop-blur-sm relative overflow-hidden z-10">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-900/10 to-transparent"></div>
         <div className="max-w-7xl mx-auto px-4">
           <div className="relative overflow-hidden">
