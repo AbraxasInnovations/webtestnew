@@ -535,18 +535,6 @@ export default function GreenprintHome() {
                     priority
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-lg text-gray-300">Today's Profit</p>
-                        <p className="text-3xl font-bold text-green-400">+$2,450</p>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-lg text-gray-300">Monthly</p>
-                        <p className="text-3xl font-bold text-green-400">+$12,780</p>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -555,7 +543,7 @@ export default function GreenprintHome() {
       </div>
 
       {/* Profit Cards Carousel - Moved up even higher */}
-      <section className="py-4 -mt-32 bg-black/50 backdrop-blur-sm relative overflow-hidden z-10">
+      <section className="py-4 -mt-48 bg-black/50 backdrop-blur-sm relative overflow-hidden z-10">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-900/10 to-transparent"></div>
         <div className="max-w-7xl mx-auto px-4">
           <div className="relative overflow-hidden">
@@ -677,7 +665,7 @@ export default function GreenprintHome() {
       </section>
 
       {/* What is GreenPrint Section - Moved up */}
-      <section className="py-32 px-4 relative overflow-hidden">
+      <section className="py-16 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-900/10 to-transparent"></div>
         <div className="max-w-6xl mx-auto relative">
           <div className="grid md:grid-cols-2 gap-16 items-center">
