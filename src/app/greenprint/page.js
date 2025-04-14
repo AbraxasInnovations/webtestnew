@@ -234,8 +234,8 @@ export default function GreenprintHome() {
         </div>
       </div>
 
-      {/* Profit Cards Carousel */}
-      <section className="py-16 bg-black/50 backdrop-blur-sm relative overflow-hidden">
+      {/* Profit Cards Carousel - Moved up closer to hero section */}
+      <section className="py-8 -mt-16 bg-black/50 backdrop-blur-sm relative overflow-hidden z-10">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-900/10 to-transparent"></div>
         <div className="max-w-7xl mx-auto px-4">
           <style jsx>{`
@@ -372,7 +372,56 @@ export default function GreenprintHome() {
         </div>
       </section>
 
-      {/* Social Proof Section */}
+      {/* What is GreenPrint Section - Moved up */}
+      <section className="py-32 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-900/10 to-transparent"></div>
+        <div className="max-w-6xl mx-auto relative">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-600">
+                What is GreenPrint?
+              </h2>
+              <div className="prose prose-lg prose-invert">
+                <p className="text-xl text-gray-300 leading-relaxed mb-6">
+                  GreenPrint is a sophisticated cryptocurrency trading bot that leverages advanced algorithms to identify and exploit funding rate differentials across major exchanges. Our technology enables automated, 24/7 trading that generates consistent returns regardless of market conditions.
+                </p>
+                <p className="text-xl text-gray-300 leading-relaxed mb-6">
+                  Unlike traditional trading strategies that rely on market direction, GreenPrint's unique approach focuses on capturing the spread between funding rates, creating a reliable income stream that's independent of price movements. This market-neutral strategy has proven effective across various market cycles.
+                </p>
+                <p className="text-xl text-gray-300 leading-relaxed">
+                  Our platform combines cutting-edge technology with robust risk management systems, ensuring your trading activities are both profitable and secure. With real-time monitoring, automated position management, and comprehensive performance analytics, GreenPrint provides a complete solution for automated crypto trading.
+                </p>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="aspect-video rounded-xl overflow-hidden border border-gray-800 shadow-2xl shadow-green-500/20">
+                <Image
+                  src="/images/bot-dashboard.png"
+                  alt="GreenPrint Bot Dashboard"
+                  width={1920}
+                  height={1080}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-6 -right-6 bg-black/80 backdrop-blur-sm p-4 rounded-lg border border-gray-800">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
+                    <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-400">Average Monthly Return</p>
+                    <p className="text-xl font-bold text-green-400">12.4%</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof Section - Moved down */}
       <section className="py-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-900/10 to-transparent"></div>
         <div className="max-w-6xl mx-auto relative">
@@ -437,55 +486,6 @@ export default function GreenprintHome() {
                       <p className="text-green-400 font-bold">+$124,500</p>
                       <p className="text-sm text-gray-400">Total Profit</p>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* What is GreenPrint Section */}
-      <section className="py-32 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-900/10 to-transparent"></div>
-        <div className="max-w-6xl mx-auto relative">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-600">
-                What is GreenPrint?
-              </h2>
-              <div className="prose prose-lg prose-invert">
-                <p className="text-xl text-gray-300 leading-relaxed mb-6">
-                  GreenPrint is a sophisticated cryptocurrency trading bot that leverages advanced algorithms to identify and exploit funding rate differentials across major exchanges. Our technology enables automated, 24/7 trading that generates consistent returns regardless of market conditions.
-                </p>
-                <p className="text-xl text-gray-300 leading-relaxed mb-6">
-                  Unlike traditional trading strategies that rely on market direction, GreenPrint's unique approach focuses on capturing the spread between funding rates, creating a reliable income stream that's independent of price movements. This market-neutral strategy has proven effective across various market cycles.
-                </p>
-                <p className="text-xl text-gray-300 leading-relaxed">
-                  Our platform combines cutting-edge technology with robust risk management systems, ensuring your trading activities are both profitable and secure. With real-time monitoring, automated position management, and comprehensive performance analytics, GreenPrint provides a complete solution for automated crypto trading.
-                </p>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="aspect-video rounded-xl overflow-hidden border border-gray-800 shadow-2xl shadow-green-500/20">
-                <Image
-                  src="/images/bot-dashboard.png"
-                  alt="GreenPrint Bot Dashboard"
-                  width={1920}
-                  height={1080}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-6 -right-6 bg-black/80 backdrop-blur-sm p-4 rounded-lg border border-gray-800">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-400">Average Monthly Return</p>
-                    <p className="text-xl font-bold text-green-400">12.4%</p>
                   </div>
                 </div>
               </div>
