@@ -132,6 +132,21 @@ export default function GreenprintHome() {
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
           background: rgba(16, 185, 129, 0.7);
         }
+        
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-900px);
+          }
+        }
+        .animate-scroll {
+          animation: scroll 20s linear infinite;
+        }
+        .animate-scroll:hover {
+          animation-play-state: paused;
+        }
       `}</style>
 
       {/* Tech Pattern Overlay */}
@@ -352,22 +367,6 @@ export default function GreenprintHome() {
       <section className="py-4 -mt-32 bg-black/50 backdrop-blur-sm relative overflow-hidden z-10">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-900/10 to-transparent"></div>
         <div className="max-w-7xl mx-auto px-4">
-          <style jsx>{`
-            @keyframes scroll {
-              0% {
-                transform: translateX(0);
-              }
-              100% {
-                transform: translateX(-900px);
-              }
-            }
-            .animate-scroll {
-              animation: scroll 20s linear infinite;
-            }
-            .animate-scroll:hover {
-              animation-play-state: paused;
-            }
-          `}</style>
           <div className="relative overflow-hidden">
             <div className="flex gap-4 animate-scroll">
               {/* First set of cards */}
