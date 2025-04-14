@@ -29,48 +29,68 @@ export default function GreenprintHome() {
     <div className="min-h-screen bg-gradient-to-b from-black via-[#0a1512] to-black text-white">
       {/* Disclosure Popup */}
       {showDisclosure && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md">
-          <div className="max-w-3xl w-full bg-black/80 border border-gray-800 rounded-xl overflow-hidden shadow-2xl shadow-green-500/20">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/95 backdrop-blur-md">
+          <div className="max-w-4xl w-full bg-black/90 border-2 border-green-500/30 rounded-xl overflow-hidden shadow-2xl shadow-green-500/30">
             <div className="grid md:grid-cols-2 gap-0">
-              <div className="p-8 md:p-10 flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
-                      <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                      </svg>
-                    </div>
-                    <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-600">
-                      Time-Sensitive Opportunity
-                    </h2>
+              <div className="p-6 md:p-8 flex flex-col h-[80vh]">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center">
+                    <svg className="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
                   </div>
-                  
-                  <div className="prose prose-invert">
-                    <p className="text-gray-300 leading-relaxed mb-4">
-                      <span className="text-green-400 font-semibold">Listen carefully</span> - I don't have time for marketing fluff. I'm a 15-year Wall Street quant who's been running this funding rate arbitrage strategy for the past 3 years.
+                  <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-600">
+                    Time-Sensitive Opportunity
+                  </h2>
+                </div>
+                
+                <div className="overflow-y-auto flex-grow pr-4 custom-scrollbar">
+                  <div className="prose prose-invert prose-lg max-w-none">
+                    <p className="text-xl text-gray-200 leading-relaxed mb-6">
+                      <span className="text-green-400 font-bold text-2xl">Listen carefully</span> - I don't have time for marketing fluff. I'm a 15-year Wall Street quant who's been running this funding rate arbitrage strategy for the past 3 years.
                     </p>
-                    <p className="text-gray-300 leading-relaxed mb-4">
+                    <p className="text-xl text-gray-200 leading-relaxed mb-6">
                       The GreenPrint Funding Bot works. Period. It's generating consistent returns regardless of market conditions. But here's the catch - it's capacity constrained. There's only so much liquidity in the funding rate markets.
                     </p>
-                    <p className="text-gray-300 leading-relaxed mb-4">
+                    <p className="text-xl text-gray-200 leading-relaxed mb-6">
                       I'm offering this to a limited number of traders because I've reached my optimal position size. Any larger, and slippage would eat into my returns. By spreading it across multiple portfolios, we can all benefit without impacting each other's performance.
                     </p>
-                    <p className="text-gray-300 leading-relaxed mb-6">
-                      <span className="text-red-400 font-semibold">But the window is closing.</span> As more arbitrageurs enter this space, the funding rate differentials will compress. This is a first-mover advantage situation. The early adopters will capture the highest returns.
+                    <p className="text-xl text-gray-200 leading-relaxed mb-6">
+                      <span className="text-red-400 font-bold text-2xl">But the window is closing.</span> As more arbitrageurs enter this space, the funding rate differentials will compress. This is a first-mover advantage situation. The early adopters will capture the highest returns.
+                    </p>
+                    <p className="text-xl text-gray-200 leading-relaxed mb-6">
+                      I've spent years developing and refining this strategy. The backtest results speak for themselves - consistent monthly returns with minimal drawdown. But I can't keep this to myself forever. The market will eventually catch on, and the opportunity will disappear.
+                    </p>
+                    <p className="text-xl text-gray-200 leading-relaxed mb-6">
+                      That's why I'm offering GreenPrint to a select group of traders who understand the value of a proven, market-neutral strategy. If you're looking for a reliable way to generate consistent returns in any market condition, this is it.
+                    </p>
+                    <p className="text-xl text-gray-200 leading-relaxed mb-6">
+                      Don't wait until everyone else has caught on. The funding rate arbitrage opportunity is finite, and the window is closing fast. Join the early adopters who are already capitalizing on this strategy.
+                    </p>
+                    <p className="text-xl text-gray-200 leading-relaxed mb-6">
+                      <span className="text-green-400 font-bold">Remember:</span> This isn't about hype or promises. It's about a proven strategy with real results. The data doesn't lie, and neither do I.
+                    </p>
+                    <p className="text-xl text-gray-200 leading-relaxed mb-6">
+                      The choice is yours. You can continue with your current trading approach, or you can join the growing number of traders who are leveraging GreenPrint to generate consistent returns in any market condition.
+                    </p>
+                    <p className="text-xl text-gray-200 leading-relaxed mb-6">
+                      <span className="text-red-400 font-bold">Time is running out.</span> The funding rate arbitrage opportunity won't last forever. Don't miss out on this chance to transform your trading results.
                     </p>
                   </div>
                 </div>
                 
-                <button 
-                  onClick={closeDisclosure}
-                  className="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-lg text-center font-semibold hover:from-green-600 hover:to-emerald-700 transition-all duration-200 mt-6"
-                >
-                  I Understand - Continue to GreenPrint
-                </button>
+                <div className="pt-6 border-t border-gray-800 mt-6">
+                  <button 
+                    onClick={closeDisclosure}
+                    className="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-lg text-xl font-bold hover:from-green-600 hover:to-emerald-700 transition-all duration-200 transform hover:scale-105"
+                  >
+                    I Understand - Continue to GreenPrint
+                  </button>
+                </div>
               </div>
               
               <div className="relative hidden md:block">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-900/10 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-900/20 to-transparent"></div>
                 <div className="aspect-[4/3] relative">
                   <Image
                     src="/images/bot-backtest.png"
@@ -79,15 +99,15 @@ export default function GreenprintHome() {
                     className="object-cover"
                   />
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-black/80 backdrop-blur-sm border-t border-gray-800">
+                <div className="absolute bottom-0 left-0 right-0 p-8 bg-black/90 backdrop-blur-sm border-t border-gray-800">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm text-gray-400">3-Year Backtest Performance</p>
-                      <p className="text-2xl font-bold text-green-400">+187.4%</p>
+                      <p className="text-lg text-gray-400">3-Year Backtest Performance</p>
+                      <p className="text-4xl font-bold text-green-400">+187.4%</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-sm text-gray-400">Max Drawdown</p>
-                      <p className="text-2xl font-bold text-red-400">-3.2%</p>
+                      <p className="text-lg text-gray-400">Max Drawdown</p>
+                      <p className="text-4xl font-bold text-red-400">-3.2%</p>
                     </div>
                   </div>
                 </div>
@@ -96,6 +116,23 @@ export default function GreenprintHome() {
           </div>
         </div>
       )}
+
+      <style jsx global>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: rgba(0, 0, 0, 0.2);
+          border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: rgba(16, 185, 129, 0.5);
+          border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: rgba(16, 185, 129, 0.7);
+        }
+      `}</style>
 
       {/* Tech Pattern Overlay */}
       <div className="fixed inset-0 bg-[url('/images/tech-pattern.png')] opacity-5 pointer-events-none"></div>
@@ -263,7 +300,19 @@ export default function GreenprintHome() {
               
               <div className="relative">
                 <div className="bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-gray-800 shadow-2xl shadow-green-500/20">
-                  <div className="flex items-center justify-between mb-6">
+                  {/* Faded GreenPrint Logo in Background */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+                    <Image
+                      src="/images/gplogo.PNG"
+                      alt="GreenPrint Logo Background"
+                      width={400}
+                      height={120}
+                      className="object-contain"
+                      priority
+                    />
+                  </div>
+                  
+                  <div className="flex items-center justify-between mb-6 relative z-10">
                     <h3 className="text-xl font-semibold">Recent Profits</h3>
                     <div className="flex items-center gap-1 text-green-400">
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -273,7 +322,7 @@ export default function GreenprintHome() {
                     </div>
                   </div>
                   
-                  <div className="space-y-4">
+                  <div className="space-y-4 relative z-10">
                     {[
                       { name: "BTC/USDT", profit: "+$1,245", time: "2 min ago" },
                       { name: "ETH/USDT", profit: "+$876", time: "5 min ago" },
@@ -715,7 +764,7 @@ export default function GreenprintHome() {
             </div>
           </div>
           <div className="mt-12 pt-8 border-t border-gray-800 flex items-center justify-between">
-            <p className="text-gray-400">&copy; 2024 GreenPrint. All rights reserved.</p>
+            <p className="text-gray-400">&copy; 2025 GreenPrint. All rights reserved.</p>
             <div className="flex space-x-6">
               <a href="#" className="text-gray-400 hover:text-white">
                 <span className="sr-only">Twitter</span>
