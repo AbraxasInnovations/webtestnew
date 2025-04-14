@@ -234,6 +234,60 @@ export default function GreenprintHome() {
         </div>
       </div>
 
+      {/* Profit Cards Carousel */}
+      <section className="py-16 bg-black/50 backdrop-blur-sm relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-900/10 to-transparent"></div>
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex gap-6 overflow-x-auto pb-8 scrollbar-hide">
+            {/* Placeholder cards - you can replace these with actual data */}
+            <div className="flex-none w-64 bg-black/40 backdrop-blur-sm rounded-xl border border-gray-800 p-6 hover:border-green-500/50 transition-all duration-300">
+              <div className="aspect-square rounded-lg bg-gray-800/50 mb-4"></div>
+              <h3 className="text-lg font-semibold text-white mb-2">Trader Name</h3>
+              <div className="flex items-center gap-2">
+                <span className="text-green-400 font-medium">+$1,234</span>
+                <span className="text-gray-400 text-sm">Today</span>
+              </div>
+            </div>
+
+            <div className="flex-none w-64 bg-black/40 backdrop-blur-sm rounded-xl border border-gray-800 p-6 hover:border-green-500/50 transition-all duration-300">
+              <div className="aspect-square rounded-lg bg-gray-800/50 mb-4"></div>
+              <h3 className="text-lg font-semibold text-white mb-2">Trader Name</h3>
+              <div className="flex items-center gap-2">
+                <span className="text-green-400 font-medium">+$2,345</span>
+                <span className="text-gray-400 text-sm">Today</span>
+              </div>
+            </div>
+
+            <div className="flex-none w-64 bg-black/40 backdrop-blur-sm rounded-xl border border-gray-800 p-6 hover:border-green-500/50 transition-all duration-300">
+              <div className="aspect-square rounded-lg bg-gray-800/50 mb-4"></div>
+              <h3 className="text-lg font-semibold text-white mb-2">Trader Name</h3>
+              <div className="flex items-center gap-2">
+                <span className="text-green-400 font-medium">+$3,456</span>
+                <span className="text-gray-400 text-sm">Today</span>
+              </div>
+            </div>
+
+            <div className="flex-none w-64 bg-black/40 backdrop-blur-sm rounded-xl border border-gray-800 p-6 hover:border-green-500/50 transition-all duration-300">
+              <div className="aspect-square rounded-lg bg-gray-800/50 mb-4"></div>
+              <h3 className="text-lg font-semibold text-white mb-2">Trader Name</h3>
+              <div className="flex items-center gap-2">
+                <span className="text-green-400 font-medium">+$4,567</span>
+                <span className="text-gray-400 text-sm">Today</span>
+              </div>
+            </div>
+
+            <div className="flex-none w-64 bg-black/40 backdrop-blur-sm rounded-xl border border-gray-800 p-6 hover:border-green-500/50 transition-all duration-300">
+              <div className="aspect-square rounded-lg bg-gray-800/50 mb-4"></div>
+              <h3 className="text-lg font-semibold text-white mb-2">Trader Name</h3>
+              <div className="flex items-center gap-2">
+                <span className="text-green-400 font-medium">+$5,678</span>
+                <span className="text-gray-400 text-sm">Today</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Social Proof Section */}
       <section className="py-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-900/10 to-transparent"></div>
