@@ -1100,4 +1100,3 @@ export default function GreenprintHome() {
     </div>
   );
 } 
-} 
