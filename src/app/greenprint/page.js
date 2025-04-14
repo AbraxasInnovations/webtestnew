@@ -9,6 +9,8 @@ export default function GreenprintHome() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   // Add state for disclosure popup
   const [showDisclosure, setShowDisclosure] = useState(true);
+  // Add state for tracking if user has scrolled to bottom
+  const [hasScrolledToBottom, setHasScrolledToBottom] = useState(false);
   
   // Toggle mobile menu function
   const toggleMobileMenu = () => {
@@ -23,6 +25,13 @@ export default function GreenprintHome() {
   // Close disclosure popup
   const closeDisclosure = () => {
     setShowDisclosure(false);
+  };
+
+  // Handle scroll event to check if user has reached bottom
+  const handleScroll = (e) => {
+    const element = e.target;
+    const isAtBottom = Math.abs(element.scrollHeight - element.scrollTop - element.clientHeight) < 10;
+    setHasScrolledToBottom(isAtBottom);
   };
 
   return (
@@ -43,7 +52,7 @@ export default function GreenprintHome() {
                 </h2>
               </div>
               
-              <div className="overflow-y-auto flex-grow pr-4 custom-scrollbar">
+              <div className="overflow-y-auto flex-grow pr-4 custom-scrollbar" onScroll={handleScroll}>
                 <div className="prose prose-invert prose-xl max-w-none">
                   <p className="text-2xl text-gray-200 leading-relaxed mb-8">
                     <span className="text-green-400 font-bold text-3xl">Attention Serious Traders Only</span> - I'm a 15-year Wall Street quant who's been running this funding rate arbitrage strategy for the past 3 years with exceptional results.
@@ -178,16 +187,24 @@ export default function GreenprintHome() {
                   </div>
                   
                   <div className="h-32"></div> {/* Extra space to ensure button is at bottom */}
+                  
+                  {/* Continue button at the bottom of the scrollable content */}
+                  <div className="pt-6 border-t border-gray-800 mt-6 bg-black/90">
+                    <button 
+                      onClick={closeDisclosure}
+                      className={`w-full px-8 py-4 rounded-lg text-xl font-bold transition-all duration-200 transform hover:scale-105 ${
+                        hasScrolledToBottom 
+                          ? "bg-gradient-to-r from-green-500 to-emerald-600 text-white hover:from-green-600 hover:to-emerald-700" 
+                          : "bg-gray-800 text-gray-400 cursor-not-allowed"
+                      }`}
+                      disabled={!hasScrolledToBottom}
+                    >
+                      {hasScrolledToBottom 
+                        ? "I Understand - Continue to GreenPrint" 
+                        : "Please read the entire disclosure to continue"}
+                    </button>
+                  </div>
                 </div>
-              </div>
-              
-              <div className="pt-6 border-t border-gray-800 mt-6 sticky bottom-0 bg-black/90">
-                <button 
-                  onClick={closeDisclosure}
-                  className="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-lg text-xl font-bold hover:from-green-600 hover:to-emerald-700 transition-all duration-200 transform hover:scale-105"
-                >
-                  I Understand - Continue to GreenPrint
-                </button>
               </div>
             </div>
           </div>
@@ -578,7 +595,7 @@ export default function GreenprintHome() {
               </div>
               
               <div className="relative">
-                <div className="relative aspect-[16/9] rounded-lg overflow-hidden w-full max-w-3xl mx-auto">
+                <div className="relative aspect-[16/9] rounded-lg overflow-hidden w-full max-w-5xl mx-auto">
                   <Image
                     src="/images/gp-phone.PNG"
                     alt="GreenPrint Bot on Mobile Devices"
