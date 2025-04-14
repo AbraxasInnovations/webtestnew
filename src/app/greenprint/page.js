@@ -172,7 +172,194 @@ export default function GreenprintHome() {
         .animate-scroll:hover {
           animation-play-state: paused;
         }
+        
+        /* Money Counter Styles */
+        .money-counter-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin: 2rem 0;
+        }
+        
+        .letter {
+          font-size: 7vw;
+          font-family: 'Overpass', sans-serif;
+          position: relative;
+          display: inline-block;
+          margin: 0 0.2em;
+          height: 1.6em;
+          user-select: none;
+          line-height: 1.6em;
+          box-shadow: 0 0.35em 0.1em -0.2em rgba(0, 0, 0, 0.3);
+          perspective: 70vw;
+          border-radius: 0.15em;
+          white-space: nowrap;
+          background-image: linear-gradient(0deg, #222 0%, #262626 100%);
+          font-weight: 700;
+        }
+        
+        .letter span:before {
+          content: "";
+          display: block;
+          z-index: 99;
+          position: absolute;
+          top: 50%;
+          width: 100%;
+          background: linear-gradient(0deg, #333 10%, #1c1c1c);
+          background-position: 50% 50%;
+          background-size: cover;
+          height: 3%;
+        }
+        
+        .letter span {
+          vertical-align: top;
+          box-shadow: inset 0.035em 0 0 0 rgba(75, 75, 75, 0.4), inset -0.035em 0 0 0 rgba(0, 0, 0, 0.25);
+          display: inline-block;
+          width: 0.95em;
+          height: 1.6;
+          line-height: 1.6em;
+          text-align: center;
+          text-transform: uppercase;
+          padding: 0;
+          color: #eee;
+          position: relative;
+        }
+        
+        .letter span:first-child:after {
+          border-radius: 0 0 0 0.15em;
+        }
+        
+        .letter span:first-child {
+          border-radius: 0.15em 0 0 0.15em;
+        }
+        
+        .letter span:last-child:after {
+          border-radius: 0 0 0.15em 0;
+        }
+        
+        .letter span:last-child {
+          border-radius: 0 0.15em 0.15em 0;
+        }
+        
+        .letter span:after {
+          content: "";
+          transform-style: preserve-3d;
+          display: block;
+          position: absolute;
+          width: 100%;
+          transform: rotatex(70deg);
+          transform-origin: 50% 0;
+          height: 50%;
+          top: 50%;
+          left: 0;
+          right: 0;
+          animation: flip 0.6s ease infinite;
+          box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.1);
+        }
+        
+        .letter span:nth-child(1n):after {
+          animation-delay: 0.2s;
+        }
+        
+        .letter span:nth-child(2n):after {
+          animation-delay: 0.3s;
+        }
+        
+        .letter span:nth-child(3n):after {
+          animation-delay: 0.4s;
+        }
+        
+        .letter span:nth-child(4n):after {
+          animation-delay: 0.5s;
+        }
+        
+        .letter span:nth-child(5n):after {
+          animation-delay: 0.6s;
+        }
+        
+        .letter span:nth-child(6n):after {
+          animation-delay: 0.7s;
+        }
+        
+        .letter span:nth-child(7n):after {
+          animation-delay: 0.8s;
+        }
+        
+        .letter span:nth-child(8n):after {
+          animation-delay: 0.9s;
+        }
+        
+        .letter span:nth-child(9n):after {
+          animation-delay: 1s;
+        }
+        
+        .letter span:nth-child(10n):after {
+          animation-delay: 1.1s;
+        }
+        
+        .letter span:nth-child(11n):after {
+          animation-delay: 1.2s;
+        }
+        
+        .letter span:nth-child(12n):after {
+          animation-delay: 1.37s;
+        }
+        
+        .letter span:nth-child(13n):after {
+          animation-delay: 1.4s;
+        }
+        
+        @keyframes flip {
+          0% {
+            opacity: 0;
+            transform: rotatex(0deg);
+            background: linear-gradient(0deg, #333 20%, transparent);
+            box-shadow: inset -0.05em -0.1em 0 #050505;
+          }
+          10% {
+            opacity: 1;
+          }
+          50% {
+            box-shadow: inset 0 -0.04em 0 rgba(255, 255, 255, 0.1);
+          }
+          70% {
+            box-shadow: inset 0.01em -0.02em 0 rgba(255, 255, 255, 0.3);
+          }
+          90% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+            transform: rotatex(180deg);
+            background: linear-gradient(0deg, #222 40%, transparent);
+            box-shadow: inset 0 0em 0 rgba(205, 205, 205, 0.2);
+          }
+        }
       `}</style>
+      
+      <script dangerouslySetInnerHTML={{
+        __html: `
+          document.addEventListener('DOMContentLoaded', function() {
+            // Lettering.js functionality
+            function lettering(selector) {
+              const element = document.querySelector(selector);
+              if (!element) return;
+              
+              const text = element.textContent;
+              element.textContent = '';
+              
+              for (let i = 0; i < text.length; i++) {
+                const span = document.createElement('span');
+                span.textContent = text[i];
+                element.appendChild(span);
+              }
+            }
+            
+            lettering('.letter');
+          });
+        `
+      }} />
 
       {/* Tech Pattern Overlay */}
       <div className="fixed inset-0 bg-[url('/images/tech-pattern.png')] opacity-5 pointer-events-none"></div>
@@ -549,194 +736,6 @@ export default function GreenprintHome() {
           <div className="money-counter-container">
             <h1 className="letter">$124560342</h1>
           </div>
-          
-          <style jsx>{`
-            .money-counter-container {
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              margin: 2rem 0;
-            }
-            
-            h1.letter {
-              font-size: 7vw;
-              font-family: 'Overpass', sans-serif;
-              position: relative;
-              display: inline-block;
-              margin: 0 0.2em;
-              height: 1.6em;
-              user-select: none;
-              line-height: 1.6em;
-              box-shadow: 0 0.35em 0.1em -0.2em rgba(0, 0, 0, 0.3);
-              perspective: 70vw;
-              border-radius: 0.15em;
-              white-space: nowrap;
-              background-image: linear-gradient(0deg, #222 0%, #262626 100%);
-              font-weight: 700;
-            }
-            
-            h1.letter span:before {
-              content: "";
-              display: block;
-              z-index: 99;
-              position: absolute;
-              top: 50%;
-              width: 100%;
-              background: linear-gradient(0deg, #333 10%, #1c1c1c);
-              background-position: 50% 50%;
-              background-size: cover;
-              height: 3%;
-            }
-            
-            h1.letter span {
-              vertical-align: top;
-              box-shadow: inset 0.035em 0 0 0 rgba(75, 75, 75, 0.4), inset -0.035em 0 0 0 rgba(0, 0, 0, 0.25);
-              display: inline-block;
-              width: 0.95em;
-              height: 1.6;
-              line-height: 1.6em;
-              text-align: center;
-              text-transform: uppercase;
-              padding: 0;
-              color: #eee;
-              position: relative;
-            }
-            
-            h1.letter span:first-child:after {
-              border-radius: 0 0 0 0.15em;
-            }
-            
-            h1.letter span:first-child {
-              border-radius: 0.15em 0 0 0.15em;
-            }
-            
-            h1.letter span:last-child:after {
-              border-radius: 0 0 0.15em 0;
-            }
-            
-            h1.letter span:last-child {
-              border-radius: 0 0.15em 0.15em 0;
-            }
-            
-            h1.letter span:after {
-              content: "";
-              transform-style: preserve-3d;
-              display: block;
-              position: absolute;
-              width: 100%;
-              transform: rotatex(70deg);
-              transform-origin: 50% 0;
-              height: 50%;
-              top: 50%;
-              left: 0;
-              right: 0;
-              animation: flip 0.6s ease infinite;
-              box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.1);
-            }
-            
-            h1.letter span:nth-child(1n):after {
-              animation-delay: 0.2s;
-            }
-            
-            h1.letter span:nth-child(2n):after {
-              animation-delay: 0.3s;
-            }
-            
-            h1.letter span:nth-child(3n):after {
-              animation-delay: 0.4s;
-            }
-            
-            h1.letter span:nth-child(4n):after {
-              animation-delay: 0.5s;
-            }
-            
-            h1.letter span:nth-child(5n):after {
-              animation-delay: 0.6s;
-            }
-            
-            h1.letter span:nth-child(6n):after {
-              animation-delay: 0.7s;
-            }
-            
-            h1.letter span:nth-child(7n):after {
-              animation-delay: 0.8s;
-            }
-            
-            h1.letter span:nth-child(8n):after {
-              animation-delay: 0.9s;
-            }
-            
-            h1.letter span:nth-child(9n):after {
-              animation-delay: 1s;
-            }
-            
-            h1.letter span:nth-child(10n):after {
-              animation-delay: 1.1s;
-            }
-            
-            h1.letter span:nth-child(11n):after {
-              animation-delay: 1.2s;
-            }
-            
-            h1.letter span:nth-child(12n):after {
-              animation-delay: 1.37s;
-            }
-            
-            h1.letter span:nth-child(13n):after {
-              animation-delay: 1.4s;
-            }
-            
-            @keyframes flip {
-              0% {
-                opacity: 0;
-                transform: rotatex(0deg);
-                background: linear-gradient(0deg, #333 20%, transparent);
-                box-shadow: inset -0.05em -0.1em 0 #050505;
-              }
-              10% {
-                opacity: 1;
-              }
-              50% {
-                box-shadow: inset 0 -0.04em 0 rgba(255, 255, 255, 0.1);
-              }
-              70% {
-                box-shadow: inset 0.01em -0.02em 0 rgba(255, 255, 255, 0.3);
-              }
-              90% {
-                opacity: 1;
-              }
-              100% {
-                opacity: 0;
-                transform: rotatex(180deg);
-                background: linear-gradient(0deg, #222 40%, transparent);
-                box-shadow: inset 0 0em 0 rgba(205, 205, 205, 0.2);
-              }
-            }
-          `}</style>
-          
-          <script dangerouslySetInnerHTML={{
-            __html: `
-              document.addEventListener('DOMContentLoaded', function() {
-                // Lettering.js functionality
-                function lettering(selector) {
-                  const element = document.querySelector(selector);
-                  if (!element) return;
-                  
-                  const text = element.textContent;
-                  element.textContent = '';
-                  
-                  for (let i = 0; i < text.length; i++) {
-                    const span = document.createElement('span');
-                    span.textContent = text[i];
-                    element.appendChild(span);
-                  }
-                }
-                
-                lettering('.letter');
-              });
-            `
-          }} />
         </div>
       </section>
 
