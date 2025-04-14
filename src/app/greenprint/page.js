@@ -370,7 +370,7 @@ export default function GreenprintHome() {
                 transform: translateX(0);
               }
               100% {
-                transform: translateX(calc(-180px * 5));
+                transform: translateX(-900px);
               }
             }
             .animate-scroll {
