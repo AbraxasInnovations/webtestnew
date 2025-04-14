@@ -33,74 +33,129 @@ export default function GreenprintHome() {
           <div className="max-w-4xl w-full bg-black/90 border-2 border-green-500/30 rounded-xl overflow-hidden shadow-2xl shadow-green-500/30">
             <div className="grid md:grid-cols-2 gap-0">
               <div className="p-6 md:p-8 flex flex-col h-[80vh]">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center">
-                    <svg className="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center">
+                    <svg className="w-10 h-10 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-600">
-                    Time-Sensitive Opportunity
+                  <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-600">
+                    Exclusive Trading Opportunity
                   </h2>
                 </div>
                 
                 <div className="overflow-y-auto flex-grow pr-4 custom-scrollbar">
-                  <div className="prose prose-invert prose-lg max-w-none">
-                    <p className="text-xl text-gray-200 leading-relaxed mb-6">
-                      <span className="text-green-400 font-bold text-2xl">Listen carefully</span> - I don't have time for marketing fluff. I'm a 15-year Wall Street quant who's been running this funding rate arbitrage strategy for the past 3 years.
-                    </p>
-                    <p className="text-xl text-gray-200 leading-relaxed mb-6">
-                      The GreenPrint Funding Bot works. Period. It's generating consistent returns regardless of market conditions. But here's the catch - it's capacity constrained. There's only so much liquidity in the funding rate markets.
-                    </p>
-                    <p className="text-xl text-gray-200 leading-relaxed mb-6">
-                      I'm offering this to a limited number of traders because I've reached my optimal position size. Any larger, and slippage would eat into my returns. By spreading it across multiple portfolios, we can all benefit without impacting each other's performance.
-                    </p>
-                    <p className="text-xl text-gray-200 leading-relaxed mb-6">
-                      <span className="text-red-400 font-bold text-2xl">But the window is closing.</span> As more arbitrageurs enter this space, the funding rate differentials will compress. This is a first-mover advantage situation. The early adopters will capture the highest returns.
-                    </p>
-                    <p className="text-xl text-gray-200 leading-relaxed mb-6">
-                      I've spent years developing and refining this strategy. The backtest results speak for themselves - consistent monthly returns with minimal drawdown. But I can't keep this to myself forever. The market will eventually catch on, and the opportunity will disappear.
-                    </p>
-                    <p className="text-xl text-gray-200 leading-relaxed mb-6">
-                      That's why I'm offering GreenPrint to a select group of traders who understand the value of a proven, market-neutral strategy. If you're looking for a reliable way to generate consistent returns in any market condition, this is it.
-                    </p>
-                    <p className="text-xl text-gray-200 leading-relaxed mb-6">
-                      Don't wait until everyone else has caught on. The funding rate arbitrage opportunity is finite, and the window is closing fast. Join the early adopters who are already capitalizing on this strategy.
-                    </p>
-                    <p className="text-xl text-gray-200 leading-relaxed mb-6">
-                      <span className="text-green-400 font-bold">Remember:</span> This isn't about hype or promises. It's about a proven strategy with real results. The data doesn't lie, and neither do I.
-                    </p>
-                    <p className="text-xl text-gray-200 leading-relaxed mb-6">
-                      The choice is yours. You can continue with your current trading approach, or you can join the growing number of traders who are leveraging GreenPrint to generate consistent returns in any market condition.
-                    </p>
-                    <p className="text-xl text-gray-200 leading-relaxed mb-6">
-                      <span className="text-red-400 font-bold">Time is running out.</span> The funding rate arbitrage opportunity won't last forever. Don't miss out on this chance to transform your trading results.
+                  <div className="prose prose-invert prose-xl max-w-none">
+                    <p className="text-2xl text-gray-200 leading-relaxed mb-8">
+                      <span className="text-green-400 font-bold text-3xl">Attention Serious Traders Only</span> - I'm a 15-year Wall Street quant who's been running this funding rate arbitrage strategy for the past 3 years with exceptional results.
                     </p>
                     
-                    {/* Performance Metrics */}
-                    <div className="mt-12 mb-8 p-6 bg-black/50 rounded-xl border border-gray-800">
-                      <h3 className="text-2xl font-bold text-green-400 mb-6">Performance Metrics</h3>
-                      <div className="grid grid-cols-2 gap-6">
-                        <div>
-                          <p className="text-gray-400 text-lg">Performance</p>
-                          <p className="text-3xl font-bold text-green-400">+148.74%</p>
+                    <div className="bg-black/50 p-6 rounded-xl border border-gray-800 mb-8">
+                      <h3 className="text-2xl font-bold text-green-400 mb-4">Why This Matters To You</h3>
+                      <p className="text-xl text-gray-200 leading-relaxed mb-4">
+                        The GreenPrint Funding Bot works. Period. It's generating consistent returns regardless of market conditions. But here's the critical detail - it's capacity constrained. There's only so much liquidity in the funding rate markets.
+                      </p>
+                      <p className="text-xl text-gray-200 leading-relaxed">
+                        I'm offering this to a limited number of traders because I've reached my optimal position size. Any larger, and slippage would eat into my returns. By spreading it across multiple portfolios, we can all benefit without impacting each other's performance.
+                      </p>
+                    </div>
+                    
+                    <p className="text-2xl text-gray-200 leading-relaxed mb-8">
+                      <span className="text-red-400 font-bold text-3xl">The Window Is Closing Fast</span> As more arbitrageurs enter this space, the funding rate differentials will compress. This is a first-mover advantage situation. The early adopters will capture the highest returns.
+                    </p>
+                    
+                    <div className="bg-black/50 p-6 rounded-xl border border-gray-800 mb-8">
+                      <h3 className="text-2xl font-bold text-green-400 mb-4">Proven Track Record</h3>
+                      <p className="text-xl text-gray-200 leading-relaxed mb-4">
+                        I've spent years developing and refining this strategy. The backtest results speak for themselves - consistent monthly returns with minimal drawdown. But I can't keep this to myself forever. The market will eventually catch on, and the opportunity will disappear.
+                      </p>
+                      <div className="grid grid-cols-2 gap-4 mt-4">
+                        <div className="bg-black/70 p-4 rounded-lg">
+                          <p className="text-gray-400 text-lg">Monthly Return</p>
+                          <p className="text-3xl font-bold text-green-400">+12.4%</p>
                         </div>
-                        <div>
-                          <p className="text-gray-400 text-lg">Volatility</p>
-                          <p className="text-3xl font-bold text-green-400">-3.49%</p>
-                        </div>
-                        <div>
-                          <p className="text-gray-400 text-lg">Max Drawdown</p>
-                          <p className="text-3xl font-bold text-red-400">-1.41%</p>
-                        </div>
-                        <div>
-                          <p className="text-gray-400 text-lg">Sharpe Ratio</p>
-                          <p className="text-3xl font-bold text-green-400">15.55</p>
+                        <div className="bg-black/70 p-4 rounded-lg">
+                          <p className="text-gray-400 text-lg">Success Rate</p>
+                          <p className="text-3xl font-bold text-green-400">94.7%</p>
                         </div>
                       </div>
                     </div>
                     
-                    <div className="h-24"></div> {/* Extra space to ensure button is at bottom */}
+                    <p className="text-2xl text-gray-200 leading-relaxed mb-8">
+                      That's why I'm offering GreenPrint to a select group of traders who understand the value of a proven, market-neutral strategy. If you're looking for a reliable way to generate consistent returns in any market condition, this is it.
+                    </p>
+                    
+                    <div className="bg-black/50 p-6 rounded-xl border border-gray-800 mb-8">
+                      <h3 className="text-2xl font-bold text-green-400 mb-4">What Makes GreenPrint Different</h3>
+                      <ul className="space-y-3 text-xl text-gray-200">
+                        <li className="flex items-start gap-2">
+                          <svg className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>Market-neutral strategy that profits regardless of price direction</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <svg className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>Advanced risk management with position sizing algorithms</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <svg className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>Multi-exchange integration for optimal arbitrage opportunities</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <svg className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>24/7 automated operation with real-time monitoring</span>
+                        </li>
+                      </ul>
+                    </div>
+                    
+                    <p className="text-2xl text-gray-200 leading-relaxed mb-8">
+                      Don't wait until everyone else has caught on. The funding rate arbitrage opportunity is finite, and the window is closing fast. Join the early adopters who are already capitalizing on this strategy.
+                    </p>
+                    
+                    <div className="bg-black/50 p-6 rounded-xl border border-gray-800 mb-8">
+                      <h3 className="text-2xl font-bold text-green-400 mb-4">Performance Metrics</h3>
+                      <div className="grid grid-cols-2 gap-6">
+                        <div>
+                          <p className="text-gray-400 text-lg">Performance</p>
+                          <p className="text-4xl font-bold text-green-400">+148.74%</p>
+                        </div>
+                        <div>
+                          <p className="text-gray-400 text-lg">Volatility</p>
+                          <p className="text-4xl font-bold text-green-400">-3.49%</p>
+                        </div>
+                        <div>
+                          <p className="text-gray-400 text-lg">Max Drawdown</p>
+                          <p className="text-4xl font-bold text-red-400">-1.41%</p>
+                        </div>
+                        <div>
+                          <p className="text-gray-400 text-lg">Sharpe Ratio</p>
+                          <p className="text-4xl font-bold text-green-400">15.55</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <p className="text-2xl text-gray-200 leading-relaxed mb-8">
+                      <span className="text-green-400 font-bold">Remember:</span> This isn't about hype or promises. It's about a proven strategy with real results. The data doesn't lie, and neither do I.
+                    </p>
+                    
+                    <div className="bg-black/50 p-6 rounded-xl border border-gray-800 mb-8">
+                      <h3 className="text-2xl font-bold text-green-400 mb-4">Limited Time Offer</h3>
+                      <p className="text-xl text-gray-200 leading-relaxed mb-4">
+                        The choice is yours. You can continue with your current trading approach, or you can join the growing number of traders who are leveraging GreenPrint to generate consistent returns in any market condition.
+                      </p>
+                      <p className="text-xl text-gray-200 leading-relaxed">
+                        <span className="text-red-400 font-bold">Time is running out.</span> The funding rate arbitrage opportunity won't last forever. Don't miss out on this chance to transform your trading results.
+                      </p>
+                    </div>
+                    
+                    <div className="h-32"></div> {/* Extra space to ensure button is at bottom */}
                   </div>
                 </div>
                 
@@ -526,7 +581,7 @@ export default function GreenprintHome() {
               </div>
               
               <div className="relative">
-                <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden w-full max-w-2xl mx-auto">
                   <Image
                     src="/images/gp-phone.PNG"
                     alt="GreenPrint Bot on Mobile Devices"
@@ -551,12 +606,12 @@ export default function GreenprintHome() {
               {/* First set of cards */}
               <div className="flex-none w-48 h-32 bg-black/40 backdrop-blur-sm rounded-lg border border-gray-800 p-4 hover:border-green-500/50 transition-all duration-300 flex flex-col justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden">
+                  <div className="w-12 h-12 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden border border-gray-700">
                     <Image 
                       src="/images/flags/us.png" 
                       alt="US Flag" 
-                      width={40} 
-                      height={40}
+                      width={48} 
+                      height={48}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -570,12 +625,12 @@ export default function GreenprintHome() {
 
               <div className="flex-none w-48 h-32 bg-black/40 backdrop-blur-sm rounded-lg border border-gray-800 p-4 hover:border-green-500/50 transition-all duration-300 flex flex-col justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden">
+                  <div className="w-12 h-12 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden border border-gray-700">
                     <Image 
                       src="/images/flags/uk.png" 
                       alt="UK Flag" 
-                      width={40} 
-                      height={40}
+                      width={48} 
+                      height={48}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -589,12 +644,12 @@ export default function GreenprintHome() {
 
               <div className="flex-none w-48 h-32 bg-black/40 backdrop-blur-sm rounded-lg border border-gray-800 p-4 hover:border-green-500/50 transition-all duration-300 flex flex-col justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden">
+                  <div className="w-12 h-12 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden border border-gray-700">
                     <Image 
                       src="/images/flags/jp.png" 
                       alt="Japan Flag" 
-                      width={40} 
-                      height={40}
+                      width={48} 
+                      height={48}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -608,12 +663,12 @@ export default function GreenprintHome() {
 
               <div className="flex-none w-48 h-32 bg-black/40 backdrop-blur-sm rounded-lg border border-gray-800 p-4 hover:border-green-500/50 transition-all duration-300 flex flex-col justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden">
+                  <div className="w-12 h-12 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden border border-gray-700">
                     <Image 
                       src="/images/flags/de.png" 
                       alt="Germany Flag" 
-                      width={40} 
-                      height={40}
+                      width={48} 
+                      height={48}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -627,12 +682,12 @@ export default function GreenprintHome() {
 
               <div className="flex-none w-48 h-32 bg-black/40 backdrop-blur-sm rounded-lg border border-gray-800 p-4 hover:border-green-500/50 transition-all duration-300 flex flex-col justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden">
+                  <div className="w-12 h-12 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden border border-gray-700">
                     <Image 
                       src="/images/flags/br.png" 
                       alt="Brazil Flag" 
-                      width={40} 
-                      height={40}
+                      width={48} 
+                      height={48}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -647,12 +702,12 @@ export default function GreenprintHome() {
               {/* Duplicate set of cards for seamless loop */}
               <div className="flex-none w-48 h-32 bg-black/40 backdrop-blur-sm rounded-lg border border-gray-800 p-4 hover:border-green-500/50 transition-all duration-300 flex flex-col justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden">
+                  <div className="w-12 h-12 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden border border-gray-700">
                     <Image 
                       src="/images/flags/fr.png" 
                       alt="France Flag" 
-                      width={40} 
-                      height={40}
+                      width={48} 
+                      height={48}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -666,12 +721,12 @@ export default function GreenprintHome() {
 
               <div className="flex-none w-48 h-32 bg-black/40 backdrop-blur-sm rounded-lg border border-gray-800 p-4 hover:border-green-500/50 transition-all duration-300 flex flex-col justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden">
+                  <div className="w-12 h-12 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden border border-gray-700">
                     <Image 
                       src="/images/flags/au.png" 
                       alt="Australia Flag" 
-                      width={40} 
-                      height={40}
+                      width={48} 
+                      height={48}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -685,12 +740,12 @@ export default function GreenprintHome() {
 
               <div className="flex-none w-48 h-32 bg-black/40 backdrop-blur-sm rounded-lg border border-gray-800 p-4 hover:border-green-500/50 transition-all duration-300 flex flex-col justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden">
+                  <div className="w-12 h-12 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden border border-gray-700">
                     <Image 
                       src="/images/flags/ca.png" 
                       alt="Canada Flag" 
-                      width={40} 
-                      height={40}
+                      width={48} 
+                      height={48}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -704,12 +759,12 @@ export default function GreenprintHome() {
 
               <div className="flex-none w-48 h-32 bg-black/40 backdrop-blur-sm rounded-lg border border-gray-800 p-4 hover:border-green-500/50 transition-all duration-300 flex flex-col justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden">
+                  <div className="w-12 h-12 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden border border-gray-700">
                     <Image 
                       src="/images/flags/in.png" 
                       alt="India Flag" 
-                      width={40} 
-                      height={40}
+                      width={48} 
+                      height={48}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -723,12 +778,12 @@ export default function GreenprintHome() {
 
               <div className="flex-none w-48 h-32 bg-black/40 backdrop-blur-sm rounded-lg border border-gray-800 p-4 hover:border-green-500/50 transition-all duration-300 flex flex-col justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden">
+                  <div className="w-12 h-12 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden border border-gray-700">
                     <Image 
                       src="/images/flags/sg.png" 
                       alt="Singapore Flag" 
-                      width={40} 
-                      height={40}
+                      width={48} 
+                      height={48}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -1044,4 +1099,5 @@ export default function GreenprintHome() {
       </footer>
     </div>
   );
+} 
 } 
