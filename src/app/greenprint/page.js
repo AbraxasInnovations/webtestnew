@@ -76,10 +76,35 @@ export default function GreenprintHome() {
                     <p className="text-xl text-gray-200 leading-relaxed mb-6">
                       <span className="text-red-400 font-bold">Time is running out.</span> The funding rate arbitrage opportunity won't last forever. Don't miss out on this chance to transform your trading results.
                     </p>
+                    
+                    {/* Performance Metrics */}
+                    <div className="mt-12 mb-8 p-6 bg-black/50 rounded-xl border border-gray-800">
+                      <h3 className="text-2xl font-bold text-green-400 mb-6">Performance Metrics</h3>
+                      <div className="grid grid-cols-2 gap-6">
+                        <div>
+                          <p className="text-gray-400 text-lg">Performance</p>
+                          <p className="text-3xl font-bold text-green-400">+148.74%</p>
+                        </div>
+                        <div>
+                          <p className="text-gray-400 text-lg">Volatility</p>
+                          <p className="text-3xl font-bold text-green-400">-3.49%</p>
+                        </div>
+                        <div>
+                          <p className="text-gray-400 text-lg">Max Drawdown</p>
+                          <p className="text-3xl font-bold text-red-400">-1.41%</p>
+                        </div>
+                        <div>
+                          <p className="text-gray-400 text-lg">Sharpe Ratio</p>
+                          <p className="text-3xl font-bold text-green-400">15.55</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="h-24"></div> {/* Extra space to ensure button is at bottom */}
                   </div>
                 </div>
                 
-                <div className="pt-6 border-t border-gray-800 mt-6">
+                <div className="pt-6 border-t border-gray-800 mt-6 sticky bottom-0 bg-black/90">
                   <button 
                     onClick={closeDisclosure}
                     className="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-lg text-xl font-bold hover:from-green-600 hover:to-emerald-700 transition-all duration-200 transform hover:scale-105"
@@ -316,7 +341,7 @@ export default function GreenprintHome() {
               <div className="relative">
                 <div className="bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-gray-800 shadow-2xl shadow-green-500/20">
                   <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-xl font-semibold">Recent Profits</h3>
+                    <h3 className="text-xl font-semibold">GreenPrint Mobile</h3>
                     <div className="flex items-center gap-1 text-green-400">
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
@@ -325,35 +350,26 @@ export default function GreenprintHome() {
                     </div>
                   </div>
                   
-                  <div className="space-y-4">
-                    {[
-                      { name: "BTC/USDT", profit: "+$1,245", time: "2 min ago" },
-                      { name: "ETH/USDT", profit: "+$876", time: "5 min ago" },
-                      { name: "SOL/USDT", profit: "+$432", time: "8 min ago" },
-                      { name: "AVAX/USDT", profit: "+$654", time: "12 min ago" },
-                      { name: "DOT/USDT", profit: "+$321", time: "15 min ago" }
-                    ].map((trade, i) => (
-                      <div key={i} className="flex items-center justify-between p-3 rounded-lg bg-black/30 hover:bg-black/50 transition-colors">
-                        <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center">
-                            <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                            </svg>
-                          </div>
-                          <div>
-                            <p className="font-medium">{trade.name}</p>
-                            <p className="text-xs text-gray-400">{trade.time}</p>
-                          </div>
+                  <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                    <Image
+                      src="/images/gp-phone.PNG"
+                      alt="GreenPrint Bot on Mobile Devices"
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="text-lg text-gray-300">Today's Profit</p>
+                          <p className="text-3xl font-bold text-green-400">+$2,450</p>
                         </div>
-                        <p className="text-green-400 font-semibold">{trade.profit}</p>
+                        <div className="text-right">
+                          <p className="text-lg text-gray-300">Monthly</p>
+                          <p className="text-3xl font-bold text-green-400">+$12,780</p>
+                        </div>
                       </div>
-                    ))}
-                  </div>
-                  
-                  <div className="mt-6 pt-4 border-t border-gray-800">
-                    <div className="flex items-center justify-between">
-                      <p className="text-gray-400">Monthly Average</p>
-                      <p className="text-xl font-bold text-green-400">+$8,450</p>
                     </div>
                   </div>
                 </div>
