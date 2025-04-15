@@ -38,8 +38,8 @@ export default function GreenprintHome() {
     <div className="min-h-screen bg-gradient-to-b from-black via-[#0a1512] to-black text-white">
       {/* Disclosure Popup */}
       {showDisclosure && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-white/95 backdrop-blur-md">
-          <div className="max-w-4xl w-full bg-white rounded-xl overflow-hidden shadow-2xl">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-md">
+          <div className="max-w-4xl w-full bg-[#faf6f0] rounded-xl overflow-hidden shadow-2xl">
             <div className="p-6 md:p-8 flex flex-col h-[80vh]">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
@@ -54,17 +54,17 @@ export default function GreenprintHome() {
               
               <div className="overflow-y-auto flex-grow pr-4 custom-scrollbar" onScroll={handleScroll}>
                 <div className="prose prose-lg max-w-none">
-                  <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-8">
+                  <div className="bg-white p-6 rounded-xl border border-gray-200 mb-8">
                     <p className="text-xl text-gray-700 leading-relaxed mb-4">
-                      <span className="text-green-600 font-bold">I don't want to waste your time with fluff.</span> Let me show you exactly what you're here for:
+                      <span className="text-green-600 font-bold">Let me be direct</span> - I've placed the most important information right at the top. What you see above is a strategy with a 15+ Sharpe ratio, a maximum drawdown of just 2.8%, and a 256% annual return. These aren't just numbers - they're the result of years of Wall Street experience and a commitment to excellence. I didn't leave Wall Street to build something ordinary.
                     </p>
                     
                     {/* Centered Backtest Image */}
                     <div className="my-6 flex justify-center">
                       <div className="relative w-full max-w-2xl aspect-[16/9] rounded-xl overflow-hidden border border-gray-200 shadow-lg">
                         <Image
-                          src="/images/bot-backtest.png"
-                          alt="GreenPrint Funding Bot Backtest Results"
+                          src="/images/equitycurve95.jpeg"
+                          alt="GreenPrint Funding Bot Performance"
                           fill
                           className="object-cover"
                         />
@@ -72,11 +72,11 @@ export default function GreenprintHome() {
                           <div className="flex items-center justify-between">
                             <div>
                               <p className="text-sm text-gray-500">3-Year Backtest Performance</p>
-                              <p className="text-2xl font-bold text-green-600">+187.4%</p>
+                              <p className="text-2xl font-bold text-green-600">+256%</p>
                             </div>
                             <div className="text-right">
                               <p className="text-sm text-gray-500">Max Drawdown</p>
-                              <p className="text-2xl font-bold text-red-500">-3.2%</p>
+                              <p className="text-2xl font-bold text-red-500">-2.8%</p>
                             </div>
                           </div>
                         </div>
@@ -84,114 +84,111 @@ export default function GreenprintHome() {
                     </div>
                     
                     <div className="text-center mb-4">
-                      <h3 className="text-2xl font-bold text-green-600">BOOM!</h3>
-                      <p className="text-lg text-gray-600 mt-2">That's the power of GreenPrint</p>
+                      <h3 className="text-2xl font-bold text-green-600">Impressive Results</h3>
+                      <p className="text-lg text-gray-600 mt-2">The Power of GreenPrint</p>
                     </div>
                   </div>
                   
                   <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                    <span className="text-green-600 font-bold">Attention Serious Traders Only</span> - I'm a 15-year Wall Street quant who's been running this funding rate arbitrage strategy for the past 3 years with exceptional results.
+                    Let me present you with the facts about today's trading landscape:
                   </p>
                   
-                  <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-6">
-                    <h3 className="text-xl font-bold text-gray-800 mb-3">Why This Matters To You</h3>
-                    <p className="text-lg text-gray-700 leading-relaxed mb-3">
-                      The GreenPrint Funding Bot works. Period. It's generating consistent returns regardless of market conditions. But here's the critical detail - it's capacity constrained. There's only so much liquidity in the funding rate markets.
-                    </p>
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                      I'm offering this to a limited number of traders because I've reached my optimal position size. Any larger, and slippage would eat into my returns. By spreading it across multiple portfolios, we can all benefit without impacting each other's performance.
-                    </p>
-                  </div>
-                  
-                  <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                    <span className="text-red-500 font-bold">The Window Is Closing Fast</span> As more arbitrageurs enter this space, the funding rate differentials will compress. This is a first-mover advantage situation. The early adopters will capture the highest returns.
-                  </p>
-                  
-                  <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-6">
-                    <h3 className="text-xl font-bold text-gray-800 mb-3">Proven Track Record</h3>
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                      I've spent years developing and refining this strategy. The backtest results speak for themselves - consistent monthly returns with minimal drawdown. But I can't keep this to myself forever. The market will eventually catch on, and the opportunity will disappear.
-                    </p>
-                  </div>
-                  
-                  <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                    That's why I'm offering GreenPrint to a select group of traders who understand the value of a proven, market-neutral strategy. If you're looking for a reliable way to generate consistent returns in any market condition, this is it.
-                  </p>
-                  
-                  <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-6">
-                    <h3 className="text-xl font-bold text-gray-800 mb-3">What Makes GreenPrint Different</h3>
+                  <div className="bg-white p-6 rounded-xl border border-gray-200 mb-6">
                     <ul className="space-y-3 text-lg text-gray-700">
                       <li className="flex items-start gap-2">
                         <svg className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                         </svg>
-                        <span>Market-neutral strategy that profits regardless of price direction</span>
+                        <span>Traditional directional trading (buy and hold) in today's market carries significant risks</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <svg className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                         </svg>
-                        <span>Advanced risk management with position sizing algorithms</span>
+                        <span>The GreenPrint bot employs arbitrage strategies, making it market-direction independent and virtually risk-free</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <svg className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                         </svg>
-                        <span>Multi-exchange integration for optimal arbitrage opportunities</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <svg className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>24/7 automated operation with real-time monitoring</span>
+                        <span>Our strategy's performance has exceeded that of the top 5 hedge funds combined</span>
                       </li>
                     </ul>
                   </div>
                   
                   <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                    Don't wait until everyone else has caught on. The funding rate arbitrage opportunity is finite, and the window is closing fast. Join the early adopters who are already capitalizing on this strategy.
+                    I anticipate your questions, and I appreciate your skepticism - it demonstrates intelligence. You might wonder: "How can this outperform top hedge funds?" and "If the strategy is so effective, why share it?"
                   </p>
                   
-                  <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-6">
+                  <div className="bg-white p-6 rounded-xl border border-gray-200 mb-6">
+                    <h3 className="text-xl font-bold text-gray-800 mb-3">Understanding Market Inefficiencies</h3>
+                    <p className="text-lg text-gray-700 leading-relaxed">
+                      The explanation is straightforward. Top hedge funds operate under strict investment guidelines and size constraints. While they employ brilliant analysts who identify the same opportunities we do, their large capital base prevents them from capitalizing on smaller, high-potential investments. This creates market inefficiencies that we can exploit. By operating with greater flexibility and targeting opportunities they cannot access, we achieve returns they can only aspire to.
+                    </p>
+                  </div>
+                  
+                  <p className="text-xl text-gray-700 leading-relaxed mb-6">
+                    However, this strategy isn't without limitations. It's capacity-constrained, meaning it performs optimally up to a certain investment threshold. Beyond that, we risk the same issues that prevent hedge funds from participating: slippage and price impact.
+                    </p>
+                  
+                  <div className="bg-white p-6 rounded-xl border border-gray-200 mb-6">
+                    <h3 className="text-xl font-bold text-gray-800 mb-3">Strategic Partnership Opportunity</h3>
+                    <p className="text-lg text-gray-700 leading-relaxed">
+                      I've reached that capacity threshold - which is in the millions. This is why I'm offering the strategy to qualified investors at its fair value. The price reflects the development effort and operational costs, not the potential returns.
+                    </p>
+                  </div>
+                  
+                  <p className="text-xl text-gray-700 leading-relaxed mb-6">
+                    Successful trading isn't about constant activity - it's about patience and seizing the few truly exceptional opportunities that arise each year. These moments can emerge from various catalysts: major firm liquidations, market mispricings due to misinformation, or temporary market inefficiencies. These are the opportunities where substantial wealth is created.
+                    </p>
+                  
+                  <div className="bg-white p-6 rounded-xl border border-gray-200 mb-6">
+                    <h3 className="text-xl font-bold text-gray-800 mb-3">The GreenPrint Advantage</h3>
+                    <p className="text-lg text-gray-700 leading-relaxed mb-3">
+                      Imagine having an automated system that instantly capitalizes on these opportunities, regardless of timing. The value of such a tool far exceeds what I'm offering it for. I'm pricing it based on development costs and operational expenses - you're paying for the technology and infrastructure, not the potential returns.
+                    </p>
+                    <p className="text-lg text-gray-700 leading-relaxed">
+                      Let's be realistic - traditional trading isn't suitable for everyone, and even professionals face significant losses in current market conditions. Why risk your capital for modest returns when you could deploy a strategy that both protects and grows your wealth? Our approach has demonstrated the ability to more than double investments annually while maintaining capital preservation.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-white p-6 rounded-xl border border-gray-200 mb-6">
+                    <h3 className="text-xl font-bold text-gray-800 mb-3">Your Capital, Your Control</h3>
+                    <p className="text-lg text-gray-700 leading-relaxed">
+                      A key advantage of our strategy is its non-custodial nature. You maintain complete control of your funds and accounts at all times. Unlike traditional investment advisors who may impose high fees, lockup periods, or questionable expertise, our strategy offers transparency, proven performance, and the ultimate security: you retain full control of your capital.
+                    </p>
+                  </div>
+                  
+                  <p className="text-xl text-gray-700 leading-relaxed mb-6">
+                    Your interest in reading this far indicates two things: you're seeking a reliable investment strategy, and you recognize value when you see it. This technology has the potential to revolutionize trading. By being among the first to adopt it, you're positioning yourself ahead of the curve. Soon, capacity constraints will limit new participants. Let's build wealth together.
+                  </p>
+                  
+                  <div className="bg-white p-6 rounded-xl border border-gray-200 mb-6">
                     <h3 className="text-xl font-bold text-gray-800 mb-3">Performance Metrics</h3>
                     <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-white p-4 rounded-lg border border-gray-200">
+                      <div className="bg-[#faf6f0] p-4 rounded-lg border border-gray-200">
                         <p className="text-gray-500 text-sm">Performance</p>
-                        <p className="text-2xl font-bold text-green-600">+148.74%</p>
+                        <p className="text-2xl font-bold text-green-600">+256%</p>
                       </div>
-                      <div className="bg-white p-4 rounded-lg border border-gray-200">
+                      <div className="bg-[#faf6f0] p-4 rounded-lg border border-gray-200">
                         <p className="text-gray-500 text-sm">Volatility</p>
                         <p className="text-2xl font-bold text-green-600">-3.49%</p>
                       </div>
-                      <div className="bg-white p-4 rounded-lg border border-gray-200">
+                      <div className="bg-[#faf6f0] p-4 rounded-lg border border-gray-200">
                         <p className="text-gray-500 text-sm">Max Drawdown</p>
-                        <p className="text-2xl font-bold text-red-500">-1.41%</p>
+                        <p className="text-2xl font-bold text-red-500">-2.8%</p>
                       </div>
-                      <div className="bg-white p-4 rounded-lg border border-gray-200">
+                      <div className="bg-[#faf6f0] p-4 rounded-lg border border-gray-200">
                         <p className="text-gray-500 text-sm">Sharpe Ratio</p>
                         <p className="text-2xl font-bold text-green-600">15.55</p>
                       </div>
                     </div>
                   </div>
                   
-                  <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                    <span className="text-green-600 font-bold">Remember:</span> This isn't about hype or promises. It's about a proven strategy with real results. The data doesn't lie, and neither do I.
-                  </p>
-                  
-                  <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-6">
-                    <h3 className="text-xl font-bold text-gray-800 mb-3">Limited Time Offer</h3>
-                    <p className="text-lg text-gray-700 leading-relaxed mb-3">
-                      The choice is yours. You can continue with your current trading approach, or you can join the growing number of traders who are leveraging GreenPrint to generate consistent returns in any market condition.
-                    </p>
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                      <span className="text-red-500 font-bold">Time is running out.</span> The funding rate arbitrage opportunity won't last forever. Don't miss out on this chance to transform your trading results.
-                    </p>
-                  </div>
-                  
                   <div className="h-32"></div> {/* Extra space to ensure button is at bottom */}
                   
                   {/* Continue button at the bottom of the scrollable content */}
-                  <div className="pt-6 border-t border-gray-200 mt-6 bg-white">
+                  <div className="pt-6 border-t border-gray-200 mt-6 bg-[#faf6f0]">
                     <button 
                       onClick={closeDisclosure}
                       className={`w-full px-8 py-4 rounded-lg text-xl font-bold transition-all duration-200 transform hover:scale-105 ${
