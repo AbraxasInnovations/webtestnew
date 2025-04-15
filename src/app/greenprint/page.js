@@ -594,7 +594,7 @@ export default function GreenprintHome() {
                 </div>
               </div>
               
-              <div className="relative">
+              <div className="relative w-full">
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden w-full max-w-full mx-auto">
                   <Image
                     src="/images/gpfront.png"
@@ -912,7 +912,7 @@ export default function GreenprintHome() {
                 <div className="md:w-1/3">
                   <div className="aspect-square rounded-xl overflow-hidden border border-gray-800">
                     <Image
-                      src="/images/trader-profile.jpg"
+                      src="/images/trustedtrader.jpeg"
                       alt="Professional Trader"
                       width={400}
                       height={400}
@@ -932,12 +932,12 @@ export default function GreenprintHome() {
                     <span className="text-green-400 font-medium">Verified Trader</span>
                   </div>
                   <blockquote className="text-xl text-gray-300 mb-6">
-                    "GreenPrint has completely transformed my trading approach. The consistent returns have allowed me to quit my day job and trade full-time. The risk management features give me peace of mind, and the support team is always there when I need them."
+                    "Believe me when I say that I knew nothing about funding rates, I mean it. I STILL couldn't even explain it to you that well. The GreenPrint is a bot that does EVERYTHING for you. I splurged a little bit with my earnings, but I'm just glad I can park my money somewhere safe because all I hear is how the stock market goes down every other day. I'm riding this until retirement!"
                   </blockquote>
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="font-semibold">David Martinez</p>
-                      <p className="text-gray-400">Professional Crypto Trader</p>
+                      <p className="font-semibold">Jada C.</p>
+                      <p className="text-gray-400">First Time User</p>
                     </div>
                     <div className="text-right">
                       <p className="text-green-400 font-bold">+$124,500</p>
