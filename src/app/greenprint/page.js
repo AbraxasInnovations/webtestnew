@@ -11,7 +11,6 @@ export default function GreenprintHome() {
   const [showDisclosure, setShowDisclosure] = useState(true);
   // Add state for tracking if user has scrolled to bottom
   const [hasScrolledToBottom, setHasScrolledToBottom] = useState(false);
-  const [activeProduct, setActiveProduct] = useState(null);
   
   // Toggle mobile menu function
   const toggleMobileMenu = () => {
@@ -33,14 +32,6 @@ export default function GreenprintHome() {
     const element = e.target;
     const isAtBottom = Math.abs(element.scrollHeight - element.scrollTop - element.clientHeight) < 10;
     setHasScrolledToBottom(isAtBottom);
-  };
-
-  const handleProductHover = (index) => {
-    setActiveProduct(index);
-  };
-
-  const handleProductLeave = () => {
-    setActiveProduct(null);
   };
 
   return (
@@ -523,8 +514,8 @@ export default function GreenprintHome() {
 
       {/* Hero Section with Video */}
       <div className="relative min-h-screen pt-16">
-        <div className="absolute inset-0 bg-gradient-to-b from-green-900/10 via-green-800/5 to-black/60 z-10"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-green-700/10 via-transparent to-transparent z-5"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-green-900/30 via-green-800/20 to-black/60 z-10"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-green-700/20 via-transparent to-transparent z-5"></div>
         <video 
           className="absolute inset-0 w-full h-full object-cover opacity-70"
           autoPlay 
@@ -823,83 +814,66 @@ export default function GreenprintHome() {
       </section>
 
       {/* What is GreenPrint Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16">What is GreenPrint</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div>
-              <p className="text-lg text-gray-300 mb-8">
-                GreenPrint is a suite of advanced trading tools designed to help traders maximize their profits
-                through automated strategies and real-time market analysis.
-              </p>
-              <ul id="product-disclosure" className="space-y-4">
-                <li
-                  onMouseEnter={() => handleProductHover(0)}
-                  onMouseLeave={handleProductLeave}
-                  className="bg-gradient-to-r from-green-900/50 to-transparent rounded-lg overflow-hidden"
-                >
-                  <article>
-                    <h3>Funding Arb Bot</h3>
-                    <p>Automated funding rate arbitrage strategy for consistent profits</p>
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                    <a href="#">
-                      Learn more
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </a>
-                    <img src="/funding-arb.jpg" alt="Funding Arb Bot" className="absolute inset-0 w-full h-full object-cover opacity-20" />
-                  </article>
-                </li>
-                <li
-                  onMouseEnter={() => handleProductHover(1)}
-                  onMouseLeave={handleProductLeave}
-                  className="bg-gradient-to-r from-green-900/50 to-transparent rounded-lg overflow-hidden"
-                >
-                  <article>
-                    <h3>CLMM Bot</h3>
-                    <p>Advanced concentrated liquidity management for optimal trading</p>
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                    <a href="#" className="opacity-50 cursor-not-allowed">
-                      Coming soon
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </a>
-                    <img src="/clmm-bot.jpg" alt="CLMM Bot" className="absolute inset-0 w-full h-full object-cover opacity-20" />
-                  </article>
-                </li>
-                <li
-                  onMouseEnter={() => handleProductHover(2)}
-                  onMouseLeave={handleProductLeave}
-                  className="bg-gradient-to-r from-green-900/50 to-transparent rounded-lg overflow-hidden"
-                >
-                  <article>
-                    <h3>Data Analysis</h3>
-                    <p>Real-time market data analysis and insights</p>
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                    <a href="#" className="opacity-50 cursor-not-allowed">
-                      Coming soon
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </a>
-                    <img src="/data-analysis.jpg" alt="Data Analysis" className="absolute inset-0 w-full h-full object-cover opacity-20" />
-                  </article>
-                </li>
-              </ul>
-            </div>
-            <div className="relative">
-              <div className="money-counter">
-                <h1 className="text-6xl font-bold text-green-500">$124560342</h1>
+      <section className="py-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-900/10 to-transparent"></div>
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="relative">
+            <div className="relative z-10">
+              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-emerald-500">
+                  What is GreenPrint?
+                </span>
+              </h2>
+              <div className="prose prose-lg prose-invert">
+                <p className="text-xl text-gray-300 leading-relaxed mb-6">
+                  GreenPrint is a suite of market-exploiting products, for retail and professionals alike. 
+                </p>
+                <p className="text-xl text-gray-300 leading-relaxed mb-6">
+                  Unlike traditional trading strategies that rely on market direction, GreenPrint's unique approach focuses on capturing the spread between funding rates, creating a reliable income stream that's independent of price movements. This market-neutral strategy has proven effective across various market cycles.
+                </p>
+                <p className="text-xl text-gray-300 leading-relaxed">
+                  Our platform combines cutting-edge technology with robust risk management systems, ensuring your trading activities are both profitable and secure. With real-time monitoring, automated position management, and comprehensive performance analytics, GreenPrint provides a complete solution for automated crypto trading.
+                </p>
               </div>
             </div>
+            <div className="relative">
+              <div className="aspect-video rounded-xl overflow-hidden border border-gray-800 shadow-2xl shadow-green-500/20">
+                <Image
+                  src="/images/bot-dashboard.png"
+                  alt="GreenPrint Bot Dashboard"
+                  width={1920}
+                  height={1080}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-6 -right-6 bg-black/80 backdrop-blur-sm p-4 rounded-lg border border-gray-800">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
+                    <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-400">Yearly Returns</p>
+                    <p className="text-xl font-bold text-green-400">113.52%</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Money Counter Flipper Animation */}
+      <section className="py-32 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-900/10 to-transparent"></div>
+        <div className="max-w-6xl mx-auto relative text-center">
+          <h2 className="text-3xl font-bold mb-16 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-600">
+            Funding Payments Paid Out Daily
+          </h2>
+          
+          <div className="money-counter-container">
+            <h1 className="letter">$124560342</h1>
           </div>
         </div>
       </section>
@@ -910,7 +884,7 @@ export default function GreenprintHome() {
         <div className="max-w-6xl mx-auto relative">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-600">
-              Trusted by Everyday People
+              Trusted by Professional Traders
             </h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Join thousands of traders who have transformed their trading with GreenPrint
@@ -1015,108 +989,13 @@ export default function GreenprintHome() {
             </div>
             <div className="relative">
               <div className="aspect-video rounded-xl overflow-hidden border border-gray-800 shadow-2xl shadow-green-500/20">
-                <div className="w-full h-full bg-gradient-to-br from-black to-gray-900 flex items-center justify-center">
-                  <ul className="grid grid-cols-3 gap-2 w-full h-full p-4" id="product-disclosure">
-                    <li data-active="true" className="relative overflow-hidden rounded-lg border border-gray-700 bg-black/40 backdrop-blur-sm">
-                      <article>
-                        <h3>Funding Arb Bot</h3>
-                        <p>
-                          Our flagship product that automatically captures funding rate differentials across exchanges, generating consistent returns regardless of market direction.
-                        </p>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="w-5 h-5 text-green-400"
-                        >
-                          <path d="M6 3h12l4 6-10 13L2 9Z" />
-                          <path d="M11 3 8 9l4 13 4-13-3-6" />
-                          <path d="M2 9h20" />
-                        </svg>
-                        <a href="#">
-                          <span>Learn more</span>
-                        </a>
-                        <Image
-                          src="/images/bot-dashboard.png"
-                          alt="GreenPrint Funding Arb Bot"
-                          width={720}
-                          height={720}
-                          className="absolute inset-0 w-full h-full object-cover opacity-30"
-                        />
-                      </article>
-                    </li>
-                    <li className="relative overflow-hidden rounded-lg border border-gray-700 bg-black/40 backdrop-blur-sm">
-                      <article>
-                        <h3>CLMM Bot</h3>
-                        <p>
-                          Coming soon: Our concentrated liquidity market maker bot that maximizes yield through strategic position placement and rebalancing.
-                        </p>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="w-5 h-5 text-green-400"
-                        >
-                          <rect width="18" height="18" x="3" y="3" rx="2" />
-                          <path d="M7 3v18" />
-                          <path d="M3 7.5h4" />
-                          <path d="M3 12h18" />
-                          <path d="M3 16.5h4" />
-                          <path d="M17 3v18" />
-                          <path d="M17 7.5h4" />
-                          <path d="M17 16.5h4" />
-                        </svg>
-                        <a href="#">
-                          <span>Coming soon</span>
-                        </a>
-                        <Image
-                          src="/images/clmm-preview.jpg"
-                          alt="GreenPrint CLMM Bot"
-                          width={720}
-                          height={720}
-                          className="absolute inset-0 w-full h-full object-cover opacity-30"
-                        />
-                      </article>
-                    </li>
-                    <li className="relative overflow-hidden rounded-lg border border-gray-700 bg-black/40 backdrop-blur-sm">
-                      <article>
-                        <h3>Data Analysis</h3>
-                        <p>
-                          Coming soon: Advanced market data analysis tools that provide actionable insights and identify profitable trading opportunities.
-                        </p>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="w-5 h-5 text-green-400"
-                        >
-                          <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
-                        </svg>
-                        <a href="#">
-                          <span>Coming soon</span>
-                        </a>
-                        <Image
-                          src="/images/data-analysis.jpg"
-                          alt="GreenPrint Data Analysis Tool"
-                          width={720}
-                          height={720}
-                          className="absolute inset-0 w-full h-full object-cover opacity-30"
-                        />
-                      </article>
-                    </li>
-                  </ul>
-                </div>
+                <Image
+                  src="/images/bot-dashboard.png"
+                  alt="GreenPrint Bot Dashboard"
+                  width={1920}
+                  height={1080}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
