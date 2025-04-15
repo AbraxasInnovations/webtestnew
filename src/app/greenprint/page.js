@@ -36,13 +36,6 @@ export default function GreenprintHome() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-[#0a1512] to-black text-white">
-      {/* Vertical Lines for Scrolling Continuity */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute left-1/4 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-green-500/20 to-transparent"></div>
-        <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-green-500/20 to-transparent"></div>
-        <div className="absolute left-3/4 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-green-500/20 to-transparent"></div>
-      </div>
-      
       {/* Disclosure Popup */}
       {showDisclosure && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-md">
@@ -604,7 +597,7 @@ export default function GreenprintHome() {
               <div className="relative">
                 <div className="relative aspect-[16/9] rounded-lg overflow-hidden w-full max-w-5xl mx-auto">
                   <Image
-                    src="/images/gp-phone.PNG"
+                    src="/images/gpfront.png"
                     alt="GreenPrint Bot on Mobile Devices"
                     fill
                     className="object-contain"
@@ -819,14 +812,16 @@ export default function GreenprintHome() {
         </div>
       </section>
 
-      {/* What is GreenPrint Section - Moved up */}
-      <section className="py-16 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-900/10 to-transparent"></div>
-        <div className="max-w-6xl mx-auto relative">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-600">
-                What is GreenPrint?
+      {/* What is GreenPrint Section */}
+      <section className="py-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-900/10 to-transparent"></div>
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="relative">
+            <div className="relative z-10">
+              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-emerald-500">
+                  What is GreenPrint?
+                </span>
               </h2>
               <div className="prose prose-lg prose-invert">
                 <p className="text-xl text-gray-300 leading-relaxed mb-6">
@@ -858,8 +853,8 @@ export default function GreenprintHome() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400">Average Monthly Return</p>
-                    <p className="text-xl font-bold text-green-400">12.4%</p>
+                    <p className="text-sm text-gray-400">Yearly Returns</p>
+                    <p className="text-xl font-bold text-green-400">113.52%</p>
                   </div>
                 </div>
               </div>
