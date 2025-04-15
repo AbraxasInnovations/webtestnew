@@ -36,7 +36,12 @@ export default function GreenprintHome() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-[#0a1512] to-black text-white">
-      {/* Vertical Lines for Scrolling Continuity - Removed from hero section */}
+      {/* Vertical Lines for Scrolling Continuity */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute left-1/4 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-green-500/20 to-transparent"></div>
+        <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-green-500/20 to-transparent"></div>
+        <div className="absolute left-3/4 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-green-500/20 to-transparent"></div>
+      </div>
       
       {/* Disclosure Popup */}
       {showDisclosure && (
@@ -613,7 +618,7 @@ export default function GreenprintHome() {
       </div>
 
       {/* Profit Cards Carousel - Moved up even higher */}
-      <section className="py-4 -mt-64 relative overflow-hidden z-10">
+      <section className="py-4 -mt-80 relative overflow-hidden z-10">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-900/10 to-transparent"></div>
         <div className="max-w-7xl mx-auto px-4">
           <div className="relative overflow-hidden">
@@ -814,149 +819,135 @@ export default function GreenprintHome() {
         </div>
       </section>
 
-      {/* What is GreenPrint Section */}
-      <section className="py-16 relative overflow-hidden mt-16">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-900/10 to-transparent"></div>
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="relative">
-            <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-green-500/20 to-transparent"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-green-500/20 to-transparent"></div>
-            <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-emerald-500">
-                  What is GreenPrint?
-                </span>
+      {/* What is GreenPrint Section - Moved up */}
+      <section className="py-16 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-900/10 to-transparent"></div>
+        <div className="max-w-6xl mx-auto relative">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-600">
+                What is GreenPrint?
               </h2>
-              
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="space-y-6">
-                  <p className="text-xl text-gray-200 leading-relaxed">
-                    GreenPrint is an advanced funding rate arbitrage bot that automatically identifies and executes profitable trades across multiple cryptocurrency exchanges. By leveraging price discrepancies between exchanges, it generates consistent returns regardless of market direction.
-                  </p>
-                  
-                  <div className="flex flex-col gap-4">
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-green-500/20 flex-shrink-0 flex items-center justify-center mt-1">
-                        <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <p className="text-lg text-gray-300">Non-directional strategy that profits in any market condition</p>
-                    </div>
-                    
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-green-500/20 flex-shrink-0 flex items-center justify-center mt-1">
-                        <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <p className="text-lg text-gray-300">Advanced algorithms identify optimal trading opportunities</p>
-                    </div>
-                    
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-green-500/20 flex-shrink-0 flex items-center justify-center mt-1">
-                        <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <p className="text-lg text-gray-300">Fully automated execution with built-in risk management</p>
-                    </div>
+              <div className="prose prose-lg prose-invert">
+                <p className="text-xl text-gray-300 leading-relaxed mb-6">
+                  GreenPrint is a suite of market-exploiting products, for retail and professionals alike. 
+                </p>
+                <p className="text-xl text-gray-300 leading-relaxed mb-6">
+                  Unlike traditional trading strategies that rely on market direction, GreenPrint's unique approach focuses on capturing the spread between funding rates, creating a reliable income stream that's independent of price movements. This market-neutral strategy has proven effective across various market cycles.
+                </p>
+                <p className="text-xl text-gray-300 leading-relaxed">
+                  Our platform combines cutting-edge technology with robust risk management systems, ensuring your trading activities are both profitable and secure. With real-time monitoring, automated position management, and comprehensive performance analytics, GreenPrint provides a complete solution for automated crypto trading.
+                </p>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="aspect-video rounded-xl overflow-hidden border border-gray-800 shadow-2xl shadow-green-500/20">
+                <Image
+                  src="/images/bot-dashboard.png"
+                  alt="GreenPrint Bot Dashboard"
+                  width={1920}
+                  height={1080}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-6 -right-6 bg-black/80 backdrop-blur-sm p-4 rounded-lg border border-gray-800">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
+                    <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-400">Average Monthly Return</p>
+                    <p className="text-xl font-bold text-green-400">12.4%</p>
                   </div>
                 </div>
-                
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-transparent rounded-lg"></div>
-                  <div className="relative aspect-video rounded-lg overflow-hidden">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Money Counter Flipper Animation */}
+      <section className="py-32 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-900/10 to-transparent"></div>
+        <div className="max-w-6xl mx-auto relative text-center">
+          <h2 className="text-3xl font-bold mb-16 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-600">
+            Funding Payments Paid Out Daily
+          </h2>
+          
+          <div className="money-counter-container">
+            <h1 className="letter">$124560342</h1>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof Section - Moved down */}
+      <section className="py-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-900/10 to-transparent"></div>
+        <div className="max-w-6xl mx-auto relative">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-600">
+              Trusted by Professional Traders
+            </h2>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Join thousands of traders who have transformed their trading with GreenPrint
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { icon: "👥", value: "2,500+", label: "Active Traders" },
+              { icon: "📈", value: "$12.4M+", label: "Total Profits Generated" },
+              { icon: "🛡️", value: "99.9%", label: "Uptime Reliability" }
+            ].map((stat, i) => (
+              <div key={i} className="bg-black/40 backdrop-blur-sm p-8 rounded-xl border border-gray-800 text-center">
+                <div className="text-4xl mb-4">{stat.icon}</div>
+                <p className="text-3xl font-bold mb-2">{stat.value}</p>
+                <p className="text-gray-400">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-16 relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-500/10 to-transparent"></div>
+            <div className="relative bg-black/40 backdrop-blur-sm p-8 rounded-xl border border-gray-800">
+              <div className="flex flex-col md:flex-row items-center gap-8">
+                <div className="md:w-1/3">
+                  <div className="aspect-square rounded-xl overflow-hidden border border-gray-800">
                     <Image
-                      src="/images/greenprint-dashboard.jpg"
-                      alt="GreenPrint Dashboard"
-                      fill
-                      className="object-cover"
+                      src="/images/trader-profile.jpg"
+                      alt="Professional Trader"
+                      width={400}
+                      height={400}
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Trusted by Professional Traders Section */}
-      <section className="py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-900/10 to-transparent"></div>
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="relative">
-            <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-green-500/20 to-transparent"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-green-500/20 to-transparent"></div>
-            <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-emerald-500">
-                  Trusted by Professional Traders
-                </span>
-              </h2>
-              
-              <div className="grid md:grid-cols-3 gap-8">
-                <div className="bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-gray-800">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden border border-gray-700">
-                      <Image 
-                        src="/images/avatar-1.jpg" 
-                        alt="Trader 1" 
-                        width={48} 
-                        height={48}
-                        className="w-full h-full object-cover"
-                      />
+                <div className="md:w-2/3">
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="flex">
+                      {[1, 2, 3, 4, 5].map((i) => (
+                        <svg key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ))}
                     </div>
+                    <span className="text-green-400 font-medium">Verified Trader</span>
+                  </div>
+                  <blockquote className="text-xl text-gray-300 mb-6">
+                    "GreenPrint has completely transformed my trading approach. The consistent returns have allowed me to quit my day job and trade full-time. The risk management features give me peace of mind, and the support team is always there when I need them."
+                  </blockquote>
+                  <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="text-lg font-semibold text-white">Michael Chen</h3>
-                      <p className="text-sm text-gray-400">Professional Trader</p>
+                      <p className="font-semibold">David Martinez</p>
+                      <p className="text-gray-400">Professional Crypto Trader</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-green-400 font-bold">+$124,500</p>
+                      <p className="text-sm text-gray-400">Total Profit</p>
                     </div>
                   </div>
-                  <p className="text-gray-300 leading-relaxed">
-                    "GreenPrint has transformed my trading approach. The consistent returns and risk management features give me confidence in any market condition."
-                  </p>
-                </div>
-                
-                <div className="bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-gray-800">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden border border-gray-700">
-                      <Image 
-                        src="/images/avatar-2.jpg" 
-                        alt="Trader 2" 
-                        width={48} 
-                        height={48}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-white">Sarah Johnson</h3>
-                      <p className="text-sm text-gray-400">Hedge Fund Manager</p>
-                    </div>
-                  </div>
-                  <p className="text-gray-300 leading-relaxed">
-                    "The arbitrage strategies employed by GreenPrint are sophisticated yet accessible. It's a game-changer for both individual traders and institutions."
-                  </p>
-                </div>
-                
-                <div className="bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-gray-800">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden border border-gray-700">
-                      <Image 
-                        src="/images/avatar-3.jpg" 
-                        alt="Trader 3" 
-                        width={48} 
-                        height={48}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-white">David Rodriguez</h3>
-                      <p className="text-sm text-gray-400">Crypto Analyst</p>
-                    </div>
-                  </div>
-                  <p className="text-gray-300 leading-relaxed">
-                    "The automated execution and risk management features of GreenPrint have significantly improved my trading efficiency and profitability."
-                  </p>
                 </div>
               </div>
             </div>
@@ -964,107 +955,109 @@ export default function GreenprintHome() {
         </div>
       </section>
 
-      {/* Money Counter Section */}
-      <section className="py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-900/10 to-transparent"></div>
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="relative">
-            <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-green-500/20 to-transparent"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-green-500/20 to-transparent"></div>
-            <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-emerald-500">
-                  Funding Payments Paid Out Daily
-                </span>
+      {/* Funding Bot Section */}
+      <section className="py-32 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-transparent"></div>
+        <div className="max-w-6xl mx-auto relative">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-600">
+                The GreenPrint Funding Bot
               </h2>
-              
-              <div className="money-counter-container">
-                <h1 className="letter">$124560342</h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works Section */}
-      <section className="py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-900/10 to-transparent"></div>
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="relative">
-            <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-green-500/20 to-transparent"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-green-500/20 to-transparent"></div>
-            <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-emerald-500">
-                  How It Works
-                </span>
-              </h2>
-              
-              <div className="grid md:grid-cols-3 gap-8">
-                <div className="bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-gray-800">
-                  <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Market Analysis</h3>
-                  <p className="text-gray-300 leading-relaxed">
-                    Advanced algorithms continuously monitor multiple exchanges to identify price discrepancies and arbitrage opportunities.
-                  </p>
-                </div>
-                
-                <div className="bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-gray-800">
-                  <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Automated Execution</h3>
-                  <p className="text-gray-300 leading-relaxed">
-                    Once an opportunity is identified, the bot automatically executes trades across exchanges to capture the profit.
-                  </p>
-                </div>
-                
-                <div className="bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-gray-800">
-                  <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Risk Management</h3>
-                  <p className="text-gray-300 leading-relaxed">
-                    Built-in risk management features ensure that trades are executed safely and within predefined parameters.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-900/10 to-transparent"></div>
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="relative">
-            <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-green-500/20 to-transparent"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-green-500/20 to-transparent"></div>
-            <div className="relative z-10 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-emerald-500">
-                  Ready to Start Trading?
-                </span>
-              </h2>
-              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                Join thousands of professional traders who trust GreenPrint for consistent, reliable returns.
+              <p className="text-gray-300 text-lg mb-6">
+                Our advanced funding rate arbitrage bot automatically identifies and exploits funding rate differentials across major cryptocurrency exchanges, generating consistent returns regardless of market direction.
               </p>
-              <Link 
-                href="/greenprint/docs"
-                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:from-green-600 hover:to-emerald-700 transition-all duration-200 transform hover:scale-105"
-              >
-                Get Started Today
-                <ArrowRight className="w-5 h-5" />
-              </Link>
+              <ul className="space-y-4">
+                {[
+                  'Automated 24/7 operation',
+                  'Multi-exchange support',
+                  'Advanced risk management',
+                  'Real-time monitoring',
+                  'Detailed performance analytics'
+                ].map((feature, index) => (
+                  <li key={index} className="flex items-center gap-3">
+                    <ChevronRight className="w-5 h-5 text-green-500" />
+                    <span className="text-gray-300">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8">
+                <Link 
+                  href="/greenprint/docs"
+                  className="text-green-500 hover:text-green-400 flex items-center gap-2 font-medium"
+                >
+                  Learn more about how it works
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="aspect-video rounded-xl overflow-hidden border border-gray-800 shadow-2xl shadow-green-500/20">
+                <Image
+                  src="/images/bot-dashboard.png"
+                  alt="GreenPrint Bot Dashboard"
+                  width={1920}
+                  height={1080}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* More Info Section */}
+      <section className="py-32 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-900/10 to-transparent"></div>
+        <div className="max-w-6xl mx-auto relative">
+          <h2 className="text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-600">
+            Why Choose GreenPrint?
+          </h2>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="space-y-8">
+              <div className="bg-black/40 backdrop-blur-sm p-8 rounded-xl border border-gray-800 hover:border-green-500/50 transition-colors">
+                <h3 className="text-xl font-semibold mb-3">Proven Track Record</h3>
+                <p className="text-gray-300">
+                  Our bot has consistently generated positive returns through various market conditions, maintaining a steady performance regardless of market volatility.
+                </p>
+              </div>
+              <div className="bg-black/40 backdrop-blur-sm p-8 rounded-xl border border-gray-800 hover:border-green-500/50 transition-colors">
+                <h3 className="text-xl font-semibold mb-3">Advanced Technology</h3>
+                <p className="text-gray-300">
+                  Built on cutting-edge technology with real-time monitoring and automated risk management systems to protect your investments.
+                </p>
+              </div>
+              <div className="bg-black/40 backdrop-blur-sm p-8 rounded-xl border border-gray-800 hover:border-green-500/50 transition-colors">
+                <h3 className="text-xl font-semibold mb-3">Expert Support</h3>
+                <p className="text-gray-300">
+                  Access to our dedicated support team and detailed documentation to help you maximize your trading success.
+                </p>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="sticky top-8">
+                <div className="bg-black/40 backdrop-blur-sm p-8 rounded-xl border border-gray-800">
+                  <h3 className="text-2xl font-bold mb-4">Ready to Start?</h3>
+                  <p className="text-gray-300 mb-6">
+                    Join thousands of traders who are already generating consistent returns with GreenPrint.
+                  </p>
+                  <Link 
+                    href="/greenprint/docs"
+                    className="block w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-lg text-center font-semibold hover:from-green-600 hover:to-emerald-700 transition-all duration-200"
+                  >
+                    Get Started Now
+                  </Link>
+                  <div className="mt-6 text-center">
+                    <Link 
+                      href="/greenprint/docs"
+                      className="text-green-500 hover:text-green-400 inline-flex items-center gap-2"
+                    >
+                      Read the documentation
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
