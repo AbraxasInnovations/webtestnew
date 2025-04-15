@@ -38,8 +38,8 @@ export default function GreenprintHome() {
     <div className="min-h-screen bg-gradient-to-b from-black via-[#0a1512] to-black text-white">
       {/* Disclosure Popup */}
       {showDisclosure && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-white/95 backdrop-blur-md">
-          <div className="max-w-4xl w-full bg-white rounded-xl overflow-hidden shadow-2xl">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-md">
+          <div className="max-w-4xl w-full bg-[#faf6f0] rounded-xl overflow-hidden shadow-2xl">
             <div className="p-6 md:p-8 flex flex-col h-[80vh]">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
@@ -54,7 +54,7 @@ export default function GreenprintHome() {
               
               <div className="overflow-y-auto flex-grow pr-4 custom-scrollbar" onScroll={handleScroll}>
                 <div className="prose prose-lg max-w-none">
-                  <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-8">
+                  <div className="bg-white p-6 rounded-xl border border-gray-200 mb-8">
                     <p className="text-xl text-gray-700 leading-relaxed mb-4">
                       <span className="text-green-600 font-bold">I don't want to waste your time with fluff.</span> Let me show you exactly what you're here for:
                     </p>
@@ -93,7 +93,7 @@ export default function GreenprintHome() {
                     <span className="text-green-600 font-bold">Attention Serious Traders Only</span> - I'm a 15-year Wall Street quant who's been running this funding rate arbitrage strategy for the past 3 years with exceptional results.
                   </p>
                   
-                  <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-6">
+                  <div className="bg-white p-6 rounded-xl border border-gray-200 mb-6">
                     <h3 className="text-xl font-bold text-gray-800 mb-3">Why This Matters To You</h3>
                     <p className="text-lg text-gray-700 leading-relaxed mb-3">
                       The GreenPrint Funding Bot works. Period. It's generating consistent returns regardless of market conditions. But here's the critical detail - it's capacity constrained. There's only so much liquidity in the funding rate markets.
@@ -107,7 +107,7 @@ export default function GreenprintHome() {
                     <span className="text-red-500 font-bold">The Window Is Closing Fast</span> As more arbitrageurs enter this space, the funding rate differentials will compress. This is a first-mover advantage situation. The early adopters will capture the highest returns.
                   </p>
                   
-                  <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-6">
+                  <div className="bg-white p-6 rounded-xl border border-gray-200 mb-6">
                     <h3 className="text-xl font-bold text-gray-800 mb-3">Proven Track Record</h3>
                     <p className="text-lg text-gray-700 leading-relaxed">
                       I've spent years developing and refining this strategy. The backtest results speak for themselves - consistent monthly returns with minimal drawdown. But I can't keep this to myself forever. The market will eventually catch on, and the opportunity will disappear.
@@ -118,7 +118,7 @@ export default function GreenprintHome() {
                     That's why I'm offering GreenPrint to a select group of traders who understand the value of a proven, market-neutral strategy. If you're looking for a reliable way to generate consistent returns in any market condition, this is it.
                   </p>
                   
-                  <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-6">
+                  <div className="bg-white p-6 rounded-xl border border-gray-200 mb-6">
                     <h3 className="text-xl font-bold text-gray-800 mb-3">What Makes GreenPrint Different</h3>
                     <ul className="space-y-3 text-lg text-gray-700">
                       <li className="flex items-start gap-2">
@@ -152,22 +152,22 @@ export default function GreenprintHome() {
                     Don't wait until everyone else has caught on. The funding rate arbitrage opportunity is finite, and the window is closing fast. Join the early adopters who are already capitalizing on this strategy.
                   </p>
                   
-                  <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-6">
+                  <div className="bg-white p-6 rounded-xl border border-gray-200 mb-6">
                     <h3 className="text-xl font-bold text-gray-800 mb-3">Performance Metrics</h3>
                     <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-white p-4 rounded-lg border border-gray-200">
+                      <div className="bg-[#faf6f0] p-4 rounded-lg border border-gray-200">
                         <p className="text-gray-500 text-sm">Performance</p>
                         <p className="text-2xl font-bold text-green-600">+148.74%</p>
                       </div>
-                      <div className="bg-white p-4 rounded-lg border border-gray-200">
+                      <div className="bg-[#faf6f0] p-4 rounded-lg border border-gray-200">
                         <p className="text-gray-500 text-sm">Volatility</p>
                         <p className="text-2xl font-bold text-green-600">-3.49%</p>
                       </div>
-                      <div className="bg-white p-4 rounded-lg border border-gray-200">
+                      <div className="bg-[#faf6f0] p-4 rounded-lg border border-gray-200">
                         <p className="text-gray-500 text-sm">Max Drawdown</p>
                         <p className="text-2xl font-bold text-red-500">-1.41%</p>
                       </div>
-                      <div className="bg-white p-4 rounded-lg border border-gray-200">
+                      <div className="bg-[#faf6f0] p-4 rounded-lg border border-gray-200">
                         <p className="text-gray-500 text-sm">Sharpe Ratio</p>
                         <p className="text-2xl font-bold text-green-600">15.55</p>
                       </div>
@@ -178,7 +178,7 @@ export default function GreenprintHome() {
                     <span className="text-green-600 font-bold">Remember:</span> This isn't about hype or promises. It's about a proven strategy with real results. The data doesn't lie, and neither do I.
                   </p>
                   
-                  <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-6">
+                  <div className="bg-white p-6 rounded-xl border border-gray-200 mb-6">
                     <h3 className="text-xl font-bold text-gray-800 mb-3">Limited Time Offer</h3>
                     <p className="text-lg text-gray-700 leading-relaxed mb-3">
                       The choice is yours. You can continue with your current trading approach, or you can join the growing number of traders who are leveraging GreenPrint to generate consistent returns in any market condition.
@@ -191,7 +191,7 @@ export default function GreenprintHome() {
                   <div className="h-32"></div> {/* Extra space to ensure button is at bottom */}
                   
                   {/* Continue button at the bottom of the scrollable content */}
-                  <div className="pt-6 border-t border-gray-200 mt-6 bg-white">
+                  <div className="pt-6 border-t border-gray-200 mt-6 bg-[#faf6f0]">
                     <button 
                       onClick={closeDisclosure}
                       className={`w-full px-8 py-4 rounded-lg text-xl font-bold transition-all duration-200 transform hover:scale-105 ${
@@ -517,9 +517,10 @@ export default function GreenprintHome() {
 
       {/* Hero Section with Video */}
       <div className="relative min-h-screen pt-16">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-transparent z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-green-900/30 via-green-800/20 to-black/60 z-10"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-green-700/20 via-transparent to-transparent z-5"></div>
         <video 
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover opacity-70"
           autoPlay 
           loop 
           muted 
@@ -532,7 +533,7 @@ export default function GreenprintHome() {
           <div className="max-w-7xl mx-auto w-full">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
-                <div className="inline-block bg-green-500/20 text-green-400 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">
+                <div className="inline-block bg-green-500/30 text-green-300 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">
                   <span className="flex items-center gap-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
@@ -542,14 +543,14 @@ export default function GreenprintHome() {
                 </div>
                 
                 <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-600">
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-emerald-500">
                     Automated Crypto
                   </span>
                   <br />
                   <span className="text-white">Trading That Actually Works</span>
                 </h1>
                 
-                <p className="text-xl text-gray-300 max-w-xl">
+                <p className="text-xl text-gray-200 max-w-xl">
                   GreenPrint's advanced funding rate arbitrage bot generates consistent returns regardless of market conditions. No directional risk, just reliable profits.
                 </p>
                 
@@ -591,7 +592,7 @@ export default function GreenprintHome() {
                         </svg>
                       ))}
                     </div>
-                    <p className="text-sm text-gray-400">Trusted by 2,500+ traders</p>
+                    <p className="text-sm text-gray-300">Trusted by 2,500+ traders</p>
                   </div>
                 </div>
               </div>
@@ -605,7 +606,7 @@ export default function GreenprintHome() {
                     className="object-contain"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                 </div>
               </div>
             </div>
