@@ -36,6 +36,13 @@ export default function GreenprintHome() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-[#0a1512] to-black text-white">
+      {/* Vertical Lines for Scrolling Continuity */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute left-1/4 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-green-500/20 to-transparent"></div>
+        <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-green-500/20 to-transparent"></div>
+        <div className="absolute left-3/4 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-green-500/20 to-transparent"></div>
+      </div>
+      
       {/* Disclosure Popup */}
       {showDisclosure && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-md">
@@ -611,7 +618,7 @@ export default function GreenprintHome() {
       </div>
 
       {/* Profit Cards Carousel - Moved up even higher */}
-      <section className="py-4 -mt-64 relative overflow-hidden z-10">
+      <section className="py-4 -mt-80 relative overflow-hidden z-10">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-900/10 to-transparent"></div>
         <div className="max-w-7xl mx-auto px-4">
           <div className="relative overflow-hidden">
@@ -640,6 +647,44 @@ export default function GreenprintHome() {
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden border border-gray-700">
                     <Image 
+                      src="/images/flags/us.png" 
+                      alt="US Flag" 
+                      width={48} 
+                      height={48}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="text-sm font-semibold text-white truncate">Sarah Johnson</h3>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-green-400 font-medium text-sm">+$2,567</span>
+                  <span className="text-gray-400 text-xs">Today</span>
+                </div>
+              </div>
+
+              <div className="flex-none w-48 h-32 bg-black/40 backdrop-blur-sm rounded-lg border border-gray-800 p-4 hover:border-green-500/50 transition-all duration-300 flex flex-col justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden border border-gray-700">
+                    <Image 
+                      src="/images/flags/us.png" 
+                      alt="US Flag" 
+                      width={48} 
+                      height={48}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="text-sm font-semibold text-white truncate">David Rodriguez</h3>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-green-400 font-medium text-sm">+$3,789</span>
+                  <span className="text-gray-400 text-xs">Today</span>
+                </div>
+              </div>
+
+              <div className="flex-none w-48 h-32 bg-black/40 backdrop-blur-sm rounded-lg border border-gray-800 p-4 hover:border-green-500/50 transition-all duration-300 flex flex-col justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden border border-gray-700">
+                    <Image 
                       src="/images/flags/uk.png" 
                       alt="UK Flag" 
                       width={48} 
@@ -651,6 +696,64 @@ export default function GreenprintHome() {
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-green-400 font-medium text-sm">+$2,345</span>
+                  <span className="text-gray-400 text-xs">Today</span>
+                </div>
+              </div>
+
+              <div className="flex-none w-48 h-32 bg-black/40 backdrop-blur-sm rounded-lg border border-gray-800 p-4 hover:border-green-500/50 transition-all duration-300 flex flex-col justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden border border-gray-700">
+                    <Image 
+                      src="/images/flags/us.png" 
+                      alt="US Flag" 
+                      width={48} 
+                      height={48}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="text-sm font-semibold text-white truncate">Emily Thompson</h3>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-green-400 font-medium text-sm">+$4,123</span>
+                  <span className="text-gray-400 text-xs">Today</span>
+                </div>
+              </div>
+
+              {/* Duplicate set of cards for seamless loop */}
+              <div className="flex-none w-48 h-32 bg-black/40 backdrop-blur-sm rounded-lg border border-gray-800 p-4 hover:border-green-500/50 transition-all duration-300 flex flex-col justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden border border-gray-700">
+                    <Image 
+                      src="/images/flags/us.png" 
+                      alt="US Flag" 
+                      width={48} 
+                      height={48}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="text-sm font-semibold text-white truncate">Robert Martinez</h3>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-green-400 font-medium text-sm">+$1,567</span>
+                  <span className="text-gray-400 text-xs">Today</span>
+                </div>
+              </div>
+
+              <div className="flex-none w-48 h-32 bg-black/40 backdrop-blur-sm rounded-lg border border-gray-800 p-4 hover:border-green-500/50 transition-all duration-300 flex flex-col justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden border border-gray-700">
+                    <Image 
+                      src="/images/flags/us.png" 
+                      alt="US Flag" 
+                      width={48} 
+                      height={48}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="text-sm font-semibold text-white truncate">Jennifer Lee</h3>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-green-400 font-medium text-sm">+$2,890</span>
                   <span className="text-gray-400 text-xs">Today</span>
                 </div>
               </div>
@@ -678,14 +781,14 @@ export default function GreenprintHome() {
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden border border-gray-700">
                     <Image 
-                      src="/images/flags/de.png" 
-                      alt="Germany Flag" 
+                      src="/images/flags/us.png" 
+                      alt="US Flag" 
                       width={48} 
                       height={48}
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <h3 className="text-sm font-semibold text-white truncate">Lukas Schmidt</h3>
+                  <h3 className="text-sm font-semibold text-white truncate">Thomas Anderson</h3>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-green-400 font-medium text-sm">+$4,567</span>
@@ -705,102 +808,6 @@ export default function GreenprintHome() {
                     />
                   </div>
                   <h3 className="text-sm font-semibold text-white truncate">Rafael Silva</h3>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-green-400 font-medium text-sm">+$5,678</span>
-                  <span className="text-gray-400 text-xs">Today</span>
-                </div>
-              </div>
-
-              {/* Duplicate set of cards for seamless loop */}
-              <div className="flex-none w-48 h-32 bg-black/40 backdrop-blur-sm rounded-lg border border-gray-800 p-4 hover:border-green-500/50 transition-all duration-300 flex flex-col justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden border border-gray-700">
-                    <Image 
-                      src="/images/flags/fr.png" 
-                      alt="France Flag" 
-                      width={48} 
-                      height={48}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <h3 className="text-sm font-semibold text-white truncate">Sophie Dubois</h3>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-green-400 font-medium text-sm">+$1,234</span>
-                  <span className="text-gray-400 text-xs">Today</span>
-                </div>
-              </div>
-
-              <div className="flex-none w-48 h-32 bg-black/40 backdrop-blur-sm rounded-lg border border-gray-800 p-4 hover:border-green-500/50 transition-all duration-300 flex flex-col justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden border border-gray-700">
-                    <Image 
-                      src="/images/flags/au.png" 
-                      alt="Australia Flag" 
-                      width={48} 
-                      height={48}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <h3 className="text-sm font-semibold text-white truncate">Emma Thompson</h3>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-green-400 font-medium text-sm">+$2,345</span>
-                  <span className="text-gray-400 text-xs">Today</span>
-                </div>
-              </div>
-
-              <div className="flex-none w-48 h-32 bg-black/40 backdrop-blur-sm rounded-lg border border-gray-800 p-4 hover:border-green-500/50 transition-all duration-300 flex flex-col justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden border border-gray-700">
-                    <Image 
-                      src="/images/flags/ca.png" 
-                      alt="Canada Flag" 
-                      width={48} 
-                      height={48}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <h3 className="text-sm font-semibold text-white truncate">Alex Johnson</h3>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-green-400 font-medium text-sm">+$3,456</span>
-                  <span className="text-gray-400 text-xs">Today</span>
-                </div>
-              </div>
-
-              <div className="flex-none w-48 h-32 bg-black/40 backdrop-blur-sm rounded-lg border border-gray-800 p-4 hover:border-green-500/50 transition-all duration-300 flex flex-col justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden border border-gray-700">
-                    <Image 
-                      src="/images/flags/in.png" 
-                      alt="India Flag" 
-                      width={48} 
-                      height={48}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <h3 className="text-sm font-semibold text-white truncate">Priya Patel</h3>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-green-400 font-medium text-sm">+$4,567</span>
-                  <span className="text-gray-400 text-xs">Today</span>
-                </div>
-              </div>
-
-              <div className="flex-none w-48 h-32 bg-black/40 backdrop-blur-sm rounded-lg border border-gray-800 p-4 hover:border-green-500/50 transition-all duration-300 flex flex-col justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-gray-800/50 flex-shrink-0 overflow-hidden border border-gray-700">
-                    <Image 
-                      src="/images/flags/sg.png" 
-                      alt="Singapore Flag" 
-                      width={48} 
-                      height={48}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <h3 className="text-sm font-semibold text-white truncate">Wei Chen</h3>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-green-400 font-medium text-sm">+$5,678</span>
