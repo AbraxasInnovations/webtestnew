@@ -12,21 +12,6 @@ export default function GreenprintHome() {
   // Add state for tracking if user has scrolled to bottom
   const [hasScrolledToBottom, setHasScrolledToBottom] = useState(false);
   
-  // Add useEffect for money counter animation
-  useEffect(() => {
-    const letters = document.querySelectorAll('.letter');
-    letters.forEach(letter => {
-      const text = letter.textContent;
-      letter.textContent = '';
-      [...text].forEach((char, i) => {
-        const span = document.createElement('span');
-        span.textContent = char;
-        span.style.animationDelay = `${i * 0.1}s`;
-        letter.appendChild(span);
-      });
-    });
-  }, []);
-  
   // Toggle mobile menu function
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -282,28 +267,142 @@ export default function GreenprintHome() {
           font-weight: 700;
         }
         
+        .letter span:before {
+          content: "";
+          display: block;
+          z-index: 99;
+          position: absolute;
+          top: 50%;
+          width: 100%;
+          background: linear-gradient(0deg, #333 10%, #1c1c1c);
+          background-position: 50% 50%;
+          background-size: cover;
+          height: 3%;
+        }
+        
         .letter span {
           vertical-align: top;
           box-shadow: inset 0.035em 0 0 0 rgba(75, 75, 75, 0.4), inset -0.035em 0 0 0 rgba(0, 0, 0, 0.25);
           display: inline-block;
           width: 0.95em;
-          height: 1.6em;
+          height: 1.6;
           line-height: 1.6em;
           text-align: center;
-          animation: flip 2s infinite;
-          animation-fill-mode: both;
-          transform-origin: 50% 100%;
-          background: linear-gradient(0deg, #333 10%, #1c1c1c);
-          color: #fff;
-          text-shadow: 0 0 0.1em rgba(255, 255, 255, 0.5);
+          text-transform: uppercase;
+          padding: 0;
+          color: #eee;
+          position: relative;
+        }
+        
+        .letter span:first-child:after {
+          border-radius: 0 0 0 0.15em;
+        }
+        
+        .letter span:first-child {
+          border-radius: 0.15em 0 0 0.15em;
+        }
+        
+        .letter span:last-child:after {
+          border-radius: 0 0 0.15em 0;
+        }
+        
+        .letter span:last-child {
+          border-radius: 0 0.15em 0.15em 0;
+        }
+        
+        .letter span:after {
+          content: "";
+          transform-style: preserve-3d;
+          display: block;
+          position: absolute;
+          width: 100%;
+          transform: rotatex(70deg);
+          transform-origin: 50% 0;
+          height: 50%;
+          top: 50%;
+          left: 0;
+          right: 0;
+          animation: flip 0.6s ease infinite;
+          box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.1);
+        }
+        
+        .letter span:nth-child(1n):after {
+          animation-delay: 0.2s;
+        }
+        
+        .letter span:nth-child(2n):after {
+          animation-delay: 0.3s;
+        }
+        
+        .letter span:nth-child(3n):after {
+          animation-delay: 0.4s;
+        }
+        
+        .letter span:nth-child(4n):after {
+          animation-delay: 0.5s;
+        }
+        
+        .letter span:nth-child(5n):after {
+          animation-delay: 0.6s;
+        }
+        
+        .letter span:nth-child(6n):after {
+          animation-delay: 0.7s;
+        }
+        
+        .letter span:nth-child(7n):after {
+          animation-delay: 0.8s;
+        }
+        
+        .letter span:nth-child(8n):after {
+          animation-delay: 0.9s;
+        }
+        
+        .letter span:nth-child(9n):after {
+          animation-delay: 1s;
+        }
+        
+        .letter span:nth-child(10n):after {
+          animation-delay: 1.1s;
+        }
+        
+        .letter span:nth-child(11n):after {
+          animation-delay: 1.2s;
+        }
+        
+        .letter span:nth-child(12n):after {
+          animation-delay: 1.37s;
+        }
+        
+        .letter span:nth-child(13n):after {
+          animation-delay: 1.4s;
         }
         
         @keyframes flip {
-          0% { transform: rotateX(0deg); }
-          5% { transform: rotateX(0deg); }
-          10% { transform: rotateX(180deg); }
-          15% { transform: rotateX(0deg); }
-          100% { transform: rotateX(0deg); }
+          0% {
+            opacity: 0;
+            transform: rotatex(0deg);
+            background: linear-gradient(0deg, #333 20%, transparent);
+            box-shadow: inset -0.05em -0.1em 0 #050505;
+          }
+          10% {
+            opacity: 1;
+          }
+          50% {
+            box-shadow: inset 0 -0.04em 0 rgba(255, 255, 255, 0.1);
+          }
+          70% {
+            box-shadow: inset 0.01em -0.02em 0 rgba(255, 255, 255, 0.3);
+          }
+          90% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+            transform: rotatex(180deg);
+            background: linear-gradient(0deg, #222 40%, transparent);
+            box-shadow: inset 0 0em 0 rgba(205, 205, 205, 0.2);
+          }
         }
       `}</style>
       
