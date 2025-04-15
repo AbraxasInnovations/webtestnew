@@ -595,13 +595,14 @@ export default function GreenprintHome() {
               </div>
               
               <div className="relative">
-                <div className="relative aspect-[16/9] rounded-lg overflow-hidden w-full max-w-5xl mx-auto">
+                <div className="relative aspect-[16/9] rounded-lg overflow-hidden w-full max-w-6xl mx-auto">
                   <Image
                     src="/images/gpfront.png"
                     alt="GreenPrint Bot on Mobile Devices"
                     fill
                     className="object-contain"
                     priority
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                   />
                 </div>
               </div>
