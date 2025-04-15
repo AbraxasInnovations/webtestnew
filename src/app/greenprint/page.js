@@ -450,18 +450,36 @@ export default function GreenprintHome() {
               }}
             />
           </Link>
-          <div className="hidden md:block flex-1 mx-4">
-            <input type="text" placeholder="Search... Ctrl K" className="w-full p-3.5 rounded-xl border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-green-600 transition" />
-          </div>
+          
+          {/* Traditional Navigation */}
+          <nav className="hidden md:flex items-center space-x-8">
+            <Link href="/greenprint" className="text-white hover:text-green-400 transition-colors">
+              Home
+            </Link>
+            <Link href="/greenprint/docs" className="text-white hover:text-green-400 transition-colors">
+              Documentation
+            </Link>
+            <Link href="#pricing" className="text-white hover:text-green-400 transition-colors">
+              Pricing
+            </Link>
+            <Link href="#features" className="text-white hover:text-green-400 transition-colors">
+              Features
+            </Link>
+            <Link href="#testimonials" className="text-white hover:text-green-400 transition-colors">
+              Testimonials
+            </Link>
+            <Link 
+              href="/greenprint/docs"
+              className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-green-600 hover:to-emerald-700 transition-all duration-200"
+            >
+              Get Started
+            </Link>
+          </nav>
+          
           <div className="flex items-center space-x-4">
             <button className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition">
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M10 2a1 1 0 01.993.883L11 3v2a1 1 0 01-1.993.117L9 5V3a1 1 0 011-1zm4.22 2.47a1 1 0 011.414 0l1.414 1.414a1 1 0 01-1.414 1.414L14.22 5.884a1 1 0 010-1.414zM10 14a4 4 0 110-8 4 4 0 010 8zm7-4a1 1 0 01.117 1.993L17 12h-2a1 1 0 01-.117-1.993L15 10h2zm-1.636 5.364a1 1 0 011.414 1.414L14.57 18.61a1 1 0 01-1.414-1.414l1.414-1.414zM5 10a1 1 0 01.117 1.993L5 12H3a1 1 0 01-.117-1.993L3 10h2zm1.636-4.636a1 1 0 011.414-1.414L9.464 5.37a1 1 0 01-1.414 1.414L6.636 5.364zM10 16a1 1 0 01.993.883L11 17v2a1 1 0 01-1.993.117L9 19v-2a1 1 0 011-1z" />
-              </svg>
-            </button>
-            <button className="md:hidden p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </button>
             <button 
@@ -477,19 +495,7 @@ export default function GreenprintHome() {
           </div>
         </div>
       </header>
-      <nav className="bg-black/60 backdrop-blur-sm border-b border-gray-800">
-        <div className="max-w-screen-xl mx-auto px-4">
-          <ul className="flex space-x-6 h-12 items-center text-sm">
-            <li>
-              <Link href="/greenprint" className="font-semibold text-green-600 dark:text-green-400 border-b-2 border-green-600 pb-1">Overview</Link>
-            </li>
-            <li>
-              <Link href="/greenprint/docs" className="hover:text-green-600 dark:hover:text-green-400 transition">Documentation</Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
+      
       {/* Mobile Navigation Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden py-4 bg-black/90 backdrop-blur-sm border-b border-gray-800">
@@ -499,7 +505,7 @@ export default function GreenprintHome() {
               className="text-lg hover:text-green-600 dark:hover:text-green-400 transition-colors w-full text-center py-2"
               onClick={handleNavClick}
             >
-              Overview
+              Home
             </Link>
             <Link 
               href="/greenprint/docs" 
@@ -507,6 +513,34 @@ export default function GreenprintHome() {
               onClick={handleNavClick}
             >
               Documentation
+            </Link>
+            <Link 
+              href="#pricing" 
+              className="text-lg hover:text-green-600 dark:hover:text-green-400 transition-colors w-full text-center py-2"
+              onClick={handleNavClick}
+            >
+              Pricing
+            </Link>
+            <Link 
+              href="#features" 
+              className="text-lg hover:text-green-600 dark:hover:text-green-400 transition-colors w-full text-center py-2"
+              onClick={handleNavClick}
+            >
+              Features
+            </Link>
+            <Link 
+              href="#testimonials" 
+              className="text-lg hover:text-green-600 dark:hover:text-green-400 transition-colors w-full text-center py-2"
+              onClick={handleNavClick}
+            >
+              Testimonials
+            </Link>
+            <Link 
+              href="/greenprint/docs"
+              className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-lg text-center font-semibold hover:from-green-600 hover:to-emerald-700 transition-all duration-200 w-3/4"
+              onClick={handleNavClick}
+            >
+              Get Started
             </Link>
           </div>
         </div>
@@ -1007,53 +1041,133 @@ export default function GreenprintHome() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-900/10 to-transparent"></div>
         <div className="max-w-6xl mx-auto relative">
           <h2 className="text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-600">
-            Why Choose GreenPrint?
+            Pricing Plans
           </h2>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="space-y-8">
-              <div className="bg-black/40 backdrop-blur-sm p-8 rounded-xl border border-gray-800 hover:border-green-500/50 transition-colors">
-                <h3 className="text-xl font-semibold mb-3">Proven Track Record</h3>
-                <p className="text-gray-300">
-                  Our bot has consistently generated positive returns through various market conditions, maintaining a steady performance regardless of market volatility.
-                </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Basic Plan */}
+            <div className="bg-black/40 backdrop-blur-sm p-8 rounded-xl border border-gray-800 hover:border-green-500/50 transition-colors">
+              <h3 className="text-xl font-semibold mb-3">Basic</h3>
+              <div className="mb-6">
+                <span className="text-3xl font-bold">$99</span>
+                <span className="text-gray-400 ml-2">/month</span>
               </div>
-              <div className="bg-black/40 backdrop-blur-sm p-8 rounded-xl border border-gray-800 hover:border-green-500/50 transition-colors">
-                <h3 className="text-xl font-semibold mb-3">Advanced Technology</h3>
-                <p className="text-gray-300">
-                  Built on cutting-edge technology with real-time monitoring and automated risk management systems to protect your investments.
-                </p>
-              </div>
-              <div className="bg-black/40 backdrop-blur-sm p-8 rounded-xl border border-gray-800 hover:border-green-500/50 transition-colors">
-                <h3 className="text-xl font-semibold mb-3">Expert Support</h3>
-                <p className="text-gray-300">
-                  Access to our dedicated support team and detailed documentation to help you maximize your trading success.
-                </p>
-              </div>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Basic funding rate arbitrage</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Up to $10,000 capital</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Email support</span>
+                </li>
+              </ul>
+              <Link 
+                href="/greenprint/docs"
+                className="block w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-lg text-center font-semibold hover:from-green-600 hover:to-emerald-700 transition-all duration-200"
+              >
+                Get Started
+              </Link>
             </div>
-            <div className="relative">
-              <div className="sticky top-8">
-                <div className="bg-black/40 backdrop-blur-sm p-8 rounded-xl border border-gray-800">
-                  <h3 className="text-2xl font-bold mb-4">Ready to Start?</h3>
-                  <p className="text-gray-300 mb-6">
-                    Join thousands of traders who are already generating consistent returns with GreenPrint.
-                  </p>
-                  <Link 
-                    href="/greenprint/docs"
-                    className="block w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-lg text-center font-semibold hover:from-green-600 hover:to-emerald-700 transition-all duration-200"
-                  >
-                    Get Started Now
-                  </Link>
-                  <div className="mt-6 text-center">
-                    <Link 
-                      href="/greenprint/docs"
-                      className="text-green-500 hover:text-green-400 inline-flex items-center gap-2"
-                    >
-                      Read the documentation
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  </div>
-                </div>
+            
+            {/* Pro Plan */}
+            <div className="bg-black/40 backdrop-blur-sm p-8 rounded-xl border border-green-500/50 shadow-lg shadow-green-500/20">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-1 rounded-full text-sm font-medium">
+                Most Popular
               </div>
+              <h3 className="text-xl font-semibold mb-3">Pro</h3>
+              <div className="mb-6">
+                <span className="text-3xl font-bold">$199</span>
+                <span className="text-gray-400 ml-2">/month</span>
+              </div>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Advanced funding rate arbitrage</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Up to $50,000 capital</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Priority support</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Advanced analytics</span>
+                </li>
+              </ul>
+              <Link 
+                href="/greenprint/docs"
+                className="block w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-lg text-center font-semibold hover:from-green-600 hover:to-emerald-700 transition-all duration-200"
+              >
+                Get Started
+              </Link>
+            </div>
+            
+            {/* Enterprise Plan */}
+            <div className="bg-black/40 backdrop-blur-sm p-8 rounded-xl border border-gray-800 hover:border-green-500/50 transition-colors">
+              <h3 className="text-xl font-semibold mb-3">Enterprise</h3>
+              <div className="mb-6">
+                <span className="text-3xl font-bold">$2,500</span>
+                <span className="text-gray-400 ml-2">/month</span>
+              </div>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Unlimited funding rate arbitrage</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Unlimited capital</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>24/7 dedicated support</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Custom strategies</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>API access</span>
+                </li>
+              </ul>
+              <Link 
+                href="/greenprint/docs"
+                className="block w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-lg text-center font-semibold hover:from-green-600 hover:to-emerald-700 transition-all duration-200"
+              >
+                Contact Sales
+              </Link>
             </div>
           </div>
         </div>
