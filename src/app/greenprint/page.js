@@ -866,7 +866,7 @@ export default function GreenprintHome() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-video rounded-xl overflow-hidden border border-gray-800 shadow-2xl shadow-green-500/20">
+              <div className="aspect-video rounded-xl overflow-hidden">
                 <Image
                   src="/images/whatisgp.png"
                   alt="What is GreenPrint"
@@ -874,19 +874,6 @@ export default function GreenprintHome() {
                   height={1080}
                   className="w-full h-full object-cover"
                 />
-              </div>
-              <div className="absolute -bottom-6 -right-6 bg-black/80 backdrop-blur-sm p-4 rounded-lg border border-gray-800">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-400">Yearly Returns</p>
-                    <p className="text-xl font-bold text-green-400">113.52%</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -1019,8 +1006,8 @@ export default function GreenprintHome() {
             <div className="relative">
               <div className="aspect-video rounded-xl overflow-hidden border border-gray-800 shadow-2xl shadow-green-500/20">
                 <Image
-                  src="/images/bot-dashboard.png"
-                  alt="GreenPrint Bot Dashboard"
+                  src="/images/interface.png"
+                  alt="GreenPrint Bot Interface"
                   width={1920}
                   height={1080}
                   className="w-full h-full object-cover"
