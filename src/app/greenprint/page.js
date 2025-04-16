@@ -47,13 +47,13 @@ export default function GreenprintHome() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h2 className="text-3xl font-bold text-gray-800">
-                  Exclusive Trading Opportunity
+                <h2 className="text-3xl font-bold text-red-600">
+                  THE HONEST TRUTH
                 </h2>
               </div>
               
               <div className="overflow-y-auto flex-grow pr-4 custom-scrollbar" onScroll={handleScroll}>
-                <div className="prose prose-lg max-w-none">
+                <div className="prose prose-lg max-w-none font-['Source_Code_Pro']">
                   <div className="bg-white p-6 rounded-xl border border-gray-200 mb-8">
                     <p className="text-xl text-gray-700 leading-relaxed mb-4">
                       <span className="text-green-600 font-bold">Let me be direct</span> - I've placed the most important information right at the top. What you see above is a strategy with a 15+ Sharpe ratio, a maximum drawdown of just 2.8%, and a 256% annual return. These aren't just numbers - they're the result of years of Wall Street experience and a commitment to excellence. I didn't leave Wall Street to build something ordinary.
