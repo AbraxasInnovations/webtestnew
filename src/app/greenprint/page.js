@@ -868,8 +868,8 @@ export default function GreenprintHome() {
             <div className="relative">
               <div className="aspect-video rounded-xl overflow-hidden border border-gray-800 shadow-2xl shadow-green-500/20">
                 <Image
-                  src="/images/bot-dashboard.png"
-                  alt="GreenPrint Bot Dashboard"
+                  src="/images/whatisgp.png"
+                  alt="What is GreenPrint"
                   width={1920}
                   height={1080}
                   className="w-full h-full object-cover"
