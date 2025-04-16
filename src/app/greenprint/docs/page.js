@@ -97,13 +97,13 @@ export default function Greenprint() {
               <h3 className="text-sm font-semibold text-gray-500 uppercase mb-2">Overview</h3>
               <ul className="space-y-1">
                 <li>
-                  <Link href="/greenprint?returnTo=/greenprint/docs" className="block py-1.5 px-3 rounded text-green-400 hover:text-green-300 hover:bg-green-400/10 transition-all duration-200">Introduction</Link>
+                  <Link href="/greenprint" className="block py-1.5 px-3 rounded text-green-400 hover:text-green-300 hover:bg-green-400/10 transition-all duration-200">Introduction</Link>
                 </li>
                 <li>
-                  <Link href="/greenprint/overview?returnTo=/greenprint/docs" className="block py-1.5 px-3 rounded text-gray-300 hover:text-green-300 hover:bg-green-400/10 transition-all duration-200">What is GreenPrint?</Link>
+                  <Link href="/greenprint/overview" className="block py-1.5 px-3 rounded text-gray-300 hover:text-green-300 hover:bg-green-400/10 transition-all duration-200">What is GreenPrint?</Link>
                 </li>
                 <li>
-                  <Link href="/greenprint/guide?returnTo=/greenprint/docs" className="block py-1.5 px-3 rounded text-gray-300 hover:text-green-300 hover:bg-green-400/10 transition-all duration-200">Guide</Link>
+                  <Link href="/greenprint/guide" className="block py-1.5 px-3 rounded text-gray-300 hover:text-green-300 hover:bg-green-400/10 transition-all duration-200">Guide</Link>
                 </li>
               </ul>
             </div>
@@ -111,7 +111,7 @@ export default function Greenprint() {
               <h3 className="text-sm font-semibold text-gray-500 uppercase mb-2">Pricing</h3>
               <ul className="space-y-1">
                 <li>
-                  <Link href="/greenprint/pricing?returnTo=/greenprint/docs" className="block py-1.5 px-3 rounded text-gray-300 hover:text-green-300 hover:bg-green-400/10 transition-all duration-200">Our prices</Link>
+                  <Link href="/greenprint/pricing" className="block py-1.5 px-3 rounded text-gray-300 hover:text-green-300 hover:bg-green-400/10 transition-all duration-200">Our prices</Link>
                 </li>
               </ul>
             </div>
@@ -119,10 +119,10 @@ export default function Greenprint() {
               <h3 className="text-sm font-semibold text-gray-500 uppercase mb-2">Resources</h3>
               <ul className="space-y-1">
                 <li>
-                  <Link href="/greenprint/guide?returnTo=/greenprint/docs" className="block py-1.5 px-3 rounded text-gray-300 hover:text-green-300 hover:bg-green-400/10 transition-all duration-200">Guide</Link>
+                  <Link href="/greenprint/guide" className="block py-1.5 px-3 rounded text-gray-300 hover:text-green-300 hover:bg-green-400/10 transition-all duration-200">Guide</Link>
                 </li>
                 <li>
-                  <Link href="/greenprint/glossary?returnTo=/greenprint/docs" className="block py-1.5 px-3 rounded text-gray-300 hover:text-green-300 hover:bg-green-400/10 transition-all duration-200">Glossary</Link>
+                  <Link href="/greenprint/glossary" className="block py-1.5 px-3 rounded text-gray-300 hover:text-green-300 hover:bg-green-400/10 transition-all duration-200">Glossary</Link>
                 </li>
               </ul>
             </div>
@@ -141,7 +141,7 @@ export default function Greenprint() {
             <h2 className="text-2xl font-semibold mb-2">Get started with GreenPrint</h2>
             <p className="mb-4 text-base">Kickstart your journey. Choose one of the options below to connect or begin building on GreenPrint.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Link href="/greenprint/guide?returnTo=/greenprint/docs" className="bg-black/40 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition group">
+              <Link href="/greenprint/docs/guide" className="bg-black/40 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition group">
                 <div className="mb-2">
                   <svg className="w-8 h-8 text-green-600 group-hover:text-green-400 transition" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm8-5a1 1 0 00-.993.883L9 6v3H6a1 1 0 00-.117 1.993L6 11h3v3a1 1 0 001.993.117L11 14v-3h3a1 1 0 00.117-1.993L14 9h-3V6a1 1 0 00-1-1z" />
@@ -150,7 +150,7 @@ export default function Greenprint() {
                 <h3 className="text-lg font-medium mb-1">Getting Started Guide</h3>
                 <p className="text-sm">Follow our step-by-step guide to get started with GreenPrint.</p>
               </Link>
-              <Link href="/greenprint/pricing?returnTo=/greenprint/docs" className="bg-black/40 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition group">
+              <Link href="/greenprint/docs/pricing" className="bg-black/40 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition group">
                 <div className="mb-2">
                   <svg className="w-8 h-8 text-green-600 group-hover:text-green-400 transition" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M11 17a1 1 0 01-.117-1.993L11 15h3a1 1 0 01.117 1.993L14 17h-3zm-4-4a1 1 0 01-.117-1.993L7 11h7a1 1 0 01.117 1.993L14 13H7zm-4-4a1 1 0 01-.117-1.993L3 7h11a1 1 0 01.117 1.993L14 9H3z" />
@@ -165,7 +165,7 @@ export default function Greenprint() {
             <h2 className="text-2xl font-semibold mb-2">Explore GreenPrint Resources</h2>
             <p className="mb-4 text-base">Discover our documentation and resources to help you succeed.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Link href="/greenprint/overview?returnTo=/greenprint/docs" className="bg-black/40 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition group">
+              <Link href="/greenprint/docs/overview" className="bg-black/40 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition group">
                 <div className="mb-2">
                   <svg className="w-8 h-8 text-green-600 group-hover:text-green-400 transition" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm8-5a1 1 0 00-.993.883L9 6v3H6a1 1 0 00-.117 1.993L6 11h3v3a1 1 0 001.993.117L11 14v-3h3a1 1 0 00.117-1.993L14 9h-3V6a1 1 0 00-1-1z" />
@@ -174,7 +174,7 @@ export default function Greenprint() {
                 <h3 className="text-lg font-medium mb-1">Overview</h3>
                 <p className="text-sm">Learn what GreenPrint is and how it can help you.</p>
               </Link>
-              <Link href="/greenprint/glossary?returnTo=/greenprint/docs" className="bg-black/40 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition group">
+              <Link href="/greenprint/docs/glossary" className="bg-black/40 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition group">
                 <div className="mb-2">
                   <svg className="w-8 h-8 text-green-600 group-hover:text-green-400 transition" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M10 2a1 1 0 01.993.883L11 3v4h4a1 1 0 01.117 1.993L15 9h-4v4H5a1 1 0 01-.117-1.993L5 11h4V3a1 1 0 011-1z" />
@@ -189,7 +189,7 @@ export default function Greenprint() {
             <h2 className="text-2xl font-semibold mb-2">Learn more about GreenPrint</h2>
             <p className="mb-4 text-base">Deep dive into what GreenPrint is, how it works, and explore its architecture and wallet solutions.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Link href="/greenprint/overview?returnTo=/greenprint/docs" className="bg-black/40 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition group">
+              <Link href="/greenprint/docs/what-is" className="bg-black/40 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition group">
                 <div className="mb-2">
                   <svg className="w-8 h-8 text-green-600 group-hover:text-green-400 transition" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm8-5a1 1 0 00-.993.883L9 6v3H6a1 1 0 00-.117 1.993L6 11h3v3a1 1 0 001.993.117L11 14v-3h3a1 1 0 00.117-1.993L14 9h-3V6a1 1 0 00-1-1z" />
@@ -198,7 +198,7 @@ export default function Greenprint() {
                 <h3 className="text-lg font-medium mb-1">What is GreenPrint?</h3>
                 <p className="text-sm">Understand the fundamentals of GreenPrint.</p>
               </Link>
-              <Link href="/greenprint/overview?returnTo=/greenprint/docs" className="bg-black/40 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition group">
+              <Link href="/greenprint/docs/how-it-works" className="bg-black/40 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition group">
                 <div className="mb-2">
                   <svg className="w-8 h-8 text-green-600 group-hover:text-green-400 transition" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M4 3a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V4a1 1 0 00-1-1H4zm11 2v10H5V5h10z" />
@@ -207,7 +207,7 @@ export default function Greenprint() {
                 <h3 className="text-lg font-medium mb-1">How GreenPrint Works</h3>
                 <p className="text-sm">Dive into the technical workings of the platform.</p>
               </Link>
-              <Link href="/greenprint/overview?returnTo=/greenprint/docs" className="bg-black/40 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition group">
+              <Link href="/greenprint/docs/network" className="bg-black/40 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-green-600 dark:hover:border-green-400 transition group">
                 <div className="mb-2">
                   <svg className="w-8 h-8 text-green-600 group-hover:text-green-400 transition" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M10 2a1 1 0 01.993.883L11 3v4h4a1 1 0 01.117 1.993L15 9h-4v4H5a1 1 0 01-.117-1.993L5 11h4V3a1 1 0 011-1z" />

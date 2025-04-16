@@ -1,12 +1,8 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
 
 export default function Glossary() {
-  const searchParams = useSearchParams();
-  const returnTo = searchParams.get('returnTo');
-  
   return (
     <div className="min-h-screen bg-[#0a1512] text-white relative">
       <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
@@ -48,19 +44,6 @@ export default function Glossary() {
             <li>
               <Link href="#" className="hover:text-green-600 dark:hover:text-green-400 transition">Abraxas Innovations</Link>
             </li>
-            {returnTo && (
-              <li className="ml-auto">
-                <Link 
-                  href={returnTo} 
-                  className="flex items-center gap-2 text-green-500 hover:text-green-400"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                  </svg>
-                  Back to Documentation
-                </Link>
-              </li>
-            )}
           </ul>
         </div>
       </nav>
