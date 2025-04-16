@@ -64,6 +64,7 @@ export default function Glossary() {
                 <h3 className="font-medium text-lg">Arbitrage</h3>
                 <p className="text-gray-600 dark:text-gray-300">The practice of taking advantage of price differences between markets to generate profit with minimal risk.</p>
               </div>
+
               <div>
                 <h3 className="font-medium text-lg">API</h3>
                 <p className="text-gray-600 dark:text-gray-300">Application Programming Interface - a set of rules and protocols that allows different software applications to communicate with each other.</p>
@@ -82,6 +83,7 @@ export default function Glossary() {
                 <h3 className="font-medium text-lg">Blockchain</h3>
                 <p className="text-gray-600 dark:text-gray-300">A distributed ledger technology that records transactions across a network of computers in a secure, transparent, and immutable way.</p>
               </div>
+
               <div>
                 <h3 className="font-medium text-lg">Bot</h3>
                 <p className="text-gray-600 dark:text-gray-300">An automated software program that performs specific tasks, such as trading or monitoring market conditions.</p>
@@ -161,4 +163,8 @@ export default function Glossary() {
       </footer>
     </div>
   );
+} 
+  );
+} 
+} 
 } 
