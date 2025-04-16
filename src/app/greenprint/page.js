@@ -56,7 +56,7 @@ export default function GreenprintHome() {
                 <div className="prose prose-lg max-w-none font-['Source_Code_Pro']">
                   <div className="bg-white p-6 rounded-xl border border-gray-200 mb-8">
                     <p className="text-xl text-gray-700 leading-relaxed mb-4">
-                      <span className="text-green-600 font-bold">Let me be direct</span> - I've placed the most important information right at the top. What you see above is a strategy with a 15+ Sharpe ratio, a maximum drawdown of just 2.8%, and a 256% annual return. These aren't just numbers - they're the result of years of Wall Street experience and a commitment to excellence. I didn't leave Wall Street to build something ordinary.
+                      <span className="text-green-600 font-bold">Let me be direct</span> - I have placed the most important information right at the top. What you see above is a strategy with a 15+ Sharpe ratio, a maximum drawdown of just 2.8%, and a 256% annual return. These aren't just numbers - they're the result of years of Wall Street experience and a commitment to excellence. I didn't leave Wall Street to build something ordinary.
                     </p>
                     
                     {/* Centered Backtest Image */}
@@ -105,7 +105,7 @@ export default function GreenprintHome() {
                         <svg className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                         </svg>
-                        <span>The GreenPrint bot employs arbitrage strategies, making it market-direction independent and virtually risk-free</span>
+                        <span>The GreenPrint bot employs arbitrage strategies, making it non-directional (make money whether market goes up or down) and virtually risk-free</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <svg className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -117,13 +117,13 @@ export default function GreenprintHome() {
                   </div>
                   
                   <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                    I anticipate your questions, and I appreciate your skepticism - it demonstrates intelligence. You might wonder: "How can this outperform top hedge funds?" and "If the strategy is so effective, why share it?"
+                    I know what you are thinking, and I appreciate your skepticism - it demonstrates intelligence. You might wonder: "How can this outperform top hedge funds?" and "If the strategy is so effective, why share it?"
                   </p>
                   
                   <div className="bg-white p-6 rounded-xl border border-gray-200 mb-6">
                     <h3 className="text-xl font-bold text-gray-800 mb-3">Understanding Market Inefficiencies</h3>
                     <p className="text-lg text-gray-700 leading-relaxed">
-                      The explanation is straightforward. Top hedge funds operate under strict investment guidelines and size constraints. While they employ brilliant analysts who identify the same opportunities we do, their large capital base prevents them from capitalizing on smaller, high-potential investments. This creates market inefficiencies that we can exploit. By operating with greater flexibility and targeting opportunities they cannot access, we achieve returns they can only aspire to.
+                      The explanation is really quite simple. Top hedge funds operate under strict investment guidelines and size constraints. While they employ brilliant analysts who identify the same opportunities we do, their large capital base prevents them from capitalizing on smaller, high-potential investments. This creates market inefficiencies that we can exploit. By operating with greater flexibility and targeting opportunities they cannot access, we achieve returns they can only aspire to.
                     </p>
                   </div>
                   
@@ -134,7 +134,7 @@ export default function GreenprintHome() {
                   <div className="bg-white p-6 rounded-xl border border-gray-200 mb-6">
                     <h3 className="text-xl font-bold text-gray-800 mb-3">Strategic Partnership Opportunity</h3>
                     <p className="text-lg text-gray-700 leading-relaxed">
-                      I've reached that capacity threshold - which is in the millions. This is why I'm offering the strategy to qualified investors at its fair value. The price reflects the development effort and operational costs, not the potential returns.
+                      I've reached that capacity threshold - which is in the millions. This is why I'm offering the strategy to you at its fair value. The price reflects the development effort and operational costs, not the potential returns.
                     </p>
                   </div>
                   
@@ -145,7 +145,7 @@ export default function GreenprintHome() {
                   <div className="bg-white p-6 rounded-xl border border-gray-200 mb-6">
                     <h3 className="text-xl font-bold text-gray-800 mb-3">The GreenPrint Advantage</h3>
                     <p className="text-lg text-gray-700 leading-relaxed mb-3">
-                      Imagine having an automated system that instantly capitalizes on these opportunities, regardless of timing. The value of such a tool far exceeds what I'm offering it for. I'm pricing it based on development costs and operational expenses - you're paying for the technology and infrastructure, not the potential returns.
+                      Imagine having an personal assistant that instantly capitalizes on these opportunities, regardless of the time of day. The value of such a tool far exceeds what I'm offering it for. I'm pricing it based on development costs and operational expenses - you're paying for the technology and infrastructure, not the potential returns.
                     </p>
                     <p className="text-lg text-gray-700 leading-relaxed">
                       Let's be realistic - traditional trading isn't suitable for everyone, and even professionals face significant losses in current market conditions. Why risk your capital for modest returns when you could deploy a strategy that both protects and grows your wealth? Our approach has demonstrated the ability to more than double investments annually while maintaining capital preservation.
@@ -199,7 +199,7 @@ export default function GreenprintHome() {
                       disabled={!hasScrolledToBottom}
                     >
                       {hasScrolledToBottom 
-                        ? "I Understand - Continue to GreenPrint" 
+                        ? "I Am Ready To Get Started" 
                         : "Please read the entire disclosure to continue"}
                     </button>
                   </div>
