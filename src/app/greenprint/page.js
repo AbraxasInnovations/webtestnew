@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, ChevronRight, Menu, X } from 'lucide-react';
+import GreenprintBackground from '../GreenprintBackground';
 
 export default function GreenprintHome() {
   // Add state for mobile menu
@@ -505,90 +506,6 @@ export default function GreenprintHome() {
           position: relative;
         }
         
-        .letter span:first-child:after {
-          border-radius: 0 0 0 0.15em;
-        }
-        
-        .letter span:first-child {
-          border-radius: 0.15em 0 0 0.15em;
-        }
-        
-        .letter span:last-child:after {
-          border-radius: 0 0 0.15em 0;
-        }
-        
-        .letter span:last-child {
-          border-radius: 0 0.15em 0.15em 0;
-        }
-        
-        .letter span:after {
-          content: "";
-          transform-style: preserve-3d;
-          display: block;
-          position: absolute;
-          width: 100%;
-          transform: rotatex(70deg);
-          transform-origin: 50% 0;
-          height: 50%;
-          top: 50%;
-          left: 0;
-          right: 0;
-          animation: flip 0.6s ease infinite;
-          box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.1);
-        }
-        
-        .letter span:nth-child(1n):after {
-          animation-delay: 0.2s;
-        }
-        
-        .letter span:nth-child(2n):after {
-          animation-delay: 0.3s;
-        }
-        
-        .letter span:nth-child(3n):after {
-          animation-delay: 0.4s;
-        }
-        
-        .letter span:nth-child(4n):after {
-          animation-delay: 0.5s;
-        }
-        
-        .letter span:nth-child(5n):after {
-          animation-delay: 0.6s;
-        }
-        
-        .letter span:nth-child(6n):after {
-          animation-delay: 0.7s;
-        }
-        
-        .letter span:nth-child(7n):after {
-          animation-delay: 0.8s;
-        }
-        
-        .letter span:nth-child(8n):after {
-          animation-delay: 0.9s;
-        }
-        
-        .letter span:nth-child(9n):after {
-          animation-delay: 1s;
-        }
-        
-        .letter span:nth-child(10n):after {
-          animation-delay: 1.1s;
-        }
-        
-        .letter span:nth-child(11n):after {
-          animation-delay: 1.2s;
-        }
-        
-        .letter span:nth-child(12n):after {
-          animation-delay: 1.37s;
-        }
-        
-        .letter span:nth-child(13n):after {
-          animation-delay: 1.4s;
-        }
-        
         @keyframes flip {
           0% {
             opacity: 0;
@@ -752,19 +669,10 @@ export default function GreenprintHome() {
         </div>
       )}
 
-      {/* Hero Section with Video */}
+      {/* Hero Section with Neural Network Animation */}
       <div className="relative min-h-screen pt-16">
-        <div className="absolute inset-0 bg-gradient-to-b from-green-900/30 via-green-800/20 to-black/60 z-10"></div>
+        <GreenprintBackground />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-green-700/20 via-transparent to-transparent z-5"></div>
-        <video 
-          className="absolute inset-0 w-full h-full object-cover opacity-70"
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-        >
-          <source src="/videos/trading-background.mp4" type="video/mp4" />
-        </video>
         
         <div className="relative z-20 h-full flex flex-col items-center justify-center px-4">
           <div className="max-w-7xl mx-auto w-full">

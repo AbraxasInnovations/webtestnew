@@ -1,132 +1,237 @@
 'use client';
-import React from 'react';
+import { useEffect, useRef } from 'react';
 
-export default function GreenprintBackground() {
-  return (
-    <div className="absolute inset-0 z-0 overflow-hidden opacity-15">
-      <svg
-        className="w-full h-full"
-        viewBox="0 0 1000 1000"
-        preserveAspectRatio="xMidYMid slice"
-      >
-        <defs>
-          {/* Grid Pattern */}
-          <pattern id="smallGrid" width="20" height="20" patternUnits="userSpaceOnUse">
-            <path 
-              d="M 20 0 L 0 0 0 20" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="0.5" 
-              className="text-green-400/30"
-            />
-          </pattern>
+const GreenprintBackground = () => {
+  const headerRef = useRef(null);
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    let width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
+    let animationFrameId;
+
+    // Initialize header
+    const initHeader = () => {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      target = { x: width/2, y: height/2 };
+
+      largeHeader = headerRef.current;
+      if (!largeHeader) return;
+      
+      largeHeader.style.height = height+'px';
+
+      canvas = canvasRef.current;
+      if (!canvas) return;
+      
+      canvas.width = width;
+      canvas.height = height;
+      ctx = canvas.getContext('2d');
+
+      // Create points
+      points = [];
+      for(let x = 0; x < width; x = x + width/20) {
+        for(let y = 0; y < height; y = y + height/20) {
+          const px = x + Math.random()*width/20;
+          const py = y + Math.random()*height/20;
+          const p = { x: px, originX: px, y: py, originY: py };
+          points.push(p);
+        }
+      }
+
+      // For each point find the 5 closest points
+      for(let i = 0; i < points.length; i++) {
+        const closest = [];
+        const p1 = points[i];
+        for(let j = 0; j < points.length; j++) {
+          const p2 = points[j];
+          if(!(p1 === p2)) {
+            let placed = false;
+            for(let k = 0; k < 5; k++) {
+              if(!placed) {
+                if(closest[k] === undefined) {
+                  closest[k] = p2;
+                  placed = true;
+                }
+              }
+            }
+
+            for(let k = 0; k < 5; k++) {
+              if(!placed) {
+                if(getDistance(p1, p2) < getDistance(p1, closest[k])) {
+                  closest[k] = p2;
+                  placed = true;
+                }
+              }
+            }
+          }
+        }
+        p1.closest = closest;
+      }
+
+      // Assign a circle to each point
+      for(let i in points) {
+        points[i].circle = new Circle(points[i], 2+Math.random()*2, 'rgba(89,217,129,0.3)');
+      }
+    };
+
+    // Event handling
+    const addListeners = () => {
+      if(!('ontouchstart' in window)) {
+        window.addEventListener('mousemove', mouseMove);
+      }
+      window.addEventListener('scroll', scrollCheck);
+      window.addEventListener('resize', resize);
+    };
+
+    const mouseMove = (e) => {
+      let posx = 0;
+      let posy = 0;
+      if (e.pageX || e.pageY) {
+        posx = e.pageX;
+        posy = e.pageY;
+      }
+      else if (e.clientX || e.clientY) {
+        posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+        posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+      }
+      target.x = posx;
+      target.y = posy;
+    };
+
+    const scrollCheck = () => {
+      if(document.body.scrollTop > height) animateHeader = false;
+      else animateHeader = true;
+    };
+
+    const resize = () => {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      if (largeHeader) largeHeader.style.height = height+'px';
+      if (canvas) {
+        canvas.width = width;
+        canvas.height = height;
+      }
+    };
+
+    // Animation
+    const initAnimation = () => {
+      animate();
+      for(let i in points) {
+        shiftPoint(points[i]);
+      }
+    };
+
+    const animate = () => {
+      if(animateHeader) {
+        ctx.clearRect(0,0,width,height);
+        for(let i in points) {
+          // Detect points in range
+          if(Math.abs(getDistance(target, points[i])) < 4000) {
+            points[i].active = 0.3;
+            points[i].circle.active = 0.6;
+          } else if(Math.abs(getDistance(target, points[i])) < 20000) {
+            points[i].active = 0.1;
+            points[i].circle.active = 0.3;
+          } else if(Math.abs(getDistance(target, points[i])) < 40000) {
+            points[i].active = 0.02;
+            points[i].circle.active = 0.1;
+          } else {
+            points[i].active = 0;
+            points[i].circle.active = 0;
+          }
+
+          drawLines(points[i]);
+          points[i].circle.draw();
+        }
+      }
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    // Tweening helper for point movement
+    const shiftPoint = (p) => {
+      setTimeout(() => {
+        const duration = 1 + Math.random();
+        const startX = p.x;
+        const startY = p.y;
+        const targetX = p.originX - 50 + Math.random() * 100;
+        const targetY = p.originY - 50 + Math.random() * 100;
+        
+        // Simple linear animation
+        let startTime = null;
+        
+        function step(timestamp) {
+          if (!startTime) startTime = timestamp;
+          const progress = (timestamp - startTime) / (duration * 1000);
           
-          {/* Technical Symbols */}
-          <marker
-            id="arrow"
-            viewBox="0 0 10 10"
-            refX="5"
-            refY="5"
-            markerWidth="4"
-            markerHeight="4"
-            orient="auto-start-reverse"
-          >
-            <path d="M 0 0 L 10 5 L 0 10 z" className="fill-green-400" />
-          </marker>
-        </defs>
+          if (progress < 1) {
+            p.x = startX + (targetX - startX) * progress;
+            p.y = startY + (targetY - startY) * progress;
+            requestAnimationFrame(step);
+          } else {
+            p.x = targetX;
+            p.y = targetY;
+            shiftPoint(p); // Loop the animation
+          }
+        }
+        
+        requestAnimationFrame(step);
+      }, 50);
+    };
 
-        {/* Background Grid */}
-        <rect width="100%" height="100%" fill="url(#smallGrid)" />
+    // Canvas manipulation
+    const drawLines = (p) => {
+      if(!p.active) return;
+      for(let i in p.closest) {
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y);
+        ctx.lineTo(p.closest[i].x, p.closest[i].y);
+        ctx.strokeStyle = 'rgba(89,217,129,'+ p.active+')';
+        ctx.stroke();
+      }
+    };
 
-        {/* Circuit Board Paths */}
-        <g className="text-green-400" stroke="currentColor" strokeWidth="1" fill="none">
-          <path 
-            d="M 100 200 Q 150 200 150 250 L 150 350 Q 150 400 200 400 L 400 400"
-            className="animate-[dash_20s_linear_infinite]"
-            strokeDasharray="4,4"
-          />
-          <path 
-            d="M 400 100 L 400 300 Q 400 350 450 350 L 550 350 Q 600 350 600 400"
-            className="animate-[dash_20s_linear_infinite]"
-            strokeDasharray="4,4"
-          />
-        </g>
+    function Circle(pos, rad, color) {
+      this.pos = pos || null;
+      this.radius = rad || null;
+      this.color = color || null;
+      this.active = 0;
 
-        {/* Technical Drawings */}
-        <g className="text-green-400" stroke="currentColor" fill="none">
-          {/* Hexagon with measurements */}
-          <path d="M 700 300 L 750 275 L 800 300 L 800 350 L 750 375 L 700 350 Z" />
-          <line x1="700" y1="300" x2="680" y2="280" markerEnd="url(#arrow)" />
-          <text x="660" y="275" className="text-xs fill-current">50px</text>
+      this.draw = function() {
+        if(!this.active) return;
+        ctx.beginPath();
+        ctx.arc(this.pos.x, this.pos.y, this.radius, 0, 2 * Math.PI, false);
+        ctx.fillStyle = 'rgba(89,217,129,'+ this.active+')';
+        ctx.fill();
+      };
+    }
 
-          {/* Circle with radius lines */}
-          <circle cx="200" cy="600" r="50" className="animate-[spin_20s_linear_infinite] origin-[200px_600px]" />
-          <line x1="200" y1="600" x2="250" y2="600" strokeDasharray="2,2" />
-          <text x="220" y="590" className="text-xs fill-current">r=50</text>
+    // Utility
+    const getDistance = (p1, p2) => {
+      return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
+    };
 
-          {/* Animated Component */}
-          <g className="animate-[spin_30s_linear_infinite] origin-[500px_500px]">
-            <rect x="450" y="450" width="100" height="100" />
-            <circle cx="500" cy="500" r="30" />
-            <line x1="450" y1="500" x2="550" y2="500" />
-            <line x1="500" y1="450" x2="500" y2="550" />
-          </g>
-        </g>
+    // Initialize
+    initHeader();
+    initAnimation();
+    addListeners();
 
-        {/* Dimension Lines */}
-        <g className="text-green-400" stroke="currentColor" strokeWidth="0.5">
-          {/* Vertical Measurements */}
-          <line x1="100" y1="100" x2="100" y2="900" markerStart="url(#arrow)" markerEnd="url(#arrow)" />
-          <text x="80" y="500" className="text-xs fill-current" transform="rotate(-90, 80, 500)">800px</text>
+    // Cleanup
+    return () => {
+      window.removeEventListener('mousemove', mouseMove);
+      window.removeEventListener('scroll', scrollCheck);
+      window.removeEventListener('resize', resize);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
 
-          {/* Horizontal Measurements */}
-          <line x1="150" y1="800" x2="850" y2="800" markerStart="url(#arrow)" markerEnd="url(#arrow)" />
-          <text x="500" y="820" className="text-xs fill-current">700px</text>
-        </g>
-
-        {/* Technical Notes */}
-        <g className="text-green-400 opacity-50">
-          {[
-            { x: 120, y: 150, text: "R25" },
-            { x: 780, y: 420, text: "∅60" },
-            { x: 350, y: 650, text: "90°" },
-            { x: 600, y: 250, text: "A-A" },
-          ].map((note, i) => (
-            <text key={i} x={note.x} y={note.y} className="text-xs fill-current">{note.text}</text>
-          ))}
-        </g>
-
-        {/* Animated Connection Points */}
-        <g className="animate-pulse">
-          {[...Array(15)].map((_, i) => {
-            const x = 150 + (i % 5) * 200;
-            const y = 150 + Math.floor(i / 5) * 200;
-            return (
-              <circle
-                key={i}
-                cx={x}
-                cy={y}
-                r="3"
-                className="fill-green-400"
-              />
-            );
-          })}
-        </g>
-
-        {/* Animated Flow Lines */}
-        <g className="text-green-400" strokeWidth="1">
-          {[...Array(5)].map((_, i) => (
-            <path
-              key={i}
-              d={`M ${100 + i * 200} 100 Q ${150 + i * 200} ${300 + (i % 2) * 100} ${200 + i * 200} ${400 + (i % 3) * 100}`}
-              fill="none"
-              stroke="currentColor"
-              className="animate-[dash_15s_linear_infinite]"
-              strokeDasharray="4,4"
-            />
-          ))}
-        </g>
-      </svg>
+  return (
+    <div 
+      ref={headerRef} 
+      className="absolute inset-0 bg-gradient-to-b from-green-900/30 via-green-800/20 to-black/60 z-10"
+    >
+      <canvas ref={canvasRef} />
     </div>
   );
-} 
+};
+
+export default GreenprintBackground; 
