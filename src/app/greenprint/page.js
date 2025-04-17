@@ -53,134 +53,340 @@ export default function GreenprintHome() {
               </div>
               
               <div className="overflow-y-auto flex-grow pr-4 custom-scrollbar" onScroll={handleScroll}>
-                <div className="prose prose-lg max-w-none font-['Source_Code_Pro']">
-                  <div className="bg-white p-6 rounded-xl border border-gray-200 mb-8">
-                    <p className="text-xl text-gray-700 leading-relaxed mb-4">
-                      <span className="text-green-600 font-bold">Let me be direct</span> - I have placed the most important information right at the top. What you see above is a strategy with a 15+ Sharpe ratio, a maximum drawdown of just 2.8%, and a 256% annual return. These aren't just numbers - they're the result of years of Wall Street experience and a commitment to excellence. I didn't leave Wall Street to build something ordinary.
-                    </p>
-                    
-                    {/* Centered Backtest Image */}
-                    <div className="my-6 flex justify-center">
-                      <div className="relative w-full max-w-2xl aspect-[16/9] rounded-xl overflow-hidden border border-gray-200 shadow-lg">
-                        <Image
-                          src="/images/equitycurve95.jpeg"
-                          alt="GreenPrint Funding Bot Performance"
-                          fill
-                          className="object-cover"
-                        />
-                        <div className="absolute bottom-0 left-0 right-0 p-4 bg-white/90 backdrop-blur-sm border-t border-gray-200">
-                          <div className="flex items-center justify-between">
-                            <div>
-                              <p className="text-sm text-gray-500">3-Year Backtest Performance</p>
-                              <p className="text-2xl font-bold text-green-600">+256%</p>
+                <div className="max-w-none">
+                  {/* Premium Header Section */}
+                  <div className="relative mb-10">
+                    <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-green-500/10 to-transparent"></div>
+                    <div className="relative py-6 pl-6 pr-8 rounded-xl bg-white border-l-4 border-green-500 shadow-2xl">
+                      <div className="flex flex-col md:flex-row md:items-center md:gap-6">
+                        <div className="mb-4 md:mb-0 md:w-3/5">
+                          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight tracking-tight mb-2">
+                            <span className="bg-gradient-to-r from-green-600 to-emerald-500 bg-clip-text text-transparent">Exclusive</span> Trading Opportunity
+                          </h2>
+                          <p className="text-xl md:text-2xl font-light text-gray-700 leading-snug mb-4">
+                            A <span className="font-medium text-gray-900">15+ Sharpe ratio</span> with <span className="font-medium text-gray-900">256% annual returns</span> and minimal risk.
+                          </p>
+                          <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0">
+                              <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                              </svg>
                             </div>
-                            <div className="text-right">
-                              <p className="text-sm text-gray-500">Max Drawdown</p>
-                              <p className="text-2xl font-bold text-red-500">-2.8%</p>
+                            <div className="flex flex-col">
+                              <p className="text-sm font-medium text-gray-600">Wall Street level strategies</p>
+                              <p className="text-xs text-gray-500">Non-custodial & secure</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="relative md:w-2/5">
+                          <div className="px-4 py-3 bg-green-50 rounded-lg border border-green-100">
+                            <div className="flex flex-col">
+                              <div className="flex justify-between items-center mb-2">
+                                <span className="text-xs uppercase tracking-wider text-gray-500 font-medium">Verified Performance</span>
+                                <span className="text-xs text-green-600 font-medium px-2 py-0.5 bg-green-100 rounded-full">Audited</span>
+                              </div>
+                              <div className="grid grid-cols-2 gap-3">
+                                <div>
+                                  <p className="text-xl font-bold text-green-600">+256%</p>
+                                  <p className="text-xs text-gray-500">Annual Return</p>
+                                </div>
+                                <div>
+                                  <p className="text-xl font-bold text-red-500">-2.8%</p>
+                                  <p className="text-xs text-gray-500">Max Drawdown</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Backtest Image Section */}
+                  <div className="mb-12">
+                    <div className="relative rounded-xl overflow-hidden bg-white shadow-2xl">
+                      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-green-400 via-green-500 to-emerald-600"></div>
+                      <div className="p-6">
+                        <div className="flex flex-col md:flex-row gap-6">
+                          <div className="md:w-2/3">
+                            <div className="aspect-[16/9] relative rounded-lg overflow-hidden shadow-lg">
+                              <Image
+                                src="/images/equitycurve95.jpeg"
+                                alt="GreenPrint Funding Bot Performance"
+                                fill
+                                className="object-cover"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                              <div className="absolute bottom-0 left-0 right-0 p-4">
+                                <p className="text-white/80 text-xs uppercase tracking-wider font-medium">3-Year Backtest</p>
+                                <div className="mt-1 flex items-center justify-between">
+                                  <p className="text-2xl font-bold text-white">Market-Neutral Strategy</p>
+                                  <div className="flex items-center gap-2">
+                                    <span className="inline-block px-2 py-1 bg-green-500/20 backdrop-blur-sm rounded text-green-300 text-xs font-medium">Verified</span>
+                                    <span className="inline-block px-2 py-1 bg-emerald-500/20 backdrop-blur-sm rounded text-emerald-300 text-xs font-medium">Institutional</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="md:w-1/3">
+                            <div className="h-full flex flex-col justify-between">
+                              <div>
+                                <h3 className="text-lg font-bold text-gray-900 mb-2">Why This Matters To You</h3>
+                                <p className="text-gray-700 text-sm leading-relaxed mb-4">
+                                  These aren't theoretical projections—they're the culmination of elite Wall Street experience and years of optimization.
+                                </p>
+                                <div className="space-y-3 mb-4">
+                                  <div className="flex items-start gap-2">
+                                    <svg className="w-5 h-5 text-green-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <p className="text-sm text-gray-600">Consistently outperforms the market</p>
+                                  </div>
+                                  <div className="flex items-start gap-2">
+                                    <svg className="w-5 h-5 text-green-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <p className="text-sm text-gray-600">Strategy works in any market condition</p>
+                                  </div>
+                                  <div className="flex items-start gap-2">
+                                    <svg className="w-5 h-5 text-green-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <p className="text-sm text-gray-600">Minimal capital at risk</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="text-xs text-gray-500">
+                                <p>Past performance is not indicative of future results. Data verified by third-party audit.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Main Content Sections */}
+                  <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-10">
+                    {/* Left Column */}
+                    <div className="md:col-span-8 space-y-6">
+                      <div className="bg-white rounded-xl overflow-hidden shadow-xl">
+                        <div className="px-6 py-5 border-b border-gray-100">
+                          <h2 className="text-xl font-bold text-gray-900">The Market Reality</h2>
+                        </div>
+                        <div className="p-6 bg-gradient-to-br from-gray-50 to-white">
+                          <div className="space-y-4">
+                            <div className="flex items-start gap-4">
+                              <div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center flex-shrink-0">
+                                <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                              </div>
+                              <div className="flex-1">
+                                <p className="text-gray-900 font-medium mb-1">Traditional trading carries significant risk</p>
+                                <p className="text-sm text-gray-600">Directional trading exposes your capital to extreme volatility and potential losses</p>
+                              </div>
+                            </div>
+                            <div className="flex items-start gap-4">
+                              <div className="w-8 h-8 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0">
+                                <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                              </div>
+                              <div className="flex-1">
+                                <p className="text-gray-900 font-medium mb-1">GreenPrint eliminates directional risk</p>
+                                <p className="text-sm text-gray-600">Our non-directional approach profits regardless of whether markets move up, down, or sideways</p>
+                              </div>
+                            </div>
+                            <div className="flex items-start gap-4">
+                              <div className="w-8 h-8 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0">
+                                <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                              </div>
+                              <div className="flex-1">
+                                <p className="text-gray-900 font-medium mb-1">Outperforms professional hedge funds</p>
+                                <p className="text-sm text-gray-600">Our strategy consistently exceeds the performance of top 5 hedge funds combined</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="bg-white rounded-xl overflow-hidden shadow-xl">
+                        <div className="px-6 py-5 border-b border-gray-100">
+                          <h2 className="text-xl font-bold text-gray-900">The Wall Street Advantage</h2>
+                        </div>
+                        <div className="p-6">
+                          <p className="text-gray-700 leading-relaxed mb-6">
+                            Top hedge funds operate under strict investment mandates and size constraints. While they employ brilliant analysts who identify the same opportunities we do, their massive capital base <span className="font-medium text-gray-900">prevents them from capitalizing</span> on smaller, high-potential investments.
+                          </p>
+                          <div className="relative rounded-lg bg-gray-50 p-4 mb-6 border border-gray-100">
+                            <div className="absolute top-0 right-0 -mt-3 -mr-3 w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center shadow-md">
+                              <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
+                            </div>
+                            <p className="text-sm text-gray-600">
+                              GreenPrint exploits these market inefficiencies with greater flexibility, targeting opportunities they cannot access to achieve returns they can only dream about.
+                            </p>
+                          </div>
+                          <div className="flex items-center gap-4 border-t border-gray-100 pt-4">
+                            <div className="w-12 h-12 rounded-full bg-gray-100 overflow-hidden flex-shrink-0">
+                              <Image
+                                src="/images/trustedtrader.jpeg"
+                                alt="Wall Street Expert"
+                                width={48}
+                                height={48}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                            <div className="flex-1">
+                              <p className="text-sm font-medium text-gray-900">Former Wall Street Trader</p>
+                              <p className="text-xs text-gray-500">15+ years institutional experience</p>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                     
-                    <div className="text-center mb-4">
-                      <h3 className="text-2xl font-bold text-green-600">Impressive Results</h3>
-                      <p className="text-lg text-gray-600 mt-2">The Power of GreenPrint</p>
+                    {/* Right Column */}
+                    <div className="md:col-span-4 space-y-6">
+                      <div className="bg-white rounded-xl overflow-hidden shadow-xl">
+                        <div className="px-6 py-5 border-b border-gray-100">
+                          <h2 className="text-xl font-bold text-gray-900">Limited Opportunity</h2>
+                        </div>
+                        <div className="p-6">
+                          <div className="mb-6">
+                            <div className="w-full bg-gray-100 rounded-full h-2 mb-2">
+                              <div className="bg-red-500 h-2 rounded-full w-[85%]"></div>
+                            </div>
+                            <div className="flex justify-between text-xs text-gray-500">
+                              <span>Capacity</span>
+                              <span className="font-medium text-red-500">85% Full</span>
+                            </div>
+                          </div>
+                          <p className="text-sm text-gray-700 mb-4">
+                            This strategy is capacity-constrained, meaning it performs optimally up to a certain investment threshold. We've almost reached that threshold.
+                          </p>
+                          <div className="bg-orange-50 border-l-4 border-orange-400 p-4 mb-4">
+                            <div className="flex items-start gap-3">
+                              <svg className="w-5 h-5 text-orange-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                              </svg>
+                              <p className="text-sm text-gray-700">
+                                When we reach capacity, new participants will be waitlisted until space becomes available.
+                              </p>
+                            </div>
+                          </div>
+                          <div className="flex items-center justify-between border-t border-gray-100 pt-4 mt-4">
+                            <div className="flex items-center gap-2">
+                              <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                              <span className="text-xs text-gray-500">Limited slots remaining</span>
+                            </div>
+                            <span className="text-xs font-medium text-gray-700">Act now</span>
+                          </div>
+                        </div>
+                      </div>
+                    
+                      <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl overflow-hidden shadow-xl border border-green-200">
+                        <div className="px-6 py-5 border-b border-green-200/50">
+                          <h2 className="text-xl font-bold text-gray-900">Key Advantages</h2>
+                        </div>
+                        <div className="p-6">
+                          <ul className="space-y-3">
+                            <li className="flex items-start gap-3">
+                              <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center flex-shrink-0 border border-green-200 shadow-sm">
+                                <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                                </svg>
+                              </div>
+                              <div className="flex-1">
+                                <p className="text-sm font-medium text-gray-800">Non-custodial operation</p>
+                                <p className="text-xs text-gray-600">You maintain complete control of your funds</p>
+                              </div>
+                            </li>
+                            <li className="flex items-start gap-3">
+                              <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center flex-shrink-0 border border-green-200 shadow-sm">
+                                <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                                </svg>
+                              </div>
+                              <div className="flex-1">
+                                <p className="text-sm font-medium text-gray-800">Market-neutral strategy</p>
+                                <p className="text-xs text-gray-600">Profit regardless of market direction</p>
+                              </div>
+                            </li>
+                            <li className="flex items-start gap-3">
+                              <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center flex-shrink-0 border border-green-200 shadow-sm">
+                                <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                                </svg>
+                              </div>
+                              <div className="flex-1">
+                                <p className="text-sm font-medium text-gray-800">Institutional-grade performance</p>
+                                <p className="text-xs text-gray-600">Proven track record of excellence</p>
+                              </div>
+                            </li>
+                            <li className="flex items-start gap-3">
+                              <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center flex-shrink-0 border border-green-200 shadow-sm">
+                                <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                                </svg>
+                              </div>
+                              <div className="flex-1">
+                                <p className="text-sm font-medium text-gray-800">Fully automated execution</p>
+                                <p className="text-xs text-gray-600">24/7 operation without manual intervention</p>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   
-                  <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                    Let me present you with the facts about today's trading landscape:
-                  </p>
-                  
-                  <div className="bg-white p-6 rounded-xl border border-gray-200 mb-6">
-                    <ul className="space-y-3 text-lg text-gray-700">
-                      <li className="flex items-start gap-2">
-                        <svg className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>Traditional directional trading (buy and hold) in today's market carries significant risks</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <svg className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>The GreenPrint bot employs arbitrage strategies, making it non-directional (make money whether market goes up or down) and virtually risk-free</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <svg className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>Our strategy's performance has exceeded that of the top 5 hedge funds combined</span>
-                      </li>
-                    </ul>
-                  </div>
-                  
-                  <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                    I know what you are thinking, and I appreciate your skepticism - it demonstrates intelligence. You might wonder: "How can this outperform top hedge funds?" and "If the strategy is so effective, why share it?"
-                  </p>
-                  
-                  <div className="bg-white p-6 rounded-xl border border-gray-200 mb-6">
-                    <h3 className="text-xl font-bold text-gray-800 mb-3">Understanding Market Inefficiencies</h3>
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                      The explanation is really quite simple. Top hedge funds operate under strict investment guidelines and size constraints. While they employ brilliant analysts who identify the same opportunities we do, their large capital base prevents them from capitalizing on smaller, high-potential investments. This creates market inefficiencies that we can exploit. By operating with greater flexibility and targeting opportunities they cannot access, we achieve returns they can only aspire to.
-                    </p>
-                  </div>
-                  
-                  <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                    However, this strategy isn't without limitations. It's capacity-constrained, meaning it performs optimally up to a certain investment threshold. Beyond that, we risk the same issues that prevent hedge funds from participating: slippage and price impact.
-                    </p>
-                  
-                  <div className="bg-white p-6 rounded-xl border border-gray-200 mb-6">
-                    <h3 className="text-xl font-bold text-gray-800 mb-3">Strategic Partnership Opportunity</h3>
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                      I've reached that capacity threshold - which is in the millions. This is why I'm offering the strategy to you at its fair value. The price reflects the development effort and operational costs, not the potential returns.
-                    </p>
-                  </div>
-                  
-                  <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                    Successful trading isn't about constant activity - it's about patience and seizing the few truly exceptional opportunities that arise each year. These moments can emerge from various catalysts: major firm liquidations, market mispricings due to misinformation, or temporary market inefficiencies. These are the opportunities where substantial wealth is created.
-                    </p>
-                  
-                  <div className="bg-white p-6 rounded-xl border border-gray-200 mb-6">
-                    <h3 className="text-xl font-bold text-gray-800 mb-3">The GreenPrint Advantage</h3>
-                    <p className="text-lg text-gray-700 leading-relaxed mb-3">
-                      Imagine having an personal assistant that instantly capitalizes on these opportunities, regardless of the time of day. The value of such a tool far exceeds what I'm offering it for. I'm pricing it based on development costs and operational expenses - you're paying for the technology and infrastructure, not the potential returns.
-                    </p>
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                      Let's be realistic - traditional trading isn't suitable for everyone, and even professionals face significant losses in current market conditions. Why risk your capital for modest returns when you could deploy a strategy that both protects and grows your wealth? Our approach has demonstrated the ability to more than double investments annually while maintaining capital preservation.
-                    </p>
-                  </div>
-                  
-                  <div className="bg-white p-6 rounded-xl border border-gray-200 mb-6">
-                    <h3 className="text-xl font-bold text-gray-800 mb-3">Your Capital, Your Control</h3>
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                      A key advantage of our strategy is its non-custodial nature. You maintain complete control of your funds and accounts at all times. Unlike traditional investment advisors who may impose high fees, lockup periods, or questionable expertise, our strategy offers transparency, proven performance, and the ultimate security: you retain full control of your capital.
-                    </p>
-                  </div>
-                  
-                  <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                    Your interest in reading this far indicates two things: you're seeking a reliable investment strategy, and you recognize value when you see it. This technology has the potential to revolutionize trading. By being among the first to adopt it, you're positioning yourself ahead of the curve. Soon, capacity constraints will limit new participants. Let's build wealth together.
-                  </p>
-                  
-                  <div className="bg-white p-6 rounded-xl border border-gray-200 mb-6">
-                    <h3 className="text-xl font-bold text-gray-800 mb-3">Performance Metrics</h3>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-[#faf6f0] p-4 rounded-lg border border-gray-200">
-                        <p className="text-gray-500 text-sm">Performance</p>
-                        <p className="text-2xl font-bold text-green-600">+256%</p>
+                  {/* Results Section */}
+                  <div className="bg-white rounded-xl overflow-hidden shadow-xl mb-10">
+                    <div className="bg-gradient-to-r from-green-600 to-emerald-700 px-6 py-5">
+                      <h2 className="text-xl font-bold text-white">Proven Track Record</h2>
+                    </div>
+                    <div className="p-6">
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6">
+                        <div className="bg-gray-50 rounded-lg p-4 border border-gray-100">
+                          <h3 className="text-xs uppercase tracking-wider text-gray-500 mb-1">Annual Return</h3>
+                          <p className="text-3xl font-bold text-green-600">+256%</p>
+                          <p className="text-xs text-gray-500 mt-1">Consistently high performance</p>
+                        </div>
+                        <div className="bg-gray-50 rounded-lg p-4 border border-gray-100">
+                          <h3 className="text-xs uppercase tracking-wider text-gray-500 mb-1">Volatility</h3>
+                          <p className="text-3xl font-bold text-green-600">3.49%</p>
+                          <p className="text-xs text-gray-500 mt-1">Exceptionally low</p>
+                        </div>
+                        <div className="bg-gray-50 rounded-lg p-4 border border-gray-100">
+                          <h3 className="text-xs uppercase tracking-wider text-gray-500 mb-1">Max Drawdown</h3>
+                          <p className="text-3xl font-bold text-red-500">-2.8%</p>
+                          <p className="text-xs text-gray-500 mt-1">Minimal capital at risk</p>
+                        </div>
+                        <div className="bg-gray-50 rounded-lg p-4 border border-gray-100">
+                          <h3 className="text-xs uppercase tracking-wider text-gray-500 mb-1">Sharpe Ratio</h3>
+                          <p className="text-3xl font-bold text-green-600">15.55</p>
+                          <p className="text-xs text-gray-500 mt-1">Institutional quality</p>
+                        </div>
                       </div>
-                      <div className="bg-[#faf6f0] p-4 rounded-lg border border-gray-200">
-                        <p className="text-gray-500 text-sm">Volatility</p>
-                        <p className="text-2xl font-bold text-green-600">-3.49%</p>
-                      </div>
-                      <div className="bg-[#faf6f0] p-4 rounded-lg border border-gray-200">
-                        <p className="text-gray-500 text-sm">Max Drawdown</p>
-                        <p className="text-2xl font-bold text-red-500">-2.8%</p>
-                      </div>
-                      <div className="bg-[#faf6f0] p-4 rounded-lg border border-gray-200">
-                        <p className="text-gray-500 text-sm">Sharpe Ratio</p>
-                        <p className="text-2xl font-bold text-green-600">15.55</p>
+                      <div className="border-t border-gray-100 pt-6">
+                        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                          <p className="text-sm text-gray-700 md:max-w-xl">
+                            Your interest in reading this far indicates you're seeking a reliable investment strategy that stands out from conventional approaches. This technology has the potential to revolutionize your trading portfolio.
+                          </p>
+                          <div className="text-right">
+                            <p className="text-xs uppercase tracking-wider text-gray-500 mb-1">Opportunity Closing Soon</p>
+                            <div className="flex items-center gap-2">
+                              <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
+                              <p className="text-sm font-medium text-gray-900">Limited slots remaining</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -188,20 +394,25 @@ export default function GreenprintHome() {
                   <div className="h-32"></div> {/* Extra space to ensure button is at bottom */}
                   
                   {/* Continue button at the bottom of the scrollable content */}
-                  <div className="pt-6 border-t border-gray-200 mt-6 bg-[#faf6f0]">
+                  <div className="pt-8 border-t-4 border-green-500 mt-8 bg-white sticky bottom-0 shadow-xl">
                     <button 
                       onClick={closeDisclosure}
-                      className={`w-full px-8 py-4 rounded-lg text-xl font-bold transition-all duration-200 transform hover:scale-105 ${
+                      className={`w-full px-8 py-6 rounded-lg text-xl font-bold transition-all duration-300 transform ${
                         hasScrolledToBottom 
-                          ? "bg-gradient-to-r from-green-500 to-emerald-600 text-white hover:from-green-600 hover:to-emerald-700" 
-                          : "bg-gray-200 text-gray-500 cursor-not-allowed"
+                          ? "bg-gradient-to-r from-green-500 to-emerald-600 text-white hover:from-green-600 hover:to-emerald-700 hover:scale-[1.02] shadow-lg shadow-green-500/20" 
+                          : "bg-gray-100 text-gray-400 cursor-not-allowed"
                       }`}
                       disabled={!hasScrolledToBottom}
                     >
                       {hasScrolledToBottom 
-                        ? "I Am Ready To Get Started" 
-                        : "Please read the entire disclosure to continue"}
+                        ? "I'M READY TO ACCESS THIS OPPORTUNITY" 
+                        : "Please review all information to continue"}
                     </button>
+                    <p className={`text-center mt-2 text-xs ${hasScrolledToBottom ? 'text-gray-500' : 'text-gray-400'}`}>
+                      {hasScrolledToBottom 
+                        ? "By continuing, you acknowledge that you've read and understood this disclosure"
+                        : "Scroll down to review all details before proceeding"}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -1202,7 +1413,7 @@ export default function GreenprintHome() {
               <a href="#" className="text-gray-400 hover:text-white">
                 <span className="sr-only">GitHub</span>
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+                  <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.042-.133-2.052-.382-3.016z" clipRule="evenodd" />
                 </svg>
               </a>
             </div>
