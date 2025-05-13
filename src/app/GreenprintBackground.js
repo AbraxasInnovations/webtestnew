@@ -224,7 +224,7 @@ const GreenprintBackground = () => {
     };
   }, []);
 
-  return (
+            return (
     <div 
       ref={headerRef} 
       className="absolute inset-0 bg-gradient-to-b from-green-900/30 via-green-800/20 to-black/60 z-10"
