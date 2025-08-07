@@ -100,7 +100,7 @@ export default function AssetManagement() {
         <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg p-8 mb-12">
           <h2 className="text-3xl font-bold mb-4">The Golden Age of Crypto Regulation</h2>
           <p className="text-gray-300 mb-6">
-            As the regulatory landscape evolves to embrace digital assets, we're positioned 
+            As the regulatory landscape evolves to embrace Defi, we're positioned 
             to capitalize on the increasing institutional adoption and market maturity. 
             This transition creates unique opportunities for sophisticated investors to 
             participate in the future of finance.
