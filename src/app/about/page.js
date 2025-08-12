@@ -7,8 +7,12 @@ import Image from 'next/image';
 export default function About() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mapLoaded, setMapLoaded] = useState(false);
+  const [heroVisible, setHeroVisible] = useState(false);
+  const [missionVisible, setMissionVisible] = useState(false);
   const mapRef = useRef(null);
   const mapInstanceRef = useRef(null);
+  const heroRef = useRef(null);
+  const missionRef = useRef(null);
   
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -19,6 +23,38 @@ export default function About() {
   };
 
   useEffect(() => {
+    // Ensure page starts at the top
+    window.scrollTo(0, 0);
+    
+    // Set up Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const heroObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setHeroVisible(true);
+        }
+      });
+    }, observerOptions);
+
+    const missionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setMissionVisible(true);
+        }
+      });
+    }, observerOptions);
+
+    if (heroRef.current) {
+      heroObserver.observe(heroRef.current);
+    }
+    if (missionRef.current) {
+      missionObserver.observe(missionRef.current);
+    }
+    
     let isMounted = true;
     
     // Load Leaflet CSS and JS for free OpenStreetMap
@@ -73,6 +109,10 @@ export default function About() {
     return () => {
       isMounted = false;
       clearTimeout(timer);
+      
+      // Cleanup observers
+      heroObserver.disconnect();
+      missionObserver.disconnect();
       
       // Cleanup map instance
       if (mapInstanceRef.current) {
@@ -185,7 +225,7 @@ export default function About() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white scroll-smooth">
       {/* Navigation */}
       <nav className="fixed w-full bg-black z-50">
         <div className="container mx-auto px-6 py-4">
@@ -255,7 +295,108 @@ export default function About() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 relative" style={{
+      <section ref={heroRef} className={`pt-32 pb-0 px-6 relative overflow-hidden transition-all duration-1000 ease-out min-h-screen ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        {/* Collage Grid Background */}
+        <div className="absolute inset-0 grid grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-4 opacity-40">
+          <div className="col-span-2 row-span-1">
+            <img src="/images/showcase1.png" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-1 row-span-2">
+            <img src="/images/abxcoins.PNG" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-1 row-span-1">
+            <img src="/images/abxposter.png" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-1 row-span-2">
+            <img src="/images/abxstreet.png" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-1 row-span-1">
+            <img src="/images/abxpromoreal.png" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-1 row-span-1">
+            <img src="/images/abxbillboard.png" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-1 row-span-1">
+            <img src="/images/showcase2.png" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-1 row-span-2">
+            <img src="/images/abxcoins.PNG" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-2 row-span-1">
+            <img src="/images/abxposter.png" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-1 row-span-2">
+            <img src="/images/showcase1.png" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-1 row-span-1">
+            <img src="/images/abxstreet.png" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-1 row-span-1">
+            <img src="/images/abxpromoreal.png" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-1 row-span-1">
+            <img src="/images/abxbillboard.png" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-1 row-span-1">
+            <img src="/images/showcase2.png" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-1 row-span-1">
+            <img src="/images/abxcoins.PNG" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-1 row-span-1">
+            <img src="/images/abxposter.png" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-1 row-span-1">
+            <img src="/images/showcase1.png" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-1 row-span-1">
+            <img src="/images/abxstreet.png" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-1 row-span-1">
+            <img src="/images/abxpromoreal.png" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-1 row-span-1">
+            <img src="/images/abxbillboard.png" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-1 row-span-1">
+            <img src="/images/showcase2.png" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-1 row-span-1">
+            <img src="/images/abxcoins.PNG" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-1 row-span-1">
+            <img src="/images/abxposter.png" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-1 row-span-1">
+            <img src="/images/showcase1.png" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-1 row-span-1">
+            <img src="/images/abxstreet.png" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-1 row-span-1">
+            <img src="/images/abxpromoreal.png" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-1 row-span-1">
+            <img src="/images/abxbillboard.png" alt="" className="w-full h-full object-cover" />
+          </div>
+        </div>
+        
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black bg-opacity-25"></div>
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-10 w-full max-w-5xl px-6">
+          {/* About Logo */}
+          <div className="w-full max-w-4xl mx-auto">
+            <img 
+              src="/images/aboutlogo.png" 
+              alt="Abraxas Innovations" 
+              className="w-full h-auto object-contain"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Combined Mission and Operations Section */}
+      <section ref={missionRef} id="mission-section" className={`py-20 px-6 relative scroll-smooth transition-all duration-1000 ease-out ${missionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{
         backgroundImage: "url('/images/aboutheader.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -263,113 +404,86 @@ export default function About() {
       }}>
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div className="max-w-6xl mx-auto text-center relative z-10">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 font-mono">
-            About Abraxas
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-mono">
-            A global multi-strategy firm delivering institutional-grade solutions through 
-            strategic operations in St. Petersburg and Dayton.
-          </p>
-        </div>
-      </section>
-
-      {/* Mission Section */}
-      <section className="py-20 px-6 bg-gray-900 relative" style={{
-        backgroundImage: "url('/images/aboutbg.jpg')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundColor: '#111827' // Fallback color
-      }}>
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 font-mono">
-                Our Mission
-              </h2>
-              <p className="text-lg text-gray-300 leading-relaxed font-mono mb-6">
+        <div className="max-w-5xl mx-auto relative z-10">
+          {/* Mission Section */}
+          <div className="text-center mb-16">
+            <div className="bg-gray-900/80 backdrop-blur-sm p-8 rounded-2xl border border-gray-700 max-w-3xl mx-auto">
+              <div className="mb-6">
+                <img 
+                  src="/images/abaraxaslogowords.png" 
+                  alt="Abraxas Innovations" 
+                  className="h-12 w-auto mx-auto"
+                />
+              </div>
+              <p className="text-lg text-white mb-6 leading-relaxed">
                 We leverage deep industry expertise across finance, technology, and strategic consulting 
                 to deliver world-class solutions that drive exceptional results for institutions and individuals.
               </p>
-              <p className="text-lg text-gray-300 leading-relaxed font-mono">
+              <p className="text-base text-gray-300 mb-8">
                 Our integrated approach combines cutting-edge technology with proven financial strategies, 
                 enabling clients to navigate complex markets and achieve sustainable growth in an evolving global landscape.
               </p>
             </div>
-            <div className="flex justify-center">
-              <div className="w-full max-w-md">
-                <div className="bg-gray-800 p-8 rounded-lg border border-gray-700">
-                  <div className="flex items-center mb-6">
-                    <Globe className="w-8 h-8 text-emerald-400 mr-4" />
-                    <h3 className="text-xl font-bold text-white font-mono">Global Operations</h3>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="flex items-center">
-                      <Building className="w-5 h-5 text-emerald-400 mr-3" />
-                      <span className="text-gray-300 font-mono">St. Petersburg, Florida</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Building className="w-5 h-5 text-emerald-400 mr-3" />
-                      <span className="text-gray-300 font-mono">Dayton, Ohio, USA</span>
-                    </div>
-                  </div>
+          </div>
+
+          {/* Global Operations and Dayton Combined */}
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            {/* Global Operations */}
+            <div className="bg-gray-900/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-700">
+              <div className="flex items-center mb-4">
+                <Globe className="w-6 h-6 mr-3 rainbow-glow" />
+                <h3 className="text-xl font-bold text-white" style={{ fontFamily: 'Phonic, Helvetica, system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif', letterSpacing: '-1px' }}>Global Operations</h3>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-center">
+                  <Building className="w-4 h-4 mr-2 rainbow-glow" />
+                  <span className="text-gray-300 text-sm">St. Petersburg, Florida</span>
+                </div>
+                <div className="flex items-center">
+                  <Building className="w-4 h-4 mr-2 rainbow-glow" />
+                  <span className="text-gray-300 text-sm">Dayton, Ohio, USA</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Dayton Operations */}
+            <div className="bg-gray-900/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-700">
+              <h3 className="text-xl font-bold text-white mb-4" style={{ fontFamily: 'Phonic, Helvetica, system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif', letterSpacing: '-1px' }}>Dayton Operations</h3>
+              <p className="text-base text-gray-300 leading-relaxed mb-4">
+                Our Dayton facility serves as a strategic hub for North American operations, 
+                connecting with emerging markets and unexplored opportunities across the region.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-center">
+                  <MapPin className="w-4 h-4 mr-2 rainbow-glow" />
+                  <span className="text-gray-300 text-sm">Dayton, Ohio, United States</span>
+                </div>
+                <div className="flex items-center">
+                  <Building className="w-4 h-4 mr-2 rainbow-glow" />
+                  <span className="text-gray-300 text-sm">North American Operations Hub</span>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Dayton Location Section */}
-      <section className="py-20 px-6 relative" style={{
-        backgroundImage: "url('/images/aboutfooter.jpg')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}>
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-mono">
-              Dayton Operations
-            </h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto font-mono">
-              Our Dayton facility serves as a strategic hub for North American operations, 
-              combining local expertise with global reach.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-6 font-mono">Strategic Location</h3>
-              <p className="text-gray-300 leading-relaxed font-mono mb-6">
+          {/* Dayton Map Section */}
+          <div className="mt-12">
+            <div className="text-center mb-6">
+              <h3 className="text-xl font-bold text-white mb-3" style={{ fontFamily: 'Phonic, Helvetica, system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif', letterSpacing: '-1px' }}>Strategic Location</h3>
+              <p className="text-base text-gray-300 max-w-2xl mx-auto">
                 Located in the heart of Dayton, Ohio, our facility provides strategic access to 
-                major financial markets and technology corridors across the United States.
+                emerging technology corridors and unexplored addressable markets across the United States.
               </p>
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <MapPin className="w-5 h-5 text-emerald-400 mr-3" />
-                  <span className="text-gray-300 font-mono">Dayton, Ohio, United States</span>
-                </div>
-                <div className="flex items-center">
-                  <Building className="w-5 h-5 text-emerald-400 mr-3" />
-                  <span className="text-gray-300 font-mono">North American Operations Hub</span>
-                </div>
-              </div>
             </div>
             
-            <div className="bg-gray-900 rounded-lg overflow-hidden border border-gray-700">
-              <div id="map" className="w-full h-80">
+            <div className="bg-gray-900/80 backdrop-blur-sm rounded-2xl border border-gray-700 overflow-hidden max-w-3xl mx-auto">
+              <div id="map" className="w-full h-64">
                 {/* Fallback content when map is not available */}
                 <div className="w-full h-full flex items-center justify-center bg-gray-800">
                   <div className="text-center">
-                    <MapPin className="w-12 h-12 text-emerald-400 mx-auto mb-4" />
-                    <h3 className="text-lg font-bold text-white font-mono mb-2">Dayton, Ohio</h3>
-                    <p className="text-gray-400 font-mono text-sm">
+                    <MapPin className="w-8 h-8 text-emerald-400 mx-auto mb-3" />
+                    <h3 className="text-base font-bold text-white font-mono mb-2">Dayton, Ohio</h3>
+                    <p className="text-gray-400 font-mono text-xs">
                       {mapLoaded ? 'Map loaded successfully!' : 'Loading free OpenStreetMap...'}
                     </p>
                   </div>
@@ -500,6 +614,43 @@ export default function About() {
         /* Fix for map tiles not loading */
         .leaflet-tile {
           opacity: 1 !important;
+        }
+
+        /* Rainbow Glow Effect */
+        .rainbow-glow {
+          animation: rainbow-glow 3s ease-in-out infinite;
+          filter: drop-shadow(0 0 10px currentColor);
+        }
+
+        @keyframes rainbow-glow {
+          0% {
+            color: #ff0000;
+            filter: drop-shadow(0 0 10px #ff0000);
+          }
+          16.66% {
+            color: #ff8000;
+            filter: drop-shadow(0 0 10px #ff8000);
+          }
+          33.33% {
+            color: #ffff00;
+            filter: drop-shadow(0 0 10px #ffff00);
+          }
+          50% {
+            color: #00ff00;
+            filter: drop-shadow(0 0 10px #00ff00);
+          }
+          66.66% {
+            color: #0080ff;
+            filter: drop-shadow(0 0 10px #0080ff);
+          }
+          83.33% {
+            color: #8000ff;
+            filter: drop-shadow(0 0 10px #8000ff);
+          }
+          100% {
+            color: #ff0000;
+            filter: drop-shadow(0 0 10px #ff0000);
+          }
         }
       `}</style>
     </div>

@@ -397,7 +397,7 @@ export default function Home() {
       </nav>
 
       {/* Animated Hover Disclosure Cards Section */}
-      <section id="disclosure-cards" className="py-32 px-4 relative overflow-hidden" style={{
+      <section id="disclosure-cards" className="py-16 md:py-32 px-4 relative overflow-hidden" style={{
         backgroundImage: "url('/images/unsplash.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -407,8 +407,8 @@ export default function Home() {
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="max-w-6xl mx-auto relative text-center z-10">
-          <h1 className="mb-8 text-white text-6xl md:text-8xl font-black font-mono">Multi-Strategy Innovation</h1>
-          <p className="mb-16 text-gray-300 max-w-4xl mx-auto text-base font-mono">
+          <h1 className="mb-6 md:mb-8 text-white text-6xl md:text-8xl font-black font-mono">Multi-Strategy Innovation</h1>
+          <p className="mb-8 md:mb-12 text-gray-300 max-w-4xl mx-auto text-sm md:text-base px-4" style={{ fontFamily: 'Phonic, Helvetica, system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif', letterSpacing: '-1px' }}>
             A multi-strategy firm delivering institutional-grade software solutions, 
             strategic investment opportunities, and comprehensive security services. 
             We leverage technology and financial expertise to create value across diverse sectors.
@@ -432,10 +432,24 @@ export default function Home() {
             <li>
               <article>
                 <div className="animation-container">
+                  <canvas id="orbital-pulse-2" className="animation-canvas"></canvas>
+                </div>
+                <div className="text-content">
+                  <h3>Greenprint</h3>
+                  <p>
+                    Advanced algorithmic trading platform for funding rate arbitrage. 
+                    Professional-grade automation tools for institutional and retail traders.
+              </p>
+            </div>
+              </article>
+            </li>
+            <li>
+              <article>
+                <div className="animation-container">
                   <canvas id="pulse-wave-1" className="animation-canvas"></canvas>
                 </div>
                 <div className="text-content">
-                  <h3>Software Development</h3>
+                  <h3>Software</h3>
                   <p>
                     Custom and tailored software programs for financial applications. 
                     Professional-grade development services for institutional and retail clients.
@@ -447,40 +461,26 @@ export default function Home() {
               <article>
                 <div className="animation-container">
                   <canvas id="concentric-rings-1" className="animation-canvas"></canvas>
-                </div>
+          </div>
                 <div className="text-content">
-                  <h3>Website Security</h3>
+                  <h3>Web Security</h3>
                   <p>
                     Apollo Security protects your digital assets. 
                     Comprehensive security solutions to prevent hacks and data breaches.
               </p>
-            </div>
+                </div>
               </article>
             </li>
             <li>
               <article>
                 <div className="animation-container">
                   <canvas id="sequential-pulse-1" className="animation-canvas"></canvas>
-          </div>
-                <div className="text-content">
-                  <h3>Education</h3>
-                  <p>
-                    Traditional and decentralized finance education. 
-                    In-depth articles and insights published on Medium.
-                  </p>
-                </div>
-              </article>
-            </li>
-            <li>
-              <article>
-                <div className="animation-container">
-                  <canvas id="orbital-pulse-2" className="animation-canvas"></canvas>
                 </div>
                 <div className="text-content">
-                  <h3>Greenprint</h3>
+                  <h3>Insights</h3>
                   <p>
-                    Advanced algorithmic trading platform for funding rate arbitrage. 
-                    Professional-grade automation tools for institutional and retail traders.
+                    In-depth analysis and strategic perspectives published on Medium. 
+                    Expert commentary on emerging trends and market opportunities across global sectors.
                   </p>
                 </div>
               </article>
@@ -707,11 +707,11 @@ export default function Home() {
           font-size: 1.2rem;
           font-weight: 700;
           text-transform: uppercase;
-          font-family: monospace;
+          font-family: "Inter", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
           white-space: nowrap;
           margin: 0;
           color: #ffffff;
-          letter-spacing: 0.05em;
+          letter-spacing: -0.5px;
         }
 
         .disclosure-cards-grid article svg {
@@ -780,27 +780,38 @@ export default function Home() {
             width: 100%;
             max-width: 100%;
             gap: 1rem;
+            padding: 0 1rem;
           }
 
           .disclosure-cards-grid li {
-            height: 300px;
+            height: auto;
+            min-height: 200px;
             min-width: auto;
           }
 
           .disclosure-cards-grid article {
             position: relative;
             width: 100%;
-            padding: 1rem;
+            padding: 1.5rem;
             height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
           }
 
           .disclosure-cards-grid article .animation-container {
-            min-height: 50%;
+            min-height: 80px;
             margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
           }
 
           .disclosure-cards-grid article .text-content {
-            min-height: 50%;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
           }
 
           .disclosure-cards-grid article h3 {
@@ -808,7 +819,16 @@ export default function Home() {
             rotate: 0deg;
             transform: none;
             margin-bottom: 0.5rem;
-            font-size: 1.1rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-align: center;
+          }
+
+          .disclosure-cards-grid article p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            text-align: center;
+            margin: 0;
           }
 
           .disclosure-cards-grid li :is(svg, h3, a, p) {

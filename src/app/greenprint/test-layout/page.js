@@ -110,9 +110,7 @@ export default function GreenprintTestLayout() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-64 px-6 relative overflow-hidden" style={{ 
-        background: 'radial-gradient(#ffffff54 2px, transparent 0) 0 0/40px 40px, radial-gradient(#00000026 2px, transparent 0) -1px 1px/40px 40px, radial-gradient(ellipse at 150% -50%, #a0aec0, #718096)'
-      }}>
+      <section className="pt-32 pb-64 px-6 relative overflow-hidden bg-gray-50">
         <div className="max-w-6xl mx-auto text-center relative z-10 h-full flex flex-col justify-start pt-0">
           <div className="typing-wrapper">
             <h1 className="text-3xl md:text-5xl font-normal text-black mb-4 leading-tight font-['SF_Pro_Display',_-apple-system,_BlinkMacSystemFont,_'Segoe_UI',_system-ui,_sans-serif]">
@@ -440,7 +438,7 @@ export default function GreenprintTestLayout() {
 
       {/* Glassmorphism Button Section */}
       <section className="py-24" style={{ 
-        background: 'radial-gradient(#ffffff54 2px, transparent 0) 0 0/40px 40px, radial-gradient(#00000026 2px, transparent 0) -1px 1px/40px 40px, radial-gradient(ellipse at 150% -50%, #a0aec0, #718096)',
+        background: 'radial-gradient(#ffffff54 2px, transparent 0) 0 0/40px 40px, radial-gradient(#00000015 2px, transparent 0) -1px 1px/40px 40px, radial-gradient(ellipse at 150% -50%, #cbd5e0, #a0aec0)',
         minHeight: '65vh',
         display: 'flex',
         flexDirection: 'column',
@@ -448,7 +446,7 @@ export default function GreenprintTestLayout() {
         justifyContent: 'center',
         padding: '0 2rem'
       }}>
-        <div className="text-center mb-16 mt-16">
+        <div className="text-center mb-16 mt-24">
           <div className="flex items-center justify-center gap-4 mb-4 -ml-8">
             <img 
               src="/images/blackgplogo.png"
@@ -655,7 +653,7 @@ export default function GreenprintTestLayout() {
         backdropFilter: 'blur(10px)',
         WebkitBackdropFilter: 'blur(10px)'
       }}>
-        <div className="absolute inset-0 bg-gray-800 bg-opacity-30"></div>
+        <div className="absolute inset-0 bg-gray-800 bg-opacity-20"></div>
         <div className="relative z-10">
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-4 gap-8">

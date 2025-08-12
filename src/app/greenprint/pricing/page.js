@@ -106,7 +106,7 @@ export default function GreenprintPricing() {
               style={{ width: `${(currentStep / 6) * 100}%` }}
             ></div>
           </div>
-        </div>
+          </div>
           
         {/* Step Content */}
         <div className="min-h-[300px] flex flex-col justify-center">
@@ -273,7 +273,7 @@ export default function GreenprintPricing() {
                     <strong>Important:</strong> The answer to your crypto question and additional insights are included in the email we'll send.
                   </p>
                 </div>
-              </div>
+            </div>
             </div>
           )}
           

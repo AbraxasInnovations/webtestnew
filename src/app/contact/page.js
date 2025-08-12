@@ -310,12 +310,12 @@ export default function Contact() {
         .form-label {
           display: block;
           color: white;
-          font-family: monospace;
+          font-family: "Inter", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
           font-weight: 600;
           margin-bottom: 8px;
           font-size: 14px;
           text-transform: uppercase;
-          letter-spacing: 0.5px;
+          letter-spacing: -0.5px;
         }
 
         .form-input,
@@ -326,7 +326,7 @@ export default function Contact() {
           border: 2px solid #333;
           border-radius: 8px;
           color: white;
-          font-family: monospace;
+          font-family: "Inter", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
           font-size: 16px;
           transition: all 0.3s ease;
           box-sizing: border-box;
@@ -343,7 +343,7 @@ export default function Contact() {
         .form-input::placeholder,
         .form-textarea::placeholder {
           color: #666;
-          font-family: monospace;
+          font-family: "Inter", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
         }
 
         .form-textarea {
@@ -352,25 +352,28 @@ export default function Contact() {
         }
 
         .submit-button {
-          background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
           color: white;
-          font-family: monospace;
+          font-family: "Inter", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
           font-weight: 700;
           padding: 16px 40px;
-          border: none;
+          border: 1px solid rgba(255, 255, 255, 0.2);
           border-radius: 8px;
           cursor: pointer;
           transition: all 0.3s ease;
           font-size: 16px;
           text-transform: uppercase;
-          letter-spacing: 0.5px;
-          box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+          letter-spacing: -0.5px;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .submit-button:hover {
-          background: linear-gradient(135deg, #059669 0%, #047857 100%);
+          background: rgba(255, 255, 255, 0.15);
+          border-color: rgba(255, 255, 255, 0.3);
           transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
 
         .submit-button:active {
