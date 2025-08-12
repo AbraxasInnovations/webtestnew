@@ -779,29 +779,45 @@ export default function Home() {
             height: auto;
             width: 100%;
             max-width: 100%;
-            gap: 1rem;
+            gap: 1.5rem;
             padding: 0 1rem;
+            display: flex;
+            flex-direction: column;
           }
 
           .disclosure-cards-grid li {
             height: auto;
-            min-height: 200px;
+            min-height: 250px;
             min-width: auto;
+            width: 100%;
+            border-radius: 12px;
+            background: rgba(26, 26, 26, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+          }
+
+          .disclosure-cards-grid li:hover {
+            border-color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
           }
 
           .disclosure-cards-grid article {
             position: relative;
             width: 100%;
-            padding: 1.5rem;
+            padding: 2rem;
             height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            align-items: center;
+            text-align: center;
           }
 
           .disclosure-cards-grid article .animation-container {
-            min-height: 80px;
-            margin-bottom: 1rem;
+            min-height: 100px;
+            margin-bottom: 1.5rem;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -811,24 +827,30 @@ export default function Home() {
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
+            gap: 1rem;
+            align-items: center;
           }
 
           .disclosure-cards-grid article h3 {
             position: static;
             rotate: 0deg;
             transform: none;
-            margin-bottom: 0.5rem;
-            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
             font-weight: 700;
             text-align: center;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
           }
 
           .disclosure-cards-grid article p {
-            font-size: 0.9rem;
-            line-height: 1.5;
+            font-size: 1rem;
+            line-height: 1.6;
             text-align: center;
             margin: 0;
+            color: #e5e7eb;
+            max-width: 400px;
           }
 
           .disclosure-cards-grid li :is(svg, h3, a, p) {
@@ -839,6 +861,10 @@ export default function Home() {
 
           .disclosure-cards-grid li :is(a, p) {
             transition-delay: 0s;
+          }
+
+          .disclosure-cards-grid li::after {
+            display: none;
           }
         }
 
