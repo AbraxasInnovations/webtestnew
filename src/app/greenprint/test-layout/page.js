@@ -110,24 +110,20 @@ export default function GreenprintTestLayout() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-64 px-6 relative overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ 
-            backgroundImage: 'url(/images/stocks.jpg)',
-            filter: 'grayscale(100%)'
-          }}
-        ></div>
-        <div className="absolute inset-0 bg-gray-800 bg-opacity-80"></div>
+      <section className="pt-32 pb-64 px-6 relative overflow-hidden" style={{ 
+        background: 'radial-gradient(#ffffff54 2px, transparent 0) 0 0/40px 40px, radial-gradient(#00000026 2px, transparent 0) -1px 1px/40px 40px, radial-gradient(ellipse at 150% -50%, #a0aec0, #718096)'
+      }}>
         <div className="max-w-6xl mx-auto text-center relative z-10 h-full flex flex-col justify-start pt-0">
-          <h1 className="text-3xl md:text-5xl font-normal text-white mb-4 leading-tight font-['Martina_Plantijn',_serif]">
-            The Gold Standard of
-            <br />
-            <span className="font-normal">Arbitrage Automation</span>
-          </h1>
+          <div className="typing-wrapper">
+            <h1 className="text-3xl md:text-5xl font-normal text-black mb-4 leading-tight font-['SF_Pro_Display',_-apple-system,_BlinkMacSystemFont,_'Segoe_UI',_system-ui,_sans-serif]">
+              <span className="typing-line-1">No Code. No Stress. No Mistakes.</span>
+              <br />
+              <span className="typing-line-2">Your Custody. Your Profits.</span>
+            </h1>
+          </div>
           
-          <p className="text-base md:text-lg text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Automate what already makes money to give you back your life.
+          <p className="text-base md:text-lg text-gray-800 mb-8 max-w-2xl mx-auto leading-relaxed">
+            You know that funding rate arbitrage pays well. Don't keep missing the thousands of opportunities a day.
           </p>
           
           <div className="flex justify-center items-center mb-16">
@@ -136,9 +132,9 @@ export default function GreenprintTestLayout() {
               className="form"
               style={{
                 position: 'relative',
-                maxWidth: '20rem',
+                maxWidth: '28rem',
                 flex: '1 1 auto',
-                height: '4rem',
+                height: '5rem',
                 transition: '250ms ease all'
               }}
             >
@@ -149,14 +145,14 @@ export default function GreenprintTestLayout() {
                   position: 'relative',
                   display: 'flex',
                   alignItems: 'center',
-                  minHeight: '2rem',
-                  borderRadius: '20px',
+                  minHeight: '3rem',
+                  borderRadius: '25px',
                   border: 'none',
                   width: '100%',
                   background: 'rgba(255, 255, 255, 0.1)',
                   backdropFilter: 'blur(2px)',
                   textShadow: '0.25em 0.25em 1px #00000010',
-                  fontSize: '0.9rem',
+                  fontSize: '1.1rem',
                   cursor: 'pointer',
                   boxShadow: `
                     0.5px 1px 1.1px hsl(0deg 0% 64% / 0.28),
@@ -190,11 +186,11 @@ export default function GreenprintTestLayout() {
                 <span 
                   className="form-header"
                   style={{
-                    height: '4rem',
-                    padding: '0 1.5rem',
+                    height: '5rem',
+                    padding: '0 2rem',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '1rem'
+                    gap: '1.5rem'
                   }}
                 >
                   <span 
@@ -206,7 +202,7 @@ export default function GreenprintTestLayout() {
                       aspectRatio: '1',
                       flex: '0 0',
                       borderRadius: '50px',
-                      height: '2rem',
+                      height: '2.5rem',
                       boxShadow: 'inset -5px 20px 2px -20px #fff, inset 5px -20px 2px -20px #fff, inset -19px 1px 2px -20px #000, inset 19px 1px 2px -20px #000, inset 19px 1px 2px -20px #000, inset -15px -26px 3px -30px #000'
                     }}
                   >
@@ -340,15 +336,15 @@ export default function GreenprintTestLayout() {
                 />
               </div>
               <h2 className="text-3xl font-normal text-white mb-4 leading-tight mt-4" style={{ fontFamily: 'Phonic, Helvetica, system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif', letterSpacing: '-1px' }}>
-                Everything You Need to Succeed
+                The World In Your Hands
               </h2>
               <p className="text-base text-gray-300 mb-6 leading-relaxed">
-                Professional tools designed for both institutional and retail traders. 
-                No experience required. Our suite includes funding rate bots, CLMM strategies, 
-                and comprehensive backtesting capabilities.
+                It is known that funding rate arbitrage pays out in a big way. 
+                The problem is that nobody has five sets of hands. Greenprint automates the search and trading 
+                with your rules, and your funds in your custody. We give you the edge in the markets.
               </p>
               <p className="text-sm text-gray-400 mb-8">
-                Multi-exchange funding rate arbitrage, advanced CLMM optimization, institutional-grade backtesting, and 24/7 automated trading.
+                Multi-exchange funding rate arbitrage, advanced hedging optimization, institutional-grade backtesting, and 24/7 automated trading.
               </p>
               <a 
                 href="https://t.me/AbraxasInnovations" 
@@ -381,7 +377,7 @@ export default function GreenprintTestLayout() {
                 through a simple Telegram bot.
               </p>
               <p className="text-base text-gray-600 mb-8">
-                First Telegram-based funding rate bot. No monthly subscriptions. Zero competition in the space. One-time payment, lifetime access.
+                You choose when and how you want to trade. No handing your money over to a third party. No hoping for the best. Arbitrage profits in your hands like never before.
               </p>
               <a 
                 href="https://t.me/AbraxasInnovations" 
@@ -421,11 +417,13 @@ export default function GreenprintTestLayout() {
                 The Golden Era of Funding Arbitrage
               </h2>
               <p className="text-base text-gray-300 mb-6 leading-relaxed">
-                We are basically in a golden era to be early. Once everybody catches on, 
-                funding arbitrage profits will continue to get smaller and smaller.
+                It is your turn to be early on a new technology. Once everybody catches on, 
+                funding arbitrage profits will continue to get smaller and smaller. It is simple 
+                math. Seize your seat at the table.
               </p>
               <p className="text-sm text-gray-400 mb-8">
-                Early mover advantage. Diminishing returns ahead. Limited time opportunity. First-mover benefits.
+              No guessing or wishing for the next big mover in the markets. 
+              Precise, logical profits in your hands. 
               </p>
               <a 
                 href="https://t.me/AbraxasInnovations" 
@@ -441,9 +439,9 @@ export default function GreenprintTestLayout() {
       </section>
 
       {/* Glassmorphism Button Section */}
-      <section className="py-10" style={{ 
+      <section className="py-24" style={{ 
         background: 'radial-gradient(#ffffff54 2px, transparent 0) 0 0/40px 40px, radial-gradient(#00000026 2px, transparent 0) -1px 1px/40px 40px, radial-gradient(ellipse at 150% -50%, #a0aec0, #718096)',
-        minHeight: '50vh',
+        minHeight: '65vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -462,7 +460,8 @@ export default function GreenprintTestLayout() {
             </h2>
           </div>
           <p className="text-lg text-gray-800 max-w-2xl mx-auto">
-            Find the pricing tier that's right for you. Tell us about your needs and we'll recommend the perfect plan.
+            Put the gambling aside and step into profitability. Access is currently 
+            limited to 20,000 users.
           </p>
         </div>
         <div 
@@ -561,7 +560,7 @@ export default function GreenprintTestLayout() {
                   animationDelay: '1s'
                 }}
               >
-                Find the Choice right for me
+                Get First Payment Today
               </span>
             </span>
             <button 
@@ -896,6 +895,42 @@ export default function GreenprintTestLayout() {
         .form:not(.open) #heading:active {
           scale: 0.98;
           filter: brightness(0.8);
+        }
+
+        /* Typing Animation */
+        .typing-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .typing-line-1 {
+          display: inline-block;
+          width: 0;
+          animation: typing-line-1 2s steps(30) forwards;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+
+        .typing-line-2 {
+          display: inline-block;
+          width: 0;
+          animation: typing-line-2 1.5s steps(20) forwards;
+          white-space: nowrap;
+          overflow: hidden;
+          animation-delay: 3s;
+        }
+
+        @keyframes typing-line-1 {
+          to {
+            width: 100%;
+          }
+        }
+
+        @keyframes typing-line-2 {
+          to {
+            width: 100%;
+          }
         }
       `}</style>
     </div>

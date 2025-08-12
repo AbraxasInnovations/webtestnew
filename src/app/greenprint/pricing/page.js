@@ -1,15 +1,46 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 
 export default function GreenprintPricing() {
+  const [currentStep, setCurrentStep] = useState(1);
+  const [responses, setResponses] = useState({});
+  const [email, setEmail] = useState('');
+
+  const handleResponse = (question, answer) => {
+    setResponses(prev => ({
+      ...prev,
+      [question]: answer
+    }));
+  };
+
+  const nextStep = () => {
+    setCurrentStep(prev => prev + 1);
+  };
+
+  const prevStep = () => {
+    setCurrentStep(prev => prev - 1);
+  };
+
+  // Auto-advance loading step after 3 seconds
+  React.useEffect(() => {
+    if (currentStep === 5) {
+      const timer = setTimeout(() => {
+        nextStep();
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [currentStep]);
+
   return (
-    <div className="min-h-screen bg-gray-50" style={{
-      backgroundImage: `
-        linear-gradient(rgba(0, 0, 0, 0.8) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.8) 1px, transparent 1px)
-      `,
-      backgroundSize: '50px 50px'
+    <div className="min-h-screen" style={{ 
+      background: 'radial-gradient(#ffffff54 2px, transparent 0) 0 0/40px 40px, radial-gradient(#00000026 2px, transparent 0) -1px 1px/40px 40px, radial-gradient(ellipse at 150% -50%, #6d788f, #fff)',
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      padding: '2rem',
+      paddingTop: '0'
     }}>
       {/* Navigation */}
       <nav className="fixed w-full bg-black/95 backdrop-blur-sm border-b border-gray-800 z-50">
@@ -45,248 +76,260 @@ export default function GreenprintPricing() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-4 mb-8">
+      {/* Questionnaire Container */}
+      <div className="max-w-2xl mx-auto w-full bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-xl mt-48">
+        <div className="text-center mb-8">
+          <div className="flex items-center justify-center gap-4 mb-4 -ml-8">
             <img 
               src="/images/blackgplogo.png"
               alt="GreenPrint Logo"
-              className="h-16 w-auto"
+              className="h-16 w-auto -mt-6"
             />
-            <h1 className="text-5xl font-normal text-gray-900 leading-tight font-['SF_Pro_Display',_-apple-system,_BlinkMacSystemFont,_'Segoe_UI',_system-ui,_sans-serif]">
-              Pricing
+            <h1 className="text-3xl font-normal text-black leading-tight font-['SF_Pro_Display',_-apple-system,_BlinkMacSystemFont,_'Segoe_UI',_system-ui,_sans-serif]" style={{ marginLeft: '-1rem' }}>
+              GreenPrint Access
             </h1>
           </div>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-16 font-medium">
-            Choose the perfect plan for your trading automation needs. All plans include lifetime access and no monthly fees.
+          <p className="text-lg text-gray-700 font-['SF_Pro_Display',_-apple-system,_BlinkMacSystemFont,_'Segoe_UI',_system-ui,_sans-serif]">
+            Let's find the perfect plan for your trading automation needs.
           </p>
         </div>
-      </section>
 
-      {/* Pricing Plans */}
-      <section className="pb-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Starter Plan */}
-            <div className="rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 relative overflow-hidden" style={{
-              background: 'rgba(255, 255, 255, 0.4)',
-              backdropFilter: 'blur(20px)',
-              WebkitBackdropFilter: 'blur(20px)',
-              border: '1px solid rgba(0, 0, 0, 0.1)',
-              boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.1), 0 4px 16px 0 rgba(0, 0, 0, 0.05)'
-            }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-white/10 rounded-2xl"></div>
-              <div className="relative z-10">
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Starter</h3>
-                  <div className="text-4xl font-bold text-gray-900 mb-2">$997</div>
-                  <p className="text-gray-600 font-medium">One-time payment</p>
-                </div>
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-center">
-                    <svg className="w-5 h-5 text-emerald-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-gray-800 font-medium">Basic funding rate arbitrage</span>
-                  </li>
-                  <li className="flex items-center">
-                    <svg className="w-5 h-5 text-emerald-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-gray-800 font-medium">Telegram bot access</span>
-                  </li>
-                  <li className="flex items-center">
-                    <svg className="w-5 h-5 text-emerald-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-gray-800 font-medium">Lifetime access</span>
-                  </li>
-                  <li className="flex items-center">
-                    <svg className="w-5 h-5 text-emerald-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-gray-800 font-medium">Basic support</span>
-                  </li>
-                </ul>
-                <a 
-                  href="https://t.me/AbraxasInnovations" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-full bg-gray-900 text-white py-3 px-6 rounded-lg font-semibold hover:bg-gray-800 transition-all duration-300 text-center block border border-gray-700"
-                >
-                  Get Started
-                </a>
-              </div>
-            </div>
-
-            {/* Professional Plan */}
-            <div className="rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 relative overflow-hidden" style={{
-              background: 'rgba(255, 255, 255, 0.5)',
-              backdropFilter: 'blur(20px)',
-              WebkitBackdropFilter: 'blur(20px)',
-              border: '2px solid rgba(16, 185, 129, 0.6)',
-              boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.1), 0 4px 16px 0 rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(16, 185, 129, 0.2)'
-            }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/15 to-emerald-400/10 rounded-2xl"></div>
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
-                <span className="bg-emerald-600 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg">Most Popular</span>
-              </div>
-              <div className="relative z-10">
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Professional</h3>
-                  <div className="text-4xl font-bold text-gray-900 mb-2">$1,997</div>
-                  <p className="text-gray-600 font-medium">One-time payment</p>
-                </div>
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-center">
-                    <svg className="w-5 h-5 text-emerald-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-gray-800 font-medium">Everything in Starter</span>
-                  </li>
-                  <li className="flex items-center">
-                    <svg className="w-5 h-5 text-emerald-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-gray-800 font-medium">Advanced CLMM strategies</span>
-                  </li>
-                  <li className="flex items-center">
-                    <svg className="w-5 h-5 text-emerald-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-gray-800 font-medium">Multi-exchange support</span>
-                  </li>
-                  <li className="flex items-center">
-                    <svg className="w-5 h-5 text-emerald-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-gray-800 font-medium">Priority support</span>
-                  </li>
-                  <li className="flex items-center">
-                    <svg className="w-5 h-5 text-emerald-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-gray-800 font-medium">Backtesting tools</span>
-                  </li>
-                </ul>
-                <a 
-                  href="https://t.me/AbraxasInnovations" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-full bg-emerald-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-emerald-700 transition-all duration-300 text-center block border border-emerald-500"
-                >
-                  Get Started
-                </a>
-              </div>
-            </div>
-
-            {/* Enterprise Plan */}
-            <div className="rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 relative overflow-hidden" style={{
-              background: 'rgba(255, 255, 255, 0.4)',
-              backdropFilter: 'blur(20px)',
-              WebkitBackdropFilter: 'blur(20px)',
-              border: '1px solid rgba(0, 0, 0, 0.1)',
-              boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.1), 0 4px 16px 0 rgba(0, 0, 0, 0.05)'
-            }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-white/10 rounded-2xl"></div>
-              <div className="relative z-10">
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Enterprise</h3>
-                  <div className="text-4xl font-bold text-gray-900 mb-2">$4,997</div>
-                  <p className="text-gray-600 font-medium">One-time payment</p>
-                </div>
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-center">
-                    <svg className="w-5 h-5 text-emerald-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-gray-800 font-medium">Everything in Professional</span>
-                  </li>
-                  <li className="flex items-center">
-                    <svg className="w-5 h-5 text-emerald-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-gray-800 font-medium">Custom strategies</span>
-                  </li>
-                  <li className="flex items-center">
-                    <svg className="w-5 h-5 text-emerald-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-gray-800 font-medium">Dedicated support</span>
-                  </li>
-                  <li className="flex items-center">
-                    <svg className="w-5 h-5 text-emerald-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-gray-800 font-medium">API access</span>
-                  </li>
-                  <li className="flex items-center">
-                    <svg className="w-5 h-5 text-emerald-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-gray-800 font-medium">White-label options</span>
-                  </li>
-                </ul>
-                <a 
-                  href="https://t.me/AbraxasInnovations" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-full bg-gray-900 text-white py-3 px-6 rounded-lg font-semibold hover:bg-gray-800 transition-all duration-300 text-center block border border-gray-700"
-                >
-                  Contact Sales
-                </a>
-              </div>
-            </div>
+        {/* Progress Bar */}
+        <div className="mb-8">
+          <div className="flex justify-between text-sm text-gray-600 mb-2 font-['SF_Pro_Display',_-apple-system,_BlinkMacSystemFont,_'Segoe_UI',_system-ui,_sans-serif]">
+            <span>Step {currentStep} of 6</span>
+            <span>{Math.round((currentStep / 6) * 100)}%</span>
+          </div>
+          <div className="w-full bg-gray-200 rounded-full h-2">
+            <div 
+              className="bg-emerald-500 h-2 rounded-full transition-all duration-300"
+              style={{ width: `${(currentStep / 6) * 100}%` }}
+            ></div>
           </div>
         </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <img 
-                src="/images/whitegplogo.PNG"
-                alt="GreenPrint"
-                className="h-8 w-auto mb-4"
-              />
-              <p className="text-gray-400 text-sm">
-                Professional trading tools for the modern investor.
+          
+        {/* Step Content */}
+        <div className="min-h-[300px] flex flex-col justify-center">
+          {currentStep === 1 && (
+            <div className="text-center">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-6 font-['SF_Pro_Display',_-apple-system,_BlinkMacSystemFont,_'Segoe_UI',_system-ui,_sans-serif]">
+                What is your experience in financial markets?
+              </h2>
+              <div className="space-y-4">
+                {[
+                  "I'm completely new to trading and financial markets",
+                  "I have some basic knowledge but limited trading experience",
+                  "I'm an active trader with 1-3 years of experience",
+                  "I'm an experienced trader with 3+ years in the markets",
+                  "I'm a professional trader or work in the financial industry"
+                ].map((option, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleResponse('experience', option)}
+                    className={`w-full p-4 text-left rounded-lg border-2 transition-all duration-200 font-['SF_Pro_Display',_-apple-system,_BlinkMacSystemFont,_'Segoe_UI',_system-ui,_sans-serif] ${
+                      responses.experience === option
+                        ? 'border-emerald-500 bg-emerald-50 text-emerald-700'
+                        : 'border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50'
+                    }`}
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+          
+          {currentStep === 2 && (
+            <div className="text-center">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-6 font-['SF_Pro_Display',_-apple-system,_BlinkMacSystemFont,_'Segoe_UI',_system-ui,_sans-serif]">
+                Why do you want to automate your trading?
+              </h2>
+              <div className="space-y-4">
+                {[
+                  "I want more passive income",
+                  "I want a high Sharpe ratio portfolio diversifier",
+                  "I am scared of buying and holding",
+                  "I want to reduce emotional trading decisions",
+                  "I want to capture opportunities 24/7",
+                  "I want to scale my existing strategies"
+                ].map((option, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleResponse('motivation', option)}
+                    className={`w-full p-4 text-left rounded-lg border-2 transition-all duration-200 font-['SF_Pro_Display',_-apple-system,_BlinkMacSystemFont,_'Segoe_UI',_system-ui,_sans-serif] ${
+                      responses.motivation === option
+                        ? 'border-emerald-500 bg-emerald-50 text-emerald-700'
+                        : 'border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50'
+                    }`}
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+          
+          {currentStep === 3 && (
+            <div className="text-center">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-6 font-['SF_Pro_Display',_-apple-system,_BlinkMacSystemFont,_'Segoe_UI',_system-ui,_sans-serif]">
+                What is your expected liquid net worth ballpark?
+              </h2>
+              <div className="space-y-4">
+                {[
+                  "Under $10,000",
+                  "$10,000 - $50,000",
+                  "$50,000 - $100,000",
+                  "$100,000 - $500,000",
+                  "$500,000 - $1,000,000",
+                  "Over $1,000,000"
+                ].map((option, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleResponse('netWorth', option)}
+                    className={`w-full p-4 text-left rounded-lg border-2 transition-all duration-200 font-['SF_Pro_Display',_-apple-system,_BlinkMacSystemFont,_'Segoe_UI',_system-ui,_sans-serif] ${
+                      responses.netWorth === option
+                        ? 'border-emerald-500 bg-emerald-50 text-emerald-700'
+                        : 'border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50'
+                    }`}
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+          
+          {currentStep === 4 && (
+            <div className="text-center">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-6 font-['SF_Pro_Display',_-apple-system,_BlinkMacSystemFont,_'Segoe_UI',_system-ui,_sans-serif]">
+                Quick crypto knowledge check: What is the primary purpose of a funding rate in perpetual futures?
+              </h2>
+              <div className="space-y-4">
+                {[
+                  "To pay for transaction fees",
+                  "To balance long and short positions and prevent price manipulation",
+                  "To provide insurance against liquidation",
+                  "To reward market makers",
+                  "To calculate trading volume"
+                ].map((option, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleResponse('cryptoMath', option)}
+                    className={`w-full p-4 text-left rounded-lg border-2 transition-all duration-200 font-['SF_Pro_Display',_-apple-system,_BlinkMacSystemFont,_'Segoe_UI',_system-ui,_sans-serif] ${
+                      responses.cryptoMath === option
+                        ? 'border-emerald-500 bg-emerald-50 text-emerald-700'
+                        : 'border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50'
+                    }`}
+                  >
+                    {option}
+            </button>
+                ))}
+          </div>
+        </div>
+          )}
+          
+          {currentStep === 5 && (
+            <div className="text-center">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-6 font-['SF_Pro_Display',_-apple-system,_BlinkMacSystemFont,_'Segoe_UI',_system-ui,_sans-serif]">
+                Loading Analysis...
+              </h2>
+              <div className="flex flex-col items-center space-y-4">
+                <div className="w-16 h-16 border-4 border-emerald-200 border-t-emerald-500 rounded-full animate-spin"></div>
+                <p className="text-gray-600 font-['SF_Pro_Display',_-apple-system,_BlinkMacSystemFont,_'Segoe_UI',_system-ui,_sans-serif]">
+                  Analyzing your responses and calculating your optimal plan...
+                </p>
+              </div>
+            </div>
+          )}
+          
+          {currentStep === 6 && (
+            <div className="text-center">
+              <div className="mb-6">
+                <div className="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-['SF_Pro_Display',_-apple-system,_BlinkMacSystemFont,_'Segoe_UI',_system-ui,_sans-serif]">
+                  We are pleased to inform you that you have been approved for access to GreenPrint.
+                </h2>
+                <p className="text-gray-600 mb-6 font-['SF_Pro_Display',_-apple-system,_BlinkMacSystemFont,_'Segoe_UI',_system-ui,_sans-serif]">
+                  Enter your email below to receive your personalized plan and next steps.
+                </p>
+                <div className="space-y-4 mb-6">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email address"
+                    className="w-full p-4 border-2 border-gray-200 rounded-lg focus:border-emerald-500 focus:outline-none transition-colors font-['SF_Pro_Display',_-apple-system,_BlinkMacSystemFont,_'Segoe_UI',_system-ui,_sans-serif]"
+                  />
+                  <p className="text-sm text-gray-600 font-['SF_Pro_Display',_-apple-system,_BlinkMacSystemFont,_'Segoe_UI',_system-ui,_sans-serif]">
+                    We'll send your personalized GreenPrint access plan and next steps to this email.
+                  </p>
+                </div>
+                <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4 mb-6">
+                  <p className="text-sm text-emerald-800 font-['SF_Pro_Display',_-apple-system,_BlinkMacSystemFont,_'Segoe_UI',_system-ui,_sans-serif]">
+                    <strong>Important:</strong> The answer to your crypto question and additional insights are included in the email we'll send.
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+          
+          {currentStep !== 1 && currentStep !== 2 && currentStep !== 3 && currentStep !== 4 && currentStep !== 5 && currentStep !== 6 && (
+            <div className="text-center">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-['SF_Pro_Display',_-apple-system,_BlinkMacSystemFont,_'Segoe_UI',_system-ui,_sans-serif]">
+                Step {currentStep} - Coming Soon
+              </h2>
+              <p className="text-gray-600 font-['SF_Pro_Display',_-apple-system,_BlinkMacSystemFont,_'Segoe_UI',_system-ui,_sans-serif]">
+                This step will be implemented next.
               </p>
             </div>
-            
-            <div>
-              <h3 className="font-semibold mb-4 text-sm">Product</h3>
-              <ul className="space-y-2 text-gray-400 text-xs">
-                <li><Link href="/greenprint/test-layout#features" className="hover:text-white transition-colors">Features</Link></li>
-                <li><Link href="/greenprint/pricing" className="hover:text-white transition-colors">Pricing</Link></li>
-                <li><Link href="/greenprint/docs" className="hover:text-white transition-colors">Documentation</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold mb-4 text-sm">Company</h3>
-              <ul className="space-y-2 text-gray-400 text-xs">
-                <li><Link href="/greenprint/test-layout#about" className="hover:text-white transition-colors">About</Link></li>
-                <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
-                <li><Link href="/support" className="hover:text-white transition-colors">Support</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold mb-4 text-sm">Legal</h3>
-              <ul className="space-y-2 text-gray-400 text-xs">
-                <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-                <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
-              </ul>
-            </div>
+          )}
           </div>
+
+        {/* Navigation */}
+        <div className="flex justify-between mt-8">
+          {currentStep === 6 ? (
+            <Link
+              href="/greenprint/test-layout"
+              className="px-6 py-2 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-colors font-['SF_Pro_Display',_-apple-system,_BlinkMacSystemFont,_'Segoe_UI',_system-ui,_sans-serif]"
+            >
+              Back to GreenPrint Home
+            </Link>
+          ) : (
+            <button
+              onClick={prevStep}
+              disabled={currentStep === 1}
+              className="px-6 py-2 bg-gray-500 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-600 transition-colors font-['SF_Pro_Display',_-apple-system,_BlinkMacSystemFont,_'Segoe_UI',_system-ui,_sans-serif]"
+            >
+              Previous
+            </button>
+          )}
           
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-xs">
-            <p>© 2025 Abraxas Innovations. All rights reserved.</p>
-          </div>
+          {currentStep !== 6 && (
+            <button
+              onClick={nextStep}
+              disabled={
+                (currentStep === 1 && !responses.experience) ||
+                (currentStep === 2 && !responses.motivation) ||
+                (currentStep === 3 && !responses.netWorth) ||
+                (currentStep === 4 && !responses.cryptoMath) ||
+                (currentStep === 6 && !email)
+              }
+              className="px-6 py-2 bg-emerald-500 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-emerald-600 transition-colors font-['SF_Pro_Display',_-apple-system,_BlinkMacSystemFont,_'Segoe_UI',_system-ui,_sans-serif]"
+            >
+              {currentStep === 6 ? 'Submit' : 'Next'}
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* Footer */}
+      <footer className="fixed bottom-0 w-full bg-gray-900 text-white py-4">
+        <div className="max-w-6xl mx-auto px-6 text-center text-sm text-gray-400">
+          <p>© 2025 Abraxas Innovations. All rights reserved.</p>
         </div>
       </footer>
     </div>

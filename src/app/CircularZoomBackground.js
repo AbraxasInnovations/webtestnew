@@ -100,10 +100,10 @@ const CircularZoomBackground = () => {
         console.error('Shader is null');
         return false;
       }
-      gl.shaderSource(shader, source);
-      gl.compileShader(shader);
-      
-      if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+    gl.shaderSource(shader, source);
+    gl.compileShader(shader);
+    
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
         console.error('Shader compilation failed:', gl.getShaderInfoLog(shader));
         return false;
       }
@@ -116,16 +116,16 @@ const CircularZoomBackground = () => {
   
   const setup = (canvas) => {
     try {
-      const dpr = window.devicePixelRatio || 1;
-      const gl = canvas.getContext('webgl2');
-      
-      if (!gl) {
-        console.error('WebGL 2 not supported');
+    const dpr = window.devicePixelRatio || 1;
+    const gl = canvas.getContext('webgl2');
+    
+    if (!gl) {
+      console.error('WebGL 2 not supported');
         setWebglError(true);
-        return null;
-      }
-      
-      const vs = gl.createShader(gl.VERTEX_SHADER);
+      return null;
+    }
+    
+    const vs = gl.createShader(gl.VERTEX_SHADER);
       if (!vs) {
         console.error('Failed to create vertex shader');
         setWebglError(true);
@@ -136,8 +136,8 @@ const CircularZoomBackground = () => {
         setWebglError(true);
         return null;
       }
-      
-      const fs = gl.createShader(gl.FRAGMENT_SHADER);
+    
+    const fs = gl.createShader(gl.FRAGMENT_SHADER);
       if (!fs) {
         console.error('Failed to create fragment shader');
         setWebglError(true);
@@ -148,55 +148,55 @@ const CircularZoomBackground = () => {
         setWebglError(true);
         return null;
       }
-      
-      const program = gl.createProgram();
+    
+    const program = gl.createProgram();
       if (!program) {
         console.error('Failed to create program');
         setWebglError(true);
         return null;
       }
       
-      gl.attachShader(program, vs);
-      gl.attachShader(program, fs);
-      gl.linkProgram(program);
-      
-      if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+    gl.attachShader(program, vs);
+    gl.attachShader(program, fs);
+    gl.linkProgram(program);
+    
+    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
         console.error('Program linking failed:', gl.getProgramInfoLog(program));
         setWebglError(true);
-        return null;
-      }
-      
-      const vertices = [
-        -1, -1, 1,
-        -1, -1, 1,
-        -1, 1, 1,
-        -1, 1, 1,
-      ];
-      
-      const buffer = gl.createBuffer();
-      gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
-      
-      const position = gl.getAttribLocation(program, 'position');
-      gl.enableVertexAttribArray(position);
-      gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
-      
-      program.resolution = gl.getUniformLocation(program, 'resolution');
-      program.time = gl.getUniformLocation(program, 'time');
-      program.fade = gl.getUniformLocation(program, 'fade');
-      
-      // Resize canvas to match display
-      const resize = () => {
-        const { width, height } = canvas.getBoundingClientRect();
-        canvas.width = width * dpr;
-        canvas.height = height * dpr;
-        gl.viewport(0, 0, width * dpr, height * dpr);
-      };
-      
-      resize();
-      window.addEventListener('resize', resize);
-      
-      return { gl, program, vertices, buffer };
+      return null;
+    }
+    
+    const vertices = [
+      -1, -1, 1,
+      -1, -1, 1,
+      -1, 1, 1,
+      -1, 1, 1,
+    ];
+    
+    const buffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
+    
+    const position = gl.getAttribLocation(program, 'position');
+    gl.enableVertexAttribArray(position);
+    gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
+    
+    program.resolution = gl.getUniformLocation(program, 'resolution');
+    program.time = gl.getUniformLocation(program, 'time');
+    program.fade = gl.getUniformLocation(program, 'fade');
+    
+    // Resize canvas to match display
+    const resize = () => {
+      const { width, height } = canvas.getBoundingClientRect();
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      gl.viewport(0, 0, width * dpr, height * dpr);
+    };
+    
+    resize();
+    window.addEventListener('resize', resize);
+    
+    return { gl, program, vertices, buffer };
     } catch (error) {
       console.error('Error in WebGL setup:', error);
       setWebglError(true);
@@ -206,15 +206,15 @@ const CircularZoomBackground = () => {
   
   const draw = (gl, program, vertices, now, fade) => {
     try {
-      gl.clearColor(0, 0, 0, 1);
-      gl.clear(gl.COLOR_BUFFER_BIT);
-      gl.useProgram(program);
-      
-      gl.uniform2f(program.resolution, gl.canvas.width, gl.canvas.height);
-      gl.uniform1f(program.time, now * 1e-3);
-      gl.uniform1f(program.fade, fade);
-      
-      gl.drawArrays(gl.TRIANGLES, 0, vertices.length * 0.5);
+    gl.clearColor(0, 0, 0, 1);
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.useProgram(program);
+    
+    gl.uniform2f(program.resolution, gl.canvas.width, gl.canvas.height);
+    gl.uniform1f(program.time, now * 1e-3);
+    gl.uniform1f(program.fade, fade);
+    
+    gl.drawArrays(gl.TRIANGLES, 0, vertices.length * 0.5);
     } catch (error) {
       console.error('Error in WebGL draw:', error);
       setWebglError(true);
@@ -225,19 +225,19 @@ const CircularZoomBackground = () => {
     if (!glRef.current || !programRef.current || !verticesRef.current) return;
     
     try {
-      const now = timestamp - offsetRef.current;
-      
-      // Calculate fade (simplified from the original code)
-      fadeRef.current = (now % 10000) / 10000;
-      
-      draw(glRef.current, programRef.current, verticesRef.current, now, fadeRef.current);
-      
-      if (fadeRef.current >= 1) {
-        offsetRef.current += now;
-        fadeRef.current = 0;
-      }
-      
-      animationRef.current = requestAnimationFrame(loop);
+    const now = timestamp - offsetRef.current;
+    
+    // Calculate fade (simplified from the original code)
+    fadeRef.current = (now % 10000) / 10000;
+    
+    draw(glRef.current, programRef.current, verticesRef.current, now, fadeRef.current);
+    
+    if (fadeRef.current >= 1) {
+      offsetRef.current += now;
+      fadeRef.current = 0;
+    }
+    
+    animationRef.current = requestAnimationFrame(loop);
     } catch (error) {
       console.error('Error in animation loop:', error);
       setWebglError(true);
@@ -248,19 +248,19 @@ const CircularZoomBackground = () => {
     if (!canvasRef.current) return;
 
     try {
-      const { gl, program, vertices, buffer } = setup(canvasRef.current) || {};
-      
+    const { gl, program, vertices, buffer } = setup(canvasRef.current) || {};
+    
       if (!gl || !program) {
         setWebglError(true);
         return;
       }
-      
-      glRef.current = gl;
-      programRef.current = program;
-      verticesRef.current = vertices;
-      bufferRef.current = buffer;
-      
-      animationRef.current = requestAnimationFrame(loop);
+    
+    glRef.current = gl;
+    programRef.current = program;
+    verticesRef.current = vertices;
+    bufferRef.current = buffer;
+    
+    animationRef.current = requestAnimationFrame(loop);
     } catch (error) {
       console.error('Error in useEffect:', error);
       setWebglError(true);
@@ -273,8 +273,8 @@ const CircularZoomBackground = () => {
       
       if (glRef.current) {
         try {
-          const ext = glRef.current.getExtension('WEBGL_lose_context');
-          if (ext) ext.loseContext();
+        const ext = glRef.current.getExtension('WEBGL_lose_context');
+        if (ext) ext.loseContext();
         } catch (error) {
           console.error('Error losing WebGL context:', error);
         }
