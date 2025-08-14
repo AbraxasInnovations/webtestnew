@@ -404,9 +404,27 @@ export default function Home() {
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'fixed'
       }}>
+        {/* Mobile background override */}
+        <style jsx>{`
+          @media (max-width: 768px) {
+            #disclosure-cards {
+              background-attachment: scroll !important;
+              background-size: cover !important;
+              background-position: center !important;
+              transform: rotate(90deg);
+              transform-origin: center center;
+              min-height: 100vh;
+            }
+            #disclosure-cards > * {
+              transform: rotate(-90deg);
+              transform-origin: center center;
+            }
+          }
+        `}</style>
+        
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div className="max-w-6xl mx-auto relative text-center z-10">
+        <div className="max-w-6xl mx-auto relative text-center z-10" style={{ paddingTop: '6rem' }}>
           <h1 className="mb-6 md:mb-8 text-white text-6xl md:text-8xl font-black font-mono">Multi-Strategy Innovation</h1>
           <p className="mb-8 md:mb-12 text-gray-300 max-w-4xl mx-auto text-sm md:text-base px-4" style={{ fontFamily: 'Phonic, Helvetica, system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif', letterSpacing: '-1px' }}>
             A multi-strategy firm delivering institutional-grade software solutions, 
@@ -842,6 +860,8 @@ export default function Home() {
             color: #ffffff;
             text-transform: uppercase;
             letter-spacing: -0.5px;
+            width: 100%;
+            display: block;
           }
 
           .disclosure-cards-grid article p {
