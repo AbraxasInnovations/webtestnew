@@ -404,24 +404,6 @@ export default function Home() {
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'fixed'
       }}>
-        {/* Mobile background override */}
-        <style jsx>{`
-          @media (max-width: 768px) {
-            #disclosure-cards {
-              background-attachment: scroll !important;
-              background-size: cover !important;
-              background-position: center !important;
-              transform: rotate(90deg);
-              transform-origin: center center;
-              min-height: 100vh;
-            }
-            #disclosure-cards > * {
-              transform: rotate(-90deg);
-              transform-origin: center center;
-            }
-          }
-        `}</style>
-        
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="max-w-6xl mx-auto relative text-center z-10" style={{ paddingTop: '6rem' }}>
@@ -792,6 +774,19 @@ export default function Home() {
 
         /* Mobile responsive adjustments */
         @media (max-width: 768px) {
+          #disclosure-cards {
+            background-attachment: scroll !important;
+            background-size: cover !important;
+            background-position: center !important;
+            transform: rotate(90deg);
+            transform-origin: center center;
+            min-height: 100vh;
+          }
+          #disclosure-cards > * {
+            transform: rotate(-90deg);
+            transform-origin: center center;
+          }
+          
           .disclosure-cards-grid {
             grid-template-columns: 1fr;
             height: auto;
