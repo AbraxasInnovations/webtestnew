@@ -862,13 +862,40 @@ export default function Home() {
         /* Mobile responsive adjustments */
         @media (max-width: 768px) {
           #disclosure-cards {
-            background-attachment: scroll !important;
-            background-size: cover !important;
-            background-position: center !important;
-            min-height: 100vh;
+            background: none !important;
+            min-height: auto;
             overflow-x: hidden;
-            width: 100vw;
+            width: 100%;
             position: relative;
+            padding: 0;
+          }
+
+          /* Hero section with background */
+          #disclosure-cards .max-w-6xl {
+            background-image: url('/images/unsplash.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            min-height: 100vh;
+            padding: 6rem 1rem 2rem 1rem;
+            position: relative;
+          }
+
+          #disclosure-cards .max-w-6xl::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+          }
+
+          #disclosure-cards .max-w-6xl > * {
+            position: relative;
+            z-index: 2;
           }
           
           .disclosure-cards-grid {
@@ -882,6 +909,7 @@ export default function Home() {
             flex-direction: column;
             margin: 0;
             overflow-x: hidden;
+            background: #000000;
           }
 
           .disclosure-cards-grid li {
