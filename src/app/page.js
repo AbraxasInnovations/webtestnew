@@ -307,12 +307,7 @@ export default function Home() {
       requestAnimationFrame(animate);
     }
 
-    // Initialize animations
-    setupOrbitalPulse('orbital-pulse-1');
-    setupPulseWave('pulse-wave-1');
-    setupConcentricRings('concentric-rings-1');
-    setupSequentialPulse('sequential-pulse-1');
-    setupOrbitalPulse('orbital-pulse-2');
+    // Initialize animations - removed as all cards now use images
 
     list.addEventListener('focus', setIndex, true);
     list.addEventListener('click', setIndex);
@@ -344,8 +339,7 @@ export default function Home() {
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
-              <a href="/about" className="hover:text-gray-300 transition-colors nav-items font-mono">About</a>
-              <a href="#greenprint" className="hover:text-gray-300 transition-colors nav-items font-mono">Greenprint</a>
+              <a href="https://abxinnovate.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition-colors nav-items font-mono">ABX Security</a>
               <a href="/contact" className="hover:text-gray-300 transition-colors nav-items font-mono">Contact</a>
             </div>
             
@@ -370,18 +364,13 @@ export default function Home() {
             <div className="md:hidden py-4 animate-fade-in">
               <div className="flex flex-col space-y-4 items-center">
                 <a 
-                  href="/about" 
+                  href="https://abxinnovate.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   className="text-lg hover:text-gray-300 transition-colors w-full text-center py-2 font-mono"
                   onClick={handleNavClick}
                 >
-                  About
-                </a>
-                <a 
-                  href="#greenprint" 
-                  className="text-lg hover:text-gray-300 transition-colors w-full text-center py-2 font-mono"
-                  onClick={handleNavClick}
-                >
-                  Greenprint
+                  ABX Security
                 </a>
                 <a 
                   href="/contact" 
@@ -417,13 +406,20 @@ export default function Home() {
           <ul className="disclosure-cards-grid">
             <li data-active="true">
               <article>
-                <div className="animation-container">
-                  <canvas id="orbital-pulse-1" className="animation-canvas"></canvas>
+                <div className="image-container">
+                  <img 
+                    src="/images/spv.png" 
+                    alt="Special Situations - Strategic investment opportunities"
+                    className="site-preview-image"
+                  />
                 </div>
                 <div className="text-content">
-                  <h3>Special Situations</h3>
+                  <h3>SPV</h3>
+                  <div className="content-title">Special Situations</div>
                   <p>
-                    Strategic opportunities in unique market situations. 
+                    <a href="/contact" className="security-link">
+                      Special Situations
+                    </a> delivers strategic investment opportunities. 
                     Access to specialized deals and structured transactions for qualified participants.
               </p>
             </div>
@@ -431,27 +427,41 @@ export default function Home() {
             </li>
             <li>
               <article>
-                <div className="animation-container">
-                  <canvas id="orbital-pulse-2" className="animation-canvas"></canvas>
+                <div className="image-container">
+                  <img 
+                    src="/images/gppreview.png" 
+                    alt="Greenprint - Advanced algorithmic trading platform"
+                    className="site-preview-image"
+                  />
                 </div>
                 <div className="text-content">
                   <h3>Greenprint</h3>
+                  <div className="content-title">Greenprint</div>
                   <p>
-                    Advanced algorithmic trading platform for funding rate arbitrage. 
-                    Professional-grade automation tools for institutional and retail traders.
+                    <a href="#" className="security-link">
+                      Greenprint
+                    </a> provides advanced algorithmic trading solutions. 
+                    Professional-grade automation tools for institutional and retail traders. <strong>Coming Soon.</strong>
               </p>
             </div>
               </article>
             </li>
             <li>
               <article>
-                <div className="animation-container">
-                  <canvas id="pulse-wave-1" className="animation-canvas"></canvas>
+                <div className="image-container">
+                  <img 
+                    src="/images/softwarepre.png" 
+                    alt="Software - Custom financial software solutions"
+                    className="site-preview-image"
+                  />
                 </div>
                 <div className="text-content">
                   <h3>Software</h3>
+                  <div className="content-title">Software</div>
                   <p>
-                    Custom and tailored software programs for financial applications. 
+                    We develop <a href="/contact" className="security-link">
+                      software
+                    </a> for custom financial technology solutions. 
                     Professional-grade development services for institutional and retail clients.
               </p>
             </div>
@@ -459,27 +469,41 @@ export default function Home() {
             </li>
             <li>
               <article>
-                <div className="animation-container">
-                  <canvas id="concentric-rings-1" className="animation-canvas"></canvas>
-          </div>
+                <div className="image-container">
+                  <img 
+                    src="/images/abx-security-preview.png" 
+                    alt="ABX Security - abxinnovate.com site preview"
+                    className="site-preview-image"
+                  />
+                </div>
                 <div className="text-content">
-                  <h3>Web Security</h3>
+                  <h3>Security</h3>
+                  <div className="content-title">Web Security</div>
                   <p>
-                    Apollo Security protects your digital assets. 
-                    Comprehensive security solutions to prevent hacks and data breaches.
+                    <a href="https://abxinnovate.com" target="_blank" rel="noopener noreferrer" className="security-link">
+                      ABX Security
+                    </a> provides comprehensive cybersecurity services for business websites. 
+                    Professional security solutions to prevent hacks and data breaches.
               </p>
                 </div>
               </article>
             </li>
             <li>
               <article>
-                <div className="animation-container">
-                  <canvas id="sequential-pulse-1" className="animation-canvas"></canvas>
+                <div className="image-container">
+                  <img 
+                    src="/images/medium.png" 
+                    alt="Insights - Strategic market analysis and perspectives"
+                    className="site-preview-image"
+                  />
                 </div>
                 <div className="text-content">
                   <h3>Insights</h3>
+                  <div className="content-title">Insights</div>
                   <p>
-                    In-depth analysis and strategic perspectives published on Medium. 
+                    We provide insights and research on <a href="https://medium.com/@derekpabx" target="_blank" rel="noopener noreferrer" className="security-link">
+                      Medium
+                    </a>. 
                     Expert commentary on emerging trends and market opportunities across global sectors.
                   </p>
                 </div>
@@ -594,26 +618,6 @@ export default function Home() {
           cursor: pointer;
         }
 
-        .disclosure-cards-grid li::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          height: 25%;
-          background-image: url('/images/ububbles.jpg');
-          background-size: cover;
-          background-position: center top;
-          background-repeat: no-repeat;
-          pointer-events: none;
-          z-index: 1;
-          opacity: 0;
-          transition: opacity 0.6s linear(0 0%, 0.1538 4.09%, 0.2926 8.29%, 0.4173 12.63%, 0.5282 17.12%, 0.6255 21.77%, 0.7099 26.61%, 0.782 31.67%, 0.8425 37%, 0.8887 42.23%, 0.9257 47.79%, 0.9543 53.78%, 0.9752 60.32%, 0.9883 67.11%, 0.9961 75%, 1 100%);
-        }
-
-        .disclosure-cards-grid [data-active='true']::after {
-          opacity: 1;
-        }
 
         .disclosure-cards-grid li:hover {
           border-color: #ffffff;
@@ -676,6 +680,40 @@ export default function Home() {
           position: relative;
           height: 100px;
           margin-bottom: 1rem;
+          opacity: 0;
+          transition: opacity 0.6s linear(0 0%, 0.1538 4.09%, 0.2926 8.29%, 0.4173 12.63%, 0.5282 17.12%, 0.6255 21.77%, 0.7099 26.61%, 0.782 31.67%, 0.8425 37%, 0.8887 42.23%, 0.9257 47.79%, 0.9543 53.78%, 0.9752 60.32%, 0.9883 67.11%, 0.9961 75%, 1 100%);
+        }
+
+        .disclosure-cards-grid [data-active='true'] article .animation-container {
+          opacity: 1;
+        }
+
+        .disclosure-cards-grid article .image-container {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 66.67%;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          border-radius: 0;
+          border-bottom: 1px solid #ffffff;
+          opacity: 0;
+          transition: opacity 0.6s linear(0 0%, 0.1538 4.09%, 0.2926 8.29%, 0.4173 12.63%, 0.5282 17.12%, 0.6255 21.77%, 0.7099 26.61%, 0.782 31.67%, 0.8425 37%, 0.8887 42.23%, 0.9257 47.79%, 0.9543 53.78%, 0.9752 60.32%, 0.9883 67.11%, 0.9961 75%, 1 100%);
+        }
+
+        .disclosure-cards-grid [data-active='true'] article .image-container {
+          opacity: 1;
+        }
+
+
+        .disclosure-cards-grid article .site-preview-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center top;
         }
 
         .disclosure-cards-grid article .animation-canvas {
@@ -691,16 +729,32 @@ export default function Home() {
         }
 
         .disclosure-cards-grid article .text-content {
-          flex: 1;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 33.33%;
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
           gap: 0.5rem;
+          padding: 1rem;
+          padding-left: 3rem;
+          text-align: left;
+        }
+
+        .disclosure-cards-grid article .text-content p {
+          color: #ffffff;
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 1.5;
+          letter-spacing: -0.01em;
         }
 
         .disclosure-cards-grid article h3 {
           position: absolute;
-          top: 1rem;
+          top: 0;
           left: 1rem;
           transform-origin: 0 50%;
           rotate: 90deg;
@@ -712,6 +766,29 @@ export default function Home() {
           margin: 0;
           color: #ffffff;
           letter-spacing: -0.5px;
+          opacity: 1;
+          transition: opacity 0.6s linear(0 0%, 0.1538 4.09%, 0.2926 8.29%, 0.4173 12.63%, 0.5282 17.12%, 0.6255 21.77%, 0.7099 26.61%, 0.782 31.67%, 0.8425 37%, 0.8887 42.23%, 0.9257 47.79%, 0.9543 53.78%, 0.9752 60.32%, 0.9883 67.11%, 0.9961 75%, 1 100%);
+        }
+
+        .disclosure-cards-grid [data-active='true'] article h3 {
+          opacity: 0;
+        }
+
+        .disclosure-cards-grid article .content-title {
+          font-size: 1.4rem;
+          font-weight: 600;
+          text-transform: none;
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+          color: #ffffff;
+          letter-spacing: -0.02em;
+          margin: 0 0 0.75rem 0;
+          opacity: 0;
+          transition: opacity 0.6s linear(0 0%, 0.1538 4.09%, 0.2926 8.29%, 0.4173 12.63%, 0.5282 17.12%, 0.6255 21.77%, 0.7099 26.61%, 0.782 31.67%, 0.8425 37%, 0.8887 42.23%, 0.9257 47.79%, 0.9543 53.78%, 0.9752 60.32%, 0.9883 67.11%, 0.9961 75%, 1 100%);
+        }
+
+        .disclosure-cards-grid [data-active='true'] article .content-title {
+          opacity: 1;
+          transition-delay: 0.15s;
         }
 
         .disclosure-cards-grid article svg {
@@ -721,12 +798,24 @@ export default function Home() {
         }
 
         .disclosure-cards-grid article p {
-          font-size: 14px;
+          font-size: 18px;
           text-wrap: balance;
           line-height: 1.4;
           --opacity: 0.8;
           margin: 0;
           color: #e5e7eb;
+        }
+
+        .disclosure-cards-grid article .security-link {
+          color: #3b82f6;
+          text-decoration: none;
+          font-weight: 500;
+          transition: color 0.2s ease;
+        }
+
+        .disclosure-cards-grid article .security-link:hover {
+          color: #60a5fa;
+          text-decoration: underline;
         }
 
         .disclosure-cards-grid article a {
@@ -761,8 +850,6 @@ export default function Home() {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          mask: radial-gradient(100% 100% at 100% 0, #fff, #0000);
-          background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
         }
 
         /* Fallback for when images fail to load */
@@ -836,12 +923,22 @@ export default function Home() {
             align-items: center;
           }
 
+          .disclosure-cards-grid article .image-container {
+            position: relative;
+            height: 200px;
+            margin-bottom: 1.5rem;
+            border-radius: 0;
+            overflow: hidden;
+            border-bottom: 1px solid #ffffff;
+          }
+
           .disclosure-cards-grid article .text-content {
             flex: 1;
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            align-items: center;
+            align-items: flex-start;
+            text-align: left;
           }
 
           .disclosure-cards-grid article h3 {
@@ -860,12 +957,15 @@ export default function Home() {
           }
 
           .disclosure-cards-grid article p {
-            font-size: 1rem;
+            font-size: 1.2rem;
             line-height: 1.6;
-            text-align: center;
+            text-align: left;
             margin: 0;
             color: #e5e7eb;
             max-width: 400px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: -0.01em;
           }
 
           .disclosure-cards-grid li :is(svg, h3, a, p) {
@@ -878,9 +978,6 @@ export default function Home() {
             transition-delay: 0s;
           }
 
-          .disclosure-cards-grid li::after {
-            display: none;
-          }
         }
 
         :root {
