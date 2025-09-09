@@ -865,13 +865,10 @@ export default function Home() {
             background-attachment: scroll !important;
             background-size: cover !important;
             background-position: center !important;
-            transform: rotate(90deg);
-            transform-origin: center center;
             min-height: 100vh;
-          }
-          #disclosure-cards > * {
-            transform: rotate(-90deg);
-            transform-origin: center center;
+            overflow-x: hidden;
+            width: 100vw;
+            position: relative;
           }
           
           .disclosure-cards-grid {
@@ -883,6 +880,8 @@ export default function Home() {
             padding: 2rem 1rem;
             display: flex;
             flex-direction: column;
+            margin: 0;
+            overflow-x: hidden;
           }
 
           .disclosure-cards-grid li {
@@ -897,6 +896,7 @@ export default function Home() {
             transition: none;
             position: relative;
             overflow: visible;
+            margin: 0;
           }
 
           .disclosure-cards-grid li:hover {
@@ -915,6 +915,7 @@ export default function Home() {
             justify-content: flex-start;
             align-items: flex-start;
             text-align: left;
+            margin: 0;
           }
 
           .disclosure-cards-grid article .animation-container {
@@ -929,6 +930,7 @@ export default function Home() {
             overflow: hidden;
             border-bottom: 1px solid #ffffff;
             opacity: 1;
+            width: 100%;
           }
 
           .disclosure-cards-grid article .text-content {
@@ -940,6 +942,7 @@ export default function Home() {
             text-align: left;
             position: relative;
             opacity: 1;
+            width: 100%;
           }
 
           .disclosure-cards-grid article h3 {
@@ -954,6 +957,7 @@ export default function Home() {
             margin: 0 0 1rem 0;
             opacity: 1;
             position: relative;
+            width: 100%;
           }
 
           .disclosure-cards-grid article p {
@@ -968,6 +972,7 @@ export default function Home() {
             letter-spacing: -0.01em;
             opacity: 1;
             position: relative;
+            width: 100%;
           }
 
           .disclosure-cards-grid li :is(svg, h3, a, p, .content-title) {
