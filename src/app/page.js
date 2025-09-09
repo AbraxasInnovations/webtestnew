@@ -879,57 +879,56 @@ export default function Home() {
             height: auto;
             width: 100%;
             max-width: 100%;
-            gap: 1.5rem;
-            padding: 0 1rem;
+            gap: 2rem;
+            padding: 2rem 1rem;
             display: flex;
             flex-direction: column;
           }
 
           .disclosure-cards-grid li {
             height: auto;
-            min-height: 250px;
+            min-height: 300px;
             min-width: auto;
             width: 100%;
             border-radius: 12px;
             background: rgba(26, 26, 26, 0.9);
             backdrop-filter: blur(10px);
             border: 1px solid #333;
-            transition: all 0.3s ease;
+            transition: none;
+            position: relative;
+            overflow: visible;
           }
 
           .disclosure-cards-grid li:hover {
             border-color: #ffffff;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transform: none;
+            box-shadow: none;
           }
 
           .disclosure-cards-grid article {
             position: relative;
             width: 100%;
             padding: 2rem;
-            height: 100%;
+            height: auto;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            text-align: center;
+            justify-content: flex-start;
+            align-items: flex-start;
+            text-align: left;
           }
 
           .disclosure-cards-grid article .animation-container {
-            min-height: 100px;
-            margin-bottom: 1.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display: none;
           }
 
           .disclosure-cards-grid article .image-container {
             position: relative;
             height: 200px;
             margin-bottom: 1.5rem;
-            border-radius: 0;
+            border-radius: 8px;
             overflow: hidden;
             border-bottom: 1px solid #ffffff;
+            opacity: 1;
           }
 
           .disclosure-cards-grid article .text-content {
@@ -939,36 +938,39 @@ export default function Home() {
             gap: 1rem;
             align-items: flex-start;
             text-align: left;
+            position: relative;
+            opacity: 1;
           }
 
           .disclosure-cards-grid article h3 {
-            position: static;
-            rotate: 0deg;
-            transform: none;
-            margin-bottom: 0.75rem;
+            display: none;
+          }
+
+          .disclosure-cards-grid article .content-title {
             font-size: 1.5rem;
-            font-weight: 700;
-            text-align: center;
+            font-weight: 600;
+            text-transform: none;
             color: #ffffff;
-            text-transform: uppercase;
-            letter-spacing: -0.5px;
-            width: 100%;
-            display: block;
+            margin: 0 0 1rem 0;
+            opacity: 1;
+            position: relative;
           }
 
           .disclosure-cards-grid article p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             line-height: 1.6;
             text-align: left;
             margin: 0;
             color: #e5e7eb;
-            max-width: 400px;
+            max-width: none;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             font-weight: 400;
             letter-spacing: -0.01em;
+            opacity: 1;
+            position: relative;
           }
 
-          .disclosure-cards-grid li :is(svg, h3, a, p) {
+          .disclosure-cards-grid li :is(svg, h3, a, p, .content-title) {
             opacity: 1;
             position: relative;
             z-index: 1;
