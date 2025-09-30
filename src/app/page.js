@@ -916,13 +916,20 @@ export default function Home() {
 
         /* Mobile responsive adjustments */
         @media (max-width: 768px) {
+          body {
+            overflow-x: hidden;
+            max-width: 100vw;
+          }
+          
           #disclosure-cards {
             background: none !important;
             min-height: auto;
             overflow-x: hidden;
             width: 100%;
+            max-width: 100vw;
             position: relative;
             padding: 0;
+            box-sizing: border-box;
           }
 
           /* Hero section with background */
@@ -958,13 +965,14 @@ export default function Home() {
             height: auto;
             width: 100%;
             max-width: 100%;
-            gap: 2rem;
-            padding: 2rem 1rem;
+            gap: 1.5rem;
+            padding: 1rem;
             display: flex;
             flex-direction: column;
             margin: 0;
             overflow-x: hidden;
             background: #000000;
+            box-sizing: border-box;
           }
 
           .disclosure-cards-grid li {
@@ -972,14 +980,16 @@ export default function Home() {
             min-height: 300px;
             min-width: auto;
             width: 100%;
+            max-width: 100%;
             border-radius: 12px;
             background: rgba(26, 26, 26, 0.9);
             backdrop-filter: blur(10px);
             border: 1px solid #333;
             transition: none;
             position: relative;
-            overflow: visible;
+            overflow: hidden;
             margin: 0;
+            box-sizing: border-box;
           }
 
           .disclosure-cards-grid li:hover {
@@ -991,7 +1001,8 @@ export default function Home() {
           .disclosure-cards-grid article {
             position: relative;
             width: 100%;
-            padding: 2rem;
+            max-width: 100%;
+            padding: 1.5rem;
             height: auto;
             display: flex;
             flex-direction: column;
@@ -999,6 +1010,8 @@ export default function Home() {
             align-items: flex-start;
             text-align: left;
             margin: 0;
+            box-sizing: border-box;
+            min-width: auto;
           }
 
           .disclosure-cards-grid article .animation-container {
@@ -1014,6 +1027,8 @@ export default function Home() {
             border-bottom: 1px solid #ffffff;
             opacity: 1;
             width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
           }
 
           .disclosure-cards-grid article .text-content {
@@ -1026,6 +1041,8 @@ export default function Home() {
             position: relative;
             opacity: 1;
             width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
           }
 
           .disclosure-cards-grid article h3 {
@@ -1041,6 +1058,8 @@ export default function Home() {
             opacity: 1;
             position: relative;
             width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
           }
 
           .disclosure-cards-grid article p {
@@ -1049,13 +1068,16 @@ export default function Home() {
             text-align: left;
             margin: 0;
             color: #e5e7eb;
-            max-width: none;
+            max-width: 100%;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             font-weight: 400;
             letter-spacing: -0.01em;
             opacity: 1;
             position: relative;
             width: 100%;
+            box-sizing: border-box;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
           }
 
           .disclosure-cards-grid li :is(svg, h3, a, p, .content-title) {
