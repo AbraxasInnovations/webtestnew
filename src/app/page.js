@@ -42,12 +42,8 @@ export default function Home() {
     };
 
     const resync = () => {
-      const w = Math.max(
-        ...[...items].map((i) => {
-          return i.offsetWidth;
-        })
-      );
-      list.style.setProperty('--article-width', w);
+      // Simplified resync - no longer needed for width calculations
+      // But keeping the function for any future needs
     };
 
     // Circle Animation Functions
@@ -313,7 +309,49 @@ export default function Home() {
     list.addEventListener('click', setIndex);
     list.addEventListener('pointermove', setIndex);
     window.addEventListener('resize', resync);
-    resync();
+    
+    // Initial resync with delay to ensure DOM is fully rendered
+    setTimeout(() => {
+      resync();
+    }, 0);
+
+    // Force initial resize to ensure proper image sizing
+    setTimeout(() => {
+      resync();
+      window.dispatchEvent(new Event('resize'));
+    }, 100);
+
+    // Additional force resize after images load
+    setTimeout(() => {
+      resync();
+      window.dispatchEvent(new Event('resize'));
+    }, 500);
+
+    // Force resize when all images are loaded
+    const images = list.querySelectorAll('img');
+    let loadedImages = 0;
+    images.forEach(img => {
+      if (img.complete) {
+        loadedImages++;
+      } else {
+        img.addEventListener('load', () => {
+          loadedImages++;
+          if (loadedImages === images.length) {
+            setTimeout(() => {
+              resync();
+              window.dispatchEvent(new Event('resize'));
+            }, 50);
+          }
+        });
+      }
+    });
+    
+    if (loadedImages === images.length) {
+      setTimeout(() => {
+        resync();
+        window.dispatchEvent(new Event('resize'));
+      }, 50);
+    }
 
     return () => {
       list.removeEventListener('focus', setIndex, true);
@@ -406,12 +444,15 @@ export default function Home() {
           <ul className="disclosure-cards-grid">
             <li data-active="true">
               <article>
-                <div className="image-container">
-                  <img 
-                    src="/images/spv.png" 
-                    alt="Special Situations - Strategic investment opportunities"
-                    className="site-preview-image"
-                  />
+                <div 
+                  className="image-container"
+                  style={{
+                    backgroundImage: "url('/images/spv.png')",
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center top',
+                    backgroundRepeat: 'no-repeat'
+                  }}
+                >
                 </div>
                 <div className="text-content">
                   <h3>SPV</h3>
@@ -427,12 +468,15 @@ export default function Home() {
             </li>
             <li>
               <article>
-                <div className="image-container">
-                  <img 
-                    src="/images/gppreview.png" 
-                    alt="Greenprint - Advanced algorithmic trading platform"
-                    className="site-preview-image"
-                  />
+                <div 
+                  className="image-container"
+                  style={{
+                    backgroundImage: "url('/images/gppreview.png')",
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center top',
+                    backgroundRepeat: 'no-repeat'
+                  }}
+                >
                 </div>
                 <div className="text-content">
                   <h3>Greenprint</h3>
@@ -448,12 +492,15 @@ export default function Home() {
             </li>
             <li>
               <article>
-                <div className="image-container">
-                  <img 
-                    src="/images/softwarepre.png" 
-                    alt="Software - Custom financial software solutions"
-                    className="site-preview-image"
-                  />
+                <div 
+                  className="image-container"
+                  style={{
+                    backgroundImage: "url('/images/softwarepre.png')",
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center top',
+                    backgroundRepeat: 'no-repeat'
+                  }}
+                >
                 </div>
                 <div className="text-content">
                   <h3>Software</h3>
@@ -469,12 +516,15 @@ export default function Home() {
             </li>
             <li>
               <article>
-                <div className="image-container">
-                  <img 
-                    src="/images/abx-security-preview.png" 
-                    alt="ABX Security - abxinnovate.com site preview"
-                    className="site-preview-image"
-                  />
+                <div 
+                  className="image-container"
+                  style={{
+                    backgroundImage: "url('/images/abx-security-preview.png')",
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center top',
+                    backgroundRepeat: 'no-repeat'
+                  }}
+                >
                 </div>
                 <div className="text-content">
                   <h3>Security</h3>
@@ -490,12 +540,15 @@ export default function Home() {
             </li>
             <li>
               <article>
-                <div className="image-container">
-                  <img 
-                    src="/images/medium.png" 
-                    alt="Insights - Strategic market analysis and perspectives"
-                    className="site-preview-image"
-                  />
+                <div 
+                  className="image-container"
+                  style={{
+                    backgroundImage: "url('/images/medium.png')",
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center top',
+                    backgroundRepeat: 'no-repeat'
+                  }}
+                >
                 </div>
                 <div className="text-content">
                   <h3>Insights</h3>
@@ -605,6 +658,7 @@ export default function Home() {
           margin: 0 auto;
           width: 700px;
           max-width: calc(100% - 4rem);
+          min-width: 600px;
           transition: grid-template-columns 0.6s linear(0 0%, 0.1538 4.09%, 0.2926 8.29%, 0.4173 12.63%, 0.5282 17.12%, 0.6255 21.77%, 0.7099 26.61%, 0.782 31.67%, 0.8425 37%, 0.8887 42.23%, 0.9257 47.79%, 0.9543 53.78%, 0.9752 60.32%, 0.9883 67.11%, 0.9961 75%, 1 100%);
         }
 
@@ -657,7 +711,7 @@ export default function Home() {
         }
 
         .disclosure-cards-grid article {
-          width: calc(var(--article-width) * 1px);
+          width: 100%;
           height: 100%;
           position: absolute;
           font-family: monospace;
@@ -670,6 +724,7 @@ export default function Home() {
           padding-left: 3rem;
           overflow: hidden;
           z-index: 2;
+          min-width: 400px;
         }
 
         .disclosure-cards-grid article .animation-container {
@@ -701,7 +756,13 @@ export default function Home() {
           border-radius: 0;
           border-bottom: 1px solid #ffffff;
           opacity: 0;
+          min-height: 300px;
+          max-height: 500px;
           transition: opacity 0.6s linear(0 0%, 0.1538 4.09%, 0.2926 8.29%, 0.4173 12.63%, 0.5282 17.12%, 0.6255 21.77%, 0.7099 26.61%, 0.782 31.67%, 0.8425 37%, 0.8887 42.23%, 0.9257 47.79%, 0.9543 53.78%, 0.9752 60.32%, 0.9883 67.11%, 0.9961 75%, 1 100%);
+          box-sizing: border-box;
+          background-size: cover !important;
+          background-position: center top !important;
+          background-repeat: no-repeat !important;
         }
 
         .disclosure-cards-grid [data-active='true'] article .image-container {
@@ -709,12 +770,6 @@ export default function Home() {
         }
 
 
-        .disclosure-cards-grid article .site-preview-image {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: center top;
-        }
 
         .disclosure-cards-grid article .animation-canvas {
           position: absolute;
