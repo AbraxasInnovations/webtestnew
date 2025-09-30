@@ -949,7 +949,8 @@ export default function Home() {
             background-repeat: no-repeat;
             background-attachment: scroll;
             min-height: 100vh;
-            padding: 12rem 1rem 2rem 1rem;
+            padding: 4rem 1rem 2rem 1rem;
+            margin-top: 8rem;
             position: relative;
           }
 
