@@ -934,7 +934,7 @@ export default function Home() {
 
           /* Hero section with background */
           #disclosure-cards .max-w-6xl {
-            background-image: url('/images/unsplash.jpg');
+            background-image: url('/images/coins2.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -965,8 +965,8 @@ export default function Home() {
             height: auto;
             width: 100%;
             max-width: 100%;
-            gap: 1.5rem;
-            padding: 1rem;
+            gap: 1rem;
+            padding: 0.5rem;
             display: flex;
             flex-direction: column;
             margin: 0;
@@ -977,11 +977,11 @@ export default function Home() {
 
           .disclosure-cards-grid li {
             height: auto;
-            min-height: 300px;
+            min-height: 250px;
             min-width: auto;
             width: 100%;
             max-width: 100%;
-            border-radius: 12px;
+            border-radius: 8px;
             background: rgba(26, 26, 26, 0.9);
             backdrop-filter: blur(10px);
             border: 1px solid #333;
@@ -1002,7 +1002,7 @@ export default function Home() {
             position: relative;
             width: 100%;
             max-width: 100%;
-            padding: 1.5rem;
+            padding: 1rem;
             height: auto;
             display: flex;
             flex-direction: column;
@@ -1020,9 +1020,9 @@ export default function Home() {
 
           .disclosure-cards-grid article .image-container {
             position: relative;
-            height: 200px;
-            margin-bottom: 1.5rem;
-            border-radius: 8px;
+            height: 150px;
+            margin-bottom: 1rem;
+            border-radius: 6px;
             overflow: hidden;
             border-bottom: 1px solid #ffffff;
             opacity: 1;
@@ -1035,7 +1035,7 @@ export default function Home() {
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 0.75rem;
             align-items: flex-start;
             text-align: left;
             position: relative;
@@ -1050,11 +1050,11 @@ export default function Home() {
           }
 
           .disclosure-cards-grid article .content-title {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: 600;
             text-transform: none;
             color: #ffffff;
-            margin: 0 0 1rem 0;
+            margin: 0 0 0.75rem 0;
             opacity: 1;
             position: relative;
             width: 100%;
@@ -1063,8 +1063,8 @@ export default function Home() {
           }
 
           .disclosure-cards-grid article p {
-            font-size: 1.1rem;
-            line-height: 1.6;
+            font-size: 0.95rem;
+            line-height: 1.5;
             text-align: left;
             margin: 0;
             color: #e5e7eb;
