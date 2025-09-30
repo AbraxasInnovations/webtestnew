@@ -949,7 +949,7 @@ export default function Home() {
             background-repeat: no-repeat;
             background-attachment: scroll;
             min-height: 100vh;
-            padding: 6rem 1rem 2rem 1rem;
+            padding: 8rem 1rem 2rem 1rem;
             position: relative;
           }
 
@@ -989,7 +989,7 @@ export default function Home() {
 
           .disclosure-cards-grid li {
             height: auto !important;
-            min-height: 250px !important;
+            min-height: 200px !important;
             min-width: auto !important;
             width: 100% !important;
             max-width: 100% !important;
@@ -1014,7 +1014,7 @@ export default function Home() {
             position: relative !important;
             width: 100% !important;
             max-width: 100% !important;
-            padding: 1rem !important;
+            padding: 1.25rem !important;
             height: auto !important;
             display: flex !important;
             flex-direction: column !important;
@@ -1032,7 +1032,7 @@ export default function Home() {
 
           .disclosure-cards-grid article .image-container {
             position: relative;
-            height: 150px;
+            height: 120px;
             margin-bottom: 1rem;
             border-radius: 6px;
             overflow: hidden;
@@ -1047,7 +1047,7 @@ export default function Home() {
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
+            gap: 1rem;
             align-items: flex-start;
             text-align: left;
             position: relative;
@@ -1062,11 +1062,11 @@ export default function Home() {
           }
 
           .disclosure-cards-grid article .content-title {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             font-weight: 600;
             text-transform: none;
             color: #ffffff;
-            margin: 0 0 0.75rem 0;
+            margin: 0 0 0.5rem 0;
             opacity: 1;
             position: relative;
             width: 100%;
@@ -1075,8 +1075,8 @@ export default function Home() {
           }
 
           .disclosure-cards-grid article p {
-            font-size: 0.95rem;
-            line-height: 1.5;
+            font-size: 1rem;
+            line-height: 1.6;
             text-align: left;
             margin: 0;
             color: #e5e7eb;
