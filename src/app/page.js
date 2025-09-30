@@ -931,6 +931,15 @@ export default function Home() {
             padding: 0;
             box-sizing: border-box;
           }
+          
+          /* Force override desktop grid constraints */
+          .disclosure-cards-grid {
+            width: 100% !important;
+            max-width: 100% !important;
+            min-width: auto !important;
+            margin: 0 !important;
+            padding: 0.5rem !important;
+          }
 
           /* Hero section with background */
           #disclosure-cards .max-w-6xl {
@@ -961,35 +970,38 @@ export default function Home() {
           }
           
           .disclosure-cards-grid {
-            grid-template-columns: 1fr;
-            height: auto;
-            width: 100%;
-            max-width: 100%;
-            gap: 1rem;
-            padding: 0.5rem;
-            display: flex;
-            flex-direction: column;
-            margin: 0;
-            overflow-x: hidden;
-            background: #000000;
-            box-sizing: border-box;
+            grid-template-columns: 1fr !important;
+            height: auto !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            min-width: auto !important;
+            gap: 1rem !important;
+            padding: 0.5rem !important;
+            display: flex !important;
+            flex-direction: column !important;
+            margin: 0 !important;
+            overflow-x: hidden !important;
+            background: #000000 !important;
+            box-sizing: border-box !important;
+            container-type: none !important;
+            transition: none !important;
           }
 
           .disclosure-cards-grid li {
-            height: auto;
-            min-height: 250px;
-            min-width: auto;
-            width: 100%;
-            max-width: 100%;
-            border-radius: 8px;
-            background: rgba(26, 26, 26, 0.9);
-            backdrop-filter: blur(10px);
-            border: 1px solid #333;
-            transition: none;
-            position: relative;
-            overflow: hidden;
-            margin: 0;
-            box-sizing: border-box;
+            height: auto !important;
+            min-height: 250px !important;
+            min-width: auto !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            border-radius: 8px !important;
+            background: rgba(26, 26, 26, 0.9) !important;
+            backdrop-filter: blur(10px) !important;
+            border: 1px solid #333 !important;
+            transition: none !important;
+            position: relative !important;
+            overflow: hidden !important;
+            margin: 0 !important;
+            box-sizing: border-box !important;
           }
 
           .disclosure-cards-grid li:hover {
@@ -999,19 +1011,19 @@ export default function Home() {
           }
 
           .disclosure-cards-grid article {
-            position: relative;
-            width: 100%;
-            max-width: 100%;
-            padding: 1rem;
-            height: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            text-align: left;
-            margin: 0;
-            box-sizing: border-box;
-            min-width: auto;
+            position: relative !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            padding: 1rem !important;
+            height: auto !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: flex-start !important;
+            align-items: flex-start !important;
+            text-align: left !important;
+            margin: 0 !important;
+            box-sizing: border-box !important;
+            min-width: auto !important;
           }
 
           .disclosure-cards-grid article .animation-container {
